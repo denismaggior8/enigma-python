@@ -1,5 +1,7 @@
 from string import ascii_lowercase
 import logging
+import unittest
+
 class Enigma:
     
     plugboard = None
