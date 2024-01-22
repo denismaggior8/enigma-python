@@ -1,3 +1,9 @@
+from enigma.RotorWiringI import RotorWiringI
+from enigma.RotorWiringII import RotorWiringII
+from enigma.RotorWiringIII import RotorWiringIII
+from enigma.PlugboardPassthrough import PlugboardPassthrough
+from enigma.ReflectorUKWB import ReflectorUKWB
+from enigma.EtwPassthrough import EtwPassthrough
 from string import ascii_lowercase
 import logging
 import unittest
@@ -53,3 +59,28 @@ class Enigma:
     def shift_letter(letter,shift):
 	    return Enigma.alphabet[(Enigma.alphabet.index(letter)+shift) % len(Enigma.alphabet)]
 
+class TestEnigma(unittest.TestCase):
+     
+    def test_enigma_3_rotors_output(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = RotorWiringI(25)
+        rotor2 = RotorWiringII(25)
+        rotor3 = RotorWiringIII(25)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw)
+        self.assertEqual(enigma.input_char("z"),"t","Enigma output error")
+
+    def test_enigma_3_rotors_output_reverted(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = RotorWiringI(25)
+        rotor2 = RotorWiringII(25)
+        rotor3 = RotorWiringIII(25)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw)
+        scrambled_char = enigma.input_char("z")
+        self.assertEqual(enigma.input_char(scrambled_char),"z","Enigma output error")
+
+if __name__ == "__main__":
+    unittest.main()
