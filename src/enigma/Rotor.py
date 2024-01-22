@@ -59,5 +59,11 @@ class TestRotor(unittest.TestCase):
         rotor.set_position(random_int)
         self.assertEqual(rotor.position, random_int % len(rotor.wiring), "Rotor position is wrong")
 
+    def test_set_rotor_negative_position(self):
+        rotor = Rotor(list(ascii_lowercase),0)
+        random_int = random.randint(-10000, -1)
+        rotor.set_position(random_int)
+        self.assertEqual(rotor.position, random_int % len(rotor.wiring), "Rotor position is wrong")
+
 if __name__ == "__main__":
     unittest.main()
