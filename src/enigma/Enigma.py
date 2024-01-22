@@ -14,14 +14,16 @@ class Enigma:
     rotors = None
     reflector = None
     etw = None
+    auto_increment_rotors = False
 
     alphabet = list(ascii_lowercase)
 
-    def __init__(self, plugboard, rotors, reflector,etw):
+    def __init__(self, plugboard, rotors, reflector,etw,auto_increment_rotors=False):
         self.plugboard = plugboard
         self.rotors = rotors
         self.reflector = reflector
         self.etw = etw
+        self.auto_increment_rotors = auto_increment_rotors
     
 
     def input_char(self,char):
