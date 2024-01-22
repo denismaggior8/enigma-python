@@ -25,7 +25,7 @@ class Enigma:
     
 
     def input_char(self,char):
-        logging.debug("Input char: {}".format(char))
+        logging.info("Input char: {}".format(char))
         return self.process_char(char)
 
     def process_char(self, char):
