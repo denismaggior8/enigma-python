@@ -1,9 +1,9 @@
-from enigma.RotorWiringI import RotorWiringI
-from enigma.RotorWiringII import RotorWiringII
-from enigma.RotorWiringIII import RotorWiringIII
-from enigma.PlugboardPassthrough import PlugboardPassthrough
-from enigma.ReflectorUKWB import ReflectorUKWB
-from enigma.EtwPassthrough import EtwPassthrough
+from RotorWiringI import RotorWiringI
+from RotorWiringII import RotorWiringII
+from RotorWiringIII import RotorWiringIII
+from PlugboardPassthrough import PlugboardPassthrough
+from ReflectorUKWB import ReflectorUKWB
+from EtwPassthrough import EtwPassthrough
 from string import ascii_lowercase
 import logging
 import unittest
