@@ -1,12 +1,12 @@
 
 # Import from enigma module
-from enigma.RotorWiringI import RotorWiringI
-from enigma.RotorWiringII import RotorWiringII
-from enigma.RotorWiringIII import RotorWiringIII
-from enigma.PlugboardPassthrough import PlugboardPassthrough
-from enigma.ReflectorUKWB import ReflectorUKWB
-from enigma.EnigmaThreeRotors import EnigmaThreeRotors
-from enigma.EtwPassthrough import EtwPassthrough
+from RotorWiringI import RotorWiringI
+from RotorWiringII import RotorWiringII
+from RotorWiringIII import RotorWiringIII
+from PlugboardPassthrough import PlugboardPassthrough
+from ReflectorUKWB import ReflectorUKWB
+from EnigmaThreeRotors import EnigmaThreeRotors
+from EtwPassthrough import EtwPassthrough
 
 # Import from python echosystem
 import logging
