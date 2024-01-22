@@ -1,4 +1,5 @@
 from string import ascii_lowercase
+import logging
 class Enigma:
     
     plugboard = None
@@ -16,12 +17,12 @@ class Enigma:
     
 
     def input_char(self,char):
-        print("Input char: "+ char)
+        logging.debug("Input char: {}".format(char))
         return self.process_char(char)
 
     def process_char(self, char):
         scrambled_char = self.plugboard.switch_char(char)
-        print("Scrambled letter from plugboard: "+scrambled_char)
+        logging.debug("Scrambled letter from plugboard: {}".format(scrambled_char))
         iteration = 0
         for rotor in self.rotors:
             if iteration == 0:
@@ -29,20 +30,21 @@ class Enigma:
             else:
                 scrambled_char = rotor.scramble_letter_index(rotor.wiring,Enigma.alphabet.index(scrambled_char)-self.rotors[iteration-1].position) 
             iteration +=1
-            print("Scrambled letter from rotor "+ str(iteration) + ": "+scrambled_char)
+            logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration),scrambled_char))
         scrambled_char = self.reflector.scramble_letter_index(self.reflector.wiring,(Enigma.alphabet.index(scrambled_char)-self.rotors[iteration-1].position))
-        print("Scrambled letter from reflector: "+scrambled_char)
+        logging.debug("Scrambled letter from reflector: {}".format(scrambled_char))
         for rotor in reversed(self.rotors):
             if iteration == len(self.rotors):
                 scrambled_char = rotor.scramble_letter_index(Enigma.alphabet,(rotor.wiring.index(Enigma.shift_letter(scrambled_char,rotor.position))-rotor.position))
             else:
                 scrambled_char = rotor.scramble_letter_index(Enigma.alphabet,(rotor.wiring.index(Enigma.shift_letter(scrambled_char, (rotor.position - self.rotors[iteration].position))) - rotor.position))
             iteration -=1
-            print("Scrambled letter from rotor "+ str(iteration+1) + ": "+scrambled_char)   
+            logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration+1),scrambled_char))   
         scrambled_char = self.etw.switch_char(scrambled_char,-self.rotors[iteration].position)
         
        
-        print("Scrambled letter from ETW: "+scrambled_char)
+        logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
+        logging.info("Scrambled letter to lamp: {}".format(scrambled_char))
         return scrambled_char
     
     @staticmethod        
