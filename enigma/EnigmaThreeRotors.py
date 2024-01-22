@@ -1,4 +1,4 @@
-from .Enigma import Enigma
+from Enigma import Enigma
 
 class EnigmaThreeRotors(Enigma):
    

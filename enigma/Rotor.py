@@ -7,6 +7,9 @@ import random
 class Rotor:
     wiring = None
     position = 0
+
+    def reset_position(self):
+        self.position = 0
     
     def increment_position(self):
         self.position = ((self.position + 1) % len(self.wiring))
@@ -27,7 +30,12 @@ class Rotor:
         return self.wiring + '\n' + pointer 
     
 class TestRotor(unittest.TestCase):
-    
+
+    def test_reset_rotor_position(self):
+        rotor = Rotor(list(ascii_lowercase),25)
+        rotor.reset_position()
+        self.assertEqual(rotor.position, 0, "Rotor position is wrong")
+
     def test_rotor_position_increment_by_1(self):
         rotor = Rotor(list(ascii_lowercase),0)
         rotor.increment_position()

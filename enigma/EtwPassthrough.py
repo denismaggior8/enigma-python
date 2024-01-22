@@ -1,4 +1,4 @@
-from .Etw import Etw
+from Etw import Etw
 
 class EtwPassthrough(Etw):
     wiring = "abcdefghijklmnopqrstuvwxyz"

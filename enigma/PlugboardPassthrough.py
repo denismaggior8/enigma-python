@@ -1,4 +1,4 @@
-from .Plugboard import Plugboard
+from Plugboard import Plugboard
 
 class PlugboardPassthrough(Plugboard):
     wiring = "abcdefghijklmnopqrstuvwxyz"

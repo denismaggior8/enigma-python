@@ -1,4 +1,4 @@
-from .Rotor import Rotor
+from Rotor import Rotor
 
 class RotorWiringIII(Rotor):
     
