@@ -1,5 +1,2 @@
-./enigma
+./src/enigma
 logging
-unittest
-random
-string
