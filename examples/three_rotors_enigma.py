@@ -8,7 +8,7 @@ from ReflectorUKWB import ReflectorUKWB
 from EnigmaThreeRotors import EnigmaThreeRotors
 from EtwPassthrough import EtwPassthrough
 
-# Import from python echosystem
+# Import from python ecosystem
 import logging
 import sys
 
