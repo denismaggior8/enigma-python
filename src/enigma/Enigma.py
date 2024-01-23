@@ -62,7 +62,7 @@ class Enigma(Observer):
             iteration -=1
             logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration+1),scrambled_char))   
         scrambled_char = self.etw.switch_char(scrambled_char,-self.rotors[iteration].position)
-        scrambled_char = self.plugboard.switch_char(char)
+        scrambled_char = self.plugboard.switch_char(scrambled_char)
        
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
         logging.info("Scrambled letter to lamp: {}".format(scrambled_char))
