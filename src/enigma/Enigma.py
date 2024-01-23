@@ -135,7 +135,7 @@ class TestEnigma(unittest.TestCase):
         self.assertEqual(rotor2.position,0,"Rotor rotations error")
         self.assertEqual(rotor3.position,0,"Rotor rotations error")
 
-    def test_enigma_3_rotors_boundaries_dup(self):
+    def test_enigma_3_rotors_complete_rotations(self):
         plugboard = PlugboardPassthrough()
         rotor1 = RotorWiringI(0)
         rotor2 = RotorWiringII(0)
@@ -144,11 +144,11 @@ class TestEnigma(unittest.TestCase):
         etw = EtwPassthrough()
         enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
         # Cypher 34 charachters
-        for i in range(1,17*26*26):
+        for i in range(1,17577):
            enigma.input_char("a")
-        #self.assertEqual(rotor1.position,1,"Rotor rotations error")
-        #self.assertEqual(rotor2.position,0,"Rotor rotations error")
-        #self.assertEqual(rotor3.position,0,"Rotor rotations error")
+        self.assertEqual(rotor1.position,0,"Rotor rotations error")
+        self.assertEqual(rotor2.position,0,"Rotor rotations error")
+        self.assertEqual(rotor3.position,0,"Rotor rotations error")
     
     def test_enigma_3_rotors_first_to_second_rotor_rotation(self):
         plugboard = PlugboardPassthrough()
@@ -197,7 +197,7 @@ class TestEnigma(unittest.TestCase):
         encrypted_string = enigma.input_string("supercalifragilistichespiralidososupercalifragilistichespiralidoso")
         self.assertEqual(encrypted_string,"xbbdugsoaoywaobzgkcggrdenwmeqnxapvwykgzuqpiwdiprbwzmiqxngbbrivrbue","Enigma encryption error")
 
-    def test_enigma_3_encrypt_very_long_string(self):
+    def test_enigma_3_encrypt_very_long_string_reversed(self):
         plugboard = PlugboardPassthrough()
         rotor1 = RotorWiringI(0)
         rotor2 = RotorWiringII(0)
@@ -209,4 +209,4 @@ class TestEnigma(unittest.TestCase):
         self.assertEqual(encrypted_string,"supercalifragilistichespiralidososupercalifragilistichespiralidoso","Enigma encryption error")
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(verbosity=2)

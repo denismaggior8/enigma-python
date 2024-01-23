@@ -28,7 +28,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.ERROR)
 
 # Test the Enigma machine
 if __name__ == "__main__":
-    for i in range(1,17576):
+    for i in range(1,17577):
         enigma.input_char("a")
     print("Rotor1 position",rotor1.position)
     print("Rotor1 counter",rotor1.rotations_counter)

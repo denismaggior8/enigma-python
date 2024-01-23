@@ -74,4 +74,4 @@ class TestRotor(unittest.TestCase):
         self.assertEqual(rotor.position, random_int % len(rotor.wiring), "Rotor position is wrong")
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(verbosity=2)
