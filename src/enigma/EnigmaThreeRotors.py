@@ -98,7 +98,7 @@ class TestEnigma(unittest.TestCase):
         self.assertEqual(rotor2.position,1,"Rotor rotations error")
     
 
-    def test_enigma_3_encrypt_string(self):
+    def test_enigma_3_rotors_encrypt_string(self):
         plugboard = PlugboardPassthrough()
         rotor1 = RotorWiringI(0)
         rotor2 = RotorWiringII(0)
@@ -108,8 +108,19 @@ class TestEnigma(unittest.TestCase):
         enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
         encrypted_string = enigma.input_string("ciao")
         self.assertEqual(encrypted_string,"pqzz","Enigma encryption error")
+    
+    def test_enigma_3_rotors_inverted_encrypt_string(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = RotorWiringIII(0)
+        rotor2 = RotorWiringII(0)
+        rotor3 = RotorWiringI(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
+        encrypted_string = enigma.input_string("ciao")
+        self.assertEqual(encrypted_string,"qozm","Enigma encryption error")
 
-    def test_enigma_3_encrypt_long_string(self):
+    def test_enigma_3_rotors_encrypt_long_string(self):
         plugboard = PlugboardPassthrough()
         rotor1 = RotorWiringI(0)
         rotor2 = RotorWiringII(0)
@@ -120,7 +131,7 @@ class TestEnigma(unittest.TestCase):
         encrypted_string = enigma.input_string("supercalifragilistichespiralidoso")
         self.assertEqual(encrypted_string,"xbbdugsoaoywaobzgkcggrdenwmeqnxap","Enigma encryption error")
     
-    def test_enigma_3_encrypt_very_long_string(self):
+    def test_enigma_3_rotors_encrypt_very_long_string(self):
         plugboard = PlugboardPassthrough()
         rotor1 = RotorWiringI(0)
         rotor2 = RotorWiringII(0)
@@ -131,7 +142,7 @@ class TestEnigma(unittest.TestCase):
         encrypted_string = enigma.input_string("supercalifragilistichespiralidososupercalifragilistichespiralidoso")
         self.assertEqual(encrypted_string,"xbbdugsoaoywaobzgkcggrdenwmeqnxapvwykgzuqpiwdiprbwzmiqxngbbrivrbue","Enigma encryption error")
 
-    def test_enigma_3_encrypt_very_long_string_reversed(self):
+    def test_enigma_3_rotors_encrypt_very_long_string_reversed(self):
         plugboard = PlugboardPassthrough()
         rotor1 = RotorWiringI(0)
         rotor2 = RotorWiringII(0)
@@ -140,6 +151,17 @@ class TestEnigma(unittest.TestCase):
         etw = EtwPassthrough()
         enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
         encrypted_string = enigma.input_string("xbbdugsoaoywaobzgkcggrdenwmeqnxapvwykgzuqpiwdiprbwzmiqxngbbrivrbue")
+        self.assertEqual(encrypted_string,"supercalifragilistichespiralidososupercalifragilistichespiralidoso","Enigma encryption error")
+
+    def test_enigma_3_rotors_inverted_encrypt_very_long_string_reversed(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = RotorWiringIII(0)
+        rotor2 = RotorWiringII(0)
+        rotor3 = RotorWiringI(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
+        encrypted_string = enigma.input_string("jvswemcgjqvshqvkuidiwplsxjyomqgflhcnsulnyxzcufozgxbqqsyghxkcrtjzbd")
         self.assertEqual(encrypted_string,"supercalifragilistichespiralidososupercalifragilistichespiralidoso","Enigma encryption error")
 
 if __name__ == "__main__":
