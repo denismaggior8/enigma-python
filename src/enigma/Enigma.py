@@ -69,7 +69,7 @@ class Enigma(Observer):
         return scrambled_char
     
     def update(self, observable, *args, **kwargs):
-        # if there a rotor N+1, increment its position by 1
+        # if there is rotor N+1, increment its position by 1
         if observable in self.rotors and self.rotors.index(observable) < len(self.rotors):
           self.rotors[self.rotors.index(observable)+1].increment_position()
     
