@@ -119,8 +119,22 @@ class TestEnigma(unittest.TestCase):
         self.assertEqual(rotor1.rotations_counter,34,"Rotor rotations error")
         # Rotor2 position should be 'b', indexed by 1    
         self.assertEqual(rotor2.position,1,"Rotor position error")
-        # Rotor1 should have done 1 rotations    
+        # Rotor2 should have done 1 rotations    
         self.assertEqual(rotor2.rotations_counter,1,"Rotor rotations error")
+
+    def test_enigma_3_rotors_automatic_rotor_rotation_boundaries(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = RotorWiringI(26)
+        rotor2 = RotorWiringII(26)
+        rotor3 = RotorWiringIII(26)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
+        enigma.input_char("a")
+        self.assertEqual(rotor1.position,1,"Rotor rotations error")
+        self.assertEqual(rotor2.position,0,"Rotor rotations error")
+        self.assertEqual(rotor3.position,0,"Rotor rotations error")
+    
 
     def test_enigma_3_encrypt_string(self):
         plugboard = PlugboardPassthrough()
