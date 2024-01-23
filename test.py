@@ -24,10 +24,15 @@ etw = EtwPassthrough()
 enigma = EnigmaThreeRotors(plugboard,rotor1,rotor2,rotor3,reflector,etw,True)
 
 # Configure logging
-logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+logging.basicConfig(stream=sys.stdout, level=logging.ERROR)
 
 # Test the Enigma machine
 if __name__ == "__main__":
-    print("rotor1: "+str(id(rotor1)))
-    for i in range(0,18):
+    for i in range(1,17576):
         enigma.input_char("a")
+    print("Rotor1 position",rotor1.position)
+    print("Rotor1 counter",rotor1.rotations_counter)
+    print("Rotor2 position",rotor2.position)
+    print("Rotor2 counter",rotor2.rotations_counter)
+    print("Rotor3 position",rotor3.position)
+    print("Rotor3 counter",rotor3.rotations_counter)

@@ -9,7 +9,7 @@ class Rotor(Observable):
     wiring = None
     position = 0
     rotations_counter = 0
-    notch_index = 0
+    notch_index = None
 
     def reset_position(self):
         self.position = 0
