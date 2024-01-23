@@ -32,6 +32,8 @@ class Enigma(Observer):
 
     def input_char(self,char):
         logging.info("Input char: {}".format(char))
+        if self.auto_increment_rotors == True:
+            self.rotors[0].increment_position()
         return self.process_char(char)
 
     def process_char(self, char):
@@ -62,7 +64,8 @@ class Enigma(Observer):
         return scrambled_char
     
     def update(self, observable, *args, **kwargs):
-        print("event")
+        if self.rotors.index(observable) != None and self.rotors.index(observable) < len(self.rotors):
+          self.rotors[self.rotors.index(observable)+1].increment_position()
     
     @staticmethod        
     def shift_letter(letter,shift):
@@ -92,6 +95,27 @@ class TestEnigma(unittest.TestCase):
         enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw)
         scrambled_char = enigma.input_char("z")
         self.assertEqual(enigma.input_char(scrambled_char),"z","Enigma output error")
+
+    def test_enigma_3_rotors_automatic_rotor_rotation(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = RotorWiringI(0)
+        rotor2 = RotorWiringII(0)
+        rotor3 = RotorWiringIII(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
+        for i in range(len(rotor1.wiring)):
+           enigma.input_char("a")
+        self.assertEqual(rotor1.position,0,"Enigma output error")
+        self.assertEqual(rotor1.rotations_counter,0,"Enigma output error")
+        self.assertEqual(rotor2.position,1,"Enigma output error")
+        self.assertEqual(rotor1.rotations_counter,0,"Enigma output error")
+        self.assertEqual(rotor3.position,0,"Enigma output error")
+        self.assertEqual(rotor3.rotations_counter,0,"Enigma output error")
+        for i in range(len(rotor1.wiring)*len(rotor2.wiring)):
+           enigma.input_char("a")
+        print(rotor2.position)
+        print(rotor2.rotations_counter)
 
 if __name__ == "__main__":
     unittest.main()
