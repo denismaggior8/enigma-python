@@ -91,7 +91,7 @@ class TestEnigma(unittest.TestCase):
         enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw)
         self.assertEqual(enigma.input_char("z"),"t","Enigma output error")
 
-    def test_enigma_3_rotors_output_reverted(self):
+    def test_enigma_3_rotors_output_reversed(self):
         plugboard = PlugboardPassthrough()
         rotor1 = RotorWiringI(25)
         rotor2 = RotorWiringII(25)
@@ -144,7 +144,7 @@ class TestEnigma(unittest.TestCase):
         etw = EtwPassthrough()
         enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
         # Cypher 34 charachters
-        for i in range(1,17*27*27):
+        for i in range(1,17*26*26):
            enigma.input_char("a")
         #self.assertEqual(rotor1.position,1,"Rotor rotations error")
         #self.assertEqual(rotor2.position,0,"Rotor rotations error")
@@ -196,6 +196,17 @@ class TestEnigma(unittest.TestCase):
         enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
         encrypted_string = enigma.input_string("supercalifragilistichespiralidososupercalifragilistichespiralidoso")
         self.assertEqual(encrypted_string,"xbbdugsoaoywaobzgkcggrdenwmeqnxapvwykgzuqpiwdiprbwzmiqxngbbrivrbue","Enigma encryption error")
+
+    def test_enigma_3_encrypt_very_long_string(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = RotorWiringI(0)
+        rotor2 = RotorWiringII(0)
+        rotor3 = RotorWiringIII(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
+        encrypted_string = enigma.input_string("xbbdugsoaoywaobzgkcggrdenwmeqnxapvwykgzuqpiwdiprbwzmiqxngbbrivrbue")
+        self.assertEqual(encrypted_string,"supercalifragilistichespiralidososupercalifragilistichespiralidoso","Enigma encryption error")
 
 if __name__ == "__main__":
     unittest.main()

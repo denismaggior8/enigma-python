@@ -9,17 +9,15 @@ class Rotor(Observable):
     wiring = None
     position = 0
     rotations_counter = 0
+    notch_index = 0
 
     def reset_position(self):
         self.position = 0
     
     def increment_position(self):
         self.position = ((self.position + 1) % len(self.wiring))
-        self.rotations_counter = ((self.rotations_counter + 1))
-        #self.rotations_counter = ((self.rotations_counter + 1)% len(self.wiring))
-        # I don't know why but original Enigma seems to move the next rotor when the current rotations_counter % len(wiring) is 17
-        if (self.rotations_counter % len(self.wiring)) == 17:
-        #if (self.rotations_counter) == 17:
+        self.rotations_counter = ((self.rotations_counter + 1))        
+        if (self.position % len(self.wiring)) == self.notch_index+1:
             self.notify_observers("ciao","ciao")
 
     def set_position(self,position):
@@ -30,9 +28,10 @@ class Rotor(Observable):
         scrambled_letter_index_from_rotor = dictionary.index(dictionary[(self.position + letter_index) % len(dictionary)])
         return dictionary[scrambled_letter_index_from_rotor]
 
-    def __init__(self, wiring, position):
+    def __init__(self, wiring, position, notch_index=None):
         self.wiring = wiring
         self.position = position % len(wiring)
+        self.notch_index = notch_index
 
     def __str__(self):
         pointer = ' ' * self.position + '^'

@@ -5,9 +5,10 @@ import unittest
 class RotorWiringII(Rotor):
     
     wiring = 'ajdksiruxblhwtmcqgznpyfvoe'
+    notch_index = 4
     
     def __init__(self, position):
-        super().__init__(self.wiring,position)
+        super().__init__(self.wiring,position,self.notch_index)
 
 class TestRotorWiringI(unittest.TestCase):
     
