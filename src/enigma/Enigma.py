@@ -4,11 +4,12 @@ from RotorWiringIII import RotorWiringIII
 from PlugboardPassthrough import PlugboardPassthrough
 from ReflectorUKWB import ReflectorUKWB
 from EtwPassthrough import EtwPassthrough
+from Observer import Observer
 from string import ascii_lowercase
 import logging
 import unittest
 
-class Enigma:
+class Enigma(Observer):
     
     plugboard = None
     rotors = None
@@ -24,6 +25,9 @@ class Enigma:
         self.reflector = reflector
         self.etw = etw
         self.auto_increment_rotors = auto_increment_rotors
+        if auto_increment_rotors == True:
+            for rotor in rotors:
+                rotor.add_observer(self)
     
 
     def input_char(self,char):
@@ -57,9 +61,14 @@ class Enigma:
         logging.info("Scrambled letter to lamp: {}".format(scrambled_char))
         return scrambled_char
     
+    def update(self, observable, *args, **kwargs):
+        print("event")
+    
     @staticmethod        
     def shift_letter(letter,shift):
 	    return Enigma.alphabet[(Enigma.alphabet.index(letter)+shift) % len(Enigma.alphabet)]
+
+
 
 class TestEnigma(unittest.TestCase):
      

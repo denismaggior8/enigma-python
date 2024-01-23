@@ -1,18 +1,23 @@
 
+from Observable import Observable
 from string import ascii_lowercase
 import unittest
 import random
 
 
-class Rotor:
+class Rotor(Observable):
     wiring = None
     position = 0
+    rotations_counter = 0
 
     def reset_position(self):
         self.position = 0
     
     def increment_position(self):
         self.position = ((self.position + 1) % len(self.wiring))
+        self.rotations_counter = ((self.rotations_counter + 1) % len(self.wiring))
+        if self.rotations_counter == 0:
+            self.notify_observers("ciao","ciao")
 
     def set_position(self,position):
         self.position = position % len(self.wiring)
