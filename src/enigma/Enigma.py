@@ -110,10 +110,17 @@ class TestEnigma(unittest.TestCase):
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
-        for i in range(1,34):
+        # Cypher 34 charachters
+        for i in range(1,35):
            enigma.input_char("a")
-        self.assertEqual(rotor1.position,7,"Rotor position error")
-        self.assertEqual(rotor1.rotations_counter,33,"Rotor rotations error")
+        # Rotor1 position should be 'i', indexed by 8    
+        self.assertEqual(rotor1.position,8,"Rotor position error")
+        # Rotor1 should have done 34 rotations    
+        self.assertEqual(rotor1.rotations_counter,34,"Rotor rotations error")
+        # Rotor2 position should be 'b', indexed by 1    
+        self.assertEqual(rotor2.position,1,"Rotor position error")
+        # Rotor1 should have done 1 rotations    
+        self.assertEqual(rotor2.rotations_counter,1,"Rotor rotations error")
 
     def test_enigma_3_encrypt_string(self):
         plugboard = PlugboardPassthrough()
