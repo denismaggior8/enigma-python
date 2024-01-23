@@ -69,7 +69,8 @@ class Enigma(Observer):
         return scrambled_char
     
     def update(self, observable, *args, **kwargs):
-        if self.rotors.index(observable) != None and self.rotors.index(observable) < len(self.rotors):
+        # if there a rotor N+1, increment its position by 1
+        if observable in self.rotors and self.rotors.index(observable) < len(self.rotors):
           self.rotors[self.rotors.index(observable)+1].increment_position()
     
     @staticmethod        
@@ -109,18 +110,10 @@ class TestEnigma(unittest.TestCase):
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
-        for i in range(len(rotor1.wiring)):
+        for i in range(1,34):
            enigma.input_char("a")
-        self.assertEqual(rotor1.position,0,"Enigma output error")
-        self.assertEqual(rotor1.rotations_counter,0,"Enigma output error")
-        #self.assertEqual(rotor2.position,1,"Enigma output error")
-        #self.assertEqual(rotor1.rotations_counter,0,"Enigma output error")
-        #self.assertEqual(rotor3.position,0,"Enigma output error")
-        #self.assertEqual(rotor3.rotations_counter,0,"Enigma output error")
-        #for i in range(len(rotor1.wiring)*len(rotor2.wiring)):
-        #   enigma.input_char("a")
-        #print(rotor2.position)
-        #print(rotor2.rotations_counter)
+        self.assertEqual(rotor1.position,7,"Rotor position error")
+        self.assertEqual(rotor1.rotations_counter,33,"Rotor rotations error")
 
     def test_enigma_3_encrypt_string(self):
         plugboard = PlugboardPassthrough()
@@ -132,6 +125,28 @@ class TestEnigma(unittest.TestCase):
         enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
         encrypted_string = enigma.input_string("ciao")
         self.assertEqual(encrypted_string,"pqzz","Enigma encryption error")
+
+    def test_enigma_3_encrypt_long_string(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = RotorWiringI(0)
+        rotor2 = RotorWiringII(0)
+        rotor3 = RotorWiringIII(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
+        encrypted_string = enigma.input_string("supercalifragilistichespiralidoso")
+        self.assertEqual(encrypted_string,"xbbdugsoaoywaobzgkcggrdenwmeqnxap","Enigma encryption error")
+    
+    def test_enigma_3_encrypt_very_long_string(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = RotorWiringI(0)
+        rotor2 = RotorWiringII(0)
+        rotor3 = RotorWiringIII(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
+        encrypted_string = enigma.input_string("supercalifragilistichespiralidososupercalifragilistichespiralidoso")
+        self.assertEqual(encrypted_string,"xbbdugsoaoywaobzgkcggrdenwmeqnxapvwykgzuqpiwdiprbwzmiqxngbbrivrbue","Enigma encryption error")
 
 if __name__ == "__main__":
     unittest.main()

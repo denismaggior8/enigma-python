@@ -15,12 +15,15 @@ class Rotor(Observable):
     
     def increment_position(self):
         self.position = ((self.position + 1) % len(self.wiring))
-        self.rotations_counter = ((self.rotations_counter + 1) % len(self.wiring))
-        if self.rotations_counter == 0:
+        self.rotations_counter = ((self.rotations_counter + 1))
+        #self.rotations_counter = ((self.rotations_counter + 1)% len(self.wiring))
+        if (self.rotations_counter % len(self.wiring)) == 17:
+        #if (self.rotations_counter) == 17:
             self.notify_observers("ciao","ciao")
 
     def set_position(self,position):
         self.position = position % len(self.wiring)
+        self.rotations_counter = 0
         
     def scramble_letter_index(self, dictionary, letter_index):
         scrambled_letter_index_from_rotor = dictionary.index(dictionary[(self.position + letter_index) % len(dictionary)])
