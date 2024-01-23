@@ -20,7 +20,7 @@ Welcome to **enigma-python**, a Python package designed to emulate the legendary
 
 ## Getting started
 
-Please have a look of the [examples](./examples)
+Please have a look of the [examples](./examples) folder
 
 ## Documentation
 
