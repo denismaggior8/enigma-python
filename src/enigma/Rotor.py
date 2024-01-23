@@ -17,6 +17,7 @@ class Rotor(Observable):
         self.position = ((self.position + 1) % len(self.wiring))
         self.rotations_counter = ((self.rotations_counter + 1))
         #self.rotations_counter = ((self.rotations_counter + 1)% len(self.wiring))
+        # I don't know why but original Enigma seems to move the next rotor when the current rotations_counter % len(wiring) is 17
         if (self.rotations_counter % len(self.wiring)) == 17:
         #if (self.rotations_counter) == 17:
             self.notify_observers("ciao","ciao")

@@ -70,7 +70,7 @@ class Enigma(Observer):
     
     def update(self, observable, *args, **kwargs):
         # if there is rotor N+1, increment its position by 1
-        if observable in self.rotors and self.rotors.index(observable) < len(self.rotors):
+        if observable in self.rotors and self.rotors.index(observable) < len(self.rotors)-1:
           self.rotors[self.rotors.index(observable)+1].increment_position()
     
     @staticmethod        
@@ -102,7 +102,7 @@ class TestEnigma(unittest.TestCase):
         scrambled_char = enigma.input_char("z")
         self.assertEqual(enigma.input_char(scrambled_char),"z","Enigma output error")
 
-    def test_enigma_3_rotors_automatic_rotor_rotation(self):
+    def test_enigma_3_rotors_automatic_rotation(self):
         plugboard = PlugboardPassthrough()
         rotor1 = RotorWiringI(0)
         rotor2 = RotorWiringII(0)
@@ -122,7 +122,7 @@ class TestEnigma(unittest.TestCase):
         # Rotor2 should have done 1 rotations    
         self.assertEqual(rotor2.rotations_counter,1,"Rotor rotations error")
 
-    def test_enigma_3_rotors_automatic_rotor_rotation_boundaries(self):
+    def test_enigma_3_rotors_boundaries(self):
         plugboard = PlugboardPassthrough()
         rotor1 = RotorWiringI(26)
         rotor2 = RotorWiringII(26)
@@ -134,6 +134,34 @@ class TestEnigma(unittest.TestCase):
         self.assertEqual(rotor1.position,1,"Rotor rotations error")
         self.assertEqual(rotor2.position,0,"Rotor rotations error")
         self.assertEqual(rotor3.position,0,"Rotor rotations error")
+
+    def test_enigma_3_rotors_boundaries_dup(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = RotorWiringI(0)
+        rotor2 = RotorWiringII(0)
+        rotor3 = RotorWiringIII(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
+        # Cypher 34 charachters
+        for i in range(1,17*27*27):
+           enigma.input_char("a")
+        #self.assertEqual(rotor1.position,1,"Rotor rotations error")
+        #self.assertEqual(rotor2.position,0,"Rotor rotations error")
+        #self.assertEqual(rotor3.position,0,"Rotor rotations error")
+    
+    def test_enigma_3_rotors_first_to_second_rotor_rotation(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = RotorWiringI(0)
+        rotor2 = RotorWiringII(0)
+        rotor3 = RotorWiringIII(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = Enigma(plugboard,[rotor1, rotor2, rotor3],reflector,etw,True)
+        for i in range(1,18):
+           enigma.input_char("a")
+        self.assertEqual(rotor1.position,17,"Rotor rotations error")
+        self.assertEqual(rotor2.position,1,"Rotor rotations error")
     
 
     def test_enigma_3_encrypt_string(self):
