@@ -25,6 +25,8 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor I                    | ekmflgdqvzntowyhxuspaibrcj 	        | q     	|   ✅           	|
 | Rotor II                   | ajdksiruxblhwtmcqgznpyfvoe 	        | e     	|   ✅           	|
 | Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo 	        | v     	|   ✅           	|
+| Rotor IV                   | esovpzjayquirhxlnftgkdcmwb 	        | j     	|   ✅           	|
+| Rotor V                    | vzbrgityupsdnhlxawmjqofeck 	        | z     	|   ✅           	|
 | Reflector B                | yruhqsldpxngokmiebfzcwvjat 	        | N/A     	|   ✅           	|
 | Reflector C                | fvpjiaoyedrzxwgctkuqsbnmhl 	        | N/A     	|   ✅           	|
 
