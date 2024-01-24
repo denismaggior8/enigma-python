@@ -1,6 +1,8 @@
 from EnigmaM3RotorI import EnigmaM3RotorI
 from EnigmaM3RotorII import EnigmaM3RotorII
 from EnigmaM3RotorIII import EnigmaM3RotorIII
+from EnigmaM3RotorIV import EnigmaM3RotorIV
+from EnigmaM3RotorV import EnigmaM3RotorV
 from PlugboardPassthrough import PlugboardPassthrough
 from ReflectorUKWB import ReflectorUKWB
 from EtwPassthrough import EtwPassthrough
@@ -157,6 +159,17 @@ class TestEnigmaM3(unittest.TestCase):
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
         encrypted_string = enigma.input_string("jvswemcgjqvshqvkuidiwplsxjyomqgflhcnsulnyxzcufozgxbqqsyghxkcrtjzbd")
         self.assertEqual(encrypted_string,"supercalifragilistichespiralidososupercalifragilistichespiralidoso","Enigma encryption error")
+
+    def test_enigma_3_rotors_III_IV_V(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = EnigmaM3RotorIII(0)
+        rotor2 = EnigmaM3RotorIV(0)
+        rotor3 = EnigmaM3RotorV(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
+        encrypted_string = enigma.input_string("thisismyawesomeenigma")
+        self.assertEqual(encrypted_string,"yoaftqlkbpjwtwvjukoif","Enigma encryption error")
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

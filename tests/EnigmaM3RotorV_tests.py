@@ -1,27 +1,27 @@
 
-from EnigmaM3RotorIV import EnigmaM3RotorIV
+from EnigmaM3RotorV import EnigmaM3RotorV
 from string import ascii_lowercase
 import unittest
 
-class TestEnigmaM3RotorIV(unittest.TestCase):
+class TestEnigmaM3RotorV(unittest.TestCase):
     
-    def test_scramble_letter_index_z_position_1(self):
-        rotor = EnigmaM3RotorIV(1)
-        char = "z"
+    def test_scramble_letter_index_c_position_0(self):
+        rotor = EnigmaM3RotorV(0)
+        char = "c"
         scrambled_char = rotor.scramble_letter_index(rotor.wiring,list(ascii_lowercase).index(char))
         self.assertEqual(scrambled_char,"b","Scramble error")
 
-    def test_scramble_letter_index_a_position_1(self):
-        rotor = EnigmaM3RotorIV(1)
-        char = "a"
+    def test_scramble_letter_index_d_position_0(self):
+        rotor = EnigmaM3RotorV(0)
+        char = "d"
         scrambled_char = rotor.scramble_letter_index(rotor.wiring,list(ascii_lowercase).index(char))
-        self.assertEqual(scrambled_char,"d","Scramble error")
+        self.assertEqual(scrambled_char,"r","Scramble error")
     
     def test_scramble_letter_index_a_position_0(self):
-        rotor = EnigmaM3RotorIV(0)
+        rotor = EnigmaM3RotorV(0)
         char = "a"
         scrambled_char = rotor.scramble_letter_index(rotor.wiring,list(ascii_lowercase).index(char))
-        self.assertEqual(scrambled_char,"b","Scramble error")
+        self.assertEqual(scrambled_char,"v","Scramble error")
 
 if __name__ == "__main__":
     unittest.main()
