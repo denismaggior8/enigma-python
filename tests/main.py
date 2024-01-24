@@ -3,7 +3,7 @@ from RotorWiringII import RotorWiringII
 from RotorWiringIII import RotorWiringIII
 from PlugboardPassthrough import PlugboardPassthrough
 from ReflectorUKWB import ReflectorUKWB
-from EnigmaThreeRotors import EnigmaThreeRotors
+from EnigmaM3 import EnigmaM3
 from EtwPassthrough import EtwPassthrough
 
 import unittest
