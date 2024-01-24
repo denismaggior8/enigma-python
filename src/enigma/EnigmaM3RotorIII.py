@@ -1,11 +1,8 @@
 from Rotor import Rotor
+from EnigmaIRotorIII import EnigmaIRotorIII
 
-
-class EnigmaM3RotorIII(Rotor):
-    
-    wiring = 'bdfhjlcprtxvznyeiwgakmusqo'
-    notch_indexes = [21]
+class EnigmaM3RotorIII(EnigmaIRotorIII):
 
     def __init__(self, position):
-        super().__init__(self.wiring,position,self.notch_indexes)
-
+        super().__init__(position)
+    
