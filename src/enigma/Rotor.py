@@ -1,4 +1,3 @@
-
 from Observable import Observable
 from string import ascii_lowercase
 
