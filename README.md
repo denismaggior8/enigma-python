@@ -14,7 +14,7 @@ Welcome to **enigma-python**, a Python package designed to emulate the legendary
 
 ## Machines implementations
 
-The following Enigma machine models (along with their rotors, reflectors and plugboards) have been implemented
+The following Enigma machine models (along with their rotors, reflectors and plugboards) have been implemented:
 
 | Enigma model 	| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
 |--------------	|-------	                 |----------------------------	        |-------	|-------------      |
