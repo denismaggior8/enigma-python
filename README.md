@@ -16,15 +16,17 @@ Welcome to **enigma-python**, a Python package designed to emulate the legendary
 
 The following Enigma machine models (along with their rotors, reflectors and plugboards) have been implemented:
 
-| Enigma model 	| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
-|--------------	|-------	                 |----------------------------	        |-------	|-------------      |
-| M3           	| Plugboard (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	| 100% ✅           	|
-| M3           	| ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	| 100% ✅           	|
-| M3           	| Rotor I                    | ekmflgdqvzntowyhxuspaibrcj 	        | q     	| 100% ✅           	|
-| M3           	| Rotor II                   | ajdksiruxblhwtmcqgznpyfvoe 	        | e     	| 100% ✅           	|
-| M3           	| Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo 	        | v     	| 100% ✅           	|
-| M3           	| Reflector B                | yruhqsldpxngokmiebfzcwvjat 	        | N/A     	| 100% ✅           	|
-| M3           	| Reflector C                | fvpjiaoyedrzxwgctkuqsbnmhl 	        | N/A     	| 100% ✅           	|
+### Enigma M3
+
+| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| Plugboard (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
+| ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
+| Rotor I                    | ekmflgdqvzntowyhxuspaibrcj 	        | q     	|   ✅           	|
+| Rotor II                   | ajdksiruxblhwtmcqgznpyfvoe 	        | e     	|   ✅           	|
+| Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo 	        | v     	|   ✅           	|
+| Reflector B                | yruhqsldpxngokmiebfzcwvjat 	        | N/A     	|   ✅           	|
+| Reflector C                | fvpjiaoyedrzxwgctkuqsbnmhl 	        | N/A     	|   ✅           	|
 
 ## Prerequisites
 
