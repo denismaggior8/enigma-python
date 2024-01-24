@@ -1,24 +1,24 @@
 
-from RotorWiringIII import RotorWiringIII
+from EnigmaM3RotorIII import EnigmaM3RotorIII
 from string import ascii_lowercase
 import unittest
 
-class TestRotorWiringI(unittest.TestCase):
+class TestEnigmaM3RotorI(unittest.TestCase):
     
     def test_scramble_letter_index_z_position_1(self):
-        rotor = RotorWiringIII(1)
+        rotor = EnigmaM3RotorIII(1)
         char = "z"
         scrambled_char = rotor.scramble_letter_index(rotor.wiring,list(ascii_lowercase).index(char))
         self.assertEqual(scrambled_char,"b","Scramble error")
 
     def test_scramble_letter_index_a_position_1(self):
-        rotor = RotorWiringIII(1)
+        rotor = EnigmaM3RotorIII(1)
         char = "a"
         scrambled_char = rotor.scramble_letter_index(rotor.wiring,list(ascii_lowercase).index(char))
         self.assertEqual(scrambled_char,"d","Scramble error")
     
     def test_scramble_letter_index_a_position_0(self):
-        rotor = RotorWiringIII(0)
+        rotor = EnigmaM3RotorIII(0)
         char = "a"
         scrambled_char = rotor.scramble_letter_index(rotor.wiring,list(ascii_lowercase).index(char))
         self.assertEqual(scrambled_char,"b","Scramble error")

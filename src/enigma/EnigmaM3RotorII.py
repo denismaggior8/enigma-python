@@ -1,7 +1,7 @@
 from Rotor import Rotor
 
 
-class RotorWiringII(Rotor):
+class EnigmaM3RotorII(Rotor):
     
     wiring = 'ajdksiruxblhwtmcqgznpyfvoe'
     notch_indexes = [4]

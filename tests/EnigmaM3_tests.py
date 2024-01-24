@@ -1,6 +1,6 @@
-from RotorWiringI import RotorWiringI
-from RotorWiringII import RotorWiringII
-from RotorWiringIII import RotorWiringIII
+from EnigmaM3RotorI import EnigmaM3RotorI
+from EnigmaM3RotorII import EnigmaM3RotorII
+from EnigmaM3RotorIII import EnigmaM3RotorIII
 from PlugboardPassthrough import PlugboardPassthrough
 from ReflectorUKWB import ReflectorUKWB
 from EtwPassthrough import EtwPassthrough
@@ -11,9 +11,9 @@ class TestEnigmaM3(unittest.TestCase):
      
     def test_enigma_3_rotors_output(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = RotorWiringI(25)
-        rotor2 = RotorWiringII(25)
-        rotor3 = RotorWiringIII(25)
+        rotor1 = EnigmaM3RotorI(25)
+        rotor2 = EnigmaM3RotorII(25)
+        rotor3 = EnigmaM3RotorIII(25)
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw)
@@ -21,9 +21,9 @@ class TestEnigmaM3(unittest.TestCase):
 
     def test_enigma_3_rotors_output_reversed(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = RotorWiringI(25)
-        rotor2 = RotorWiringII(25)
-        rotor3 = RotorWiringIII(25)
+        rotor1 = EnigmaM3RotorI(25)
+        rotor2 = EnigmaM3RotorII(25)
+        rotor3 = EnigmaM3RotorIII(25)
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw)
@@ -32,9 +32,9 @@ class TestEnigmaM3(unittest.TestCase):
 
     def test_enigma_3_rotors_automatic_rotation(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = RotorWiringI(0)
-        rotor2 = RotorWiringII(0)
-        rotor3 = RotorWiringIII(0)
+        rotor1 = EnigmaM3RotorI(0)
+        rotor2 = EnigmaM3RotorII(0)
+        rotor3 = EnigmaM3RotorIII(0)
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
@@ -52,9 +52,9 @@ class TestEnigmaM3(unittest.TestCase):
 
     def test_enigma_3_rotors_boundaries(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = RotorWiringI(26)
-        rotor2 = RotorWiringII(26)
-        rotor3 = RotorWiringIII(26)
+        rotor1 = EnigmaM3RotorI(26)
+        rotor2 = EnigmaM3RotorII(26)
+        rotor3 = EnigmaM3RotorIII(26)
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
@@ -65,9 +65,9 @@ class TestEnigmaM3(unittest.TestCase):
 
     def test_enigma_3_rotors_complete_rotations(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = RotorWiringI(0)
-        rotor2 = RotorWiringII(0)
-        rotor3 = RotorWiringIII(0)
+        rotor1 = EnigmaM3RotorI(0)
+        rotor2 = EnigmaM3RotorII(0)
+        rotor3 = EnigmaM3RotorIII(0)
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
@@ -80,9 +80,9 @@ class TestEnigmaM3(unittest.TestCase):
     
     def test_enigma_3_rotors_first_to_second_rotor_rotation(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = RotorWiringI(0)
-        rotor2 = RotorWiringII(0)
-        rotor3 = RotorWiringIII(0)
+        rotor1 = EnigmaM3RotorI(0)
+        rotor2 = EnigmaM3RotorII(0)
+        rotor3 = EnigmaM3RotorIII(0)
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
@@ -94,9 +94,9 @@ class TestEnigmaM3(unittest.TestCase):
 
     def test_enigma_3_rotors_encrypt_string(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = RotorWiringI(0)
-        rotor2 = RotorWiringII(0)
-        rotor3 = RotorWiringIII(0)
+        rotor1 = EnigmaM3RotorI(0)
+        rotor2 = EnigmaM3RotorII(0)
+        rotor3 = EnigmaM3RotorIII(0)
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
@@ -105,9 +105,9 @@ class TestEnigmaM3(unittest.TestCase):
     
     def test_enigma_3_rotors_inverted_encrypt_string(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = RotorWiringIII(0)
-        rotor2 = RotorWiringII(0)
-        rotor3 = RotorWiringI(0)
+        rotor1 = EnigmaM3RotorIII(0)
+        rotor2 = EnigmaM3RotorII(0)
+        rotor3 = EnigmaM3RotorI(0)
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
@@ -116,9 +116,9 @@ class TestEnigmaM3(unittest.TestCase):
 
     def test_enigma_3_rotors_encrypt_long_string(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = RotorWiringI(0)
-        rotor2 = RotorWiringII(0)
-        rotor3 = RotorWiringIII(0)
+        rotor1 = EnigmaM3RotorI(0)
+        rotor2 = EnigmaM3RotorII(0)
+        rotor3 = EnigmaM3RotorIII(0)
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
@@ -127,9 +127,9 @@ class TestEnigmaM3(unittest.TestCase):
     
     def test_enigma_3_rotors_encrypt_very_long_string(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = RotorWiringI(0)
-        rotor2 = RotorWiringII(0)
-        rotor3 = RotorWiringIII(0)
+        rotor1 = EnigmaM3RotorI(0)
+        rotor2 = EnigmaM3RotorII(0)
+        rotor3 = EnigmaM3RotorIII(0)
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
@@ -138,9 +138,9 @@ class TestEnigmaM3(unittest.TestCase):
 
     def test_enigma_3_rotors_encrypt_very_long_string_reversed(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = RotorWiringI(0)
-        rotor2 = RotorWiringII(0)
-        rotor3 = RotorWiringIII(0)
+        rotor1 = EnigmaM3RotorI(0)
+        rotor2 = EnigmaM3RotorII(0)
+        rotor3 = EnigmaM3RotorIII(0)
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
@@ -149,9 +149,9 @@ class TestEnigmaM3(unittest.TestCase):
 
     def test_enigma_3_rotors_inverted_encrypt_very_long_string_reversed(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = RotorWiringIII(0)
-        rotor2 = RotorWiringII(0)
-        rotor3 = RotorWiringI(0)
+        rotor1 = EnigmaM3RotorIII(0)
+        rotor2 = EnigmaM3RotorII(0)
+        rotor3 = EnigmaM3RotorI(0)
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)

@@ -1,6 +1,6 @@
 from Rotor import Rotor
 
-class RotorWiringI(Rotor):
+class EnigmaM3RotorI(Rotor):
     
     wiring = 'ekmflgdqvzntowyhxuspaibrcj'
     notch_indexes = [16]
