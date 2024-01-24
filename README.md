@@ -24,6 +24,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | M3           	| Rotor II      | ajdksiruxblhwtmcqgznpyfvoe 	| e     	| 100% ✅           	|
 | M3           	| Rotor III     | bdfhjlcprtxvznyeiwgakmusqo 	| v     	| 100% ✅           	|
 | M3           	| Reflector B   | yruhqsldpxngokmiebfzcwvjat 	| N/A     	| 100% ✅           	|
+| M3           	| Reflector C   | fvpjiaoyedrzxwgctkuqsbnmhl 	| N/A     	| 100% ✅           	|
 
 ## Prerequisites
 
