@@ -212,7 +212,6 @@ class TestEnigmaM3(unittest.TestCase):
         self.assertEqual(rotor3.position,0,"Rotor rotations error")
 
     def test_enigma_3_rotors_VI_VI_VI_rotations(self):
-        logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
         plugboard = PlugboardPassthrough()
         rotor1 = EnigmaM3RotorVI(0)
         rotor2 = EnigmaM3RotorVI(0)
@@ -225,6 +224,21 @@ class TestEnigmaM3(unittest.TestCase):
             enigma.input_char("a")
         self.assertEqual(rotor1.position, 0, "Rotor rotations error")
         self.assertEqual(rotor2.position, 2, "Rotor rotations error")
+        self.assertEqual(rotor3.position, 0, "Rotor rotations error")
+
+    def test_enigma_3_rotors_VI_VI_VI_complete_rotations(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = EnigmaM3RotorVI(0)
+        rotor2 = EnigmaM3RotorVI(0)
+        rotor3 = EnigmaM3RotorVI(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = EnigmaM3(plugboard, rotor1, rotor2, rotor3, reflector, etw, True)
+        # Cypher 26 charachters
+        for i in range(0, (26*13)*13):
+            enigma.input_char("a")
+        self.assertEqual(rotor1.position, 0, "Rotor rotations error")
+        self.assertEqual(rotor2.position, 0, "Rotor rotations error")
         self.assertEqual(rotor3.position, 0, "Rotor rotations error")
 
 if __name__ == "__main__":
