@@ -8,7 +8,9 @@ from PlugboardPassthrough import PlugboardPassthrough
 from ReflectorUKWB import ReflectorUKWB
 from EtwPassthrough import EtwPassthrough
 from EnigmaM3 import EnigmaM3
+import logging
 import unittest
+import sys
 
 class TestEnigmaM3(unittest.TestCase):
      
@@ -74,7 +76,7 @@ class TestEnigmaM3(unittest.TestCase):
         reflector = ReflectorUKWB()
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
-        # Cypher 34 charachters
+        # Cypher 17577 charachters
         for i in range(1,17577):
            enigma.input_char("a")
         self.assertEqual(rotor1.position,0,"Rotor rotations error")
@@ -193,6 +195,37 @@ class TestEnigmaM3(unittest.TestCase):
         enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
         encrypted_string = enigma.input_string("thisismyawesomeenigmasupercalifragilistichespiralidososupercalifragilistichespiralidoso")
         self.assertEqual(encrypted_string,"grdftnwtlegogzglhwbjgttnnwaigcpamesxheqjtxiecywvdxcncyifitbpgokalupxaambtxblvkmjlgejgdv","Enigma encryption error")
+
+    def test_enigma_3_rotors_IV_V_VI_complete_rotations(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = EnigmaM3RotorIV(0)
+        rotor2 = EnigmaM3RotorV(0)
+        rotor3 = EnigmaM3RotorVI(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = EnigmaM3(plugboard,rotor1, rotor2, rotor3,reflector,etw,True)
+        # Cypher 17577 charachters
+        for i in range(1,17577):
+           enigma.input_char("a")
+        self.assertEqual(rotor1.position,0,"Rotor rotations error")
+        self.assertEqual(rotor2.position,0,"Rotor rotations error")
+        self.assertEqual(rotor3.position,0,"Rotor rotations error")
+
+    def test_enigma_3_rotors_VI_V_IV_rotations(self):
+        logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+        plugboard = PlugboardPassthrough()
+        rotor1 = EnigmaM3RotorVI(0)
+        rotor2 = EnigmaM3RotorVI(0)
+        rotor3 = EnigmaM3RotorVI(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = EnigmaM3(plugboard, rotor1, rotor2, rotor3, reflector, etw, True)
+        # Cypher 26 charachters
+        for i in range(1, 27):
+            enigma.input_char("a")
+        self.assertEqual(rotor1.position, 0, "Rotor rotations error")
+        self.assertEqual(rotor2.position, 2, "Rotor rotations error")
+        self.assertEqual(rotor3.position, 0, "Rotor rotations error")
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

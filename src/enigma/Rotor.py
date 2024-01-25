@@ -1,5 +1,5 @@
 from Observable import Observable
-from string import ascii_lowercase
+import logging
 
 class Rotor(Observable):
     wiring = None
@@ -14,7 +14,9 @@ class Rotor(Observable):
         self.position = ((self.position + 1) % len(self.wiring))
         self.rotations_counter = ((self.rotations_counter + 1))   
         for notch_index in self.notch_indexes:
-            if (self.position % len(self.wiring)) == notch_index+1:
+            logging.debug("Evaluating notch_index {} against position {}".format(notch_index+1,self.position))
+            if (self.position % len(self.wiring)) == ((notch_index+1) % len(self.wiring)):
+                logging.debug("Found that rotor position {} is equals to notch {}, notifying observers".format(self.position % len(self.wiring), ((notch_index+1) % len(self.wiring))))
                 self.notify_observers("ciao","ciao")
 
     def set_position(self,position):
