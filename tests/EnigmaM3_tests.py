@@ -211,7 +211,7 @@ class TestEnigmaM3(unittest.TestCase):
         self.assertEqual(rotor2.position,0,"Rotor rotations error")
         self.assertEqual(rotor3.position,0,"Rotor rotations error")
 
-    def test_enigma_3_rotors_VI_V_IV_rotations(self):
+    def test_enigma_3_rotors_VI_VI_VI_rotations(self):
         logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
         plugboard = PlugboardPassthrough()
         rotor1 = EnigmaM3RotorVI(0)
