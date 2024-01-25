@@ -240,6 +240,24 @@ class TestEnigmaM3(unittest.TestCase):
         self.assertEqual(rotor1.position, 0, "Rotor rotations error")
         self.assertEqual(rotor2.position, 0, "Rotor rotations error")
         self.assertEqual(rotor3.position, 0, "Rotor rotations error")
+    
+    def test_enigma_3_rotors_VI_VI_VI_rotations_from_0_very_long_string(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = EnigmaM3RotorVI(0)
+        rotor2 = EnigmaM3RotorVI(0)
+        rotor3 = EnigmaM3RotorVI(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = EnigmaM3(plugboard, rotor1, rotor2, rotor3, reflector, etw, True)
+        encrypted_string = enigma.input_string("dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd")
+        #print(rotor1.position)
+        #print(rotor2.position)
+        #print(rotor3.position)
+        self.assertEqual(rotor1.position,0, "Rotor position error")
+        self.assertEqual(rotor2.position,12, "Rotor position error")
+        self.assertEqual(rotor3.position,0, "Rotor position error")
+        self.assertEqual(encrypted_string,"nlyzfbxcgczzgzyyzmwkwetytugtatwigjqxetmjfopvnnzioxwxxzyxafgwajtjjqhyfyztfxenfaabfepxpxfcxjpqrhoeembxrqzsbfsaihbunzhcgujhcuazvvrjklqkgrtyvzcsahcuxfaqglhpfqqg","Enigma encryption error")
+        
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
