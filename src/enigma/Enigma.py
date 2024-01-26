@@ -31,9 +31,14 @@ class Enigma(Observer):
 
     def input_char(self,char):
         logging.info("Input char: {}".format(char))
+        for rotor in self.rotors:
+            if rotor.double_step_triggered == True:
+                rotor.increment_position()
+                rotor.double_step_triggered = False
         if self.auto_increment_rotors == True:
             self.rotors[0].increment_position()
-        return self.process_char(char)
+        scrambled_char = self.process_char(char)
+        return scrambled_char           
 
     def process_char(self, char):
         scrambled_char = self.plugboard.switch_char(char)
@@ -65,7 +70,12 @@ class Enigma(Observer):
     def update(self, observable, *args, **kwargs):
         # if there is rotor N+1, increment its position by 1
         if observable in self.rotors and self.rotors.index(observable) < len(self.rotors)-1:
-          self.rotors[self.rotors.index(observable)+1].increment_position()
+            self.rotors[self.rotors.index(observable)+1].increment_position()
+            # engaging the enigma double step issue, only if the next rotor is not the last in the array
+            if self.rotors[self.rotors.index(observable)+1].position in self.rotors[self.rotors.index(observable)+1].notch_indexes:
+                self.rotors[self.rotors.index(observable)+1].double_step_triggered = True
+        
+        
     
     @staticmethod        
     def shift_letter(letter,shift):

@@ -6,13 +6,14 @@ class Rotor(Observable):
     position = 0
     rotations_counter = 0
     notch_indexes = None
+    double_step_triggered = False
 
     def reset_position(self):
         self.position = 0
     
     def increment_position(self):
         self.position = ((self.position + 1) % len(self.wiring))
-        self.rotations_counter = ((self.rotations_counter + 1))   
+        self.rotations_counter = ((self.rotations_counter + 1)) 
         for notch_index in self.notch_indexes:
             logging.debug("Evaluating notch_index {} against position {}".format(notch_index+1,self.position))
             if ((self.position % len(self.wiring)) == ((notch_index+1) % len(self.wiring))):
@@ -35,4 +36,8 @@ class Rotor(Observable):
     def __str__(self):
         pointer = ' ' * self.position + '^'
         return self.wiring + '\n' + pointer 
+    
+    def __eq__(self, __value: object) -> bool:
+        return id(self) == id(object)
+        #return super().__eq__(__value)
     
