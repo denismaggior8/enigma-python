@@ -9,6 +9,8 @@ from ReflectorUKWB import ReflectorUKWB
 from EtwPassthrough import EtwPassthrough
 from EnigmaM3 import EnigmaM3
 from enigma.machine import EnigmaMachine
+from string import ascii_lowercase
+import random
 import logging
 import unittest
 import sys
@@ -359,6 +361,25 @@ class TestEnigmaM3(unittest.TestCase):
         etw = EtwPassthrough()
         enigma = EnigmaM3(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
         cleartext = 'd' * 100000
+        my_encrypted_string = enigma.input_string(cleartext)
+        other_machine = EnigmaMachine.from_key_sheet(
+            rotors='VI V IV',
+            reflector='B',
+            ring_settings=[0, 0, 0],
+            plugboard_settings=None)
+        other_machine.set_display('AAA')
+        other_encrypted_string = other_machine.process_text(cleartext)
+        self.assertEqual(my_encrypted_string,other_encrypted_string.lower(),"Enigma encryption error")
+
+    def test_enigma_3_rotors_IV_V_VI_rotations_from_0_very_long_random_string(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = EnigmaM3RotorVI(0)
+        rotor2 = EnigmaM3RotorV(0)
+        rotor3 = EnigmaM3RotorIV(0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = EnigmaM3(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
+        cleartext = ''.join(random.choice(ascii_lowercase) for i in range(100000))
         my_encrypted_string = enigma.input_string(cleartext)
         other_machine = EnigmaMachine.from_key_sheet(
             rotors='VI V IV',
