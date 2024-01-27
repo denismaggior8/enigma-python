@@ -31,9 +31,9 @@ class Enigma(Observer):
 
     def input_char(self,char):
         logging.info("Input char: {}".format(char))
-        ## Triggering extra rotors rotation due to double step issue
+        ## Triggering rotors extra rotation due to double step issue
         for rotor in self.rotors:
-            ## Extra rotor rotation should be done only if it's triggered by double step issue and if the rotor is not the last one in the list
+            ## Rotor extra rotation should be done only if it's triggered by double step issue and if the rotor is not the last one in the list
             if rotor.double_step_triggered == True and self.rotors.index(rotor) < len(self.rotors)-1:
                     rotor.increment_position()
                     rotor.double_step_triggered = False
