@@ -6,7 +6,7 @@ class Rotor(Observable):
     position = 0
     rotations_counter = 0
     notch_indexes = None
-    double_step_triggered = False
+    double_step_triggered = None
 
     def reset_position(self):
         self.position = 0
@@ -32,6 +32,7 @@ class Rotor(Observable):
         self.wiring = wiring
         self.position = position % len(wiring)
         self.notch_indexes = notch_indexes
+        self.double_step_triggered = False
 
     def __str__(self):
         pointer = ' ' * self.position + '^'
