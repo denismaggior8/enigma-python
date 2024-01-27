@@ -31,10 +31,12 @@ class Enigma(Observer):
 
     def input_char(self,char):
         logging.info("Input char: {}".format(char))
+        ## Triggering extra rotors rotation due to double step issue
         for rotor in self.rotors:
-            if rotor.double_step_triggered == True:
-                rotor.increment_position()
-                rotor.double_step_triggered = False
+            ## Extra rotor rotation should be done only if it's triggered by double step issue and if the rotor is not the last one in the list
+            if rotor.double_step_triggered == True and self.rotors.index(rotor) < len(self.rotors)-1:
+                    rotor.increment_position()
+                    rotor.double_step_triggered = False
         if self.auto_increment_rotors == True:
             self.rotors[0].increment_position()
         scrambled_char = self.process_char(char)
@@ -68,10 +70,10 @@ class Enigma(Observer):
         return scrambled_char
     
     def update(self, observable, *args, **kwargs):
-        # if there is rotor N+1, increment its position by 1
+        # If there is rotor N+1, increment its position by 1
         if observable in self.rotors and self.rotors.index(observable) < len(self.rotors)-1:
             self.rotors[self.rotors.index(observable)+1].increment_position()
-            # engaging the enigma double step issue, only if the next rotor is not the last in the array
+            # Engaging the enigma double step issue, only if the next rotor is not the last in the array
             if self.rotors[self.rotors.index(observable)+1].position in self.rotors[self.rotors.index(observable)+1].notch_indexes:
                 self.rotors[self.rotors.index(observable)+1].double_step_triggered = True
         

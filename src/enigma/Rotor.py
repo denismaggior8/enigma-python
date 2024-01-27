@@ -18,7 +18,7 @@ class Rotor(Observable):
             logging.debug("Evaluating notch_index {} against position {}".format(notch_index+1,self.position))
             if ((self.position % len(self.wiring)) == ((notch_index+1) % len(self.wiring))):
                 logging.debug("Found that rotor position {} is equals to notch {}, notifying observers".format(self.position % len(self.wiring), ((notch_index+1) % len(self.wiring))))
-                self.notify_observers("ciao","ciao")
+                self.notify_observers(None,None)
 
     def set_position(self,position):
         self.position = position % len(self.wiring)
@@ -39,5 +39,4 @@ class Rotor(Observable):
     
     def __eq__(self, __value: object) -> bool:
         return id(self) == id(object)
-        #return super().__eq__(__value)
     
