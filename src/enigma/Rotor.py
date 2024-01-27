@@ -13,7 +13,7 @@ class Rotor(Observable):
     
     def increment_position(self):
         self.position = ((self.position + 1) % len(self.wiring))
-        self.rotations_counter = ((self.rotations_counter + 1)) 
+        self.rotations_counter = (self.rotations_counter + 1)
         for notch_index in self.notch_indexes:
             logging.debug("Evaluating notch_index {} against position {}".format(notch_index+1,self.position))
             if ((self.position % len(self.wiring)) == ((notch_index+1) % len(self.wiring))):
