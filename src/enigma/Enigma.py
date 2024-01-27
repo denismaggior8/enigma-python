@@ -73,7 +73,7 @@ class Enigma(Observer):
         # If there is rotor N+1, increment its position by 1
         if observable in self.rotors and self.rotors.index(observable) < len(self.rotors)-1:
             self.rotors[self.rotors.index(observable)+1].increment_position()
-            # Engaging the enigma double step issue, only if the next rotor is not the last in the array
+            # Engaging the enigma double step issue, only if the next rotor position is in its notch indexe/s
             if self.rotors[self.rotors.index(observable)+1].position in self.rotors[self.rotors.index(observable)+1].notch_indexes:
                 self.rotors[self.rotors.index(observable)+1].double_step_triggered = True
         
