@@ -33,7 +33,7 @@ class Enigma(Observer):
         logging.info("Input char: {}".format(char))
         ## Triggering rotors extra rotation due to double step issue
         for rotor in self.rotors:
-            ## Rotor extra rotation should be done only if it's triggered by double step issue and if the rotor is not the last one in the list
+            ## Rotor extra rotation should be done only if the rotor is not the last one in the list
             if rotor.double_step_triggered == True and self.rotors.index(rotor) < len(self.rotors)-1:
                     rotor.increment_position()
                     rotor.double_step_triggered = False
@@ -77,8 +77,6 @@ class Enigma(Observer):
             if self.rotors[self.rotors.index(observable)+1].position in self.rotors[self.rotors.index(observable)+1].notch_indexes:
                 self.rotors[self.rotors.index(observable)+1].double_step_triggered = True
         
-        
-    
     @staticmethod        
     def shift_letter(letter,shift):
 	    return Enigma.alphabet[(Enigma.alphabet.index(letter)+shift) % len(Enigma.alphabet)]
