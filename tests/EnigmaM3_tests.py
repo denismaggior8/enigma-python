@@ -433,6 +433,28 @@ class TestEnigmaM3(unittest.TestCase):
         other_machine.set_display('AAA')
         other_encrypted_string = other_machine.process_text(cleartext)
         self.assertEqual(my_encrypted_string,other_encrypted_string.lower(),"Enigma encryption error")
+
+    def test_enigma_3_rotors_VI_VI_VI_different_rings_rotations_from_0_very_long_random_string(self):
+        rnd_ring1 = random.randrange(26)
+        rnd_ring2 = random.randrange(26)
+        rnd_ring3 = random.randrange(26)
+        plugboard = PlugboardPassthrough()
+        rotor1 = EnigmaM3RotorVI(0,rnd_ring1)
+        rotor2 = EnigmaM3RotorVI(0,rnd_ring2)
+        rotor3 = EnigmaM3RotorVI(0,rnd_ring3)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = EnigmaM3(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
+        cleartext = ''.join(random.choice(ascii_lowercase) for i in range(100000))
+        my_encrypted_string = enigma.input_string(cleartext)
+        other_machine = EnigmaMachine.from_key_sheet(
+            rotors='VI VI VI',
+            reflector='B',
+            ring_settings=[rnd_ring1, rnd_ring2, rnd_ring3],
+            plugboard_settings=None)
+        other_machine.set_display('AAA')
+        other_encrypted_string = other_machine.process_text(cleartext)
+        self.assertEqual(my_encrypted_string,other_encrypted_string.lower(),"Enigma encryption error")
         
 
 if __name__ == "__main__":

@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.ERROR)
 # setup machine according to specs from a daily key sheet:
 
 machine = EnigmaMachine.from_key_sheet(
-       rotors='I II III',
+       rotors='VI VI VI',
        reflector='B',
        ring_settings=[2, 1, 4],
        plugboard_settings=None)
@@ -37,10 +37,10 @@ ciphertext = machine.process_text(cleartext)
 print("Other: "+ciphertext.lower() )
 
 plugboard = PlugboardPassthrough()
-rotor1 = EnigmaM3RotorI(0,2)
+rotor1 = EnigmaM3RotorVI(0,2)
 
-rotor2 = EnigmaM3RotorII(0,1)
-rotor3 = EnigmaM3RotorIII(0,4)
+rotor2 = EnigmaM3RotorVI(0,1)
+rotor3 = EnigmaM3RotorVI(0,4)
 print(rotor1)
 reflector = ReflectorUKWB()
 etw = EtwPassthrough()

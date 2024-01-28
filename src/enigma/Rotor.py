@@ -62,7 +62,7 @@ class Rotor(Observable):
             # Add one to dot position, make sure we don't exceed the lenght of the alphabet
             self.wiring = wiring
             self.dot_position = (self.dot_position + 1) % len(alphabet)
-            logging.debug("Wiring shiftet up the alphabet: " + wiring)
+            logging.debug("Wiring shifted up the alphabet: " + wiring)
             logging.debug("New dot position: " + str(self.dot_position))
         i = 0
         # While the letter at the dot position doesn't match with the ringstellung
@@ -71,31 +71,9 @@ class Rotor(Observable):
             # Rotate the wiring
             self.wiring = self.wiring[-1:] + self.wiring[:-1]
             logging.debug("Rotation " + str(i).zfill(2) + "; Wiring: " + self.wiring)
-    
-    @staticmethod
-    def shift_left_wiring(string, n):
-        char_list = list(string)
-        rotated_list = char_list[n:] + char_list[:n]
-        rotated_string = "".join(rotated_list)
-        return rotated_string
-    
-    @staticmethod
-    def shift_right_wiring(string, n):
-        char_list = list(string)
-        rotated_list = char_list[-n:] + char_list[:-n]
-        rotated_string = "".join(rotated_list)
-        return rotated_string
-        
+         
     @staticmethod
     def shift(letter, shift, alphabet):
-        '''Shift letter up/down in the alphabet by given shift'''
-        for i in range(0, len(alphabet)):
-            if alphabet[i] == letter:
-                return alphabet[(i + shift) % len(alphabet)]
-
-    @staticmethod        
-    def shift(letter, shift, alphabet):
-        '''Shift letter up/down in the alphabet by given shift'''
         for i in range(0, len(alphabet)):
             if alphabet[i] == letter:
                 return alphabet[(i + shift) % len(alphabet)]
