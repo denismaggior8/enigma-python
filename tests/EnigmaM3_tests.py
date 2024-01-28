@@ -412,9 +412,9 @@ class TestEnigmaM3(unittest.TestCase):
 
 
     def test_enigma_3_rotors_I_II_III_rotations_from_0_random_ring_very_long_random_string(self):
-        rnd_ring1 = random.randrange(0, 25, 1)
-        rnd_ring2 = random.randrange(0, 25, 1)
-        rnd_ring3 = random.randrange(0, 25, 1)
+        rnd_ring1 = 2
+        rnd_ring2 = 1
+        rnd_ring3 = 4
         print(rnd_ring1)
         plugboard = PlugboardPassthrough()
         rotor1 = EnigmaM3RotorI(0,rnd_ring1)

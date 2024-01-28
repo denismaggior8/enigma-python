@@ -10,12 +10,15 @@ from ReflectorUKWB import ReflectorUKWB
 from EtwPassthrough import EtwPassthrough
 from EnigmaM3 import EnigmaM3
 from string import ascii_lowercase
+import logging
 
+
+logging.basicConfig(level=logging.DEBUG)
 
 # setup machine according to specs from a daily key sheet:
 
 machine = EnigmaMachine.from_key_sheet(
-       rotors='III III III',
+       rotors='I I I',
        reflector='B',
        ring_settings=[1, 1, 1],
        plugboard_settings=None)
@@ -27,34 +30,31 @@ machine.set_display('AAA')
 
 
 #cleartext = 'd' * 13543
-cleartext = 'd' * 1
-print(cleartext)
+cleartext = 'd' * 5
+print("Input: "+cleartext)
 ciphertext = machine.process_text(cleartext)
-print("Other: ",end='')
-print(machine.get_display())
-print(ciphertext.lower() )
+#print(machine.get_display())
+print("Other: "+ciphertext.lower() )
 
-
-print("")
-print("")
 plugboard = PlugboardPassthrough()
-rotor1 = EnigmaM3RotorIII(0,1)
-rotor2 = EnigmaM3RotorIII(0,1)
-rotor3 = EnigmaM3RotorIII(0,1)
+rotor1 = EnigmaM3RotorI(0,1)
+
+rotor2 = EnigmaM3RotorI(0,1)
+rotor3 = EnigmaM3RotorI(0,1)
 print(rotor1)
 reflector = ReflectorUKWB()
 etw = EtwPassthrough()
-enigma = EnigmaM3(plugboard, rotor1, rotor2, rotor3, reflector, etw, True)
+enigma = EnigmaM3(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
 encrypted_string = enigma.input_string(cleartext) # 
 print("My: ",encrypted_string)
 
-print(encrypted_string==ciphertext.lower())
+#print(encrypted_string==ciphertext.lower())
 
 
-print(list(ascii_lowercase)[rotor3.position].upper(),end='')
-print(list(ascii_lowercase)[rotor2.position].upper(),end='')
-print(list(ascii_lowercase)[rotor1.position].upper())
+#print(list(ascii_lowercase)[rotor3.position].upper(),end='')
+#print(list(ascii_lowercase)[rotor2.position].upper(),end='')
+#print(list(ascii_lowercase)[rotor1.position].upper())
 
-print(rotor3.position)
-print(rotor2.position)
-print(rotor1.position)
+#print(rotor3.position)
+#print(rotor2.position)
+#print(rotor1.position)
