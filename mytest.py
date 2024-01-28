@@ -17,7 +17,7 @@ from string import ascii_lowercase
 machine = EnigmaMachine.from_key_sheet(
        rotors='III III III',
        reflector='B',
-       ring_settings=[0, 0, 0],
+       ring_settings=[1, 1, 1],
        plugboard_settings=None)
 
 
@@ -27,27 +27,27 @@ machine.set_display('AAA')
 
 
 #cleartext = 'd' * 13543
-cleartext = 'd' * 13543000
-#print(cleartext)
+cleartext = 'd' * 1
+print(cleartext)
 ciphertext = machine.process_text(cleartext)
 print("Other: ",end='')
 print(machine.get_display())
-#print(ciphertext.lower() )
+print(ciphertext.lower() )
 
 
 print("")
 print("")
 plugboard = PlugboardPassthrough()
-rotor1 = EnigmaM3RotorIII(0)
-rotor2 = EnigmaM3RotorIII(0)
-rotor3 = EnigmaM3RotorIII(0)
+rotor1 = EnigmaM3RotorIII(0,1)
+rotor2 = EnigmaM3RotorIII(0,1)
+rotor3 = EnigmaM3RotorIII(0,1)
+print(rotor1)
 reflector = ReflectorUKWB()
 etw = EtwPassthrough()
 enigma = EnigmaM3(plugboard, rotor1, rotor2, rotor3, reflector, etw, True)
 encrypted_string = enigma.input_string(cleartext) # 
-print("My: ",end='')
-#      print(encrypted_string)
-print()
+print("My: ",encrypted_string)
+
 print(encrypted_string==ciphertext.lower())
 
 

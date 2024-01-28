@@ -35,8 +35,7 @@ class Rotor(Observable):
         self.notch_indexes = notch_indexes
         self.double_step_triggered = False
         self.rotations_counter = 0
-        self.ring = ring % len(self.wiring)
-        self.wiring = Rotor.shift_left_wiring(self.wiring, self.ring)
+        self.set_rotor_ring(ring)
 
     def __str__(self):
         pointer = ' ' * self.position + '^'
@@ -44,6 +43,10 @@ class Rotor(Observable):
     
     def __eq__(self, __value: object) -> bool:
         return id(self) == id(object)
+
+    def set_rotor_ring(self, ring):
+        self.ring = ring % len(self.wiring)
+        self.wiring = Rotor.shift_left_wiring(self.wiring, ring)
     
     @staticmethod
     def shift_left_wiring(string, n):
