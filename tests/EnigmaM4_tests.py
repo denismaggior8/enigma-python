@@ -1,6 +1,6 @@
-from EnigmaM3RotorI import EnigmaM3RotorI
-from EnigmaM3RotorII import EnigmaM3RotorII
-from EnigmaM3RotorIII import EnigmaM3RotorIII
+from EnigmaM4RotorI import EnigmaM4RotorI
+from EnigmaM4RotorII import EnigmaM4RotorII
+from EnigmaM4RotorIII import EnigmaM4RotorIII
 from EnigmaM3RotorIV import EnigmaM3RotorIV
 from EnigmaM3RotorV import EnigmaM3RotorV
 from EnigmaM3RotorVI import EnigmaM3RotorVI
@@ -22,9 +22,9 @@ class TestEnigmaM4(unittest.TestCase):
      
     def test_enigma_4_rotors_output(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = EnigmaM3RotorI(0)
-        rotor2 = EnigmaM3RotorII(0)
-        rotor3 = EnigmaM3RotorIII(0)
+        rotor1 = EnigmaM4RotorI(0)
+        rotor2 = EnigmaM4RotorII(0)
+        rotor3 = EnigmaM4RotorIII(0)
         rotor4 = EnigmaM4RotorBeta(0)
         reflector = ReflectorUKWBThin()
         etw = EtwPassthrough()
@@ -33,9 +33,9 @@ class TestEnigmaM4(unittest.TestCase):
 
     def test_enigma_4_rotors_output_string(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = EnigmaM3RotorI(0)
-        rotor2 = EnigmaM3RotorII(0)
-        rotor3 = EnigmaM3RotorIII(0)
+        rotor1 = EnigmaM4RotorI(0)
+        rotor2 = EnigmaM4RotorII(0)
+        rotor3 = EnigmaM4RotorIII(0)
         rotor4 = EnigmaM4RotorBeta(0)
         reflector = ReflectorUKWBThin()
         etw = EtwPassthrough()
@@ -44,9 +44,9 @@ class TestEnigmaM4(unittest.TestCase):
 
     def test_enigma_4_rotors_beta_very_long_output_string(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = EnigmaM3RotorI(0)
-        rotor2 = EnigmaM3RotorII(0)
-        rotor3 = EnigmaM3RotorIII(0)
+        rotor1 = EnigmaM4RotorI(0)
+        rotor2 = EnigmaM4RotorII(0)
+        rotor3 = EnigmaM4RotorIII(0)
         rotor4 = EnigmaM4RotorBeta(0)
         reflector = ReflectorUKWBThin()
         etw = EtwPassthrough()
@@ -64,9 +64,9 @@ class TestEnigmaM4(unittest.TestCase):
 
     def test_enigma_4_rotors_gamma_very_long_output_string(self):
         plugboard = PlugboardPassthrough()
-        rotor1 = EnigmaM3RotorI(0)
-        rotor2 = EnigmaM3RotorII(0)
-        rotor3 = EnigmaM3RotorIII(0)
+        rotor1 = EnigmaM4RotorI(0)
+        rotor2 = EnigmaM4RotorII(0)
+        rotor3 = EnigmaM4RotorIII(0)
         rotor4 = EnigmaM4RotorGamma(0)
         reflector = ReflectorUKWBThin()
         etw = EtwPassthrough()
