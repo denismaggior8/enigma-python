@@ -30,6 +30,17 @@ class TestEnigmaM4(unittest.TestCase):
         enigma = EnigmaM4(plugboard, rotor1, rotor2, rotor3, rotor4, reflector, etw, True)
         self.assertEqual(enigma.input_char("c"),"p","Enigma output error")
 
+    def test_enigma_4_rotors_output_string(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = EnigmaM3RotorI(0)
+        rotor2 = EnigmaM3RotorII(0)
+        rotor3 = EnigmaM3RotorIII(0)
+        rotor4 = EnigmaM4RotorBeta(0)
+        reflector = ReflectorUKWBThin()
+        etw = EtwPassthrough()
+        enigma = EnigmaM4(plugboard, rotor1, rotor2, rotor3, rotor4, reflector, etw, True)
+        self.assertEqual(enigma.input_string("ciaodeniscomeva"),"pqzzcdfzhvdesmn","Enigma output error")
+
     def test_enigma_4_rotors_very_long_output_string(self):
         plugboard = PlugboardPassthrough()
         rotor1 = EnigmaM3RotorI(0)
