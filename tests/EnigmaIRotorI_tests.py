@@ -58,6 +58,22 @@ class TestEnigmaIRotorI(unittest.TestCase):
         scrambled_char = rotor.scramble_letter_index(rotor.wiring,list(ascii_lowercase).index(char))
         self.assertEqual(scrambled_char,"e","Scramble error")
 
+    def test_rotor_ring_position_2(self):
+        rotor = EnigmaIRotorI(position = 0, ring = 2)
+        self.assertEqual(rotor.wiring,"elgmohnifsxbpvqyajzwurckdt","Wiring error")
+        self.assertEqual(rotor.dot_position,22,"Dot position error")
+  
+    def test_rotor_changing_ring_position_0(self):
+        rotor = EnigmaIRotorI(position = 0, ring = 0)
+        self.assertEqual(rotor.wiring,"ekmflgdqvzntowyhxuspaibrcj","Wiring error")
+        self.assertEqual(rotor.dot_position,20,"Dot position error")
+        rotor.set_rotor_ring(1)   
+        self.assertEqual(rotor.wiring,"kflngmherwaoupxziyvtqbjcsd","Wiring error")
+        self.assertEqual(rotor.dot_position,21,"Dot position error")
+        rotor.set_rotor_ring(0)
+        self.assertEqual(rotor.wiring,"ekmflgdqvzntowyhxuspaibrcj","Wiring error")
+        self.assertEqual(rotor.dot_position,20,"Dot position error")
+
 
 if __name__ == "__main__":
     unittest.main()
