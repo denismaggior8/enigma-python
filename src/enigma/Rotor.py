@@ -3,6 +3,7 @@ from string import ascii_lowercase
 import logging
 
 class Rotor(Observable):
+    original_wiring = None
     wiring = None
     position = None
     rotations_counter = None
@@ -37,7 +38,8 @@ class Rotor(Observable):
         self.notch_indexes = notch_indexes
         self.double_step_triggered = False
         self.rotations_counter = 0
-        self.dot_position = list(self.wiring).index("a")
+        self.original_wiring = self.wiring
+        self.ring = ring
         self.set_rotor_ring(ring)
 
     def __str__(self):
@@ -48,6 +50,8 @@ class Rotor(Observable):
         return id(self) == id(object)
 
     def set_rotor_ring(self, ring):
+        self.wiring = self.original_wiring
+        self.dot_position = list(self.wiring).index("a")
         logging.debug("Dot position: " + str(self.dot_position))
         alphabet = list(ascii_lowercase)
         for i in range(0, ring):

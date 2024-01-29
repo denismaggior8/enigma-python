@@ -455,6 +455,36 @@ class TestEnigmaM3(unittest.TestCase):
         other_machine.set_display('AAA')
         other_encrypted_string = other_machine.process_text(cleartext)
         self.assertEqual(my_encrypted_string,other_encrypted_string.lower(),"Enigma encryption error")
+
+    def test_enigma_3_rotors_I_I_I_resetting_rings_rotations_string(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = EnigmaM3RotorI(0,4)
+        rotor2 = EnigmaM3RotorI(0,2)
+        rotor3 = EnigmaM3RotorI(0,6)
+        rotor1.set_rotor_ring(1)
+        rotor2.set_rotor_ring(20)
+        rotor3.set_rotor_ring(8)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = EnigmaM3(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
+        cleartext = "ciaodenis"
+        my_encrypted_string = enigma.input_string(cleartext)
+        self.assertEqual(my_encrypted_string,"tjlvbastc","Enigma encryption error")
+    
+    def test_enigma_3_rotors_I_II_III_resetting_rings_rotations_string(self):
+        plugboard = PlugboardPassthrough()
+        rotor1 = EnigmaM3RotorI(0,4)
+        rotor2 = EnigmaM3RotorII(0,2)
+        rotor3 = EnigmaM3RotorIII(0,6)
+        rotor1.set_rotor_ring(1)
+        rotor2.set_rotor_ring(20)
+        rotor3.set_rotor_ring(8)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigma = EnigmaM3(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
+        cleartext = "ciaodenis"
+        my_encrypted_string = enigma.input_string(cleartext)
+        self.assertEqual(my_encrypted_string,"vnignrcvn","Enigma encryption error")
         
 
 if __name__ == "__main__":
