@@ -31,6 +31,18 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Reflector B                | yruhqsldpxngokmiebfzcwvjat 	        | N/A     	|   ✅           	|
 | Reflector C                | fvpjiaoyedrzxwgctkuqsbnmhl 	        | N/A     	|   ✅           	|
 
+### Enigma M4
+
+| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| Plugboard (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
+| ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
+| Rotor I                    | ekmflgdqvzntowyhxuspaibrcj 	        | q     	|   ✅           	|
+| Rotor II                   | ajdksiruxblhwtmcqgznpyfvoe 	        | e     	|   ✅           	|
+| Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo 	        | v     	|   ✅           	|
+| Beta                       | bdfhjlcprtxvznyeiwgakmusqo 	        | N/A      	|   ✅           	|
+| Reflector B Thin           | yruhqsldpxngokmiebfzcwvjat 	        | N/A     	|   ✅           	|
+
 ## Prerequisites
 
 - Python 3.11
