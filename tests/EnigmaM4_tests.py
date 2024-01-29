@@ -27,11 +27,9 @@ class TestEnigmaM4(unittest.TestCase):
         rotor4 = EnigmaM4RotorBeta(0)
         reflector = ReflectorUKWBThin()
         etw = EtwPassthrough()
-        enigma = EnigmaM4(plugboard, rotor1, rotor2, rotor3, rotor4, reflector, etw)
+        enigma = EnigmaM4(plugboard, rotor1, rotor2, rotor3, rotor4, reflector, etw, True)
         self.assertEqual(enigma.input_char("c"),"p","Enigma output error")
 
     
-        
-
 if __name__ == "__main__":
     unittest.main(verbosity=2)
