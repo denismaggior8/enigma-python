@@ -41,6 +41,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor II                   | ajdksiruxblhwtmcqgznpyfvoe 	        | e     	|   ✅           	|
 | Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo 	        | v     	|   ✅           	|
 | Beta                       | bdfhjlcprtxvznyeiwgakmusqo 	        | N/A      	|   ✅           	|
+| Gamma                      | bdfhjlcprtxvznyeiwgakmusqo 	        | N/A      	|   ✅           	|
 | Reflector B Thin           | yruhqsldpxngokmiebfzcwvjat 	        | N/A     	|   ✅           	|
 
 ## Prerequisites
