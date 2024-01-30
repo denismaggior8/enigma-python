@@ -28,6 +28,8 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor IV                   | esovpzjayquirhxlnftgkdcmwb 	        | j     	|   ✅           	|
 | Rotor V                    | vzbrgityupsdnhlxawmjqofeck 	        | z     	|   ✅           	|
 | Rotor VI                   | jpgvoumfyqbenhzrdkasxlictw 	        | m, z     	|   ✅           	|
+| Rotor VII                  | nzjhgrcxmyswboufaivlpekqdt 	        | m, z     	|   ✅           	|
+| Rotor VIII                 | fkqhtlxocbjspdzramewniuygv 	        | m, z     	|   ✅           	|
 | Reflector B                | yruhqsldpxngokmiebfzcwvjat 	        | N/A     	|   ✅           	|
 | Reflector C                | fvpjiaoyedrzxwgctkuqsbnmhl 	        | N/A     	|   ✅           	|
 
@@ -40,6 +42,11 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor I                    | ekmflgdqvzntowyhxuspaibrcj 	        | q     	|   ✅           	|
 | Rotor II                   | ajdksiruxblhwtmcqgznpyfvoe 	        | e     	|   ✅           	|
 | Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo 	        | v     	|   ✅           	|
+| Rotor IV                   | esovpzjayquirhxlnftgkdcmwb 	        | j     	|   ✅           	|
+| Rotor V                    | vzbrgityupsdnhlxawmjqofeck 	        | z     	|   ✅           	|
+| Rotor VI                   | jpgvoumfyqbenhzrdkasxlictw 	        | m, z     	|   ✅           	|
+| Rotor VII                  | nzjhgrcxmyswboufaivlpekqdt 	        | m, z     	|   ✅           	|
+| Rotor VIII                 | fkqhtlxocbjspdzramewniuygv 	        | m, z     	|   ✅           	|
 | Beta                       | bdfhjlcprtxvznyeiwgakmusqo 	        | N/A      	|   ✅           	|
 | Gamma                      | bdfhjlcprtxvznyeiwgakmusqo 	        | N/A      	|   ✅           	|
 | Reflector B Thin           | yruhqsldpxngokmiebfzcwvjat 	        | N/A     	|   ✅           	|
