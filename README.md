@@ -50,6 +50,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Beta                       | bdfhjlcprtxvznyeiwgakmusqo 	        | N/A      	|   ✅           	|
 | Gamma                      | bdfhjlcprtxvznyeiwgakmusqo 	        | N/A      	|   ✅           	|
 | Reflector B Thin           | yruhqsldpxngokmiebfzcwvjat 	        | N/A     	|   ✅           	|
+| Reflector C Thin           | rdobjntkvehmlfcwzaxgyipsuq 	        | N/A     	|   ✅           	|
 
 ## Prerequisites
 
