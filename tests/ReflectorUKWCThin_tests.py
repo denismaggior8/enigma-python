@@ -1,15 +1,15 @@
 
-from ReflectorUKWBThin import ReflectorUKWBThin
+from ReflectorUKWCThin import ReflectorUKWCThin
 from string import ascii_lowercase
 import unittest
 
-class TestReflectorUKWBThin(unittest.TestCase):
+class TestReflectorUKWCThin(unittest.TestCase):
     
     def test_reflector_b_scramble_letter_index_z(self):
-        reflector = ReflectorUKWBThin()
+        reflector = ReflectorUKWCThin()
         char = "z"
         scrambled_char = reflector.scramble_letter_index(reflector.wiring,list(ascii_lowercase).index(char))
-        self.assertEqual(scrambled_char,"s","Scramble error")
+        self.assertEqual(scrambled_char,"q","Scramble error")
 
 if __name__ == "__main__":
     unittest.main()

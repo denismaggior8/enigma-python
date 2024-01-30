@@ -1,6 +1,6 @@
 from Rotor import Rotor
 
-class ReflectorUKWBThin(Rotor):
+class ReflectorUKWCThin(Rotor):
     
     wiring = 'rdobjntkvehmlfcwzaxgyipsuq'
     
