@@ -62,7 +62,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor VIII                 | fkqhtlxocbjspdzramewniuygv 	        | m, z     	|   ✅           	|
 | Beta                       | leyjvcnixwpbqmdrtakzgfuhos 	        | N/A      	|   ✅           	|
 | Gamma                      | fsokanuerhmbtiycwlqpzxvgjd 	        | N/A      	|   ✅           	|
-| Reflector B Thin           | yruhqsldpxngokmiebfzcwvjat 	        | N/A     	|   ✅           	|
+| Reflector B Thin           | enkqauywjicopblmdxzvfthrgs 	        | N/A     	|   ✅           	|
 | Reflector C Thin           | rdobjntkvehmlfcwzaxgyipsuq 	        | N/A     	|   ✅           	|
 
 ## Prerequisites
