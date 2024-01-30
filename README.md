@@ -16,7 +16,7 @@ Welcome to **enigma-python**, a Python package designed to emulate the legendary
 
 The following Enigma machine models (along with their rotors, reflectors and plugboards) have been implemented:
 
-### Enigma I
+### Enigma I 
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
@@ -28,6 +28,20 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Reflector A                | ejmzalyxvbwfcrquontspikhgd 	        | N/A     	|   ✅           	|
 | Reflector B                | yruhqsldpxngokmiebfzcwvjat 	        | N/A     	|   ✅           	|
 | Reflector C                | fvpjiaoyedrzxwgctkuqsbnmhl 	        | N/A     	|   ✅           	|
+
+### Enigma I Norway (a.k.a. Norenigma)
+
+| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| Plugboard (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
+| ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
+| Rotor I                    | wtokasuyvrbxjhqcpzefmdinlg 	        | q     	|   ✅           	|
+| Rotor II                   | gjlpubswemctqvhxaofzdrkyni 	        | e     	|   ✅           	|
+| Rotor III                  | jwfmhnbpusdytixvzgrqlaoekc 	        | v     	|   ✅           	|
+| Rotor IV                   | fgzjmvxepbwshqtliudykcnrao 	        | j     	|   ✅           	|
+| Rotor V                    | hejxqotzbvfdascilwpgynmurk 	        | z     	|   ✅           	|
+| Reflector UKW              | mowjypuxndsraibfvlkzgqchet 	        | N/A     	|   ✅           	|
+
 
 ### Enigma M3
 

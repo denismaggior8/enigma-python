@@ -1,9 +1,9 @@
 from Rotor import Rotor
 
 
-class EnigmaIRotorII(Rotor):
+class EnigmaINorwayRotorII(Rotor):
     
-    wiring = 'ajdksiruxblhwtmcqgznpyfvoe'
+    wiring = 'gjlpubswemctqvhxaofzdrkyni'
     notch_indexes = [4]
     
     def __init__(self, position = 0, ring = 0):
