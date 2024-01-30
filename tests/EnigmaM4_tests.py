@@ -82,6 +82,31 @@ class TestEnigmaM4(unittest.TestCase):
         my_encrypted_string = enigma.input_string(cleartext)
         self.assertEqual(my_encrypted_string,other_encrypted_string.lower(),"Enigma encryption error")
 
+
+    def test_enigma_4_rotors_ring_settings(self):
+        rnd_ring1 = random.randrange(26)
+        rnd_ring2 = random.randrange(26)
+        rnd_ring3 = random.randrange(26)
+        rnd_ring4 = random.randrange(26)
+        plugboard = PlugboardPassthrough()
+        rotor1 = EnigmaM4RotorI(0,rnd_ring1)
+        rotor2 = EnigmaM4RotorII(0,rnd_ring2)
+        rotor3 = EnigmaM4RotorIII(0,rnd_ring3)
+        rotor4 = EnigmaM4RotorGamma(0,rnd_ring4)
+        reflector = ReflectorUKWBThin()
+        etw = EtwPassthrough()
+        enigma = EnigmaM4(plugboard, rotor4, rotor3, rotor2, rotor1, reflector, etw, True)
+        cleartext = ''.join(random.choice(ascii_lowercase) for i in range(100000))
+        other_machine = EnigmaMachine.from_key_sheet(
+            rotors='I II III Gamma',
+            reflector='B-Thin',
+            ring_settings=[rnd_ring1, rnd_ring2, rnd_ring3, rnd_ring4],
+            plugboard_settings=None)
+        other_machine.set_display('AAAA')
+        other_encrypted_string = other_machine.process_text(cleartext)
+        my_encrypted_string = enigma.input_string(cleartext)
+        self.assertEqual(my_encrypted_string,other_encrypted_string.lower(),"Enigma encryption error")
+
     
 if __name__ == "__main__":
     unittest.main(verbosity=2)
