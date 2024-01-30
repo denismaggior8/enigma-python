@@ -12,7 +12,7 @@ import logging
 import unittest
 import sys
 
-class TestEnigmaM3(unittest.TestCase):
+class TestEnigmaNorway(unittest.TestCase):
 
      def test_enigma_3_rotors_I_II_III_norway(self):
         plugboard = PlugboardPassthrough()

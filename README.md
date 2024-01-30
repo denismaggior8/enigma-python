@@ -29,7 +29,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Reflector B                | yruhqsldpxngokmiebfzcwvjat 	        | N/A     	|   ✅           	|
 | Reflector C                | fvpjiaoyedrzxwgctkuqsbnmhl 	        | N/A     	|   ✅           	|
 
-### Enigma I Norway (a.k.a. Norenigma)
+### Enigma I Norway (Norenigma)
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
@@ -41,6 +41,17 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor IV                   | fgzjmvxepbwshqtliudykcnrao 	        | j     	|   ✅           	|
 | Rotor V                    | hejxqotzbvfdascilwpgynmurk 	        | z     	|   ✅           	|
 | Reflector UKW              | mowjypuxndsraibfvlkzgqchet 	        | N/A     	|   ✅           	|
+
+### Enigma I Sondermaschine (special machine)
+
+| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| Plugboard (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
+| ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
+| Rotor I                    | veosirzujdqckgwypnxaflthmb 	        | q     	|   ✅           	|
+| Rotor II                   | uemoatqlshpkcyfwjzbgvxidnr 	        | e     	|   ✅           	|
+| Rotor III                  | tzhxmbsipnurjfdkeqvcwglaoy 	        | v     	|   ✅           	|
+| Reflector UKW              | ciagsndrbytpzfulvhekoqxwjm 	        | N/A     	|   ✅           	|
 
 
 ### Enigma M3
