@@ -3,7 +3,8 @@ from Rotor import Rotor
 
 class EnigmaISonderRotorII(Rotor):
     
-    wiring = 'uemoatqlshpkcyfwjzbgvxindr'
+    #wiring = 'uemoatqlshpkcyfwjzbgvxindr'
+    wiring = 'uemoatqlshpkcyfwjzbgvxidnr'
     notch_indexes = [4]
     
     def __init__(self, position = 0, ring = 0):

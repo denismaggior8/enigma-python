@@ -10,7 +10,7 @@ from string import ascii_lowercase
 import logging
 
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 plugboard = PlugboardPassthrough()
 rotor1 = EnigmaISonderRotorI(0)
 rotor2 = EnigmaISonderRotorII(0)

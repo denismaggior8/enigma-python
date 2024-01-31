@@ -49,7 +49,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Plugboard (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
 | ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
 | Rotor I                    | veosirzujdqckgwypnxaflthmb 	        | q     	|   ✅           	|
-| Rotor II                   | uemoatqlshpkcyfwjzbgvxindr 	        | e     	|   ✅           	|
+| Rotor II                   | uemoatqlshpkcyfwjzbgvxidnr 	        | e     	|   ✅           	|
 | Rotor III                  | tzhxmbsipnurjfdkeqvcwglaoy 	        | v     	|   ✅           	|
 | Reflector UKW              | ciagsndrbytpzfulvhekoqxwjm 	        | N/A     	|   ✅           	|
 
