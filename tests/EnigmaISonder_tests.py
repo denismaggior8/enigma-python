@@ -22,7 +22,7 @@ class TestEnigmaISonder(unittest.TestCase):
         reflector = ReflectorSonderUKW()
         etw = EtwPassthrough()
         enigma = EnigmaISonder(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
-        cleartext = "aa"
+        cleartext = "a"
         my_encrypted_string = enigma.input_string(cleartext)
         self.assertEqual(my_encrypted_string,"z","Enigma encryption error")
 
