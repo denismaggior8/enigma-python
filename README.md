@@ -1,6 +1,6 @@
 # Python Enigma library
 
-![](img/enigma.jpg)
+![](img/logo.jpg)
 
 ## About
 
