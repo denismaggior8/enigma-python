@@ -1,7 +1,7 @@
 # Examples
 
-Three rotors Enigma machine example:
+Enigma machines examples:
 
 ```console
-$ python three_rotors_enigma.py
+$ python enigma_machines_examples.py
 ```
