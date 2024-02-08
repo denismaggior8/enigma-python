@@ -14,7 +14,7 @@ import sys
 
 class TestEnigmaNorway(unittest.TestCase):
 
-     def test_enigma_3_rotors_I_II_III_norway(self):
+    def test_enigma_3_rotors_I_II_III_norway(self):
         plugboard = PlugboardPassthrough()
         rotor1 = EnigmaINorwayRotorI(0)
         rotor2 = EnigmaINorwayRotorII(0)
@@ -25,8 +25,7 @@ class TestEnigmaNorway(unittest.TestCase):
         cleartext = "supercalifragilistichespiralidoso"
         my_encrypted_string = enigma.input_string(cleartext)
         self.assertEqual(my_encrypted_string,"mdxaexnvprzuxqpxfzhjxyhdfolomjvmg","Enigma encryption error")
-     
-
+        
     #def test_enigma_3_rotors_I_II_III_resetting_rings_rotations_111_very_long_string(self):
     #    plugboard = PlugboardPassthrough()
     #    rotor1 = EnigmaINorwayRotorI(1,4)
@@ -41,7 +40,7 @@ class TestEnigmaNorway(unittest.TestCase):
     #    cleartext = ''.join(random.choice(ascii_lowercase) for i in range(100000))
     #    my_encrypted_string = enigma.input_string(cleartext)
     #    self.assertEqual(my_encrypted_string,"","Enigma encryption error")
-        
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

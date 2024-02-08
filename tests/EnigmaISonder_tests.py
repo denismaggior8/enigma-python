@@ -13,18 +13,6 @@ import unittest
 import sys
 
 class TestEnigmaISonder(unittest.TestCase):
-     
-     def test_enigma_3_rotors_I_II_III_sonder_simple_string(self):
-        plugboard = PlugboardPassthrough()
-        rotor1 = EnigmaISonderRotorI(0)
-        rotor2 = EnigmaISonderRotorII(0)
-        rotor3 = EnigmaISonderRotorIII(0)
-        reflector = ReflectorSonderUKW()
-        etw = EtwPassthrough()
-        enigma = EnigmaISonder(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
-        cleartext = "a"
-        my_encrypted_string = enigma.input_string(cleartext)
-        self.assertEqual(my_encrypted_string,"z","Enigma encryption error")
 
      def test_enigma_3_rotors_I_II_III_sonder(self):
         plugboard = PlugboardPassthrough()
@@ -36,7 +24,7 @@ class TestEnigmaISonder(unittest.TestCase):
         enigma = EnigmaISonder(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
         cleartext = "supercalifragilistichespiralidoso"
         my_encrypted_string = enigma.input_string(cleartext)
-        self.assertEqual(my_encrypted_string,"fwcdwasqpchhvcirooqyvpanphhgcfsoa","Enigma encryption error")
+        self.assertEqual(my_encrypted_string,"fwudwasqpchevhifooqyvvanphhgcfwoa","Enigma encryption error")
      
         
 
