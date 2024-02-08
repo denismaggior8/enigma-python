@@ -1,4 +1,4 @@
-# Python Enigma library
+# Enigma Python library
 
 ![](img/logo.jpg)
 
