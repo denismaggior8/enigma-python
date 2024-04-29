@@ -1,5 +1,5 @@
 
-from EnigmaM4RotorGamma import EnigmaM4RotorGamma
+from enigmapython.EnigmaM4RotorGamma import EnigmaM4RotorGamma
 from string import ascii_lowercase
 import unittest
 

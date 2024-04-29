@@ -1,10 +1,10 @@
-from EnigmaIRotorI import EnigmaIRotorI
-from EnigmaIRotorII import EnigmaIRotorII
-from EnigmaIRotorIII import EnigmaIRotorIII
-from PlugboardPassthrough import PlugboardPassthrough
-from ReflectorUKWB import ReflectorUKWB
-from EtwPassthrough import EtwPassthrough
-from EnigmaI import EnigmaI
+from enigmapython.EnigmaIRotorI import EnigmaIRotorI
+from enigmapython.EnigmaIRotorII import EnigmaIRotorII
+from enigmapython.EnigmaIRotorIII import EnigmaIRotorIII
+from enigmapython.PlugboardPassthrough import PlugboardPassthrough
+from enigmapython.ReflectorUKWB import ReflectorUKWB
+from enigmapython.EtwPassthrough import EtwPassthrough
+from enigmapython.EnigmaI import EnigmaI
 from enigma.machine import EnigmaMachine
 from string import ascii_lowercase
 import random

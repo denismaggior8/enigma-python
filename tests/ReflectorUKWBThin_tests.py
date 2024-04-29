@@ -1,5 +1,5 @@
 
-from ReflectorUKWBThin import ReflectorUKWBThin
+from enigmapython.ReflectorUKWBThin import ReflectorUKWBThin
 from string import ascii_lowercase
 import unittest
 

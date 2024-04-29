@@ -1,5 +1,5 @@
 
-from EnigmaM3RotorVII import EnigmaM3RotorVII
+from enigmapython.EnigmaM3RotorVII import EnigmaM3RotorVII
 from string import ascii_lowercase
 import unittest
 

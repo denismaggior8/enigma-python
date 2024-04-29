@@ -1,4 +1,4 @@
-from Rotor import Rotor
+from enigmapython.Rotor import Rotor
 from string import ascii_lowercase
 import unittest
 import random

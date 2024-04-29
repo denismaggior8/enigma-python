@@ -1,4 +1,4 @@
-from EnigmaIRotorI import EnigmaIRotorI
+from enigmapython.EnigmaIRotorI import EnigmaIRotorI
 from string import ascii_lowercase
 import unittest
 import random
