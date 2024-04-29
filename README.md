@@ -114,6 +114,6 @@ TBD, for now... code (and comments) are the documentation
     - PyEnigma https://pypi.org/project/pyenigma/
     - 101 computing https://www.101computing.net/enigma-machine-emulator/ 
     
-    for having helped me testing the correctness of the generated ciphertext 
+    for having helped me testing the correctness of the generated ciphertexts 
 
 
