@@ -1,12 +1,5 @@
 from enigma.machine import EnigmaMachine
-from EnigmaIRotorI import EnigmaIRotorI
-from EnigmaISonderRotorII import EnigmaISonderRotorII
-from EnigmaISonderRotorIII import EnigmaISonderRotorIII
-from PlugboardPassthrough import PlugboardPassthrough
-from ReflectorSonderUKW import ReflectorSonderUKW
-from EtwPassthrough import EtwPassthrough
-from EnigmaISonder import EnigmaISonder
-from Rotor import Rotor
+from enigmapython import *
 from string import ascii_lowercase
 import logging
 from Utils import Utils
