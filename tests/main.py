@@ -1,6 +1,4 @@
-from RotorWiringI import RotorWiringI
-from RotorWiringII import RotorWiringII
-from RotorWiringIII import RotorWiringIII
+
 from PlugboardPassthrough import PlugboardPassthrough
 from ReflectorUKWB import ReflectorUKWB
 from EnigmaM3 import EnigmaM3

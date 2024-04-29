@@ -104,7 +104,7 @@ Please have a look of the [examples](./examples) folder
 
 TBD, for now... code (and comments) are the documentation
 
-## Credits/recerences
+## Credits/references
 
 - Early days experiments with Python and Enigma (where this repo comes from) can be found at: https://github.com/denismaggior8/enigma-cypher
 - Rotors wirings have been taken from Crypto Museum at this link  https://www.cryptomuseum.com/crypto/enigma/wiring.htm
