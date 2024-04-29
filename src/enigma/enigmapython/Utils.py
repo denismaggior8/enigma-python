@@ -8,7 +8,7 @@ class Utils:
             [s for c in cls.__subclasses__() for s in Utils.find_all_subclasses(c)])
 
     @staticmethod
-    def instance_class(cls):
+    def get_class_instance(cls):
         try:
             module_path, class_name = cls.rsplit('.', 1)
             module = import_module(module_path)
