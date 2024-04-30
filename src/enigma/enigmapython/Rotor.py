@@ -1,4 +1,5 @@
 from .Observable import Observable
+from .Utils import Utils
 from string import ascii_lowercase
 import logging
 
@@ -86,3 +87,7 @@ class Rotor(Observable):
         for i in range(0, len(alphabet)):
             if alphabet[i] == letter:
                 return alphabet[(i + shift) % len(alphabet)]
+            
+    @staticmethod
+    def get_instance_from_tag(tag: str):
+        return Utils.get_class_instance(Rotor.lookup[tag].__module__+"."+Rotor.lookup[tag].__name__)()
