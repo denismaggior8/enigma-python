@@ -81,10 +81,6 @@ class Enigma(Observer):
     def shift_letter(letter,shift):
 	    return Enigma.alphabet[(Enigma.alphabet.index(letter)+shift) % len(Enigma.alphabet)]
     
-    @staticmethod
-    def get_custom_instance(plugboard, rotors, reflector, etw, auto_increment_rotors=False):
-        return Enigma(plugboard, rotors, reflector, etw, auto_increment_rotors)
-       
 
 
 
