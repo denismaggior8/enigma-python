@@ -7,9 +7,9 @@ class TestSwappablePlugboard(unittest.TestCase):
     
     def test_swappable_plugboard_from_a_to_z(self):
         plugboard = SwappablePlugboard()
-        print(plugboard.wiring)
+        #print(plugboard.wiring)
         plugboard.swap("a","z")
-        print(plugboard.wiring)
+        #print(plugboard.wiring)
         self.assertTrue(plugboard.wiring[0]=="z")
 
     def test_swappable_plugboard_from_a_to_z_reverted(self):
