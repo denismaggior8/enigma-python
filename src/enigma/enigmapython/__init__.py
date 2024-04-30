@@ -36,6 +36,7 @@ __all__ = [
         'PlugboardPassthrough',
         'Etw',
         'EtwPassthrough',
+        'Reflector',
         'ReflectorNorwayUKW',
         'ReflectorSonderUKW',
         'ReflectorUKWA',

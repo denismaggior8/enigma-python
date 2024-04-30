@@ -1,6 +1,6 @@
 from .Rotor import Rotor
-
-class ReflectorSonderUKW(Rotor):
+from .Reflector import Reflector
+class ReflectorSonderUKW(Reflector):
     
     wiring = 'ciagsndrbytpzfulvhekoqxwjm'
     tag = "IS_UKW"
