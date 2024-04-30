@@ -15,4 +15,17 @@ class Utils:
             return getattr(module, class_name)
         except (ImportError, AttributeError) as e:
             raise ImportError(cls)
+
+    @staticmethod    
+    def swap_chars(string, ch1, ch2):
+        if ch1 == ch2: return string
+        str_list = []
+        for char in string:
+            if char == ch1:
+                str_list.append(ch2)
+            elif char == ch2:
+                str_list.append(ch1)
+            else:
+                str_list.append(char)
+        return ''.join(str_list)
     
