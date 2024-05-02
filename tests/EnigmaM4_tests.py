@@ -1,16 +1,17 @@
-from EnigmaM4RotorI import EnigmaM4RotorI
-from EnigmaM4RotorII import EnigmaM4RotorII
-from EnigmaM4RotorIII import EnigmaM4RotorIII
-from EnigmaM3RotorIV import EnigmaM3RotorIV
-from EnigmaM3RotorV import EnigmaM3RotorV
-from EnigmaM3RotorVI import EnigmaM3RotorVI
-from EnigmaM4RotorBeta import EnigmaM4RotorBeta
-from EnigmaM4RotorGamma import EnigmaM4RotorGamma
-from PlugboardPassthrough import PlugboardPassthrough
-from ReflectorUKWB import ReflectorUKWB
-from ReflectorUKWBThin import ReflectorUKWBThin
-from EtwPassthrough import EtwPassthrough
-from EnigmaM4 import EnigmaM4
+from enigmapython.EnigmaM4RotorI import EnigmaM4RotorI
+from enigmapython.EnigmaM4RotorII import EnigmaM4RotorII
+from enigmapython.EnigmaM4RotorIII import EnigmaM4RotorIII
+from enigmapython.EnigmaM3RotorIV import EnigmaM3RotorIV
+from enigmapython.EnigmaM3RotorV import EnigmaM3RotorV
+from enigmapython.EnigmaM3RotorVI import EnigmaM3RotorVI
+from enigmapython.EnigmaM4RotorBeta import EnigmaM4RotorBeta
+from enigmapython.EnigmaM4RotorGamma import EnigmaM4RotorGamma
+from enigmapython.PlugboardPassthrough import PlugboardPassthrough
+from enigmapython.SwappablePlugboard import SwappablePlugboard
+from enigmapython.ReflectorUKWB import ReflectorUKWB
+from enigmapython.ReflectorUKWBThin import ReflectorUKWBThin
+from enigmapython.EtwPassthrough import EtwPassthrough
+from enigmapython.EnigmaM4 import EnigmaM4
 from enigma.machine import EnigmaMachine
 from string import ascii_lowercase
 import random
@@ -102,6 +103,31 @@ class TestEnigmaM4(unittest.TestCase):
             reflector='B-Thin',
             ring_settings=[rnd_ring1, rnd_ring2, rnd_ring3, rnd_ring4],
             plugboard_settings=None)
+        other_machine.set_display('AAAA')
+        other_encrypted_string = other_machine.process_text(cleartext)
+        my_encrypted_string = enigma.input_string(cleartext)
+        self.assertEqual(my_encrypted_string,other_encrypted_string.lower(),"Enigma encryption error")
+    
+    def test_enigma_4_rotors_ring_settings_swappable_plugboard(self):
+        rnd_ring1 = random.randrange(26)
+        rnd_ring2 = random.randrange(26)
+        rnd_ring3 = random.randrange(26)
+        rnd_ring4 = random.randrange(26)
+        plugboard = SwappablePlugboard()
+        plugboard.swap("d","s")
+        rotor1 = EnigmaM4RotorI(0,rnd_ring1)
+        rotor2 = EnigmaM4RotorII(0,rnd_ring2)
+        rotor3 = EnigmaM4RotorIII(0,rnd_ring3)
+        rotor4 = EnigmaM4RotorGamma(0,rnd_ring4)
+        reflector = ReflectorUKWBThin()
+        etw = EtwPassthrough()
+        enigma = EnigmaM4(plugboard, rotor4, rotor3, rotor2, rotor1, reflector, etw, True)
+        cleartext = ''.join(random.choice(ascii_lowercase) for i in range(1000000))
+        other_machine = EnigmaMachine.from_key_sheet(
+            rotors='I II III Gamma',
+            reflector='B-Thin',
+            ring_settings=[rnd_ring1, rnd_ring2, rnd_ring3, rnd_ring4],
+            plugboard_settings="DS")
         other_machine.set_display('AAAA')
         other_encrypted_string = other_machine.process_text(cleartext)
         my_encrypted_string = enigma.input_string(cleartext)

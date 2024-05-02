@@ -1,5 +1,5 @@
 
-from EnigmaIRotorV import EnigmaIRotorV
+from enigmapython.EnigmaIRotorV import EnigmaIRotorV
 from string import ascii_lowercase
 import unittest
 
