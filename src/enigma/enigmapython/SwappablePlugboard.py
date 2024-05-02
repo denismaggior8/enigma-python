@@ -6,7 +6,7 @@ class SwappablePlugboard(PlugboardPassthrough):
 
     def __init__(self, chars=None):
         super().__init__()
-        if chars != None:
+        if chars != None and isinstance(chars, dict):
             for key, value in chars.items():
                 if key != None and self.wiring.__contains__(key) and value != None and self.wiring.__contains__(value):
                     self.swap(key,value)
