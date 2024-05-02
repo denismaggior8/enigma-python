@@ -12,15 +12,18 @@ class TestSwappablePlugboard(unittest.TestCase):
     
     def test_swappable_plugboard_from_a_to_z(self):
         plugboard = SwappablePlugboard()
-        #print(plugboard.wiring)
         plugboard.swap("a","z")
-        #print(plugboard.wiring)
         self.assertTrue(plugboard.wiring[0]=="z")
 
     def test_swappable_plugboard_from_a_to_z_reverted(self):
         plugboard = SwappablePlugboard()
         plugboard.swap("a","z")
         self.assertTrue(plugboard.wiring[25]=="a")
+
+    def test_swappable_plugboard_bulk_swap_method(self):
+        plugboard = SwappablePlugboard()
+        plugboard.bulk_swap({"a":"z","b":"c"})
+        self.assertTrue(plugboard.wiring == "zcbdefghijklmnopqrstuvwxya")
 
         
 

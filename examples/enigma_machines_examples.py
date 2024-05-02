@@ -1,17 +1,18 @@
 # Import from this package
-from EnigmaM3RotorI import EnigmaM3RotorI
-from EnigmaM3RotorII import EnigmaM3RotorII
-from EnigmaM3RotorIII import EnigmaM3RotorIII
-from EnigmaM4RotorI import EnigmaM4RotorI
-from EnigmaM4RotorII import EnigmaM4RotorII
-from EnigmaM4RotorIII import EnigmaM4RotorIII
-from EnigmaM4RotorBeta import EnigmaM4RotorBeta
-from ReflectorUKWBThin import ReflectorUKWBThin
-from PlugboardPassthrough import PlugboardPassthrough
-from ReflectorUKWB import ReflectorUKWB
-from EnigmaM3 import EnigmaM3
-from EnigmaM4 import EnigmaM4
-from EtwPassthrough import EtwPassthrough
+from enigmapython.EnigmaM3RotorI import EnigmaM3RotorI
+from enigmapython.EnigmaM3RotorII import EnigmaM3RotorII
+from enigmapython.EnigmaM3RotorIII import EnigmaM3RotorIII
+from enigmapython.EnigmaM4RotorI import EnigmaM4RotorI
+from enigmapython.EnigmaM4RotorII import EnigmaM4RotorII
+from enigmapython.EnigmaM4RotorIII import EnigmaM4RotorIII
+from enigmapython.EnigmaM4RotorBeta import EnigmaM4RotorBeta
+from enigmapython.ReflectorUKWBThin import ReflectorUKWBThin
+from enigmapython.PlugboardPassthrough import PlugboardPassthrough
+from enigmapython.SwappablePlugboard import SwappablePlugboard
+from enigmapython.ReflectorUKWB import ReflectorUKWB
+from enigmapython.EnigmaM3 import EnigmaM3
+from enigmapython.EnigmaM4 import EnigmaM4
+from enigmapython.EtwPassthrough import EtwPassthrough
 
 # Import from python ecosystem
 import logging
@@ -33,7 +34,8 @@ etwM3 = EtwPassthrough()
 enigmaM3 = EnigmaM3(plugboardM3, rotor3M3, rotor2M3, rotor1M3, reflectorM3, etwM3, True)
 
 # Setup Enigma M4 components
-plugboardM4 = PlugboardPassthrough()
+plugboardM4 = SwappablePlugboard()
+plugboardM4.bulk_swap({"a":"c","d":"z"})
 rotor1M4 = EnigmaM4RotorI(0)
 rotor2M4 = EnigmaM4RotorII(0)
 rotor3M4 = EnigmaM4RotorIII(0)
@@ -43,8 +45,6 @@ etwM4 = EtwPassthrough()
 
 # Setup Enigma M4 machine
 enigmaM4 = EnigmaM4(plugboardM4, rotor1M4, rotor2M4, rotor3M4, rotor4M4, reflectorM4, etwM4, True)
-
-# Setup Enigma M4 machine
 
 # Test the Enigma machines
 if __name__ == "__main__":
