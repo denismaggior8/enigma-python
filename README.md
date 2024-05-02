@@ -20,7 +20,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
-| Plugboard (passthrough+swappable)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
+| Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
 | ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
 | Rotor I                    | ekmflgdqvzntowyhxuspaibrcj 	        | q     	|   ✅           	|
 | Rotor II                   | ajdksiruxblhwtmcqgznpyfvoe 	        | e     	|   ✅           	|
@@ -33,7 +33,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
-| Plugboard (passthrough+swappable)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
+| Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
 | ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
 | Rotor I                    | wtokasuyvrbxjhqcpzefmdinlg 	        | q     	|   ✅           	|
 | Rotor II                   | gjlpubswemctqvhxaofzdrkyni 	        | e     	|   ✅           	|
@@ -46,7 +46,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
-| Plugboard (passthrough+swappable)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
+| Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
 | ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
 | Rotor I                    | veosirzujdqckgwypnxaflthmb 	        | q     	|   ✅           	|
 | Rotor II                   | uemoatqlshpkcyfwjzbgvxidnr 	        | e     	|   ✅           	|
@@ -58,7 +58,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
-| Plugboard (passthrough+swappable)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
+| Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
 | ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
 | Rotor I                    | ekmflgdqvzntowyhxuspaibrcj 	        | q     	|   ✅           	|
 | Rotor II                   | ajdksiruxblhwtmcqgznpyfvoe 	        | e     	|   ✅           	|
@@ -75,7 +75,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
-| Plugboard (passthrough+swappable)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
+| Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
 | ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
 | Rotor I                    | ekmflgdqvzntowyhxuspaibrcj 	        | q     	|   ✅           	|
 | Rotor II                   | ajdksiruxblhwtmcqgznpyfvoe 	        | e     	|   ✅           	|
@@ -93,7 +93,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 ## Prerequisites
 
 - Python 3.11
-- Clone this repo, checkout the desired branch and install requirements (`pip install -r requirements.txt`) or directly from PyPI using `pip install enigmapython`
+- Clone this repo, checkout the desired branch/tag and install requirements (`pip install -r requirements.txt`) or directly from PyPI using `pip install enigmapython`
 
 ## Getting started
 
