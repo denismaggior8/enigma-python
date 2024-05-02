@@ -4,6 +4,7 @@ from enigmapython.EnigmaIRotorIII import EnigmaIRotorIII
 from enigmapython.PlugboardPassthrough import PlugboardPassthrough
 from enigmapython.SwappablePlugboard import SwappablePlugboard
 from enigmapython.ReflectorUKWB import ReflectorUKWB
+from enigmapython.ReflectorUKWA import ReflectorUKWA
 from enigmapython.EtwPassthrough import EtwPassthrough
 from enigmapython.EnigmaI import EnigmaI
 from enigma.machine import EnigmaMachine
@@ -60,6 +61,19 @@ class TestEnigmaM3(unittest.TestCase):
         other_machine.set_display('BBB')
         other_encrypted_string = other_machine.process_text(cleartext)
         self.assertEqual(my_encrypted_string,other_encrypted_string.lower(),"Enigma encryption error")
+
+    def test_enigma_3_rotors_I_I_I_swappable_plugboard_rotor_a(self):
+        plugboard = SwappablePlugboard()
+        plugboard.swap("d","z")
+        rotor1 = EnigmaIRotorI(0)
+        rotor2 = EnigmaIRotorI(0)
+        rotor3 = EnigmaIRotorI(0)
+        reflector = ReflectorUKWA()
+        etw = EtwPassthrough()
+        enigma = EnigmaI(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
+        cleartext = "DENISDENISDENISDENISDENISDENISDENISDENISDENISDENISDENIS".lower()
+        my_encrypted_string = enigma.input_string(cleartext)
+        self.assertEqual(my_encrypted_string,"jqoqqwuewdjnccolyagmlaphgrydoprqgocwmeebkhpkbhwujevnzme".lower(),"Enigma encryption error")
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
