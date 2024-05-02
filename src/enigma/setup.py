@@ -10,4 +10,5 @@ setup(
         include=['enigmapython'],  # ['*'] by default
     ),
     long_description=open('./enigmapython/README.txt').read(),
+    long_description_content_type='text/markdown'
 )
