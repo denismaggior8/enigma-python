@@ -5,6 +5,10 @@ from string import ascii_lowercase
 import unittest
 
 class TestSwappablePlugboard(unittest.TestCase):
+
+    def test_swappable_plugboard_init_method(self):
+        plugboard = SwappablePlugboard({"a":"z","b":"c"})
+        self.assertTrue(plugboard.wiring == "zcbdefghijklmnopqrstuvwxya")
     
     def test_swappable_plugboard_from_a_to_z(self):
         plugboard = SwappablePlugboard()
@@ -18,13 +22,6 @@ class TestSwappablePlugboard(unittest.TestCase):
         plugboard.swap("a","z")
         self.assertTrue(plugboard.wiring[25]=="a")
 
-    def test_swappable_plugboard_init_method_happy(self):
-        plugboard = SwappablePlugboard("a","z")
-        self.assertTrue(plugboard.wiring[25]=="a")
-
-    def test_swappable_plugboard_init_method_sad(self):
-        plugboard = SwappablePlugboard("!","S")
-        self.assertTrue(plugboard.wiring == PlugboardPassthrough().wiring)
         
 
 if __name__ == "__main__":

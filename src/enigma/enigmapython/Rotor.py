@@ -63,11 +63,11 @@ class Rotor(Observable):
         for i in range(0, ring):
         # Set temporary wiring variable
             temp_wiring = self.wiring
-            # Set acutall wiring to empty string
+            # Set actual wiring to empty string
             wiring = ""
             # Loop over chars in temporary wiring
             for char in temp_wiring:
-                # Shift the char by one and add that shiftet char to wiring variable
+                # Shift the char by one and add that shifted char to wiring variable
                 wiring += Rotor.shift(char, 1, alphabet)
             # Add one to dot position, make sure we don't exceed the lenght of the alphabet
             self.wiring = wiring
