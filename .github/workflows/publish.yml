@@ -25,8 +25,10 @@ jobs:
           pip install setuptools wheel
       - name: Build package
         run: |
-          python setup.py sdist bdist_wheel  # Could also be python -m build
+          cd src/enigma && python setup.py sdist bdist_wheel && cd ../.. # Could also be python -m build
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
+          packages-dir: src/enigma/dist
+          skip-existing: true
