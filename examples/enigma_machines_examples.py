@@ -1,4 +1,7 @@
 # Import from this package
+from enigmapython.EnigmaIRotorI import EnigmaIRotorI
+from enigmapython.EnigmaIRotorII import EnigmaIRotorII
+from enigmapython.EnigmaIRotorIII import EnigmaIRotorIII
 from enigmapython.EnigmaM3RotorI import EnigmaM3RotorI
 from enigmapython.EnigmaM3RotorII import EnigmaM3RotorII
 from enigmapython.EnigmaM3RotorIII import EnigmaM3RotorIII
@@ -10,6 +13,7 @@ from enigmapython.ReflectorUKWBThin import ReflectorUKWBThin
 from enigmapython.PlugboardPassthrough import PlugboardPassthrough
 from enigmapython.SwappablePlugboard import SwappablePlugboard
 from enigmapython.ReflectorUKWB import ReflectorUKWB
+from enigmapython.EnigmaI import EnigmaI
 from enigmapython.EnigmaM3 import EnigmaM3
 from enigmapython.EnigmaM4 import EnigmaM4
 from enigmapython.EtwPassthrough import EtwPassthrough
@@ -21,6 +25,17 @@ import sys
 
 # Setup logging
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+
+# Setup Enigma I components
+plugboarI = PlugboardPassthrough()
+rotor1I = EnigmaIRotorI(0)
+rotor2I = EnigmaIRotorII(0)
+rotor3I = EnigmaIRotorIII(0)
+reflectorI = ReflectorUKWB()
+etwI = EtwPassthrough()
+
+# Setup Enigma I machine
+enigmaI = EnigmaI(plugboarI, rotor3I, rotor2I, rotor1I, reflectorI, etwI, True)
 
 # Setup Enigma M3 components
 plugboardM3 = PlugboardPassthrough()
@@ -62,3 +77,10 @@ if __name__ == "__main__":
    print(enigmaM4.input_char("o"))
    
    print(enigmaM4.input_string("supercalifragilistichespiralidoso"))
+
+   print(enigmaI.input_char("c"))
+   print(enigmaI.input_char("i"))
+   print(enigmaI.input_char("a"))
+   print(enigmaI.input_char("o"))
+   
+   print(enigmaI.input_string("supercalifragilistichespiralidoso"))

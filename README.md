@@ -101,7 +101,7 @@ Please have a look of the [examples](https://github.com/denismaggior8/enigma-pyt
 
 ## Documentation
 
-TBD, for now... code (and comments) are the documentation
+An initial documentation draft can be found [here](./docs/README.md), but in most cases examples, code (and comments) are better than the documentation
 
 ## Credits/references
 

@@ -2,3 +2,5 @@
 **/*egg-info
 **/build
 **/dist
+**/*.drawio.bkp
+**/*.drawio.dtmp
