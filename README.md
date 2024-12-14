@@ -107,7 +107,7 @@ An initial documentation draft can be found [here](./docs/README.md), but in mos
 
 Here's a list containing all the known Enigma simulators that use the **enigmapython** API.
 
-- [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma M3 cypher machine. ![](img/retrocampus_enigma.png).
+- [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma M3 cypher machine. ![](img/retrocampus_enigma.png)
 
 In the case you leveraged **enigmapython** API in a project, either public or not, drop me an email at __denis.maggiorotto[at]gmail.com__ and I'll be happy to list you here.
 
