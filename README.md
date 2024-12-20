@@ -127,7 +127,7 @@ In the case you leveraged **enigmapython** API in a project, either public or no
 ## Credits/references
 
 - Early days experiments with Python and Enigma (where this repo comes from) can be found at: https://github.com/denismaggior8/enigma-cypher
-- Rotors wirings have been taken from Crypto Museum at this link  https://www.cryptomuseum.com/crypto/enigma/wiring.htm
+- Rotors wirings have been taken from **Crypto Museum** at this link  https://www.cryptomuseum.com/crypto/enigma/wiring.htm
 - Thanks to 
     - Piotte13 https://piotte13.github.io/enigma-cipher/
     - Cryptii https://cryptii.com
