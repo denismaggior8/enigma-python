@@ -16,6 +16,18 @@ Welcome to **enigmapython**, a Python package designed to emulate the legendary 
 
 The following Enigma machine models (along with their rotors, reflectors and plugboards) have been implemented:
 
+### Enigma D
+
+| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
+| ETW "QWERTZ"               | qwertzuioasdfghjkpyxcvbnml 	        | N/A     	|   ✅           	|
+| ETW "JWULCM"               | jwulcmnohpqzyxiradkegvbtsf 	        | N/A     	|   ✅           	|
+| Rotor I                    | lpgszmhaeoqkvxrfybutnicjdw 	        | y     	|   ✅           	|
+| Rotor II                   | slvgbtfxjqohewirzyamkpcndu 	        | e     	|   ✅           	|
+| Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo 	        | n     	|   ✅           	|
+| Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
+
 ### Enigma I 
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
@@ -121,6 +133,7 @@ In the case you leveraged **enigmapython** API in a project, either public or no
     - Cryptii https://cryptii.com
     - PyEnigma https://pypi.org/project/pyenigma/
     - 101 computing https://www.101computing.net/enigma-machine-emulator/ 
+    - DenCode Enigma simulator https://dencode.com/cipher/enigma
     
     for having helped me testing the correctness of the generated ciphertexts 
 

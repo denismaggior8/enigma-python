@@ -2,7 +2,7 @@ from enigmapython.EnigmaDRotorI import EnigmaDRotorI
 from enigmapython.EnigmaDRotorII import EnigmaDRotorII
 from enigmapython.EnigmaDRotorIII import EnigmaDRotorIII
 from enigmapython.PlugboardPassthrough import PlugboardPassthrough
-from enigmapython.EnigmaDEtw import EnigmaDEtw
+from enigmapython.EnigmaDEtw_JWULCM import EnigmaDEtw_JWULCM
 from enigmapython.EnigmaD import EnigmaD
 from enigmapython.ReflectorDUKW import ReflectorDUKW
 
@@ -20,7 +20,7 @@ class TestEnigmaD(unittest.TestCase):
         rotor2 = EnigmaDRotorI()
         rotor3 = EnigmaDRotorI()
         reflector = ReflectorDUKW()
-        etw = EnigmaDEtw()
+        etw = EnigmaDEtw_JWULCM()
         enigma = EnigmaD(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
         cleartext = 'ciao'
         my_encrypted_string = enigma.input_string(cleartext)
@@ -32,7 +32,7 @@ class TestEnigmaD(unittest.TestCase):
         rotor2 = EnigmaDRotorI()
         rotor3 = EnigmaDRotorI()
         reflector = ReflectorDUKW()
-        etw = EnigmaDEtw()
+        etw = EnigmaDEtw_JWULCM()
         enigma = EnigmaD(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
         cleartext = 'ciaodenis'
         my_encrypted_string = enigma.input_string(cleartext)
@@ -44,19 +44,19 @@ class TestEnigmaD(unittest.TestCase):
         rotor2 = EnigmaDRotorI()
         rotor3 = EnigmaDRotorI()
         reflector = ReflectorDUKW()
-        etw = EnigmaDEtw()
+        etw = EnigmaDEtw_JWULCM()
         enigma = EnigmaD(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
         cleartext = 'supercalifragilistichespiralidoso'
         my_encrypted_string = enigma.input_string(cleartext)
         self.assertEqual(my_encrypted_string,"nmixepxetxeoifwfnnmjzsllmxofqmdms","Enigma encryption error")
-
+                                              
     def test_enigma_D_rotors_I_I_I_long_string(self):
         plugboard = PlugboardPassthrough()
         rotor1 = EnigmaDRotorI()
         rotor2 = EnigmaDRotorI()
         rotor3 = EnigmaDRotorI()
         reflector = ReflectorDUKW()
-        etw = EnigmaDEtw()
+        etw = EnigmaDEtw_JWULCM()
         enigma = EnigmaD(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
         cleartext = 'loremipsumdolorsitametconsecteturadipiscingelitphasellusvitaeposuerediamvitaeeuismodelitloremipsumdolorsitametconsecteturadipiscingelitutfringillaullamcorpererateuconvallismagnalobortisinproinviverrasemmagnadapibustemporarcuullamcorperatcrassederosegetduisuscipitblanditquisutduisuspendisseultricesegestasultricesvestibulumpharetraurnaseddiamhendreritatefficituraugueimperdietaeneansitametleonontortorelementumimperdietaliquameratvolutpatmorbinecurnatempuspharetrafelisquiseleifendipsumpraesentrhoncusmolestiejustositamettinciduntpellentesquedignissimmivitaealiquamultriceslectusmaurislobortisliberononinterdummetuspurusetpuruscurabiturvelcommodonislpellentesquehabitantmorbitristiquesenectusetnetusetmalesuadafamesacturpisegestasmorbiinefficiturduinullatinciduntfeugiatturpisneclobortisnamacmattismassaduissitametaugueauctorsagittisauguenectempornuncutvitaesapienfringillablanditjustoetpretiumvelitnullaquisvenenatisipsumquisqueportamagnalaciniainterdumefficiturnuncdictumaliquameratquishendreritmaecenasrhoncusturpisnibhsitametposuerenullalobortisvelsuspendisselaoreetsitametenimetluctusnametlectusportaimperdietaugueacmaximusorciphasellusligulaodioefficituringravidanontinciduntacnisletiamidnullaelitetiamvitaepurusutliberotempusultricesnameratnequefaucibusintortoratcommodoegestasnullapellentesquecommodopretiummaximuspellentesquetempussitametvelitsitamettempusproinacplacerateratvivamussuscipitmattisnuncquissemperinmalesuadafringillascelerisquenunctemporturpissedleoeuismodconguecrastemporleosedvenenatismolestievivamusasapiennonpurushendreritfeugiatvestibulumeuismoderosfelisidfeugiatdiamlaoreetaduisblanditnibhfermentummagnamollisviverraproinhendreritvestibulumsapienuttinciduntaliquamatsollicitudinexpellentesquedolornullatemporutnullasitametscelerisquemollisurnaquisqueeunisiidaugueimperdietaccumsanvivamusinterdumestegetnunchendreritelementumsedgravidanislorciaimperdietquamtemporegetquisqueeulacuseupurusullamcorperbibendumloremipsumdolorsitametconsecteturadipiscingelitdonectortornequeornareetmassavitaefringillapellentesquemaurisduislaciniatemporloremsitametvulputatevestibulumanteipsumprimisinfaucibusorciluctusetultricesposuerecubiliacurae'
         my_encrypted_string = enigma.input_string(cleartext)
