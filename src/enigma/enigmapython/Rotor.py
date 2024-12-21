@@ -13,7 +13,7 @@ class Rotor(Observable):
     ring = None
     dot_position = None
     lookup = {}
-    alphabet = None
+    alphabet_list = None
 
     @staticmethod
     def register(tag, class_name):
@@ -47,7 +47,7 @@ class Rotor(Observable):
         self.rotations_counter = 0
         self.original_wiring = self.wiring
         self.ring = ring
-        self.alphabet = list(alphabet)
+        self.alphabet_list = list(alphabet)
         self.set_rotor_ring(ring)
 
     def __str__(self):
@@ -69,15 +69,15 @@ class Rotor(Observable):
             # Loop over chars in temporary wiring
             for char in temp_wiring:
                 # Shift the char by one and add that shifted char to wiring variable
-                wiring += Rotor.shift(char, 1, self.alphabet)
+                wiring += Rotor.shift(char, 1, self.alphabet_list)
             # Add one to dot position, make sure we don't exceed the lenght of the alphabet
             self.wiring = wiring
-            self.dot_position = (self.dot_position + 1) % len(self.alphabet)
+            self.dot_position = (self.dot_position + 1) % len(self.alphabet_list)
             logging.debug("Wiring shifted up the alphabet: " + wiring)
             logging.debug("New dot position: " + str(self.dot_position))
         i = 0
         # While the letter at the dot position doesn't match with the ringstellung
-        while not self.wiring[self.dot_position] == self.alphabet[ring % len(self.wiring)]:
+        while not self.wiring[self.dot_position] == self.alphabet_list[ring % len(self.wiring)]:
             i += 1
             # Rotate the wiring
             self.wiring = self.wiring[-1:] + self.wiring[:-1]
