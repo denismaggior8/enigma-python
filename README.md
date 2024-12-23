@@ -20,7 +20,6 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
-| Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
 | ETW "QWERTZ"               | qwertzuioasdfghjkpyxcvbnml 	        | N/A     	|   ✅           	|
 | ETW "JWULCM"               | jwulcmnohpqzyxiradkegvbtsf 	        | N/A     	|   ✅           	|
 | Rotor I                    | lpgszmhaeoqkvxrfybutnicjdw 	        | y     	|   ✅           	|

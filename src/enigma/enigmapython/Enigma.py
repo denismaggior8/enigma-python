@@ -43,10 +43,22 @@ class Enigma(Observer):
         scrambled_char = self.process_char(char)
         return scrambled_char           
 
+    """
+         UKW   Rotor  Rotor  Rotor   ETW  PLUGBOARD
+                 N      2      1      
+         ___    ___    ___    ___    ___    ___
+        |   |  |   |  |   |  |   |  |   |  |   |
+        |  -|--|---|--|---|--|---|--|---|--|---|-- < Key
+        | | |  |   |  |   |  |   |  |   |  |   |
+        | | |  |   |  |   |  |   |  |   |  |   |
+        |  -|--|---|--|---|--|---|--|---|--|---|-- > Lamp
+        |   |  |   |  |   |  |   |  |   |  |   |
+         ---    ---    ---    ---    ---    ---
+    """
     def process_char(self, char):
         scrambled_char = self.plugboard.switch_char(char)
         logging.debug("Scrambled letter from plugboard: {}".format(scrambled_char))
-        scrambled_char = self.etw.switch_char(scrambled_char,0)
+        scrambled_char = self.etw.process_char_forward(scrambled_char,0)
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
         iteration = 0
         for rotor in self.rotors:
@@ -66,14 +78,10 @@ class Enigma(Observer):
             iteration -=1
             logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration+1),scrambled_char))   
         
-        
         # Processing rotor 1 returning signal by ETW
-        myint = (self.alphabet_list.index(scrambled_char)-self.rotors[iteration].position) % len(self.alphabet_list)
-        myletter = self.alphabet_list[myint]
-        myint1 = self.etw.wiring.index(myletter)
-        scrambled_char = self.alphabet_list[myint1]
-
+        scrambled_char = self.etw.process_char_backward(scrambled_char,self.rotors[iteration].position)
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
+        
         scrambled_char = self.plugboard.switch_char(scrambled_char)
         logging.debug("Scrambled letter from plugboard: {}".format(scrambled_char))
         logging.info("Scrambled letter to lamp: {}".format(scrambled_char))
