@@ -142,6 +142,7 @@ In the case you leveraged **enigmapython** API in a project, either public or no
     - PyEnigma https://pypi.org/project/pyenigma/
     - 101 computing https://www.101computing.net/enigma-machine-emulator/ 
     - DenCode Enigma simulator https://dencode.com/cipher/enigma
+    - Enigma simulation in Javascript/HTML by Daniel Palloks https://people.physik.hu-berlin.de/~palloks/js/enigma/index_en.html
     
     for having helped me testing the correctness of the generated ciphertexts 
 
