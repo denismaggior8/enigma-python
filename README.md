@@ -16,6 +16,17 @@ Welcome to **enigmapython**, a Python package designed to emulate the legendary 
 
 The following Enigma machine models (along with their rotors, reflectors and plugboards) have been implemented:
 
+### Enigma D
+
+| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| ETW "QWERTZ"               | qwertzuioasdfghjkpyxcvbnml 	        | N/A     	|   ✅           	|
+| ETW "JWULCM"               | jwulcmnohpqzyxiradkegvbtsf 	        | N/A     	|   ✅           	|
+| Rotor I                    | lpgszmhaeoqkvxrfybutnicjdw 	        | y     	|   ✅           	|
+| Rotor II                   | slvgbtfxjqohewirzyamkpcndu 	        | e     	|   ✅           	|
+| Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo 	        | n     	|   ✅           	|
+| Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
+
 ### Enigma I 
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
@@ -101,7 +112,16 @@ Please have a look of the [examples](https://github.com/denismaggior8/enigma-pyt
 
 ## Documentation
 
-TBD, for now... code (and comments) are the documentation
+An initial documentation draft can be found [here](./docs/README.md), but in most cases examples, code (and comments) are better than the documentation
+
+## Known implementations
+
+Here's a list containing all the known Enigma simulators that use the **enigmapython** API.
+
+- [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma M3 cypher machine. ![](img/retrocampus_enigma.png)
+
+In the case you leveraged **enigmapython** API in a project, either public or not, drop me an email at __denis.maggiorotto[at]gmail.com__ and I'll be happy to list you here.
+
 
 ## Known implementations
 
@@ -115,12 +135,13 @@ In the case you leveraged **enigmapython** API in a project, either public or no
 ## Credits/references
 
 - Early days experiments with Python and Enigma (where this repo comes from) can be found at: https://github.com/denismaggior8/enigma-cypher
-- Rotors wirings have been taken from Crypto Museum at this link  https://www.cryptomuseum.com/crypto/enigma/wiring.htm
+- Rotors wirings have been taken from **Crypto Museum** at this link  https://www.cryptomuseum.com/crypto/enigma/wiring.htm
 - Thanks to 
     - Piotte13 https://piotte13.github.io/enigma-cipher/
     - Cryptii https://cryptii.com
     - PyEnigma https://pypi.org/project/pyenigma/
     - 101 computing https://www.101computing.net/enigma-machine-emulator/ 
+    - DenCode Enigma simulator https://dencode.com/cipher/enigma
     
     for having helped me testing the correctness of the generated ciphertexts 
 
