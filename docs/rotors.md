@@ -1,3 +1,3 @@
-# Rotos
+# Rotors
 
 ![](./img/rotors.jpg)
