@@ -122,16 +122,6 @@ Here's a list containing all the known Enigma simulators that use the **enigmapy
 
 In the case you leveraged **enigmapython** API in a project, either public or not, drop me an email at __denis.maggiorotto[at]gmail.com__ and I'll be happy to list you here.
 
-
-## Known implementations
-
-Here's a list containing all the known Enigma simulators that use the **enigmapython** API.
-
-- [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma M3 cypher machine. ![](img/retrocampus_enigma.png)
-
-In the case you leveraged **enigmapython** API in a project, either public or not, drop me an email at __denis.maggiorotto[at]gmail.com__ and I'll be happy to list you here.
-
-
 ## Credits/references
 
 - Early days experiments with Python and Enigma (where this repo comes from) can be found at: https://github.com/denismaggior8/enigma-cypher
@@ -143,6 +133,7 @@ In the case you leveraged **enigmapython** API in a project, either public or no
     - 101 computing https://www.101computing.net/enigma-machine-emulator/ 
     - DenCode Enigma simulator https://dencode.com/cipher/enigma
     - Enigma simulation in Javascript/HTML by Daniel Palloks https://people.physik.hu-berlin.de/~palloks/js/enigma/index_en.html
+    - Enigma B A133 simulation in Javascript/HTML by Daniel Palloks  https://people.physik.hu-berlin.de/~palloks/js/enigma/enigma-a133_v261_en.html
     
     for having helped me testing the correctness of the generated ciphertexts 
 
