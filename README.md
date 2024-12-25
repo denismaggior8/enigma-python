@@ -16,6 +16,17 @@ Welcome to **enigmapython**, a Python package designed to emulate the legendary 
 
 The following Enigma machine models (along with their rotors, reflectors and plugboards) have been implemented:
 
+### Enigma B (Sweden, s/n: A-133)
+
+| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| ETW       (passthrough)    | abcdefghijklmnopqrstuvxyzåäö 	    | N/A     	|   ✅           	|
+| Rotor I                    | psbgöxqjdhoäucfrtezvåinlymka         | ä     	|   ✅           	|
+| Rotor II                   | chnsyöadmotrzxbäigåekqupflvj 	    | ä     	|   ✅           	|
+| Rotor III                  | åvqiaäxrjbözspcfyunthdomekgl 	    | ä     	|   ✅           	|
+| Reflector UKW              | ldgbäncpskjavfzhxuiårmqöotey 	    | N/A     	|   ✅           	|
+
+
 ### Enigma D
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
