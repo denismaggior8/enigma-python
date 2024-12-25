@@ -8,7 +8,6 @@ import unittest
 
 
 class TestEnigmaD(unittest.TestCase):
-     
     def test_enigma_B_rotors_I_I_I_small_string(self):
         rotor1 = EnigmaB_A133RotorI()
         rotor2 = EnigmaB_A133RotorI()

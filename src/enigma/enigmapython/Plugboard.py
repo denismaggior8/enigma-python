@@ -3,15 +3,14 @@ from string import ascii_lowercase
 
 class Plugboard:
     wiring = None
-    alphabet = None
+    alphabet_list = None
 
     def switch_char(self,char):
-        alphabet = list(ascii_lowercase)
-        return self.wiring[alphabet.index(char)]
+        return self.wiring[self.alphabet_list.index(char)]
 
-    def __init__(self, wiring, alphabet=ascii_lowercase):
+    def __init__(self, wiring, alphabet):
         self.wiring = wiring
-        self.alphabet = alphabet
+        self.alphabet_list = list(alphabet)
 
     def __str__(self):
         return self.wiring
