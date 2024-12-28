@@ -9,4 +9,9 @@ class ReflectorZUKW(Reflector):
     tag = "D_UKW"
     
     def __init__(self):
-        super().__init__(self.wiring,0,notch_indexes=self.notch_indexes,alphabet=Alphabets.lookup.get("enigma_z_10chars_numbers"))
+        super().__init__(
+                            self.wiring,
+                            0,
+                            notch_indexes=self.notch_indexes,
+                            alphabet=Alphabets.lookup.get("enigma_z_10chars_numbers")
+                        )
