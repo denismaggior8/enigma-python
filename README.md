@@ -39,7 +39,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
 
 
-### Enigma Z
+### Enigma Z (Z30 Mark I)
 
 | Scrambler 	             | Wiring                     | Notch | Implemented |
 |-------	                 |----------------------------|-------|-------------|
