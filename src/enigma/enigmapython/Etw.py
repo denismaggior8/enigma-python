@@ -1,5 +1,5 @@
 
-from string import ascii_lowercase
+from .Alphabets import Alphabets
 
 class Etw:
     wiring = None
@@ -14,7 +14,7 @@ class Etw:
         myint1 = self.wiring.index(myletter)
         return self.alphabet_list[myint1]
     
-    def __init__(self, wiring, alphabet=ascii_lowercase):
+    def __init__(self, wiring, alphabet=Alphabets.lookup.get("latin_i18n_26chars_lowercase")):
         self.wiring = wiring
         self.alphabet_list = list(alphabet)
 

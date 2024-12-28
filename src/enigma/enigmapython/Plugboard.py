@@ -1,5 +1,5 @@
 
-from string import ascii_lowercase
+from .Alphabets import Alphabets
 
 class Plugboard:
     wiring = None

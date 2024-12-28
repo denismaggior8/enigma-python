@@ -1,5 +1,5 @@
 from .Observer import Observer
-from string import ascii_lowercase
+from .Alphabets import Alphabets
 import logging
 
 
@@ -13,7 +13,7 @@ class Enigma(Observer):
 
     alphabet_list = None
 
-    def __init__(self, plugboard, rotors, reflector,etw,auto_increment_rotors=False, alphabet=ascii_lowercase):
+    def __init__(self, plugboard, rotors, reflector,etw,auto_increment_rotors=False, alphabet=Alphabets.lookup.get("latin_i18n_26chars_lowercase")):
         self.plugboard = plugboard
         self.rotors = rotors
         self.reflector = reflector

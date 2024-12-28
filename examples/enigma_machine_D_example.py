@@ -19,7 +19,7 @@ rotor1 = EnigmaDRotorI()
 rotor2 = EnigmaDRotorI()
 rotor3 = EnigmaDRotorI()
 reflector = ReflectorDUKW()
-etw = EnigmaDEtw_JWULCM()
+etw = EnigmaDEtw_JWULCM() # You could use the EnigmaDEtw_QWERTZ implementation instead
 
 # Setup Enigma D machine
 enigma = EnigmaD(rotor3, rotor2, rotor1, reflector, etw, True)

@@ -1,6 +1,6 @@
 from .Observable import Observable
 from .Utils import Utils
-from string import ascii_lowercase
+from .Alphabets import Alphabets
 import logging
 
 class Rotor(Observable):
@@ -39,7 +39,7 @@ class Rotor(Observable):
         scrambled_letter_index_from_rotor = dictionary.index(dictionary[(self.position + letter_index) % len(dictionary)])
         return dictionary[scrambled_letter_index_from_rotor]
 
-    def __init__(self, wiring, position = 0, ring = 0, notch_indexes=[], alphabet=ascii_lowercase):
+    def __init__(self, wiring, position = 0, ring = 0, notch_indexes=[], alphabet=Alphabets.lookup.get("latin_i18n_26chars_lowercase")):
         self.wiring = wiring
         self.position = position % len(wiring)
         self.notch_indexes = notch_indexes
