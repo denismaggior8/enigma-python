@@ -59,7 +59,7 @@ class Rotor(Observable):
 
     def set_rotor_ring(self, ring):
         self.wiring = self.original_wiring
-        self.dot_position = list(self.wiring).index("a")
+        self.dot_position = list(self.wiring).index(self.alphabet_list[0])
         logging.debug("Dot position: " + str(self.dot_position))
         for i in range(0, ring):
         # Set temporary wiring variable
