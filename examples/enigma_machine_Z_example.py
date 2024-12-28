@@ -29,4 +29,4 @@ enigma = EnigmaZ(rotor3, rotor2, rotor1, reflector, etw, True)
 # Test the Enigma machines
 if __name__ == "__main__":
 
-   print(enigma.input_string("1"))
+   print(enigma.input_string("23041981"))

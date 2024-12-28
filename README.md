@@ -155,7 +155,8 @@ In the case you leveraged **enigmapython** API in a project, either public or no
     - 101 computing https://www.101computing.net/enigma-machine-emulator/ 
     - DenCode Enigma simulator https://dencode.com/cipher/enigma
     - Enigma simulation in Javascript/HTML by Daniel Palloks https://people.physik.hu-berlin.de/~palloks/js/enigma/index_en.html
-    - Enigma B A133 simulation in Javascript/HTML by Daniel Palloks  https://people.physik.hu-berlin.de/~palloks/js/enigma/enigma-a133_v261_en.html
+    - Enigma B A133 simulation in Javascript/HTML by Daniel Palloks https://people.physik.hu-berlin.de/~palloks/js/enigma/enigma-a133_v261_en.html
+    - Enigma Z simulation in Javascript/HTML by Daniel Palloks https://people.physik.hu-berlin.de/~palloks/js/enigma/enigma-z_v262b_en.html
     
     for having helped me testing the correctness of the generated ciphertexts 
 
