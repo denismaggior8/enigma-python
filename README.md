@@ -38,6 +38,17 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo 	        | n     	|   ✅           	|
 | Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
 
+
+### Enigma Z
+
+| Scrambler 	             | Wiring                     | Notch | Implemented |
+|-------	                 |----------------------------|-------|-------------|
+| ETW       (passthrough)    | 1234567890 	    | N/A     |   ✅  |
+| Rotor I                    | 6418270359       | 9       |   ✅  |
+| Rotor II                   | 5841097632 	    | 9       |   ✅  |
+| Rotor III                  | 3581620794 	    | 9       |   ✅  |
+| Reflector UKW              | 5079183642 	    | N/A     |   ✅  |
+
 ### Enigma I 
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
