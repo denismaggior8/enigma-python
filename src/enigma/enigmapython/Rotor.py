@@ -1,7 +1,5 @@
 from .Observable import Observable
 from .Scrambler import Scrambler
-from .Utils import Utils
-from .Alphabets import Alphabets
 import logging
 
 class Rotor(Scrambler,Observable):
@@ -28,10 +26,11 @@ class Rotor(Scrambler,Observable):
 
     def __init__(self, wiring, notch_indexes, alphabet, position = 0, ring = 0):
         # Scrambler properties
-        self.wiring = wiring
-        self.original_wiring = wiring
-        self.ring = ring
-        self.alhabet = alphabet
+        super().__init__(
+            wiring = wiring,
+            ring = ring,
+            alphabet = alphabet
+        )
         # Rotor properties
         self.position = position % len(wiring)
         self.notch_indexes = notch_indexes
