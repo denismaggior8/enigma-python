@@ -27,14 +27,17 @@ class Rotor(Scrambler,Observable):
         self.rotations_counter = 0
 
     def __init__(self, wiring, notch_indexes, alphabet, position = 0, ring = 0):
+        # Scrambler properties
         self.wiring = wiring
+        self.original_wiring = wiring
+        self.ring = ring
+        self.alhabet = alphabet
+        # Rotor properties
         self.position = position % len(wiring)
         self.notch_indexes = notch_indexes
         self.double_step_triggered = False
         self.rotations_counter = 0
-        self.original_wiring = wiring
-        self.ring = ring
-        self.alhabet = alphabet
+        
 
 
     def __str__(self):

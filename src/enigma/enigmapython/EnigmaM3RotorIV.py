@@ -1,7 +1,7 @@
 from .Rotor import Rotor
-from .EnigmaIRotorIV import EnigmaIRotorIV
+from .Alphabets import Alphabets
 
-class EnigmaM3RotorIV(EnigmaIRotorIV):
+class EnigmaM3RotorIV(Rotor):
 
     wiring = 'esovpzjayquirhxlnftgkdcmwb'
     notch_indexes = [9]
