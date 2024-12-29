@@ -5,6 +5,7 @@ class EnigmaIRotorIV(Rotor):
     
     wiring = 'esovpzjayquirhxlnftgkdcmwb'
     notch_indexes = [9]
+    
     tag = "I_IV"
 
     def __init__(self, position = 0, ring = 0):

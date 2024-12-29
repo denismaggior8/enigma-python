@@ -13,13 +13,13 @@ class TestReflectorUKWA(unittest.TestCase):
     def test_reflector_a_scramble_letter_index_z(self):
         reflector = ReflectorUKWA()
         char = "z"
-        scrambled_char = reflector.scramble_letter_index(reflector.wiring,list(ascii_lowercase).index(char))
+        scrambled_char = reflector.scramble_letter_index(reflector.wiring,list(ascii_lowercase).index(char),0)
         self.assertEqual(scrambled_char,"d","Scramble error")
 
     def test_reflector_a_scramble_letter_index_e(self):
         reflector = ReflectorUKWA()
         char = "e"
-        scrambled_char = reflector.scramble_letter_index(reflector.wiring,list(ascii_lowercase).index(char))
+        scrambled_char = reflector.scramble_letter_index(reflector.wiring,list(ascii_lowercase).index(char),0)
         self.assertEqual(scrambled_char,"a","Scramble error")
 
 if __name__ == "__main__":
