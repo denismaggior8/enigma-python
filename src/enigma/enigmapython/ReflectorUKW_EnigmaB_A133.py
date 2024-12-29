@@ -8,4 +8,8 @@ class ReflectorUKW_EnigmaB_A133(Reflector):
     tag = "B_A133_UKW"
     
     def __init__(self):
-        super().__init__(self.wiring,0, alphabet=Alphabets.lookup.get("enigma_b_a133_28chars_lowercase"))  
+        super().__init__(
+                            self.wiring,
+                            ring=0, 
+                            alphabet=Alphabets.lookup.get("enigma_b_a133_28chars_lowercase")
+                        )  

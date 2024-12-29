@@ -30,6 +30,3 @@ enigma = EnigmaB_A133(rotor3, rotor2, rotor1, reflector, etw, True)
 if __name__ == "__main__":
 
    print(enigma.input_string("ettbesettbesettbesettbesettbesettbesettbesettbesettbesettbesettbesettbes"))
-   print(enigma.rotors[0])
-   print(enigma.rotors[1])
-   print(enigma.rotors[2])

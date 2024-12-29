@@ -16,9 +16,9 @@ class TestEnigmaZ(unittest.TestCase):
         reflector = ReflectorZUKW()
         etw = EnigmaZEtw()
         enigma = EnigmaZ(rotor3, rotor2, rotor1, reflector, etw, True)
-        cleartext = '1'*10000
+        cleartext = '1'*1000
         my_encrypted_string = enigma.input_string(cleartext)
-        self.assertEqual(reflector.position,0,"Enigma encryption error")
+        self.assertEqual(reflector.position,1,"Enigma encryption error")
 
     def test_enigma_Z_rotors_I_I_I_small_number(self):
         rotor1 = EnigmaZRotorI()

@@ -63,18 +63,18 @@ class Enigma(Observer):
         iteration = 0
         for rotor in self.rotors:
             if iteration == 0:
-                scrambled_char = rotor.scramble_letter_index(rotor.wiring,self.alphabet_list.index(scrambled_char))
+                scrambled_char = rotor.scramble_letter_index(rotor.wiring,self.alphabet_list.index(scrambled_char), rotor.position)
             else:
-                scrambled_char = rotor.scramble_letter_index(rotor.wiring,self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position) 
+                scrambled_char = rotor.scramble_letter_index(rotor.wiring,self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position, rotor.position) 
             iteration +=1
             logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration),scrambled_char))
-        scrambled_char = self.reflector.scramble_letter_index(self.reflector.wiring,(self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position))
+        scrambled_char = self.reflector.scramble_letter_index(self.reflector.wiring,(self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position), 0)
         logging.debug("Scrambled letter from reflector: {}".format(scrambled_char))
         for rotor in reversed(self.rotors):
             if iteration == len(self.rotors):
-                scrambled_char = rotor.scramble_letter_index(self.alphabet_list,(rotor.wiring.index(self.shift_letter(scrambled_char,rotor.position,self.alphabet_list))-rotor.position))
+                scrambled_char = rotor.scramble_letter_index(self.alphabet_list,(rotor.wiring.index(self.shift_letter(scrambled_char,rotor.position,self.alphabet_list))-rotor.position), rotor.position)
             else:
-                scrambled_char = rotor.scramble_letter_index(self.alphabet_list,(rotor.wiring.index(self.shift_letter(scrambled_char, (rotor.position - self.rotors[iteration].position),self.alphabet_list)) - rotor.position))
+                scrambled_char = rotor.scramble_letter_index(self.alphabet_list,(rotor.wiring.index(self.shift_letter(scrambled_char, (rotor.position - self.rotors[iteration].position),self.alphabet_list)) - rotor.position), rotor.position)
             iteration -=1
             logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration+1),scrambled_char))   
         
@@ -99,7 +99,3 @@ class Enigma(Observer):
     @staticmethod        
     def shift_letter(letter,shift,alphabet_list):
         return alphabet_list[(alphabet_list.index(letter)+shift) % len(alphabet_list)]
-    
-
-
-
