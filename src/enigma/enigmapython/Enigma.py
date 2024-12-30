@@ -58,7 +58,8 @@ class Enigma(Observer):
     def process_char(self, char):
         scrambled_char = self.plugboard.switch_char(char)
         logging.debug("Scrambled letter from plugboard: {}".format(scrambled_char))
-        scrambled_char = self.etw.process_char_forward(scrambled_char,0)
+        #scrambled_char = self.etw.process_char_forward(scrambled_char,0)
+        scrambled_char = self.etw.scramble_letter_index(self.etw.wiring,self.alphabet_list.index(scrambled_char), 0)
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
         iteration = 0
         for rotor in self.rotors:
@@ -79,7 +80,7 @@ class Enigma(Observer):
             logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration+1),scrambled_char))   
         
         # Processing rotor 1 returning signal by ETW
-        scrambled_char = self.etw.process_char_backward(scrambled_char,self.rotors[iteration].position)
+        scrambled_char = self.etw.scramble_letter_index(self.alphabet_list,(self.etw.wiring.index(self.shift_letter(scrambled_char, (0 - self.rotors[iteration].position),self.alphabet_list))), 0)
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
         
         scrambled_char = self.plugboard.switch_char(scrambled_char)
