@@ -1,12 +1,13 @@
 
 from .Alphabets import Alphabets
+from .Scrambler import Scrambler
 
-class Plugboard:
+class Plugboard(Scrambler):
     wiring = None
     alphabet_list = None
 
     def switch_char(self,char):
-        return self.wiring[self.alphabet_list.index(char)]
+        return self.scramble_char(self.wiring, self.alphabet_list.index(char), 0)
 
     def __init__(self, wiring, alphabet):
         self.wiring = wiring

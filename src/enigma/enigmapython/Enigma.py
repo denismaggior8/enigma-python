@@ -56,9 +56,8 @@ class Enigma(Observer):
          ---    ---    ---    ---    ---    ---
     """
     def process_char(self, char):
-        scrambled_char = self.plugboard.switch_char(char)
+        scrambled_char = self.plugboard.scramble_char(self.plugboard.wiring,self.plugboard.alphabet_list.index(char),0)
         logging.debug("Scrambled letter from plugboard: {}".format(scrambled_char))
-        #scrambled_char = self.etw.process_char_forward(scrambled_char,0)
         scrambled_char = self.etw.scramble_char(self.etw.wiring,self.alphabet_list.index(scrambled_char), 0)
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
         iteration = 0
