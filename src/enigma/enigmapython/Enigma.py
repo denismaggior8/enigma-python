@@ -59,28 +59,28 @@ class Enigma(Observer):
         scrambled_char = self.plugboard.switch_char(char)
         logging.debug("Scrambled letter from plugboard: {}".format(scrambled_char))
         #scrambled_char = self.etw.process_char_forward(scrambled_char,0)
-        scrambled_char = self.etw.scramble_letter_index(self.etw.wiring,self.alphabet_list.index(scrambled_char), 0)
+        scrambled_char = self.etw.scramble_char(self.etw.wiring,self.alphabet_list.index(scrambled_char), 0)
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
         iteration = 0
         for rotor in self.rotors:
             if iteration == 0:
-                scrambled_char = rotor.scramble_letter_index(rotor.wiring,self.alphabet_list.index(scrambled_char), rotor.position)
+                scrambled_char = rotor.scramble_char(rotor.wiring,self.alphabet_list.index(scrambled_char), rotor.position)
             else:
-                scrambled_char = rotor.scramble_letter_index(rotor.wiring,self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position, rotor.position) 
+                scrambled_char = rotor.scramble_char(rotor.wiring,self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position, rotor.position) 
             iteration +=1
             logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration),scrambled_char))
-        scrambled_char = self.reflector.scramble_letter_index(self.reflector.wiring,(self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position), 0)
+        scrambled_char = self.reflector.scramble_char(self.reflector.wiring,(self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position), 0)
         logging.debug("Scrambled letter from reflector: {}".format(scrambled_char))
         for rotor in reversed(self.rotors):
             if iteration == len(self.rotors):
-                scrambled_char = rotor.scramble_letter_index(self.alphabet_list,(rotor.wiring.index(self.shift_letter(scrambled_char,rotor.position,self.alphabet_list))-rotor.position), rotor.position)
+                scrambled_char = rotor.scramble_char(self.alphabet_list,(rotor.wiring.index(self.shift_letter(scrambled_char,rotor.position,self.alphabet_list))-rotor.position), rotor.position)
             else:
-                scrambled_char = rotor.scramble_letter_index(self.alphabet_list,(rotor.wiring.index(self.shift_letter(scrambled_char, (rotor.position - self.rotors[iteration].position),self.alphabet_list)) - rotor.position), rotor.position)
+                scrambled_char = rotor.scramble_char(self.alphabet_list,(rotor.wiring.index(self.shift_letter(scrambled_char, (rotor.position - self.rotors[iteration].position),self.alphabet_list)) - rotor.position), rotor.position)
             iteration -=1
             logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration+1),scrambled_char))   
         
         # Processing rotor 1 returning signal by ETW
-        scrambled_char = self.etw.scramble_letter_index(self.alphabet_list,(self.etw.wiring.index(self.shift_letter(scrambled_char, (0 - self.rotors[iteration].position),self.alphabet_list))), 0)
+        scrambled_char = self.etw.scramble_char(self.alphabet_list,(self.etw.wiring.index(self.shift_letter(scrambled_char, (0 - self.rotors[iteration].position),self.alphabet_list))), 0)
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
         
         scrambled_char = self.plugboard.switch_char(scrambled_char)

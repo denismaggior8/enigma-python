@@ -8,9 +8,9 @@ class Scrambler:
     set_scrambler_ring = None
     original_wiring = None
 
-    def scramble_letter_index(self, dictionary, letter_index, shift):
-        scrambled_letter_index_from_scrambler = dictionary.index(dictionary[(shift + letter_index) % len(dictionary)])
-        return dictionary[scrambled_letter_index_from_scrambler]
+    def scramble_char(self, dictionary, letter_index, shift):
+        scrambled_letter_index = dictionary.index(dictionary[(shift + letter_index) % len(dictionary)])
+        return dictionary[scrambled_letter_index]
     
     def __init__(self, wiring, alphabet, ring):
         self.wiring = wiring
