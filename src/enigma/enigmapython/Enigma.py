@@ -82,7 +82,7 @@ class Enigma(Observer):
         scrambled_char = self.etw.scramble_char(self.alphabet_list,(self.etw.wiring.index(self.shift_letter(scrambled_char, (0 - self.rotors[iteration].position),self.alphabet_list))), 0)
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
         
-        scrambled_char = self.plugboard.switch_char(scrambled_char)
+        scrambled_char = self.plugboard.scramble_char(self.plugboard.wiring,self.plugboard.alphabet_list.index(scrambled_char),0)
         logging.debug("Scrambled letter from plugboard: {}".format(scrambled_char))
         logging.info("Scrambled letter to lamp: {}".format(scrambled_char))
         return scrambled_char
