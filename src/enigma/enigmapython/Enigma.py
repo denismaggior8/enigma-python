@@ -1,4 +1,5 @@
 from .Observer import Observer
+from .RotatingReflector import RotatingReflector
 from .Alphabets import Alphabets
 import logging
 
@@ -23,6 +24,8 @@ class Enigma(Observer):
         if auto_increment_rotors == True:
             for rotor in rotors:
                 rotor.add_observer(self)
+        #if(isinstance(reflector,RotatingReflector)):
+        #    reflector.add_observer(self)
 
     def input_string(self,str):
         output_string = ""
@@ -34,7 +37,7 @@ class Enigma(Observer):
         logging.info("Input char: {}".format(char))
         ## Triggering rotors extra rotation due to double step issue
         for rotor in self.rotors:
-            ## Rotor extra rotation should be done only if the rotor is not the last one in the list
+            ## Rotor extra rotation should be done only if it's not the last one in the list
             if rotor.double_step_triggered == True and self.rotors.index(rotor) < len(self.rotors)-1:
                     rotor.increment_position()
                     rotor.double_step_triggered = False
@@ -95,6 +98,9 @@ class Enigma(Observer):
             # Engaging the enigma double step issue, only if the next rotor position is in its notch indexe/s
             if self.rotors[self.rotors.index(observable)+1].position in self.rotors[self.rotors.index(observable)+1].notch_indexes:
                 self.rotors[self.rotors.index(observable)+1].double_step_triggered = True
+        # If ther's not rotor N+1 but reflector is rotating, then increment reflector position by 1
+        elif observable in self.rotors and self.rotors.index(observable) == len(self.rotors)-1 and isinstance(self.reflector,RotatingReflector):
+            self.reflector.increment_position()
         
     @staticmethod        
     def shift_letter(letter,shift,alphabet_list):
