@@ -24,8 +24,8 @@ class Enigma(Observer):
         if auto_increment_rotors == True:
             for rotor in rotors:
                 rotor.add_observer(self)
-        #if(isinstance(reflector,RotatingReflector)):
-        #    reflector.add_observer(self)
+        if(isinstance(reflector,RotatingReflector)):
+            reflector.add_observer(self)
 
     def input_string(self,str):
         output_string = ""
@@ -41,6 +41,9 @@ class Enigma(Observer):
             if rotor.double_step_triggered == True and self.rotors.index(rotor) < len(self.rotors)-1:
                     rotor.increment_position()
                     rotor.double_step_triggered = False
+            if rotor.double_step_triggered == True and self.rotors.index(rotor) == len(self.rotors)-1 and isinstance(self.reflector,RotatingReflector):
+                    rotor.notify_observers()
+                    #rotor.double_step_triggered = False
         if self.auto_increment_rotors == True:
             self.rotors[0].increment_position()
         scrambled_char = self.process_char(char)

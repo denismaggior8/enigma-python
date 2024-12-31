@@ -44,11 +44,12 @@ if __name__ == "__main__":
       print("Rotors[2].position: {}".format(enigma.rotors[2].position))
       print("Rotors[2].double_step_triggered: {}".format(enigma.rotors[2].double_step_triggered))
       print("Reflector.position: {}".format(enigma.reflector.position))
-      #scrambled_string_from_enigma += enigma.input_string('0')
-      #print("Rotors[0].position: {}".format(enigma.rotors[0].position))
-      #print("Rotors[1].position: {}".format(enigma.rotors[1].position))
-      #print("Rotors[2].position: {}".format(enigma.rotors[2].position))
-      #print("Reflector.position: {}".format(enigma.reflector.position))
+      scrambled_string_from_enigma += enigma.input_string('0')
+      print("Rotors[0].position: {}".format(enigma.rotors[0].position))
+      print("Rotors[1].position: {}".format(enigma.rotors[1].position))
+      print("Rotors[2].position: {}".format(enigma.rotors[2].position))
+      print("Rotors[2].double_step_triggered: {}".format(enigma.rotors[2].double_step_triggered))
+      print("Reflector.position: {}".format(enigma.reflector.position))
       print(Utils.find_divergence(scrambled_string_from_enigma, scrambled_string_from_website))
 
 
