@@ -2,6 +2,34 @@ from importlib import import_module
 
 class Utils:
 
+    def find_divergence(str1, str2):
+        """
+        Finds the index where two strings first diverge, 
+        and the characters at that index in both strings.
+        
+        Parameters:
+        str1 (str): The first string.
+        str2 (str): The second string.
+        
+        Returns:
+        tuple: (index, char1, char2) where index is the position of divergence,
+            char1 is the character in str1 at the divergence,
+            and char2 is the character in str2 at the divergence.
+            If the strings only diverge in length, char1 and char2 will be None.
+            If the strings are identical, returns None.
+        """
+        # Iterate through both strings up to the length of the shorter string
+        for i in range(min(len(str1), len(str2))):
+            if str1[i] != str2[i]:
+                return i, str1[i], str2[i]  # Return the index and differing characters
+        
+        # If the strings differ in length
+        if len(str1) != len(str2):
+            return min(len(str1), len(str2)), None, None
+        
+        # If the strings are identical
+        return None
+
     @staticmethod
     def find_all_subclasses(cls):
         return set(cls.__subclasses__()).union(

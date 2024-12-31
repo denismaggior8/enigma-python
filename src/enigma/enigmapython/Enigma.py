@@ -98,7 +98,7 @@ class Enigma(Observer):
             # Engaging the enigma double step issue, only if the next rotor position is in its notch indexe/s
             if self.rotors[self.rotors.index(observable)+1].position in self.rotors[self.rotors.index(observable)+1].notch_indexes:
                 self.rotors[self.rotors.index(observable)+1].double_step_triggered = True
-        # If ther's not rotor N+1 but reflector is rotating, then increment its position by 1
+        # If this is the last rotor and reflector is rotating, then increment its position by 1
         elif observable in self.rotors and self.rotors.index(observable) == len(self.rotors)-1 and isinstance(self.reflector,RotatingReflector):
             self.reflector.increment_position()
             logging.debug("Rotating reflector position has been incremented by 1")
