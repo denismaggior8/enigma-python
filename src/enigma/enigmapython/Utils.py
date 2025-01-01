@@ -45,8 +45,8 @@ class Utils:
 
         # Crea il diagramma con le parti dinamiche
         diagram = f"""
-                UKW   {rotor_labels}   ETW PLUGBOARD
-                        {rotor_numbers}      
+                 UKW   {rotor_labels}   ETW PLUGBOARD
+                         {rotor_numbers}      
                  ___    {rotor_walls_top}    ___    ___
                 |  _|__{rotor_wiring}|___|__|___|____ Key <
                 | | |  {rotor_walls}  |   |  |   |
