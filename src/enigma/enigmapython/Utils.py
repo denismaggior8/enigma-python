@@ -1,7 +1,67 @@
 from importlib import import_module
+from rich.console import Console
+from rich.text import Text
 
 class Utils:
 
+    @staticmethod
+    def render_enigma_diagram(enigma):
+        """
+        Render the Enigma Z ASCII diagram with a variable number of rotors.
+        UKW and the first rotor are always visible. The rotor numbers start from 0.
+
+        Parameters:
+        - rotor_count (int): Number of rotors to display (minimum 1).
+        """
+        console = Console()
+
+        rotor_count = len(enigma.rotors)
+        # Assicurarsi che ci sia almeno 1 rotore
+        if rotor_count < 1:
+            rotor_count = 1
+
+        # Etichette per i rotori (dove i numeri dei rotori partono da 0)
+        rotor_labels = "  ".join([f"Rotor" for i in range(rotor_count - 1, -1, -1)])
+        rotor_numbers = "      ".join([f"{i}" for i in range(rotor_count - 1, -1, -1)])
+
+        # Diagramma dei rotori (dove "___" è la parte superiore di ogni rotore)
+        rotor_walls_top = "    ".join(["___"] * rotor_count)
+
+        # Diagramma dei rotori (dove "___" è la parte superiore di ogni rotore)
+        rotors_positions = "     ".join(["{:02}".format(enigma.rotors[i].position) for i in range(rotor_count - 1, -1, -1)])
+
+        # Diagramma dei rotori (dove "___" è la parte superiore di ogni rotore)
+        rotors_rings = "     ".join(["{:02}".format(enigma.rotors[i].ring) for i in range(rotor_count - 1, -1, -1)])
+
+
+        # Linea verticale per ogni rotore
+        rotor_walls = "  ".join(["|   |"] * rotor_count)
+
+        # Linea verticale per ogni rotore
+        rotor_walls_bottom = "  ".join(["|___|"] * rotor_count)
+
+        # Linea cablaggio per ogni rotore
+        rotor_wiring = "".join(["|___|__"] * rotor_count)
+
+        # Crea il diagramma con le parti dinamiche
+        diagram = f"""
+                UKW   {rotor_labels}   ETW PLUGBOARD
+                        {rotor_numbers}      
+                 ___    {rotor_walls_top}    ___    ___
+                |  _|__{rotor_wiring}|___|__|___|____ Key <
+                | | |  {rotor_walls}  |   |  |   |
+                | | |  {rotor_walls}  |   |  |   |
+                | |_|__{rotor_wiring}|___|__|___|____ Lamp >
+                |___|  {rotor_walls_bottom}  |___|  |___|
+
+        Pos.:            {rotors_positions}    
+        Ring:            {rotors_rings}
+        """
+
+        # Stampa il diagramma con rich
+        console.print(Text(diagram, style="bold"))
+
+    @staticmethod
     def find_divergence(str1, str2):
         """
         Finds the index where two strings first diverge, 
