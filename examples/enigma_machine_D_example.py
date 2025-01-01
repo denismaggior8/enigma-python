@@ -15,9 +15,9 @@ import sys
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 # Setup Enigma D components (compared to other machine types, Enigma D doesn't have a plugboard)
-rotor1 = EnigmaDRotorI()
-rotor2 = EnigmaDRotorI()
-rotor3 = EnigmaDRotorI()
+rotor1 = EnigmaDRotorI(ring=0,position=0)
+rotor2 = EnigmaDRotorI(ring=0,position=0)
+rotor3 = EnigmaDRotorI(ring=0,position=0)
 reflector = ReflectorDUKW()
 etw = EnigmaDEtw_JWULCM() # You could use the EnigmaDEtw_QWERTZ implementation instead
 

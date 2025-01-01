@@ -14,9 +14,9 @@ import sys
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 # Setup Enigma B components (compared to other machine types, Enigma B doesn't have a plugboard)
-rotor1 = EnigmaB_A133RotorI(0)
-rotor2 = EnigmaB_A133RotorI(0)
-rotor3 = EnigmaB_A133RotorI(0)
+rotor1 = EnigmaB_A133RotorI(ring=0,position=0)
+rotor2 = EnigmaB_A133RotorI(ring=0,position=0)
+rotor3 = EnigmaB_A133RotorI(ring=0,position=0)
 reflector = ReflectorUKW_EnigmaB_A133()
 etw = EnigmaB_A133Etw()
 

@@ -28,9 +28,9 @@ logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 # Setup Enigma I components
 plugboarI = PlugboardPassthrough()
-rotor1I = EnigmaIRotorI(0)
-rotor2I = EnigmaIRotorII(0)
-rotor3I = EnigmaIRotorIII(0)
+rotor1I = EnigmaIRotorI(ring=0,position=0)
+rotor2I = EnigmaIRotorII(ring=0,position=0)
+rotor3I = EnigmaIRotorIII(ring=0,position=0)
 reflectorI = ReflectorUKWB()
 etwI = EtwPassthrough()
 
