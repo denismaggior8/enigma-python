@@ -39,6 +39,9 @@ class Enigma(Observer):
             if rotor.double_step_triggered == True and self.rotors.index(rotor) < len(self.rotors)-1:
                     rotor.increment_position()
                     rotor.double_step_triggered = False
+            if isinstance(self.reflector, RotatingReflector) and self.reflector.double_step_triggered == True:
+                self.reflector.increment_position()
+                self.reflector.double_step_triggered = False
         if self.auto_increment_rotors == True:
             self.rotors[0].increment_position()
         scrambled_char = self.process_char(char)
@@ -96,6 +99,13 @@ class Enigma(Observer):
             # Engaging the enigma double step issue, only if the next rotor position is in its notch indexe/s
             if self.rotors[self.rotors.index(observable)+1].position in self.rotors[self.rotors.index(observable)+1].notch_indexes:
                 self.rotors[self.rotors.index(observable)+1].double_step_triggered = True
+        # If the rotor is the last one in the list, but the machine has a rotating reflector, increment it position by 1
+        if observable in self.rotors and self.rotors.index(observable) == len(self.rotors)-1 and isinstance(self.reflector, RotatingReflector):
+            self.reflector.increment_position()
+            logging.debug("Reflector has been incremented by 1 position")
+            # Engaging the enigma double step issue, only if the next rotor position is in its notch indexe/s
+            if self.reflector.position in self.reflector.notch_indexes:
+                self.reflector.double_step_triggered = True
         
     @staticmethod        
     def shift_letter(letter,shift,alphabet_list):
