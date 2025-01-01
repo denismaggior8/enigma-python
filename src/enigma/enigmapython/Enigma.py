@@ -24,8 +24,6 @@ class Enigma(Observer):
         if auto_increment_rotors == True:
             for rotor in rotors:
                 rotor.add_observer(self)
-        if(isinstance(reflector,RotatingReflector)):
-            reflector.add_observer(self)
 
     def input_string(self,str):
         output_string = ""
