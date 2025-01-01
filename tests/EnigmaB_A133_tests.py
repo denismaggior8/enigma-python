@@ -32,6 +32,17 @@ class TestEnigmaD(unittest.TestCase):
         my_encrypted_string = enigma.input_string(cleartext)
         self.assertEqual(my_encrypted_string,"ylpe","Enigma encryption error")
 
+    def test_enigma_B_rotors_I_turnover(self):
+        rotor1 = EnigmaB_A133RotorI()
+        rotor2 = EnigmaB_A133RotorI()
+        rotor3 = EnigmaB_A133RotorI()
+        reflector = ReflectorUKW_EnigmaB_A133()
+        etw = EnigmaB_A133Etw()
+        enigma = EnigmaB_A133(rotor3, rotor2, rotor1, reflector, etw, True)
+        cleartext = 'a'*12
+        my_encrypted_string = enigma.input_string(cleartext)
+        self.assertEqual(rotor2.position,1,"Enigma encryption error")
+
     #def test_enigma_B_rotors_I_II_III_long_string(self):
     #    rotor1 = EnigmaB_A133RotorI()
     #    rotor2 = EnigmaB_A133RotorII()
