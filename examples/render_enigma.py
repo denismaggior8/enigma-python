@@ -73,9 +73,9 @@ def render_enigma_diagram(enigma):
     rotor_walls_bottom = "     ".join(["+-----+"] * rotor_count)
 
     # Linea verticale per ogni rotore
-    rotor_walls_forward = "     ".join(["|  {}  |".format(enigma.rotors[i].journal[0]['output_char']) for i in range(rotor_count - 1, -1, -1)])
+    rotor_walls_forward = "     ".join(["|  {}  |".format(enigma.rotors[i].journal[-2]['output_char']) for i in range(rotor_count - 1, -1, -1)])
 
-    rotor_walls_backward = "     ".join(["|  {}  |".format(enigma.rotors[i].journal[1]['output_char']) for i in range(rotor_count - 1, -1, -1)])
+    rotor_walls_backward = "     ".join(["|  {}  |".format(enigma.rotors[i].journal[-1]['output_char']) for i in range(rotor_count - 1, -1, -1)])
 
     # Linea cablaggio per ogni rotore
     rotor_wiring_top = "".join(["|-----|--<--"] * rotor_count)
@@ -89,11 +89,11 @@ def render_enigma_diagram(enigma):
           +-----+     {rotor_walls_top}     +-----+     +-----+
           |     |     {rotor_walls}     |     |     |     |
           |  +--|--<--{rotor_wiring_top}|-----|--<--|-----|----< {enigma.last_input_char} <-- Key
-          |  |  {rotor_walls_forward}     |  {enigma.etw.journal[0]['output_char']}  |     |  {enigma.plugboard.journal[0]['output_char']}  |     |
+          |  |  {rotor_walls_forward}     |  {enigma.etw.journal[-2]['output_char']}  |     |  {enigma.plugboard.journal[-2]['output_char']}  |     |
           |  |  |     {rotor_walls}     |     |     |     |
           |  |  |     {rotor_walls}     |     |     |     |
-          |  |  |  {enigma.reflector.journal[0]['output_char']}  |     {rotor_walls_backward}     |  {enigma.etw.journal[1]['output_char']}  |     |     
-          |  +--|-->--{rotor_wiring_bottom}|-----|-->--|-----|----> {enigma.plugboard.journal[1]['output_char']} --> Lamp
+          |  |  |  {enigma.reflector.journal[-1]['output_char']}  |     {rotor_walls_backward}     |  {enigma.etw.journal[-1]['output_char']}  |     |     
+          |  +--|-->--{rotor_wiring_bottom}|-----|-->--|-----|----> {enigma.plugboard.journal[-1]['output_char']} --> Lamp
           |     |     {rotor_walls}     |     |     |     |
           +-----+     {rotor_walls_bottom}     +-----+     +-----+
 
@@ -114,19 +114,19 @@ rotor_count = 5  # Modifica questo valore per cambiare il numero di rotori
 #reflector = ReflectorZUKW()
 #etw = EnigmaZEtw()
 #enigma = EnigmaZ(rotor3, rotor2, rotor1, reflector, etw, True)
-#enigma.input_string('0'*40)
+#enigma.input_string('0'*41)
 #render_enigma_diagram(enigma)
 
-#plugboard = PlugboardPassthrough()
-#rotor1 = EnigmaM4RotorI(0)
-#rotor2 = EnigmaM4RotorII(0)
-#rotor3 = EnigmaM4RotorIII(0)
-#rotor4 = EnigmaM4RotorBeta(0)
-#reflector = ReflectorUKWB()
-#etw = EtwPassthrough()
-#enigma = EnigmaM4(plugboard, rotor1, rotor2, rotor3, rotor4, reflector, etw, True)
-#enigma.input_string('d')
-#render_enigma_diagram(enigma)
+plugboard = PlugboardPassthrough()
+rotor1 = EnigmaM4RotorI(0)
+rotor2 = EnigmaM4RotorII(0)
+rotor3 = EnigmaM4RotorIII(0)
+rotor4 = EnigmaM4RotorBeta(0)
+reflector = ReflectorUKWBThin()
+etw = EtwPassthrough()
+enigma = EnigmaM4(plugboard, rotor1, rotor2, rotor3, rotor4, reflector, etw, True)
+print(enigma.input_string('d'))
+render_enigma_diagram(enigma)
 
 # Setup logging
 #logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
