@@ -11,6 +11,7 @@ class Enigma(Observer):
     reflector = None
     etw = None
     auto_increment_rotors = False
+    last_input_char = None
 
     alphabet_list = None
 
@@ -33,6 +34,7 @@ class Enigma(Observer):
 
     def input_char(self,char):
         logging.info("Input char: {}".format(char))
+        self.last_input_char = char
         ## Triggering rotors extra rotation due to double step issue
         for rotor in self.rotors:
             ## Rotor extra rotation should be done only if it's not the last one in the list

@@ -1,6 +1,7 @@
 import logging
+from .Journaled import Journaled
 
-class Scrambler:
+class Scrambler(Journaled):
     wiring = None
     alphabet_list = None
     dot_position = None
@@ -8,16 +9,22 @@ class Scrambler:
     set_scrambler_ring = None
     original_wiring = None
 
-    def scramble_char(self, dictionary, letter_index, shift):
-        scrambled_letter_index = dictionary.index(dictionary[(shift + letter_index) % len(dictionary)])
-        return dictionary[scrambled_letter_index]
+    def scramble_char(self, dictionary, letter_index, shift): 
+        output_char_index = dictionary.index(dictionary[(shift + letter_index) % len(dictionary)])
+        output_char = dictionary[output_char_index]
+        super().append_to_journal({
+            'output_char': output_char
+        })
+        return output_char
     
     def __init__(self, wiring, alphabet, ring):
+        super().__init__()
         self.wiring = wiring
         self.original_wiring = self.wiring
         self.alphabet_list = list(alphabet)
         self.ring = ring
         self.set_scrambler_ring(ring)
+        
         
     def set_scrambler_ring(self, ring):
         self.wiring = self.original_wiring
@@ -31,7 +38,7 @@ class Scrambler:
             # Loop over chars in temporary wiring
             for char in temp_wiring:
                 # Shift the char by one and add that shifted char to wiring variable
-                wiring += Scrambler.shift(char, 1, self.alphabet_list)
+                wiring += Scrambler.__shift(char, 1, self.alphabet_list)
             # Add one to dot position, make sure we don't exceed the lenght of the alphabet
             self.wiring = wiring
             self.dot_position = (self.dot_position + 1) % len(self.alphabet_list)
@@ -46,7 +53,7 @@ class Scrambler:
             logging.debug("Rotation " + str(i).zfill(2) + "; Wiring: " + self.wiring)
          
     @staticmethod
-    def shift(letter, shift, alphabet_list):
+    def __shift(letter, shift, alphabet_list):
         for i in range(0, len(alphabet_list)):
             if alphabet_list[i] == letter:
                 return alphabet_list[(i + shift) % len(alphabet_list)]
