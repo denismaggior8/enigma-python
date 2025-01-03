@@ -18,7 +18,7 @@ class Scrambler(Journaled):
         return output_char
     
     def __init__(self, wiring, alphabet, ring):
-        super().__init__()
+        Journaled.__init__(self)
         self.wiring = wiring
         self.original_wiring = self.wiring
         self.alphabet_list = list(alphabet)

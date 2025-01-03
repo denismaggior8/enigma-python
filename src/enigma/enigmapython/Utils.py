@@ -8,57 +8,53 @@ class Utils:
     def render_enigma_diagram(enigma):
         """
         Render the Enigma Z ASCII diagram with a variable number of rotors.
-        UKW and the first rotor are always visible. The rotor numbers start from 0.
+        UKW, ETW and Plugboard are always visible. The rotor numbers start from 0.
 
         Parameters:
-        - rotor_count (int): Number of rotors to display (minimum 1).
+        - enigma (Enigma): The Enigma machine to render (minimum 1).
         """
         console = Console()
 
         rotor_count = len(enigma.rotors)
-        # Assicurarsi che ci sia almeno 1 rotore
-        if rotor_count < 1:
-            rotor_count = 1
 
-        # Etichette per i rotori (dove i numeri dei rotori partono da 0)
-        rotor_labels = "  ".join([f"Rotor" for i in range(rotor_count - 1, -1, -1)])
-        rotor_numbers = "      ".join([f"{i}" for i in range(rotor_count - 1, -1, -1)])
+        rotor_labels = "       ".join([f"Rotor" for i in range(rotor_count - 1, -1, -1)])
+        rotor_numbers = "           ".join([f"{i}" for i in range(rotor_count - 1, -1, -1)])
 
-        # Diagramma dei rotori (dove "___" è la parte superiore di ogni rotore)
-        rotor_walls_top = "    ".join(["___"] * rotor_count)
+        rotor_walls_top = "     ".join(["+-----+"] * rotor_count)
 
-        # Diagramma dei rotori (dove "___" è la parte superiore di ogni rotore)
-        rotors_positions = "     ".join(["{:02}".format(enigma.rotors[i].position) for i in range(rotor_count - 1, -1, -1)])
+        rotors_positions = "          ".join(["{:02}".format(enigma.rotors[i].position) for i in range(rotor_count - 1, -1, -1)])
 
-        # Diagramma dei rotori (dove "___" è la parte superiore di ogni rotore)
-        rotors_rings = "     ".join(["{:02}".format(enigma.rotors[i].ring) for i in range(rotor_count - 1, -1, -1)])
+        rotors_rings = "          ".join(["{:02}".format(enigma.rotors[i].ring) for i in range(rotor_count - 1, -1, -1)])
 
+        rotor_walls = "     ".join(["|     |"] * rotor_count)
 
-        # Linea verticale per ogni rotore
-        rotor_walls = "  ".join(["|   |"] * rotor_count)
+        rotor_walls_bottom = "     ".join(["+-----+"] * rotor_count)
 
-        # Linea verticale per ogni rotore
-        rotor_walls_bottom = "  ".join(["|___|"] * rotor_count)
+        rotor_walls_forward = "     ".join(["|  {}  |".format(enigma.rotors[i].journal[-2]['output_char'] if len(enigma.rotors[i].journal) >= 2 else ' ') for i in range(rotor_count - 1, -1, -1)])
 
-        # Linea cablaggio per ogni rotore
-        rotor_wiring = "".join(["|___|__"] * rotor_count)
+        rotor_walls_backward = "     ".join(["|  {}  |".format(enigma.rotors[i].journal[-1]['output_char'] if len(enigma.rotors[i].journal) >= 2 else ' ') for i in range(rotor_count - 1, -1, -1)])
 
-        # Crea il diagramma con le parti dinamiche
+        rotor_wiring_top = "".join(["|-----|--<--"] * rotor_count)
+
+        rotor_wiring_bottom = "".join(["|-----|-->--"] * rotor_count)
+
         diagram = f"""
-                 UKW   {rotor_labels}   ETW PLUGBOARD
-                         {rotor_numbers}      
-                 ___    {rotor_walls_top}    ___    ___
-                |  _|__{rotor_wiring}|___|__|___|____ Key <
-                | | |  {rotor_walls}  |   |  |   |
-                | | |  {rotor_walls}  |   |  |   |
-                | |_|__{rotor_wiring}|___|__|___|____ Lamp >
-                |___|  {rotor_walls_bottom}  |___|  |___|
+                UKW        {rotor_labels}        ETW      PLUGBOARD
+                             {rotor_numbers}      
+              +-----+     {rotor_walls_top}     +-----+     +-----+
+              |     |     {rotor_walls}     |     |     |     |
+              |  +--|--<--{rotor_wiring_top}|-----|--<--|-----|----< {enigma.journal[-1]['input_char'] if len(enigma.journal) >= 1 else ' '} <-- Key
+              |  |  {rotor_walls_forward}     |  {enigma.etw.journal[-2]['output_char'] if len(enigma.etw.journal) >= 2 else ' '}  |     |  {enigma.plugboard.journal[-2]['output_char'] if len(enigma.plugboard.journal) >= 2 else ' '}  |     |
+              |  |  |     {rotor_walls}     |     |     |     |
+              |  |  |     {rotor_walls}     |     |     |     |
+              |  |  |  {enigma.reflector.journal[-1]['output_char'] if len(enigma.reflector.journal) >= 1 else ' '}  |     {rotor_walls_backward}     |  {enigma.etw.journal[-1]['output_char'] if len(enigma.etw.journal) >= 2 else ' '}  |     |     
+              |  +--|-->--{rotor_wiring_bottom}|-----|-->--|-----|----> {enigma.journal[-1]['output_char'] if len(enigma.journal) >= 1 else ' '} --> Lamp
+              |     |     {rotor_walls}     |     |     |     |
+              +-----+     {rotor_walls_bottom}     +-----+     +-----+
 
-        Pos.:            {rotors_positions}    
-        Ring:            {rotors_rings}
+        Pos.:                {rotors_positions}    
+        Ring:                {rotors_rings}
         """
-
-        # Stampa il diagramma con rich
         console.print(Text(diagram, style="bold"))
 
     @staticmethod

@@ -1,21 +1,22 @@
 from .Observer import Observer
 from .RotatingReflector import RotatingReflector
 from .Alphabets import Alphabets
+from .Journaled import Journaled
 import logging
 
 
-class Enigma(Observer):
+class Enigma(Observer,Journaled):
     
     plugboard = None
     rotors = None
     reflector = None
     etw = None
     auto_increment_rotors = False
-    last_input_char = None
 
     alphabet_list = None
 
     def __init__(self, plugboard, rotors, reflector,etw,auto_increment_rotors=False, alphabet=Alphabets.lookup.get("latin_i18n_26chars_lowercase")):
+        Journaled.__init__(self)
         self.plugboard = plugboard
         self.rotors = rotors
         self.reflector = reflector
@@ -34,7 +35,6 @@ class Enigma(Observer):
 
     def input_char(self,char):
         logging.info("Input char: {}".format(char))
-        self.last_input_char = char
         ## Triggering rotors extra rotation due to double step issue
         for rotor in self.rotors:
             ## Rotor extra rotation should be done only if it's not the last one in the list
@@ -47,6 +47,10 @@ class Enigma(Observer):
         if self.auto_increment_rotors == True:
             self.rotors[0].increment_position()
         scrambled_char = self.process_char(char)
+        super().append_to_journal({
+            'input_char': char,
+            'output_char': scrambled_char
+        })
         return scrambled_char           
 
     """
