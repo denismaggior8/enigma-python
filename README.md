@@ -16,7 +16,7 @@ Welcome to **enigmapython**, a Python package designed to emulate the legendary 
 
 The following Enigma machine models (along with their rotors, reflectors and plugboards) have been implemented:
 
-### Enigma B (Sweden, s/n: A-133)
+### Enigma B (Sweden, s/n: A-133)*
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
@@ -26,6 +26,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor III                  | åvqiaäxrjbözspcfyunthdomekgl 	    | ä     	|   ✅           	|
 | Reflector UKW              | ldgbäncpskjavfzhxuiårmqöotey 	    | N/A     	|   ✅           	|
 
+*given the rarity of this model and the little documentation/simulators available, although I expect an encryption consistency on par with newer models, I was unable to test it as I would have liked
 
 ### Enigma D
 
@@ -39,7 +40,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
 
 
-### Enigma Z (Z30 Mark I)
+### Enigma Z (Z30 Mark I)*
 
 | Scrambler 	             | Wiring                     | Notch | Implemented |
 |-------	                 |----------------------------|-------|-------------|
@@ -48,6 +49,8 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor II                   | 5841097632 	    | 9       |   ✅  |
 | Rotor III                  | 3581620794 	    | 9       |   ✅  |
 | Reflector UKW              | 5079183642 	    | N/A     |   ✅  |
+
+*given the rarity of this model and the little documentation/simulators available, although I expect an encryption consistency on par with newer models, I was unable to test it as I would have liked
 
 ### Enigma I 
 
