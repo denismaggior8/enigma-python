@@ -17,7 +17,7 @@ import sys
 
 class TestClonable(unittest.TestCase):
 
-    def test_clone_enigma(self):
+    def test_clone_enigma_register_observer(self):
         plugboard = PlugboardPassthrough()
         rotor1 = EnigmaM3RotorI(0)
         rotor2 = EnigmaM3RotorII(0)
