@@ -56,6 +56,7 @@ class Utils:
         Ring:                {rotors_rings}
         """
         console.print(Text(diagram, style="bold"))
+        return Text(diagram, style="bold")
 
     @staticmethod
     def find_divergence(str1, str2):
