@@ -2,10 +2,11 @@ from .Observer import Observer
 from .RotatingReflector import RotatingReflector
 from .Alphabets import Alphabets
 from .Journaled import Journaled
+from .Clonable  import Clonable
 import logging
 
 
-class Enigma(Observer,Journaled):
+class Enigma(Observer,Journaled,Clonable):
     
     plugboard = None
     rotors = None
@@ -17,6 +18,7 @@ class Enigma(Observer,Journaled):
 
     def __init__(self, plugboard, rotors, reflector,etw,auto_increment_rotors=False, alphabet=Alphabets.lookup.get("latin_i18n_26chars_lowercase")):
         Journaled.__init__(self)
+        Clonable.__init__(self)
         self.plugboard = plugboard
         self.rotors = rotors
         self.reflector = reflector
@@ -116,3 +118,9 @@ class Enigma(Observer,Journaled):
     @staticmethod        
     def shift_letter(letter,shift,alphabet_list):
         return alphabet_list[(alphabet_list.index(letter)+shift) % len(alphabet_list)]
+    
+    def clone(self):
+        new_enigma = super().clone()
+        for rotor in new_enigma.rotors:
+                rotor.add_observer(new_enigma)
+        return new_enigma
