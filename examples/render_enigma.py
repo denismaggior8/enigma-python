@@ -1,5 +1,6 @@
 from rich.console import Console
 from rich.text import Text
+import copy
 
 # Import from this package
 from enigmapython.EnigmaZRotorI import EnigmaZRotorI
@@ -124,8 +125,11 @@ rotor3 = EnigmaM3RotorI(0)
 reflector = ReflectorUKWB()
 etw = EtwPassthrough()
 enigma = EnigmaM3(plugboard,rotor3, rotor2, rotor1,reflector,etw,True)
+other_enigma = copy.deepcopy(enigma)
 enigma.input_string('d')
 print(enigma.plugboard.journal)
-#render_enigma_diagram(enigma)
+render_enigma_diagram(enigma)
+render_enigma_diagram(other_enigma)
+#Utils.render_enigma_diagram(enigma)
 
-Utils.render_enigma_diagram(enigma)
+#Utils.render_enigma_diagram(other_enigma)
