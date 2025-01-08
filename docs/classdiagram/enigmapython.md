@@ -455,6 +455,7 @@ classDiagram
         - __init__(self, wiring, alphabet, ring) None
         + set_scrambler_ring(self, ring)
         - @staticmethod __shift(letter, shift, alphabet_list)
+        - __str__(self) str
     }
 
     class EnigmaINorwayRotorIII {
