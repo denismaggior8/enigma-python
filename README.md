@@ -145,7 +145,7 @@ An initial documentation draft can be found [here](./docs/README.md), but in mos
 
 Here's a list containing all the known Enigma simulators that use the **enigmapython** API.
 
-- [Enigma TUI](https://github.com/denismaggior8/enigma-tui). **Enigma TUI** is a **T**erminal **U**ser **I**nterface for Enigma machines, allowing you to simulate different Enigma machine models from the terminal. It employs  **enigmapython** as the Enigma engine. 
+- [Enigma TUI](https://github.com/denismaggior8/enigma-tui). **Enigma TUI** is a **T**erminal **U**ser **I**nterface for Enigma machines, allowing you to simulate different Enigma machine models from the terminal. It employs  **enigmapython** as Enigma engine. 
 
 <div class="img-container" style="text-align: center;"> 
     <img src="img/enigmatui.png" alt="drawing" width="400" align="center"/>
