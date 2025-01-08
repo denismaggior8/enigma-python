@@ -151,6 +151,7 @@ Here's a list containing all the known Enigma simulators that use the **enigmapy
     <img src="img/enigmatui.png" alt="drawing" width="400" align="center"/>
 </div>
 
+
 - [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma M3 cypher machine whose backend is based on **enigmapython**.
 
 <div class="img-container" style="text-align: center;">
@@ -158,6 +159,7 @@ Here's a list containing all the known Enigma simulators that use the **enigmapy
 </div>
 
 In the case you leveraged **enigmapython** API in a project, either public or not, drop me an email at __denis.maggiorotto[at]gmail.com__ and I'll be happy to list you here.
+
 
 ## Credits/references
 
@@ -172,7 +174,7 @@ In the case you leveraged **enigmapython** API in a project, either public or no
     - Enigma simulation in Javascript/HTML by Daniel Palloks https://people.physik.hu-berlin.de/~palloks/js/enigma/index_en.html
     - Enigma B A133 simulation in Javascript/HTML by Daniel Palloks https://people.physik.hu-berlin.de/~palloks/js/enigma/enigma-a133_v261_en.html
     - Enigma Z simulation in Javascript/HTML by Daniel Palloks https://people.physik.hu-berlin.de/~palloks/js/enigma/enigma-z_v262b_en.html
-    
+
     for having helped me testing the correctness of the generated ciphertexts 
 
 
