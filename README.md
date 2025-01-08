@@ -145,13 +145,13 @@ An initial documentation draft can be found [here](./docs/README.md), but in mos
 
 Here's a list containing all the known Enigma simulators that use the **enigmapython** API.
 
-- [Enigma TUI](https://github.com/denismaggior8/enigma-tui). **Enigma TUI** is a Terminal User Interface for Enigma machines, allowing you to simulate different Enigma machine models from the terminal. It employs  **enigmapython** as the Enigma engine. 
+- [Enigma TUI](https://github.com/denismaggior8/enigma-tui). **Enigma TUI** is a **T**erminal **U**ser **I**nterface for Enigma machines, allowing you to simulate different Enigma machine models from the terminal. It employs  **enigmapython** as the Enigma engine. 
 
 <div class="img-container" style="text-align: center;"> 
     <img src="img/enigmatui.png" alt="drawing" width="400" align="center"/>
 </div>
 
-- [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma M3 cypher machine. 
+- [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma M3 cypher machine whose backend is based on **enigmapython**.
 
 <div class="img-container" style="text-align: center;">
     <img src="img/retrocampus_enigma.png" alt="drawing" width="400" align="center"/>
