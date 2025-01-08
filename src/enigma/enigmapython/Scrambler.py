@@ -58,3 +58,6 @@ class Scrambler(Journaled):
         for i in range(0, len(alphabet_list)):
             if alphabet_list[i] == letter:
                 return alphabet_list[(i + shift) % len(alphabet_list)]
+            
+    def __str__(self):
+        return self.wiring
