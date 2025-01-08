@@ -1,6 +1,8 @@
 # Enigma Python library
 
-![](img/logo.jpg)
+<div class="img-container" style="text-align: center;"> 
+    <img src="img/logo.jpg" alt="drawing" width="200" />
+</div>
 
 ## About
 
@@ -16,6 +18,18 @@ Welcome to **enigmapython**, a Python package designed to emulate the legendary 
 
 The following Enigma machine models (along with their rotors, reflectors and plugboards) have been implemented:
 
+### Enigma B (Sweden, s/n: A-133)*
+
+| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| ETW       (passthrough)    | abcdefghijklmnopqrstuvxyzåäö 	    | N/A     	|   ✅           	|
+| Rotor I                    | psbgöxqjdhoäucfrtezvåinlymka         | ä     	|   ✅           	|
+| Rotor II                   | chnsyöadmotrzxbäigåekqupflvj 	    | ä     	|   ✅           	|
+| Rotor III                  | åvqiaäxrjbözspcfyunthdomekgl 	    | ä     	|   ✅           	|
+| Reflector UKW              | ldgbäncpskjavfzhxuiårmqöotey 	    | N/A     	|   ✅           	|
+
+*given the rarity of this model and the little documentation/simulators available, although I expect an encryption consistency on par with newer models, I was unable to test it as I would have liked
+
 ### Enigma D
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
@@ -26,6 +40,19 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor II                   | slvgbtfxjqohewirzyamkpcndu 	        | e     	|   ✅           	|
 | Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo 	        | n     	|   ✅           	|
 | Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
+
+
+### Enigma Z (Z30 Mark I)*
+
+| Scrambler 	             | Wiring                     | Notch | Implemented |
+|-------	                 |----------------------------|-------|-------------|
+| ETW       (passthrough)    | 1234567890 	    | N/A     |   ✅  |
+| Rotor I                    | 6418270359       | 9       |   ✅  |
+| Rotor II                   | 5841097632 	    | 9       |   ✅  |
+| Rotor III                  | 3581620794 	    | 9       |   ✅  |
+| Reflector UKW              | 5079183642 	    | N/A     |   ✅  |
+
+*given the rarity of this model and the little documentation/simulators available, although I expect an encryption consistency on par with newer models, I was unable to test it as I would have liked
 
 ### Enigma I 
 
@@ -118,9 +145,21 @@ An initial documentation draft can be found [here](./docs/README.md), but in mos
 
 Here's a list containing all the known Enigma simulators that use the **enigmapython** API.
 
-- [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma M3 cypher machine. ![](img/retrocampus_enigma.png)
+- [Enigma TUI](https://github.com/denismaggior8/enigma-tui). **Enigma TUI** is a **T**erminal **U**ser **I**nterface for Enigma machines, allowing you to simulate different Enigma machine models from the terminal. It employs  **enigmapython** as Enigma engine. 
+
+<div class="img-container" style="text-align: center;"> 
+    <img src="img/enigmatui.png" alt="drawing" width="400" align="center"/>
+</div>
+
+
+- [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma M3 cypher machine whose backend is based on **enigmapython**.
+
+<div class="img-container" style="text-align: center;">
+    <img src="img/retrocampus_enigma.png" alt="drawing" width="400" align="center"/>
+</div>
 
 In the case you leveraged **enigmapython** API in a project, either public or not, drop me an email at __denis.maggiorotto[at]gmail.com__ and I'll be happy to list you here.
+
 
 ## Credits/references
 
@@ -132,9 +171,10 @@ In the case you leveraged **enigmapython** API in a project, either public or no
     - PyEnigma https://pypi.org/project/pyenigma/
     - 101 computing https://www.101computing.net/enigma-machine-emulator/ 
     - DenCode Enigma simulator https://dencode.com/cipher/enigma
-    - Enigma simulation in Javascript/HTML by Daniel Palloks https://people.physik.hu-berlin.de/~palloks/js/enigma/enigma-u_v262.html
+    - Enigma simulation in Javascript/HTML by Daniel Palloks https://people.physik.hu-berlin.de/~palloks/js/enigma/index_en.html
     - Enigma B A133 simulation in Javascript/HTML by Daniel Palloks https://people.physik.hu-berlin.de/~palloks/js/enigma/enigma-a133_v261_en.html
-    
+    - Enigma Z simulation in Javascript/HTML by Daniel Palloks https://people.physik.hu-berlin.de/~palloks/js/enigma/enigma-z_v262b_en.html
+
     for having helped me testing the correctness of the generated ciphertexts 
 
 

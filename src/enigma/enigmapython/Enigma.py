@@ -1,9 +1,12 @@
 from .Observer import Observer
-from string import ascii_lowercase
+from .RotatingReflector import RotatingReflector
+from .Alphabets import Alphabets
+from .Journaled import Journaled
+from .Clonable  import Clonable
 import logging
 
 
-class Enigma(Observer):
+class Enigma(Observer,Journaled,Clonable):
     
     plugboard = None
     rotors = None
@@ -13,7 +16,9 @@ class Enigma(Observer):
 
     alphabet_list = None
 
-    def __init__(self, plugboard, rotors, reflector,etw,auto_increment_rotors=False, alphabet=ascii_lowercase):
+    def __init__(self, plugboard, rotors, reflector,etw,auto_increment_rotors=False, alphabet=Alphabets.lookup.get("latin_i18n_26chars_lowercase")):
+        Journaled.__init__(self)
+        Clonable.__init__(self)
         self.plugboard = plugboard
         self.rotors = rotors
         self.reflector = reflector
@@ -34,13 +39,20 @@ class Enigma(Observer):
         logging.info("Input char: {}".format(char))
         ## Triggering rotors extra rotation due to double step issue
         for rotor in self.rotors:
-            ## Rotor extra rotation should be done only if the rotor is not the last one in the list
+            ## Rotor extra rotation should be done only if it's not the last one in the list
             if rotor.double_step_triggered == True and self.rotors.index(rotor) < len(self.rotors)-1:
                     rotor.increment_position()
                     rotor.double_step_triggered = False
+            if isinstance(self.reflector, RotatingReflector) and self.reflector.double_step_triggered == True:
+                self.reflector.increment_position()
+                self.reflector.double_step_triggered = False
         if self.auto_increment_rotors == True:
             self.rotors[0].increment_position()
         scrambled_char = self.process_char(char)
+        super().append_to_journal({
+            'input_char': char,
+            'output_char': scrambled_char
+        })
         return scrambled_char           
 
     """
@@ -56,33 +68,33 @@ class Enigma(Observer):
          ---    ---    ---    ---    ---    ---
     """
     def process_char(self, char):
-        scrambled_char = self.plugboard.switch_char(char)
+        scrambled_char = self.plugboard.scramble_char(self.plugboard.wiring,self.plugboard.alphabet_list.index(char),0)
         logging.debug("Scrambled letter from plugboard: {}".format(scrambled_char))
-        scrambled_char = self.etw.process_char_forward(scrambled_char,0)
+        scrambled_char = self.etw.scramble_char(self.etw.wiring,self.alphabet_list.index(scrambled_char), 0)
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
         iteration = 0
         for rotor in self.rotors:
             if iteration == 0:
-                scrambled_char = rotor.scramble_letter_index(rotor.wiring,self.alphabet_list.index(scrambled_char))
+                scrambled_char = rotor.scramble_char(rotor.wiring,self.alphabet_list.index(scrambled_char), rotor.position)
             else:
-                scrambled_char = rotor.scramble_letter_index(rotor.wiring,self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position) 
+                scrambled_char = rotor.scramble_char(rotor.wiring,self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position, rotor.position) 
             iteration +=1
             logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration),scrambled_char))
-        scrambled_char = self.reflector.scramble_letter_index(self.reflector.wiring,(self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position))
+        scrambled_char = self.reflector.scramble_char(self.reflector.wiring,(self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position), 0)
         logging.debug("Scrambled letter from reflector: {}".format(scrambled_char))
         for rotor in reversed(self.rotors):
             if iteration == len(self.rotors):
-                scrambled_char = rotor.scramble_letter_index(self.alphabet_list,(rotor.wiring.index(self.shift_letter(scrambled_char,rotor.position,self.alphabet_list))-rotor.position))
+                scrambled_char = rotor.scramble_char(self.alphabet_list,(rotor.wiring.index(self.shift_letter(scrambled_char,rotor.position,self.alphabet_list))-rotor.position), rotor.position)
             else:
-                scrambled_char = rotor.scramble_letter_index(self.alphabet_list,(rotor.wiring.index(self.shift_letter(scrambled_char, (rotor.position - self.rotors[iteration].position),self.alphabet_list)) - rotor.position))
+                scrambled_char = rotor.scramble_char(self.alphabet_list,(rotor.wiring.index(self.shift_letter(scrambled_char, (rotor.position - self.rotors[iteration].position),self.alphabet_list)) - rotor.position), rotor.position)
             iteration -=1
             logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration+1),scrambled_char))   
         
         # Processing rotor 1 returning signal by ETW
-        scrambled_char = self.etw.process_char_backward(scrambled_char,self.rotors[iteration].position)
+        scrambled_char = self.etw.scramble_char(self.alphabet_list,(self.etw.wiring.index(self.shift_letter(scrambled_char, (0 - self.rotors[iteration].position),self.alphabet_list))), 0)
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
         
-        scrambled_char = self.plugboard.switch_char(scrambled_char)
+        scrambled_char = self.plugboard.scramble_char(self.plugboard.wiring,self.plugboard.alphabet_list.index(scrambled_char),0)
         logging.debug("Scrambled letter from plugboard: {}".format(scrambled_char))
         logging.info("Scrambled letter to lamp: {}".format(scrambled_char))
         return scrambled_char
@@ -91,14 +103,24 @@ class Enigma(Observer):
         # If there is rotor N+1, increment its position by 1
         if observable in self.rotors and self.rotors.index(observable) < len(self.rotors)-1:
             self.rotors[self.rotors.index(observable)+1].increment_position()
+            logging.debug("Rotor at index {} has been incremented by 1 position".format(self.rotors.index(observable)+1))
             # Engaging the enigma double step issue, only if the next rotor position is in its notch indexe/s
             if self.rotors[self.rotors.index(observable)+1].position in self.rotors[self.rotors.index(observable)+1].notch_indexes:
                 self.rotors[self.rotors.index(observable)+1].double_step_triggered = True
+        # If the rotor is the last one in the list, but the machine has a rotating reflector, increment it position by 1
+        if observable in self.rotors and self.rotors.index(observable) == len(self.rotors)-1 and isinstance(self.reflector, RotatingReflector):
+            self.reflector.increment_position()
+            logging.debug("Reflector has been incremented by 1 position")
+            # Engaging the enigma double step issue, only if the next rotor position is in its notch indexe/s
+            if self.reflector.position in self.reflector.notch_indexes:
+                self.reflector.double_step_triggered = True
         
     @staticmethod        
     def shift_letter(letter,shift,alphabet_list):
         return alphabet_list[(alphabet_list.index(letter)+shift) % len(alphabet_list)]
     
-
-
-
+    def clone(self):
+        new_enigma = super().clone()
+        for rotor in new_enigma.rotors:
+                rotor.add_observer(new_enigma)
+        return new_enigma

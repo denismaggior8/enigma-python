@@ -1,15 +1,20 @@
 
-from string import ascii_lowercase
+from .Alphabets import Alphabets
+from .Scrambler import Scrambler
 
-class Plugboard:
+class Plugboard(Scrambler):
     wiring = None
+    alphabet_list = None
 
-    def switch_char(self,char):
-        alphabet = list(ascii_lowercase)
-        return self.wiring[alphabet.index(char)]
-
-    def __init__(self, wiring):
+    def __init__(self, wiring, alphabet):
         self.wiring = wiring
+        self.alphabet_list = list(alphabet)
+        super().__init__(
+            alphabet=alphabet,
+            ring=0,
+            wiring=wiring
+        )
+
 
     def __str__(self):
         return self.wiring
