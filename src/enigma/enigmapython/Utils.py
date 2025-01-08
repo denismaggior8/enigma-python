@@ -1,6 +1,8 @@
 from importlib import import_module
 from rich.console import Console
 from rich.text import Text
+from enigmapython.RotatingReflector import RotatingReflector
+
 
 class Utils:
 
@@ -52,7 +54,7 @@ class Utils:
               |     |     {rotor_walls}     |     |     |     |
               +-----+     {rotor_walls_bottom}     +-----+     +-----+
 
-        Pos.:                {rotors_positions}    
+        Pos.:    {"{:02}".format(enigma.reflector.position) if isinstance(enigma.reflector, RotatingReflector) else '  '}          {rotors_positions}    
         Ring:                {rotors_rings}
         """
         console.print(Text(diagram, style="bold"))

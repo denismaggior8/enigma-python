@@ -35,6 +35,7 @@ from enigmapython.PlugboardPassthrough import PlugboardPassthrough
 from enigmapython.ReflectorUKWB import ReflectorUKWB
 from enigmapython.EtwPassthrough import EtwPassthrough
 from enigmapython.EnigmaM3 import EnigmaM3
+from enigmapython.RotatingReflector import RotatingReflector
 import logging
 import sys
 
@@ -85,33 +86,35 @@ def render_enigma_diagram(enigma):
           |     |     {rotor_walls}     |     |     |     |
           +-----+     {rotor_walls_bottom}     +-----+     +-----+
 
-    Pos.:                {rotors_positions}    
+    Pos.:    {"{:02}".format(enigma.reflector.position) if isinstance(enigma.reflector, RotatingReflector) else '  '}          {rotors_positions}    
     Ring:                {rotors_rings}
     """
     console.print(Text(diagram, style="bold"))
 
 
 
-#rotor1 = EnigmaZRotorI(ring=0,position=0)
-#rotor2 = EnigmaZRotorI(ring=0,position=0)
-#rotor3 = EnigmaZRotorI(ring=0,position=0)
-#reflector = ReflectorZUKW()
-#etw = EnigmaZEtw()
-#enigma = EnigmaZ(rotor3, rotor2, rotor1, reflector, etw, True)
-#enigma.input_string('0'*41)
+rotor1 = EnigmaZRotorI(ring=0,position=0)
+rotor2 = EnigmaZRotorI(ring=0,position=0)
+rotor3 = EnigmaZRotorI(ring=0,position=0)
+reflector = ReflectorZUKW()
+etw = EnigmaZEtw()
+enigma = EnigmaZ(rotor3, rotor2, rotor1, reflector, etw, True)
+enigma.input_string('0'*41)
+Utils.render_enigma_diagram(enigma)
 #render_enigma_diagram(enigma)
 
-#plugboard = PlugboardPassthrough()
-#plugboard = SwappablePlugboard()
-#plugboard.swap('d', 'c')
-#rotor1 = EnigmaM4RotorI(0)
-#rotor2 = EnigmaM4RotorII(0)
-#rotor3 = EnigmaM4RotorIII(0)
-#rotor4 = EnigmaM4RotorBeta(0)
-#reflector = ReflectorUKWBThin()
-#etw = EtwPassthrough()
-#enigma = EnigmaM4(plugboard, rotor1, rotor2, rotor3, rotor4, reflector, etw, True)
-#print(enigma.input_string('d'))
+plugboard = PlugboardPassthrough()
+plugboard = SwappablePlugboard()
+plugboard.swap('d', 'c')
+rotor1 = EnigmaM4RotorI(0)
+rotor2 = EnigmaM4RotorII(0)
+rotor3 = EnigmaM4RotorIII(0)
+rotor4 = EnigmaM4RotorBeta(0)
+reflector = ReflectorUKWBThin()
+etw = EtwPassthrough()
+enigma = EnigmaM4(plugboard, rotor1, rotor2, rotor3, rotor4, reflector, etw, True)
+print(enigma.input_string('d'))
+Utils.render_enigma_diagram(enigma)
 #render_enigma_diagram(enigma)
 
 # Setup logging
@@ -128,8 +131,9 @@ enigma = EnigmaM3(plugboard,rotor3, rotor2, rotor1,reflector,etw,True)
 other_enigma = copy.deepcopy(enigma)
 enigma.input_string('d')
 print(enigma.plugboard.journal)
-render_enigma_diagram(enigma)
-render_enigma_diagram(other_enigma)
+Utils.render_enigma_diagram(enigma)
+#render_enigma_diagram(enigma)
+#render_enigma_diagram(other_enigma)
 #Utils.render_enigma_diagram(enigma)
 
 #Utils.render_enigma_diagram(other_enigma)
