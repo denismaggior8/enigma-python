@@ -1,3 +1,5 @@
 ./src/enigma
 logging
 py-enigma
+pymermaider
+rich

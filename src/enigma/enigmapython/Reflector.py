@@ -1,4 +1,4 @@
-from .Rotor import Rotor
+from .Scrambler import Scrambler
 
-class Reflector(Rotor):
+class Reflector(Scrambler):
     tag = None
