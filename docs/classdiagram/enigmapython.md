@@ -278,10 +278,8 @@ classDiagram
     }
 
     class Utils {
-        + @staticmethod render_enigma_diagram(enigma)
         + @staticmethod find_divergence(str1, str2)
         + @staticmethod find_all_subclasses(cls)
-        + @staticmethod get_class_instance(cls)
         + @staticmethod swap_chars(string, ch1, ch2)
     }
 
@@ -361,6 +359,10 @@ classDiagram
     class EnigmaB_A133 {
         + alphabet
         - __init__(self, rotor1, rotor2, rotor3, reflector, etw, auto_increment_rotors) None
+    }
+
+    class XRay {
+        + @staticmethod render_enigma_xray(enigma)
     }
 
     class ReflectorUKWBThin {
