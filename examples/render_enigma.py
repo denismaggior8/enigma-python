@@ -9,7 +9,7 @@ from enigmapython.EnigmaZRotorIII import EnigmaZRotorIII
 from enigmapython.EnigmaZEtw import EnigmaZEtw
 from enigmapython.EnigmaZ import EnigmaZ
 from enigmapython.ReflectorZUKW import ReflectorZUKW
-from enigmapython.Utils import Utils
+from enigmapython.XRay import XRay
 import rich
 from enigmapython.EnigmaM4RotorI import EnigmaM4RotorI
 from enigmapython.EnigmaM4RotorII import EnigmaM4RotorII
@@ -101,7 +101,7 @@ etw = EnigmaZEtw()
 enigma = EnigmaZ(rotor3, rotor2, rotor1, reflector, etw, True)
 enigma.input_string('0'*41)
 print(enigma.reflector)
-#Utils.render_enigma_diagram(enigma)
+XRay.render_enigma_xray(enigma)
 #render_enigma_diagram(enigma)
 
 plugboard = PlugboardPassthrough()
@@ -116,7 +116,7 @@ etw = EtwPassthrough()
 enigma = EnigmaM4(plugboard, rotor1, rotor2, rotor3, rotor4, reflector, etw, True)
 #print(enigma.input_string('d'))
 print(enigma.reflector)
-#Utils.render_enigma_diagram(enigma)
+XRay.render_enigma_xray(enigma)
 #render_enigma_diagram(enigma)
 
 # Setup logging
@@ -133,9 +133,9 @@ enigma = EnigmaM3(plugboard,rotor3, rotor2, rotor1,reflector,etw,True)
 other_enigma = copy.deepcopy(enigma)
 enigma.input_string('d')
 print(enigma.reflector)
-#Utils.render_enigma_diagram(enigma)
+XRay.render_enigma_xray(enigma)
 #render_enigma_diagram(enigma)
 #render_enigma_diagram(other_enigma)
-#Utils.render_enigma_diagram(enigma)
+XRay.render_enigma_xray(enigma)
 
 #Utils.render_enigma_diagram(other_enigma)
