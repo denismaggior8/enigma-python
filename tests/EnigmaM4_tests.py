@@ -1,17 +1,20 @@
 from enigmapython.EnigmaM4RotorI import EnigmaM4RotorI
 from enigmapython.EnigmaM4RotorII import EnigmaM4RotorII
 from enigmapython.EnigmaM4RotorIII import EnigmaM4RotorIII
-from enigmapython.EnigmaM3RotorIV import EnigmaM3RotorIV
-from enigmapython.EnigmaM3RotorV import EnigmaM3RotorV
-from enigmapython.EnigmaM3RotorVI import EnigmaM3RotorVI
+from enigmapython.EnigmaM3RotorI import EnigmaM3RotorI
+from enigmapython.EnigmaM3RotorII import EnigmaM3RotorII
+from enigmapython.EnigmaM3RotorIII import EnigmaM3RotorIII
 from enigmapython.EnigmaM4RotorBeta import EnigmaM4RotorBeta
 from enigmapython.EnigmaM4RotorGamma import EnigmaM4RotorGamma
 from enigmapython.PlugboardPassthrough import PlugboardPassthrough
 from enigmapython.SwappablePlugboard import SwappablePlugboard
 from enigmapython.ReflectorUKWB import ReflectorUKWB
+from enigmapython.ReflectorUKWC import ReflectorUKWC
 from enigmapython.ReflectorUKWBThin import ReflectorUKWBThin
+from enigmapython.ReflectorUKWCThin import ReflectorUKWCThin
 from enigmapython.EtwPassthrough import EtwPassthrough
 from enigmapython.EnigmaM4 import EnigmaM4
+from enigmapython.EnigmaM3 import EnigmaM3
 from enigma.machine import EnigmaMachine
 from string import ascii_lowercase
 import random
@@ -132,6 +135,62 @@ class TestEnigmaM4(unittest.TestCase):
         other_encrypted_string = other_machine.process_text(cleartext)
         my_encrypted_string = enigma.input_string(cleartext)
         self.assertEqual(my_encrypted_string,other_encrypted_string.lower(),"Enigma encryption error")
+
+
+    def test_enigma_m4_enigma_m3_beta_compatibility(self):
+
+        cleartext = ''.join(random.choice(ascii_lowercase) for i in range(1000))
+
+        # Enigma M3
+        plugboard = PlugboardPassthrough()
+        m3Rotor1 = EnigmaM3RotorI(23,0)
+        m3Rotor2 = EnigmaM3RotorII(4,0)
+        m3Rotor3 = EnigmaM3RotorIII(15,0)
+        reflector = ReflectorUKWB()
+        etw = EtwPassthrough()
+        enigmaM3 = EnigmaM3(plugboard, m3Rotor1, m3Rotor2, m3Rotor3, reflector, etw, True)
+        m3_encrypted_string = enigmaM3.input_string(cleartext)
+
+        # Eingma M4
+        plugboard = PlugboardPassthrough()
+        m4Rotor1 = EnigmaM4RotorI(23,0)
+        m4Rotor2 = EnigmaM4RotorII(4,0)
+        m4Rotor3 = EnigmaM4RotorIII(15,0)
+        m4Rotor4 = EnigmaM4RotorBeta(0,0)
+        reflector = ReflectorUKWBThin()
+        etw = EtwPassthrough()
+        enigmaM4 = EnigmaM4(plugboard, m4Rotor1, m4Rotor2, m4Rotor3, m4Rotor4, reflector, etw, True)
+        m4_encrypted_string = enigmaM4.input_string(cleartext)
+
+        self.assertEqual(m4_encrypted_string,m3_encrypted_string.lower(),"encrypted texts do not match between Enigma M3 and M4")
+
+
+    def test_enigma_m4_enigma_m3_gamma_compatibility(self):
+
+        cleartext = ''.join(random.choice(ascii_lowercase) for i in range(1000))
+
+        # Enigma M3
+        plugboard = PlugboardPassthrough()
+        m3Rotor1 = EnigmaM3RotorI(23,0)
+        m3Rotor2 = EnigmaM3RotorII(4,0)
+        m3Rotor3 = EnigmaM3RotorIII(15,0)
+        reflector = ReflectorUKWC()
+        etw = EtwPassthrough()
+        enigmaM3 = EnigmaM3(plugboard, m3Rotor1, m3Rotor2, m3Rotor3, reflector, etw, True)
+        m3_encrypted_string = enigmaM3.input_string(cleartext)
+
+        # Eingma M4
+        plugboard = PlugboardPassthrough()
+        m4Rotor1 = EnigmaM4RotorI(23,0)
+        m4Rotor2 = EnigmaM4RotorII(4,0)
+        m4Rotor3 = EnigmaM4RotorIII(15,0)
+        m4Rotor4 = EnigmaM4RotorGamma(0,0)
+        reflector = ReflectorUKWCThin()
+        etw = EtwPassthrough()
+        enigmaM4 = EnigmaM4(plugboard, m4Rotor1, m4Rotor2, m4Rotor3, m4Rotor4, reflector, etw, True)
+        m4_encrypted_string = enigmaM4.input_string(cleartext)
+
+        self.assertEqual(m4_encrypted_string,m3_encrypted_string.lower(),"encrypted texts do not match between Enigma M3 and M4")
 
     
 if __name__ == "__main__":

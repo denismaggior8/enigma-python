@@ -1,5 +1,6 @@
 from rich.console import Console
 from rich.text import Text
+from enigmapython.RotatingReflector import RotatingReflector
 
 class XRay():
     @staticmethod
@@ -24,6 +25,8 @@ class XRay():
 
         rotors_rings = "          ".join(["{:02}".format(enigma.rotors[i].ring) for i in range(rotor_count - 1, -1, -1)])
 
+        rotor_walls_position = "     ".join(["|  {}  |".format(enigma.alphabet_list[enigma.rotors[i].position].upper()) for i in range(rotor_count - 1, -1, -1)])
+
         rotor_walls = "     ".join(["|     |"] * rotor_count)
 
         rotor_walls_bottom = "     ".join(["+-----+"] * rotor_count)
@@ -43,7 +46,7 @@ class XRay():
               |     |     {rotor_walls}     |     |     |     |
               |  +--|--<--{rotor_wiring_top}|-----|--<--|-----|----< {enigma.journal[-1]['input_char'] if len(enigma.journal) >= 1 else ' '} <-- Key
               |  |  {rotor_walls_forward}     |  {enigma.etw.journal[-2]['output_char'] if len(enigma.etw.journal) >= 2 else ' '}  |     |  {enigma.plugboard.journal[-2]['output_char'] if len(enigma.plugboard.journal) >= 2 else ' '}  |     |
-              |  |  |     {rotor_walls}     |     |     |     |
+              |  |  |     {rotor_walls_position}     |     |     |     |
               |  |  |     {rotor_walls}     |     |     |     |
               |  |  |  {enigma.reflector.journal[-1]['output_char'] if len(enigma.reflector.journal) >= 1 else ' '}  |     {rotor_walls_backward}     |  {enigma.etw.journal[-1]['output_char'] if len(enigma.etw.journal) >= 2 else ' '}  |     |     
               |  +--|-->--{rotor_wiring_bottom}|-----|-->--|-----|----> {enigma.journal[-1]['output_char'] if len(enigma.journal) >= 1 else ' '} --> Lamp
