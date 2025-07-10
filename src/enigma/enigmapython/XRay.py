@@ -21,9 +21,11 @@ class XRay():
 
         rotor_walls_top = "     ".join(["+-----+"] * rotor_count)
 
-        rotors_positions = "          ".join(["{:02}".format(enigma.rotors[i].position) for i in range(rotor_count - 1, -1, -1)])
+        rotors_positions = "      ".join(["{} ({:02})".format(enigma.alphabet_list[enigma.rotors[i].position].upper(),enigma.rotors[i].position) for i in range(rotor_count - 1, -1, -1)])
 
-        rotors_rings = "          ".join(["{:02}".format(enigma.rotors[i].ring) for i in range(rotor_count - 1, -1, -1)])
+        rotors_rings = "      ".join(["{} ({:02})".format(enigma.alphabet_list[enigma.rotors[i].ring].upper(),enigma.rotors[i].ring) for i in range(rotor_count - 1, -1, -1)])
+
+        reflector_ring = ""
 
         rotor_walls_position = "     ".join(["|  {}  |".format(enigma.alphabet_list[enigma.rotors[i].position].upper()) for i in range(rotor_count - 1, -1, -1)])
 
@@ -46,15 +48,15 @@ class XRay():
               |     |     {rotor_walls}     |     |     |     |
               |  +--|--<--{rotor_wiring_top}|-----|--<--|-----|----< {enigma.journal[-1]['input_char'] if len(enigma.journal) >= 1 else ' '} <-- Key
               |  |  {rotor_walls_forward}     |  {enigma.etw.journal[-2]['output_char'] if len(enigma.etw.journal) >= 2 else ' '}  |     |  {enigma.plugboard.journal[-2]['output_char'] if len(enigma.plugboard.journal) >= 2 else ' '}  |     |
-              |  |  |     {rotor_walls_position}     |     |     |     |
+              |  |  |     {rotor_walls}     |     |     |     |
               |  |  |     {rotor_walls}     |     |     |     |
               |  |  |  {enigma.reflector.journal[-1]['output_char'] if len(enigma.reflector.journal) >= 1 else ' '}  |     {rotor_walls_backward}     |  {enigma.etw.journal[-1]['output_char'] if len(enigma.etw.journal) >= 2 else ' '}  |     |     
               |  +--|-->--{rotor_wiring_bottom}|-----|-->--|-----|----> {enigma.journal[-1]['output_char'] if len(enigma.journal) >= 1 else ' '} --> Lamp
               |     |     {rotor_walls}     |     |     |     |
               +-----+     {rotor_walls_bottom}     +-----+     +-----+
 
-        Pos.:    {"{:02}".format(enigma.reflector.position) if isinstance(enigma.reflector, RotatingReflector) else '  '}          {rotors_positions}    
-        Ring:                {rotors_rings}
+    Pos.:      {"{} ({:02})".format(enigma.alphabet_list[enigma.reflector.position].upper(),enigma.reflector.position) if isinstance(enigma.reflector, RotatingReflector) else ' N/A  '}      {rotors_positions}    
+    Ring:      {"{} ({:02})".format(enigma.alphabet_list[enigma.reflector.ring].upper(),enigma.reflector.ring)}      {rotors_rings}
         """
         console.print(Text(diagram, style="bold"))
         return Text(diagram, style="bold")
