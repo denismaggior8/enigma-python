@@ -8,6 +8,10 @@ from enigmapython.EtwPassthrough import EtwPassthrough
 from enigmapython.PlugboardPassthrough import PlugboardPassthrough
 from enigmapython.ReflectorUKWBThin import ReflectorUKWBThin
 from enigmapython.XRay import XRay
+from enigmapython.EnigmaZ import EnigmaZ
+from enigmapython.EnigmaZRotorI import EnigmaZRotorI
+from enigmapython.ReflectorZUKW import ReflectorZUKW
+from enigmapython.EnigmaZEtw import EnigmaZEtw
 
 
 plugboard = PlugboardPassthrough()
@@ -20,6 +24,14 @@ etw = EtwPassthrough()
 enigma = EnigmaM4(plugboard, rotor1, rotor2, rotor3, rotor4, reflector, etw, True)
 enigma.input_char("c")
 XRay.render_enigma_xray(enigma)
-enigma.input_char("c")
+
+
+rotor1 = EnigmaZRotorI(1)
+rotor2 = EnigmaZRotorI(7)
+rotor3 = EnigmaZRotorI(9)
+reflector = ReflectorZUKW()
+etw = EnigmaZEtw()
+enigma = EnigmaZ(rotor3, rotor2, rotor1, reflector, etw, True)
+enigma.input_char("8")
 XRay.render_enigma_xray(enigma)
-print("1".upper())
+#print("1".upper())
