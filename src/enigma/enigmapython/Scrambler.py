@@ -65,6 +65,4 @@ class Scrambler(Journaled):
             str += char
         str += "\n"
         str += "|" * len(self.alphabet_list)
-        str += "\n"
-        str += self.wiring
         return str

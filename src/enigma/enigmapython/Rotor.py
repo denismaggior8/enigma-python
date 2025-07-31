@@ -40,11 +40,11 @@ class Rotor(Scrambler,Observable):
 
 
     def __str__(self):
-        pointer = ' ' * self.position + '^'
         str = Scrambler.__str__(self)
         str += "\n"
-        str += pointer 
-        str += "\n"
+        # Slice the wiring, in order to left-rotate it according to the position
+        n = self.position % len(self.wiring)
+        str += self.wiring[n:] + self.wiring[:n]
         return str
         
     
