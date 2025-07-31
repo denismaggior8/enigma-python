@@ -41,7 +41,12 @@ class Rotor(Scrambler,Observable):
 
     def __str__(self):
         pointer = ' ' * self.position + '^'
-        return self.wiring + '\n' + pointer 
+        str = Scrambler.__str__(self)
+        str += "\n"
+        str += pointer 
+        str += "\n"
+        return str
+        
     
     def __eq__(self, __value: object) -> bool:
         return id(self) == id(object)

@@ -60,4 +60,11 @@ class Scrambler(Journaled):
                 return alphabet_list[(i + shift) % len(alphabet_list)]
             
     def __str__(self):
-        return self.wiring
+        str = ""
+        for char in self.alphabet_list:
+            str += char
+        str += "\n"
+        str += "|" * len(self.alphabet_list)
+        str += "\n"
+        str += self.wiring
+        return str
