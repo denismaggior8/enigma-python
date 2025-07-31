@@ -43,6 +43,7 @@ classDiagram
     }
 
     class Clonable {
+        - __init__(self) None
         + clone(self)
     }
 

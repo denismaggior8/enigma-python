@@ -1,5 +1,6 @@
 from rich.console import Console
 from rich.text import Text
+
 from enigmapython.RotatingReflector import RotatingReflector
 
 class XRay():

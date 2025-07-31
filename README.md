@@ -177,4 +177,6 @@ In the case you leveraged **enigmapython** API in a project, either public or no
 
     for having helped me testing the correctness of the generated ciphertexts 
 
+## Support
 
+Found it useful/funny/educational? Please consider to [![Buy Me a Coffee](https://img.shields.io/badge/buy_me_a_coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/denismaggior8)
