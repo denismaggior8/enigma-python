@@ -136,6 +136,7 @@ classDiagram
 
     class Reflector {
         + None tag
+        - __str__(self) str
     }
 
     class Observable {

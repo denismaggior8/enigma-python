@@ -17,4 +17,7 @@ class Plugboard(Scrambler):
 
 
     def __str__(self):
-        return self.wiring
+        str = Scrambler.__str__(self)
+        str += "\n"
+        str += self.wiring
+        return str
