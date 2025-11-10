@@ -9,7 +9,19 @@ from enigmapython.ReflectorUKW_EnigmaB_A133 import ReflectorUKW_EnigmaB_A133
 import unittest
 
 
-class TestEnigmaD(unittest.TestCase):
+class TestEnigmaBA133(unittest.TestCase):
+
+    def test_enigma_B_rotors_I_I_I_ring_1_denis(self):
+        rotor1 = EnigmaB_A133RotorI()
+        rotor2 = EnigmaB_A133RotorI()
+        rotor3 = EnigmaB_A133RotorI(ring=1)
+        reflector = ReflectorUKW_EnigmaB_A133()
+        etw = EnigmaB_A133Etw()
+        enigma = EnigmaB_A133(rotor3, rotor2, rotor1, reflector, etw, True)
+        cleartext = 'denis'
+        my_encrypted_string = enigma.input_string(cleartext)
+        self.assertEqual(my_encrypted_string,"åjsäz","Enigma encryption error")
+
     def test_enigma_B_rotors_I_I_I_small_string(self):
         rotor1 = EnigmaB_A133RotorI()
         rotor2 = EnigmaB_A133RotorI()
