@@ -16,18 +16,23 @@ class Enigma(Observer,Journaled,Clonable):
 
     alphabet_list = None
 
+    def add_rotor(self,idx,rotor):
+        if self.auto_increment_rotors == True and rotor is not None:
+            rotor.add_observer(self)
+        self.rotors[idx] = rotor
+
     def __init__(self, plugboard, rotors, reflector,etw,auto_increment_rotors=False, alphabet=Alphabets.lookup.get("latin_i18n_26chars_lowercase")):
         Journaled.__init__(self)
         Clonable.__init__(self)
         self.plugboard = plugboard
-        self.rotors = rotors
         self.reflector = reflector
+        self.rotors = [None]*len(rotors)
         self.etw = etw
         self.auto_increment_rotors = auto_increment_rotors
         self.alphabet_list = list(alphabet)
-        if auto_increment_rotors == True:
-            for rotor in rotors:
-                rotor.add_observer(self)
+        for i, rotor in enumerate(rotors):
+            self.add_rotor(i, rotor)
+        
 
     def input_string(self,str):
         output_string = ""

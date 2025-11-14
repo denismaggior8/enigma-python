@@ -8,6 +8,8 @@
 
 Welcome to **enigmapython**, a Python package designed to emulate the legendary Enigma cryptographic machine used during World War II. **enigmapython** provides a faithful implementation of the Enigma machine, allowing users to explore and understand the workings of this historic device.
 
+This project is listed on [Wikipedia](https://en.wikipedia.org/wiki/List_of_Enigma_machine_simulators) as a globally recognized Enigma machine simulator, noted for its historical accuracy.
+
 ## Key Features
 
 - **Flexible Configuration**: **enigmapython** allows customization of the Enigma machine configuration, enabling users to experiment with different rotor settings, reflectors, and ring positions.
@@ -150,13 +152,25 @@ Here's a list containing all the known Enigma simulators that use the **enigmapy
 <div class="img-container" style="text-align: center;"> 
     <img src="img/enigmatui.png" alt="drawing" width="400" align="center"/>
 </div>
+<br>
+<br>
 
+- [MicroPython Enigma Python](https://github.com/denismaggior8/micropython-enigma-python). **MicroPython Enigma Python** is a side project to bring Enigma Python library also on ambedded devices which runs MicroPython. It has been referenced on https://awesome-micropython.com/#historical, a curated list of the best MicroPython libraries, in the Cryptografy/Historical section.
+
+<div class="img-container" style="text-align: center;"> 
+    <img src="img/micropython-enigma-python.png" alt="drawing" width="400" align="center"/>
+</div>
+
+<br>
+<br>
 
 - [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma M3 cypher machine whose backend is based on **enigmapython**.
-
 <div class="img-container" style="text-align: center;">
     <img src="img/retrocampus_enigma.png" alt="drawing" width="400" align="center"/>
 </div>
+
+<br>
+<br>
 
 In the case you leveraged **enigmapython** API in a project, either public or not, drop me an email at __denis.maggiorotto[at]gmail.com__ and I'll be happy to list you here.
 

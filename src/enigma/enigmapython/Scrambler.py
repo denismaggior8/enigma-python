@@ -51,7 +51,8 @@ class Scrambler(Journaled):
             i += 1
             # Rotate the wiring
             self.wiring = self.wiring[-1:] + self.wiring[:-1]
-            logging.debug("Rotation " + str(i).zfill(2) + "; Wiring: " + self.wiring)
+            # The following line has been commente out becode not Micropython compatible
+            # logging.debug("Rotation " + str(i).zfill(2) + "; Wiring: " + self.wiring)
          
     @staticmethod
     def __shift(letter, shift, alphabet_list):
