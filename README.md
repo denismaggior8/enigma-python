@@ -155,7 +155,7 @@ Here's a list containing all the known Enigma simulators that use the **enigmapy
 <br>
 <br>
 
-- [MicroPython Enigma Python](https://github.com/denismaggior8/micropython-enigma-python). **MicroPython Enigma Python** is a side project to bring Enigma Python library also on ambedded devices which runs MicroPython. It has been referenced on https://awesome-micropython.com/#historical, a curated list of the best MicroPython libraries, in the Cryptografy/Historical section.
+- [MicroPython Enigma Python](https://github.com/denismaggior8/micropython-enigma-python). **MicroPython Enigma Python** is a side project to bring Enigma Python library also on ambedded devices which runs MicroPython. It has been referenced on https://awesome-micropython.com/#historical, a curated list of the best MicroPython libraries, in the Cryptography/Historical section.
 
 <div class="img-container" style="text-align: center;"> 
     <img src="img/micropython-enigma-python.png" alt="drawing" width="400" align="center"/>
