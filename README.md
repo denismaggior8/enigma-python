@@ -2,6 +2,16 @@
 
 <div class="img-container" style="text-align: center;"> 
     <img src="img/logo.jpg" alt="drawing" width="200" />
+    <br><br>
+    <a href="https://en.wikipedia.org/wiki/List_of_Enigma_machine_simulators">
+        <img src="https://img.shields.io/badge/Wikipedia-List%20of%20Enigma%20machine%20simulators-white?style=for-the-badge&logo=wikipedia&logoColor=black" alt="Wikipedia">
+    </a>
+    <a href="https://pypi.org/project/enigmapython/">
+        <img src="https://img.shields.io/pypi/v/enigmapython?style=for-the-badge&logo=pypi&logoColor=white" alt="PyPI version">
+    </a>
+    <a href="https://pypi.org/project/enigmapython/">
+        <img src="https://img.shields.io/pypi/pyversions/enigmapython?style=for-the-badge&logo=python&logoColor=white" alt="Python versions">
+    </a>
 </div>
 
 ## About

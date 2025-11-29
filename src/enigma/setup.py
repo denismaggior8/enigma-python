@@ -18,5 +18,9 @@ setup(
         where='.',  # '.' by default
         include=['enigmapython'],  # ['*'] by default
     ),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "Operating System :: OS Independent",
+    ],
     description="A simple yet faithful library to emulate different Enigma machines models using Python"
 )
