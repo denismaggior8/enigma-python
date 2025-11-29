@@ -21,6 +21,8 @@ setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
+        "License :: OSI Approved :: MIT License",
     ],
+    license="MIT",
     description="A simple yet faithful library to emulate different Enigma machines models using Python"
 )

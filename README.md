@@ -12,6 +12,18 @@
     <a href="https://pypi.org/project/enigmapython/">
         <img src="https://img.shields.io/pypi/pyversions/enigmapython?style=for-the-badge&logo=python&logoColor=white" alt="Python versions">
     </a>
+    <a href="https://pepy.tech/project/enigmapython">
+        <img src="https://img.shields.io/pepy/dt/enigmapython?style=for-the-badge&logo=pypi&logoColor=white" alt="Total Downloads">
+    </a>
+    <a href="https://github.com/denismaggior8/enigma-python">
+        <img src="https://img.shields.io/github/stars/denismaggior8/enigma-python?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Stars">
+    </a>
+    <a href="https://github.com/denismaggior8/enigma-python">
+        <img src="https://img.shields.io/github/languages/code-size/denismaggior8/enigma-python?style=for-the-badge&logo=github&logoColor=white" alt="Code Size">
+    </a>
+    <a href="https://github.com/denismaggior8/enigma-python/blob/master/LICENSE">
+        <img src="https://img.shields.io/github/license/denismaggior8/enigma-python?style=for-the-badge&logo=github&logoColor=white" alt="License">
+    </a>
 </div>
 
 ## About
