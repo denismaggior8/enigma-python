@@ -2,7 +2,15 @@
 
 <div class="img-container" style="text-align: center;"> 
     <img src="img/logo.jpg" alt="drawing" width="200" />
-    <br><br>
+</div>
+
+## About
+
+Welcome to **enigmapython**, a Python package designed to emulate the legendary Enigma cryptographic machine used during World War II. **enigmapython** provides a faithful implementation of the Enigma machine, allowing users to explore and understand the workings of this historic device.
+
+This project is listed on [Wikipedia](https://en.wikipedia.org/wiki/List_of_Enigma_machine_simulators) as a globally recognized Enigma machine simulator, noted for its historical accuracy.
+
+<div class="img-container" style="text-align: center;"> 
     <a href="https://en.wikipedia.org/wiki/List_of_Enigma_machine_simulators">
         <img src="https://img.shields.io/badge/Wikipedia-List%20of%20Enigma%20machine%20simulators-white?style=for-the-badge&logo=wikipedia&logoColor=black" alt="Wikipedia">
     </a>
@@ -25,12 +33,6 @@
         <img src="https://img.shields.io/github/license/denismaggior8/enigma-python?style=for-the-badge&logo=github&logoColor=white" alt="License">
     </a>
 </div>
-
-## About
-
-Welcome to **enigmapython**, a Python package designed to emulate the legendary Enigma cryptographic machine used during World War II. **enigmapython** provides a faithful implementation of the Enigma machine, allowing users to explore and understand the workings of this historic device.
-
-This project is listed on [Wikipedia](https://en.wikipedia.org/wiki/List_of_Enigma_machine_simulators) as a globally recognized Enigma machine simulator, noted for its historical accuracy.
 
 ## Key Features
 
