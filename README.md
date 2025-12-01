@@ -1,7 +1,7 @@
 # Enigma Python library
 
 <div class="img-container" style="text-align: center;"> 
-    <img src="img/logo.jpg" alt="drawing" width="200" />
+    <img src="https://raw.githubusercontent.com/denismaggior8/enigma-python/master/img/logo.jpg" alt="drawing" width="200" />
 </div>
 
 ## About
@@ -181,7 +181,7 @@ Here's a list containing all the known Enigma simulators that use the **enigmapy
 - [Enigma TUI](https://github.com/denismaggior8/enigma-tui). **Enigma TUI** is a **T**erminal **U**ser **I**nterface for Enigma machines, allowing you to simulate different Enigma machine models from the terminal. It employs  **enigmapython** as Enigma engine. 
 
 <div class="img-container" style="text-align: center;"> 
-    <img src="img/enigmatui.png" alt="drawing" width="400" align="center"/>
+    <img src="https://raw.githubusercontent.com/denismaggior8/enigma-python/master/img/enigmatui.png" alt="drawing" width="400" align="center"/>
 </div>
 <br>
 <br>
@@ -189,7 +189,7 @@ Here's a list containing all the known Enigma simulators that use the **enigmapy
 - [MicroPython Enigma Python](https://github.com/denismaggior8/micropython-enigma-python). **MicroPython Enigma Python** is a side project to bring Enigma Python library also on ambedded devices which runs MicroPython. It has been referenced on https://awesome-micropython.com/#historical, a curated list of the best MicroPython libraries, in the Cryptografy/Historical section.
 
 <div class="img-container" style="text-align: center;"> 
-    <img src="img/micropython-enigma-python.png" alt="drawing" width="400" align="center"/>
+    <img src="https://raw.githubusercontent.com/denismaggior8/enigma-python/master/img/micropython-enigma-python.png" alt="drawing" width="400" align="center"/>
 </div>
 
 <br>
@@ -197,7 +197,7 @@ Here's a list containing all the known Enigma simulators that use the **enigmapy
 
 - [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma M3 cypher machine whose backend is based on **enigmapython**.
 <div class="img-container" style="text-align: center;">
-    <img src="img/retrocampus_enigma.png" alt="drawing" width="400" align="center"/>
+    <img src="https://raw.githubusercontent.com/denismaggior8/enigma-python/master/img/retrocampus_enigma.png" alt="drawing" width="400" align="center"/>
 </div>
 
 <br>
