@@ -40,6 +40,13 @@ This project is listed on [Wikipedia](https://en.wikipedia.org/wiki/List_of_Enig
 - **Easy Extension**: **enigmapython** is designed to be easily extensible, allowing developers to add new features or enhance the existing implementation.
 - **Simple yet faithful**: don't be fooled by its simplicity; **enigmapython** implements 100% the algorithms of many Enigma machine models, allowing to decode a message that has been encoded by a real Enigma machine and also the contrary.
 
+## Historical Accuracy & Verification
+
+**enigmapython** is rigorously tested against authentic historical data to ensure maximum accuracy.
+
+
+- [Authentic German Army Test Message from 1930](https://cryptocellar.org/enigma/e-message-1930.html): Documented by Frode Weierud's CryptoCellar, this test validates that the **Enigma I** implementation correctly handles the complex interaction of rotors, ring settings, and plugboard connections exactly as the original machines did. See the [corresponding unit test](https://github.com/denismaggior8/enigma-python/blob/master/tests/Enigma1930_tests.py) for details.
+
 ## Machines implementations
 
 The following Enigma machine models (along with their rotors, reflectors and plugboards) have been implemented:
