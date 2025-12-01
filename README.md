@@ -168,7 +168,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 ## Getting started
 
-Please have a look of the [examples](https://github.com/denismaggior8/enigma-python/blob/master/examples/enigma_machines_examples.py) folder
+Please have a look of the [examples](https://github.com/denismaggior8/enigma-python/tree/master/examples) folder
 
 ## Documentation
 
