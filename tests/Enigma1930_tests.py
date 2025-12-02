@@ -12,8 +12,9 @@ class TestEnigma1930(unittest.TestCase):
         """
         Verifies the decryption of the authentic 1930 German Army Enigma test message.
         Source: https://cryptocellar.org/enigma/e-message-1930.html
-        
+
         Settings:
+        Enigma Model: I
         Reflector: A
         Rotors: II I III (Left to Right) -> III is Right (Fast), II is Left (Slow)
         Ring Settings: 24 13 22 (X M V) -> 23 12 21 (0-based)
