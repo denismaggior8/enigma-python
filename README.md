@@ -46,6 +46,7 @@ This project is listed on [Wikipedia](https://en.wikipedia.org/wiki/List_of_Enig
 
 
 - [Authentic German Army Test Message from 1930](https://cryptocellar.org/enigma/e-message-1930.html): Documented by Frode Weierud's CryptoCellar, this test validates that the **Enigma I** implementation correctly handles the complex interaction of rotors, ring settings, and plugboard connections exactly as the original machines did. See the [corresponding unit test](https://github.com/denismaggior8/enigma-python/blob/master/tests/Enigma1930_tests.py) for details.
+- [Authentic U-534 M4 Message P1030700](https://enigma.hoerenberg.com/index.php?cat=The%20U534%20messages&page=P1030700): A message from the U-534 submarine (May 1945), validating the **Enigma M4** implementation (including the Greek rotor and thin reflector) against historical intercepts. See the [corresponding unit test](https://github.com/denismaggior8/enigma-python/blob/master/tests/EnigmaM4_U534_tests.py) for details.
 
 ## Machines implementations
 
