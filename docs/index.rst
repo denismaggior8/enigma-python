@@ -11,6 +11,8 @@ Welcome to enigmapython's documentation!
    :caption: Contents:
 
    modules
+   rotors
+   classdiagram/enigmapython
 
 Indices and tables
 ==================

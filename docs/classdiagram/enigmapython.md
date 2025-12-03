@@ -1,4 +1,6 @@
-```mermaid
+# Class Diagram
+
+```{mermaid}
 ---
 title: enigmapython
 ---
