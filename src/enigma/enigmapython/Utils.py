@@ -8,16 +8,16 @@ class Utils:
         Finds the index where two strings first diverge, 
         and the characters at that index in both strings.
         
-        Parameters:
-        str1 (str): The first string.
-        str2 (str): The second string.
+        Args:
+            str1 (str): The first string.
+            str2 (str): The second string.
         
         Returns:
-        tuple: (index, char1, char2) where index is the position of divergence,
-            char1 is the character in str1 at the divergence,
-            and char2 is the character in str2 at the divergence.
-            If the strings only diverge in length, char1 and char2 will be None.
-            If the strings are identical, returns None.
+            tuple: (index, char1, char2) where index is the position of divergence,
+                char1 is the character in str1 at the divergence,
+                and char2 is the character in str2 at the divergence.
+                If the strings only diverge in length, char1 and char2 will be None.
+                If the strings are identical, returns None.
         """
         # Iterate through both strings up to the length of the shorter string
         for i in range(min(len(str1), len(str2))):

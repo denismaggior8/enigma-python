@@ -6,3 +6,4 @@
 **/*.drawio.dtmp
 **/.DS_Store
 **/.venv
+**/_build
