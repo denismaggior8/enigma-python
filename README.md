@@ -173,7 +173,9 @@ Get started by installing the package from PyPI (`pip install enigmapython`) and
 
 ## Documentation
 
-An initial documentation draft can be found [here](./docs/README.md), but in most cases examples, code (and comments) are better than the documentation
+Full API documentation is available on [ReadTheDocs](https://enigmapython.readthedocs.io/).
+
+For additional details, you can also refer to the [local documentation](./docs/README.md), examples, and code comments.
 
 ## Known implementations
 
