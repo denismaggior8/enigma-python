@@ -9,11 +9,22 @@ function initializeSvgPanZoom() {
             return;
         }
 
-        // Check if SVG has valid dimensions
-        var bbox = svg.getBBox ? svg.getBBox() : null;
-        if (!bbox || bbox.width === 0 || bbox.height === 0) {
-            console.log('SVG not ready yet:', svg.id);
-            setTimeout(function () { initializeSvgPanZoomForElement(svg); }, 100); // Retry for this specific SVG
+        // Check if SVG has valid dimensions using multiple methods
+        var bbox = null;
+        try {
+            bbox = svg.getBBox();
+        } catch (e) {
+            console.log('getBBox failed for SVG:', svg.id, e);
+        }
+
+        // Also check computed dimensions
+        var rect = svg.getBoundingClientRect();
+        var hasValidBBox = bbox && bbox.width > 0 && bbox.height > 0;
+        var hasValidRect = rect && rect.width > 0 && rect.height > 0;
+
+        if (!hasValidBBox && !hasValidRect) {
+            console.log('SVG not ready yet (no valid dimensions):', svg.id);
+            setTimeout(function () { initializeSvgPanZoomForElement(svg); }, 200);
             return;
         }
 
