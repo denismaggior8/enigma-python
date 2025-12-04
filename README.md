@@ -64,6 +64,17 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 *given the rarity of this model and the little documentation/simulators available, although I expect an encryption consistency on par with newer models, I was unable to test it as I would have liked
 
+### Enigma K (Commercial Enigma)
+
+| Scrambler \t             | Wiring                    \t        | Notch \t| Implemented \t    |
+|-------\t                 |----------------------------\t        |-------\t|-------------      |
+| ETW \"QWERTZ\"               | qwertzuioasdfghjkpyxcvbnml \t        | N/A     \t|   ✅           \t|
+| Rotor I                    | ekmflgdqvzntowyhxuspaibrcj \t        | y     \t|   ✅           \t|
+| Rotor II                   | ajdksiruxblhwtmcqgznpyfvoe \t        | m     \t|   ✅           \t|
+| Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo \t        | d     \t|   ✅           \t|
+| Reflector UKW              | imetcgfraysqbzxwlhkdvupojn \t        | N/A     \t|   ✅           \t|
+
+
 ### Enigma D
 
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |

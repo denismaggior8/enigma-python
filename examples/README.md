@@ -24,6 +24,10 @@ This directory contains example scripts demonstrating how to configure and use v
 - **File**: [enigma_machine_M4_example.py](enigma_machine_M4_example.py)
 - **Description**: Setup and usage of the Enigma M4 (Kriegsmarine U-boat) with 4 rotors (including Beta/Gamma) and a thin reflector.
 
+### Enigma K (Commercial Enigma)
+- **File**: [enigma_machine_K_example.py](enigma_machine_K_example.py)
+- **Description**: Setup and usage of the Enigma K, the original commercial Enigma machine from the 1920s with QWERTZ keyboard layout. Note: This model does not have a plugboard.
+
 ### Enigma B (A-133)
 - **File**: [enigma_machine_B_example.py](enigma_machine_B_example.py)
 - **Description**: Setup and usage of the rare Enigma B (Swedish model A-133). Note: This model does not have a plugboard.

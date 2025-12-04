@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.abspath('../src'))
 project = 'enigmapython'
 copyright = '2025, Denis Maggiorotto'
 author = 'Denis Maggiorotto'
-release = '1.3.3'
+release = '1.4.0'
 
 # -- General configuration ---------------------------------------------------
 extensions = [
