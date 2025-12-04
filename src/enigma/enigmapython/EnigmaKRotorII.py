@@ -3,8 +3,8 @@ from .Alphabets import Alphabets
 
 class EnigmaKRotorII(Rotor):
     
-    wiring = 'ajdksiruxblhwtmcqgznpyfvoe'
-    notch_indexes = [12]  # M
+    wiring = 'slvgbtfxjqohewirzyamkpcndu'
+    notch_indexes = [12]  # M (position 12)
     tag = "K_II"
     
     def __init__(self, position = 0, ring = 0):

@@ -5,7 +5,7 @@ class TestEnigmaKRotorII(unittest.TestCase):
     def test_wiring(self):
         """Test that Rotor II has the correct wiring"""
         rotor = EnigmaKRotorII(0, 0)
-        self.assertEqual(rotor.wiring, 'ajdksiruxblhwtmcqgznpyfvoe')
+        self.assertEqual(rotor.wiring, 'slvgbtfxjqohewirzyamkpcndu')
     
     def test_notch_position(self):
         """Test that Rotor II has notch at M (position 12)"""
