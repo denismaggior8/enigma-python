@@ -66,13 +66,13 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 ### Enigma K (Commercial Enigma)
 
-| Scrambler \t             | Wiring                    \t        | Notch \t| Implemented \t    |
-|-------\t                 |----------------------------\t        |-------\t|-------------      |
-| ETW \"QWERTZ\"               | qwertzuioasdfghjkpyxcvbnml \t        | N/A     \t|   ✅           \t|
-| Rotor I                    | ekmflgdqvzntowyhxuspaibrcj \t        | y     \t|   ✅           \t|
-| Rotor II                   | ajdksiruxblhwtmcqgznpyfvoe \t        | m     \t|   ✅           \t|
-| Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo \t        | d     \t|   ✅           \t|
-| Reflector UKW              | imetcgfraysqbzxwlhkdvupojn \t        | N/A     \t|   ✅           \t|
+| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| ETW "QWERTZ"               | qwertzuioasdfghjkpyxcvbnml 	        | N/A     	|   ✅           	|
+| Rotor I                    | ekmflgdqvzntowyhxuspaibrcj 	        | y     	|   ✅           	|
+| Rotor II                   | ajdksiruxblhwtmcqgznpyfvoe 	        | m     	|   ✅           	|
+| Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo 	        | d     	|   ✅           	|
+| Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
 
 
 ### Enigma D
