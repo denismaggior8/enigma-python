@@ -10,7 +10,7 @@ from enigmapython.ReflectorUKWBThin import ReflectorUKWBThin
 from enigmapython.XRay import XRay
 from enigmapython.EnigmaZ import EnigmaZ
 from enigmapython.EnigmaZRotorI import EnigmaZRotorI
-from enigmapython.ReflectorZUKW import ReflectorZUKW
+from enigmapython.ReflectorUKW_EnigmaZ import ReflectorUKW_EnigmaZ
 from enigmapython.EnigmaZEtw import EnigmaZEtw
 
 
@@ -31,7 +31,7 @@ print(rotor1)
 rotor1 = EnigmaZRotorI(1)
 rotor2 = EnigmaZRotorI(7)
 rotor3 = EnigmaZRotorI(9)
-reflector = ReflectorZUKW()
+reflector = ReflectorUKW_EnigmaZ()
 etw = EnigmaZEtw()
 enigma = EnigmaZ(rotor3, rotor2, rotor1, reflector, etw, True)
 enigma.input_char("8")

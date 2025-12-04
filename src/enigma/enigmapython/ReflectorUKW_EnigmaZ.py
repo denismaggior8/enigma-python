@@ -4,7 +4,7 @@ from .Alphabets import Alphabets
 from .RotatingReflector import RotatingReflector
 
 
-class ReflectorZUKW(RotatingReflector):
+class ReflectorUKW_EnigmaZ(RotatingReflector):
     
     wiring = '5079183642'
     notch_indexes = [3]

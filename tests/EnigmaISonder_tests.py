@@ -2,7 +2,7 @@ from enigmapython.EnigmaISonderRotorI import EnigmaISonderRotorI
 from enigmapython.EnigmaISonderRotorII import EnigmaISonderRotorII
 from enigmapython.EnigmaISonderRotorIII import EnigmaISonderRotorIII
 from enigmapython.PlugboardPassthrough import PlugboardPassthrough
-from enigmapython.ReflectorSonderUKW import ReflectorSonderUKW
+from enigmapython.ReflectorUKW_EnigmaISonder import ReflectorUKW_EnigmaISonder
 from enigmapython.EtwPassthrough import EtwPassthrough
 from enigmapython.EnigmaISonder import EnigmaISonder
 from enigma.machine import EnigmaMachine
@@ -19,7 +19,7 @@ class TestEnigmaISonder(unittest.TestCase):
         rotor1 = EnigmaISonderRotorI(0)
         rotor2 = EnigmaISonderRotorII(0)
         rotor3 = EnigmaISonderRotorIII(0)
-        reflector = ReflectorSonderUKW()
+        reflector = ReflectorUKW_EnigmaISonder()
         etw = EtwPassthrough()
         enigma = EnigmaISonder(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
         cleartext = "supercalifragilistichespiralidoso"

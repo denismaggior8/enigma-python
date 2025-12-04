@@ -2,7 +2,7 @@
 from enigmapython.EnigmaINorwayRotorI import EnigmaINorwayRotorI
 from enigmapython.EnigmaINorwayRotorII import EnigmaINorwayRotorII
 from enigmapython.EnigmaINorwayRotorIII import EnigmaINorwayRotorIII
-from enigmapython.ReflectorNorwayUKW import ReflectorNorwayUKW
+from enigmapython.ReflectorUKW_EnigmaINorway import ReflectorUKW_EnigmaINorway
 from enigmapython.PlugboardPassthrough import PlugboardPassthrough
 from enigmapython.EtwPassthrough import EtwPassthrough
 from enigmapython.EnigmaINorway import EnigmaINorway
@@ -19,7 +19,7 @@ plugboard = PlugboardPassthrough()
 rotor1 = EnigmaINorwayRotorI(ring=0,position=0)
 rotor2 = EnigmaINorwayRotorII(ring=0,position=0)
 rotor3 = EnigmaINorwayRotorIII(ring=0,position=0)
-reflector = ReflectorNorwayUKW()
+reflector = ReflectorUKW_EnigmaINorway()
 etw = EtwPassthrough()
 
 # Setup Enigma I Norway machine

@@ -1,9 +1,9 @@
 from .Alphabets import Alphabets
 from .Reflector import Reflector
-class ReflectorSonderUKW(Reflector):
+class ReflectorUKW_EnigmaISonder(Reflector):
     
     wiring = 'ciagsndrbytpzfulvhekoqxwjm'
-    tag = "IS_UKW"
+    tag = "Sonder_UKW"
     
     def __init__(self):
         super().__init__(

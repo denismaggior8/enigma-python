@@ -3,7 +3,7 @@ from enigmapython.EnigmaISonderRotorII import EnigmaISonderRotorII
 from enigmapython.EnigmaISonderRotorIII import EnigmaISonderRotorIII
 from enigmapython.PlugboardPassthrough import PlugboardPassthrough
 from enigmapython.Journaled import Journaled
-from enigmapython.ReflectorSonderUKW import ReflectorSonderUKW
+from enigmapython.ReflectorUKW_EnigmaISonder import ReflectorUKW_EnigmaISonder
 from enigmapython.EtwPassthrough import EtwPassthrough
 from enigmapython.EnigmaISonder import EnigmaISonder
 from enigma.machine import EnigmaMachine

@@ -2,7 +2,7 @@
 from enigmapython.EnigmaISonderRotorI import EnigmaISonderRotorI
 from enigmapython.EnigmaISonderRotorII import EnigmaISonderRotorII
 from enigmapython.EnigmaISonderRotorIII import EnigmaISonderRotorIII
-from enigmapython.ReflectorSonderUKW import ReflectorSonderUKW
+from enigmapython.ReflectorUKW_EnigmaISonder import ReflectorUKW_EnigmaISonder
 from enigmapython.PlugboardPassthrough import PlugboardPassthrough
 from enigmapython.EtwPassthrough import EtwPassthrough
 from enigmapython.EnigmaISonder import EnigmaISonder
@@ -19,7 +19,7 @@ plugboard = PlugboardPassthrough()
 rotor1 = EnigmaISonderRotorI(ring=0,position=0)
 rotor2 = EnigmaISonderRotorII(ring=0,position=0)
 rotor3 = EnigmaISonderRotorIII(ring=0,position=0)
-reflector = ReflectorSonderUKW()
+reflector = ReflectorUKW_EnigmaISonder()
 etw = EtwPassthrough()
 
 # Setup Enigma I Sondermaschine machine

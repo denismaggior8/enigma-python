@@ -1,10 +1,10 @@
 from .Rotor import Rotor
 from .Reflector import Reflector
 from .Alphabets import Alphabets    
-class ReflectorNorwayUKW(Reflector):
+class ReflectorUKW_EnigmaINorway(Reflector):
     
     wiring = 'mowjypuxndsraibfvlkzgqchet'
-    tag = "IN_UKW"
+    tag = "Norway_UKW"
     
     def __init__(self):
         super().__init__(

@@ -2,7 +2,7 @@ from enigmapython.EnigmaINorwayRotorI import EnigmaINorwayRotorI
 from enigmapython.EnigmaINorwayRotorII import EnigmaINorwayRotorII
 from enigmapython.EnigmaINorwayRotorIII import EnigmaINorwayRotorIII
 from enigmapython.PlugboardPassthrough import PlugboardPassthrough
-from enigmapython.ReflectorNorwayUKW import ReflectorNorwayUKW
+from enigmapython.ReflectorUKW_EnigmaINorway import ReflectorUKW_EnigmaINorway
 from enigmapython.EtwPassthrough import EtwPassthrough
 from enigmapython.EnigmaINorway import EnigmaINorway
 from string import ascii_lowercase
@@ -15,7 +15,7 @@ class TestEnigmaNorway(unittest.TestCase):
         rotor1 = EnigmaINorwayRotorI(0)
         rotor2 = EnigmaINorwayRotorII(0)
         rotor3 = EnigmaINorwayRotorIII(0)
-        reflector = ReflectorNorwayUKW()
+        reflector = ReflectorUKW_EnigmaINorway()
         etw = EtwPassthrough()
         enigma = EnigmaINorway(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)
         cleartext = "supercalifragilistichespiralidoso"

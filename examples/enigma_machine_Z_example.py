@@ -4,7 +4,7 @@ from enigmapython.EnigmaZRotorII import EnigmaZRotorII
 from enigmapython.EnigmaZRotorIII import EnigmaZRotorIII
 from enigmapython.EnigmaZEtw import EnigmaZEtw
 from enigmapython.EnigmaZ import EnigmaZ
-from enigmapython.ReflectorZUKW import ReflectorZUKW
+from enigmapython.ReflectorUKW_EnigmaZ import ReflectorUKW_EnigmaZ
 from enigmapython.Utils import Utils
 
 # Import from python ecosystem
@@ -19,7 +19,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 rotor1 = EnigmaZRotorI(ring=0,position=0)
 rotor2 = EnigmaZRotorI(ring=0,position=0)
 rotor3 = EnigmaZRotorI(ring=0,position=0)
-reflector = ReflectorZUKW()
+reflector = ReflectorUKW_EnigmaZ()
 etw = EnigmaZEtw()
 
 # Setup Enigma D machine
