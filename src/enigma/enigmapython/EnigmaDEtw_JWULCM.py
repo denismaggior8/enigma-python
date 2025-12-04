@@ -1,6 +1,5 @@
-from .Etw import Etw
+from .EtwJWULCM import EtwJWULCM
 
-class EnigmaDEtw_JWULCM(Etw):
-    wiring = "jwulcmnohpqzyxiradkegvbtsf"
-    def __init__(self):
-         super().__init__(self.wiring)
+class EnigmaDEtw_JWULCM(EtwJWULCM):
+    """Enigma D ETW with JWULCM keyboard layout"""
+    pass

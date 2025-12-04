@@ -1,6 +1,5 @@
-from .Etw import Etw
+from .EtwQWERTZ import EtwQWERTZ
 
-class EnigmaDEtw_QWERTZ(Etw):
-    wiring = "qwertzuioasdfghjkpyxcvbnml"
-    def __init__(self):
-         super().__init__(self.wiring)
+class EnigmaDEtw_QWERTZ(EtwQWERTZ):
+    """Enigma D ETW with QWERTZ keyboard layout"""
+    pass

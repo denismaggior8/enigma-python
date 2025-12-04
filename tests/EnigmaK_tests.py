@@ -3,7 +3,7 @@ from enigmapython.EnigmaKRotorI import EnigmaKRotorI
 from enigmapython.EnigmaKRotorII import EnigmaKRotorII
 from enigmapython.EnigmaKRotorIII import EnigmaKRotorIII
 from enigmapython.EnigmaKReflectorUKW import EnigmaKReflectorUKW
-from enigmapython.EnigmaKEtw import EnigmaKEtw
+from enigmapython.EnigmaKEtw_QWERTZ import EnigmaKEtw_QWERTZ
 from enigmapython.EnigmaK import EnigmaK
 
 class TestEnigmaK(unittest.TestCase):
@@ -14,7 +14,7 @@ class TestEnigmaK(unittest.TestCase):
         rotor2 = EnigmaKRotorII(0, 0)
         rotor3 = EnigmaKRotorIII(0, 0)
         reflector = EnigmaKReflectorUKW()
-        etw = EnigmaKEtw()
+        etw = EnigmaKEtw_QWERTZ()
         
         enigma = EnigmaK(rotor1, rotor2, rotor3, reflector, etw, True)
         
@@ -38,7 +38,7 @@ class TestEnigmaK(unittest.TestCase):
         rotor2 = EnigmaKRotorII(0, 0)
         rotor3 = EnigmaKRotorIII(0, 0)
         reflector = EnigmaKReflectorUKW()
-        etw = EnigmaKEtw()
+        etw = EnigmaKEtw_QWERTZ()
         
         enigma = EnigmaK(rotor1, rotor2, rotor3, reflector, etw, True)
         
@@ -52,7 +52,7 @@ class TestEnigmaK(unittest.TestCase):
         rotor2 = EnigmaKRotorII(0, 0)
         rotor3 = EnigmaKRotorIII(0, 0)
         reflector = EnigmaKReflectorUKW()
-        etw = EnigmaKEtw()
+        etw = EnigmaKEtw_QWERTZ()
         
         enigma = EnigmaK(rotor1, rotor2, rotor3, reflector, etw, True)
         
@@ -64,7 +64,7 @@ class TestEnigmaK(unittest.TestCase):
         rotor2 = EnigmaKRotorII(0, 0)
         rotor3 = EnigmaKRotorIII(0, 0)
         reflector = EnigmaKReflectorUKW()
-        etw = EnigmaKEtw()
+        etw = EnigmaKEtw_QWERTZ()
         
         enigma = EnigmaK(rotor1, rotor2, rotor3, reflector, etw, True)
         
