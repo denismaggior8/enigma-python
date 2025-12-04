@@ -4,7 +4,7 @@ from .Alphabets import Alphabets
 class EnigmaKRotorI(Rotor):
     
     wiring = 'lpgszmhaeoqkvxrfybutnicjdw'
-    notch_indexes = [6]  # G (position 6)
+    notch_indexes = [24]  # Y (notch position)
     tag = "K_I"
     
     def __init__(self, position = 0, ring = 0):
