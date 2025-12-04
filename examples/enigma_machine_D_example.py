@@ -4,7 +4,7 @@ from enigmapython.EnigmaDRotorII import EnigmaDRotorII
 from enigmapython.EnigmaDRotorIII import EnigmaDRotorIII
 from enigmapython.EnigmaDEtw_JWULCM import EnigmaDEtw_JWULCM
 from enigmapython.EnigmaD import EnigmaD
-from enigmapython.ReflectorDUKW import ReflectorDUKW
+from enigmapython.ReflectorUKW_EnigmaCommercial import ReflectorUKW_EnigmaCommercial
 
 # Import from python ecosystem
 import logging
@@ -18,7 +18,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 rotor1 = EnigmaDRotorI(ring=0,position=0)
 rotor2 = EnigmaDRotorI(ring=0,position=0)
 rotor3 = EnigmaDRotorI(ring=0,position=0)
-reflector = ReflectorDUKW()
+reflector = ReflectorUKW_EnigmaCommercial()
 etw = EnigmaDEtw_JWULCM() # You could use the EnigmaDEtw_QWERTZ implementation instead
 
 # Setup Enigma D machine

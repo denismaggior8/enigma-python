@@ -1,7 +1,7 @@
 from enigmapython.EnigmaKRotorI import EnigmaKRotorI
 from enigmapython.EnigmaKRotorII import EnigmaKRotorII
 from enigmapython.EnigmaKRotorIII import EnigmaKRotorIII
-from enigmapython.EnigmaKReflectorUKW import EnigmaKReflectorUKW
+from enigmapython.ReflectorUKW_EnigmaCommercial import ReflectorUKW_EnigmaCommercial
 from enigmapython.EnigmaKEtw_QWERTZ import EnigmaKEtw_QWERTZ
 from enigmapython.EnigmaK import EnigmaK
 
@@ -11,7 +11,7 @@ rotor2 = EnigmaKRotorII(0, 0)     # Middle rotor
 rotor3 = EnigmaKRotorIII(0, 0)    # Left rotor
 
 # Setup Reflector
-reflector = EnigmaKReflectorUKW()
+reflector = ReflectorUKW_EnigmaCommercial()
 
 # Setup ETW (QWERTZ layout)
 etw = EnigmaKEtw_QWERTZ()
