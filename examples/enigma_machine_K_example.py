@@ -4,6 +4,11 @@ from enigmapython.EnigmaKRotorIII import EnigmaKRotorIII
 from enigmapython.ReflectorUKW_EnigmaCommercial import ReflectorUKW_EnigmaCommercial
 from enigmapython.EnigmaKEtw_QWERTZ import EnigmaKEtw_QWERTZ
 from enigmapython.EnigmaK import EnigmaK
+import logging
+import sys
+
+# Setup logging
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 # Setup Rotors (position, ring)
 rotor1 = EnigmaKRotorI(0, 0)      # Right rotor
