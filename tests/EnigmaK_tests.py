@@ -73,6 +73,30 @@ class TestEnigmaK(unittest.TestCase):
         
         # Right rotor should have stepped
         self.assertEqual(enigma.rotors[0].position, initial_pos + 1)
+    
+    def test_verified_vector(self):
+        """
+        Test against a vector verified with dencode.com and cryptii.com
+        Settings:
+            - Rotors: I-II-III
+            - Ring Settings: A-A-A (0-0-0)
+            - Initial Positions: A-A-A (0-0-0)
+            - Reflector: UKW (Commercial)
+            - ETW: QWERTZ
+        """
+        rotor1 = EnigmaKRotorI(0, 0)
+        rotor2 = EnigmaKRotorII(0, 0)
+        rotor3 = EnigmaKRotorIII(0, 0)
+        reflector = ReflectorUKW_EnigmaCommercial()
+        etw = EnigmaKEtw_QWERTZ()
+        
+        enigma = EnigmaK(rotor1, rotor2, rotor3, reflector, etw, True)
+        
+        plaintext = "helloworld"
+        expected_ciphertext = "bkjjhdvbxc"
+        
+        ciphertext = enigma.input_string(plaintext)
+        self.assertEqual(ciphertext, expected_ciphertext)
 
 if __name__ == '__main__':
     unittest.main()

@@ -69,9 +69,9 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
 | ETW "QWERTZ"               | qwertzuioasdfghjkpyxcvbnml 	        | N/A     	|   ✅           	|
-| Rotor I                    | lpgszmhaeoqkvxrfybutnicjdw 	        | g     	|   ✅           	|
-| Rotor II                   | slvgbtfxjqohewirzyamkpcndu 	        | m     	|   ✅           	|
-| Rotor III                  | cjgdpshkturawzxfmynqobvlie 	        | v     	|   ✅           	|
+| Rotor I                    | lpgszmhaeoqkvxrfybutnicjdw 	        | y     	|   ✅           	|
+| Rotor II                   | slvgbtfxjqohewirzyamkpcndu 	        | e     	|   ✅           	|
+| Rotor III                  | cjgdpshkturawzxfmynqobvlie 	        | n     	|   ✅           	|
 | Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
 
 
