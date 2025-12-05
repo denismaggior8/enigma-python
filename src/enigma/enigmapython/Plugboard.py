@@ -11,7 +11,6 @@ class Plugboard(Scrambler):
         self.alphabet_list = list(alphabet)
         super().__init__(
             alphabet=alphabet,
-            ring=0,
             wiring=wiring
         )
 

@@ -85,8 +85,14 @@ class Enigma(Observer,Journaled,Clonable):
                 scrambled_char = rotor.scramble_char(rotor.wiring,self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position, rotor.position) 
             iteration +=1
             logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration),scrambled_char))
-        scrambled_char = self.reflector.scramble_char(self.reflector.wiring,(self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position), 0)
+        reflector_pos = getattr(self.reflector, 'position', 0)
+        scrambled_char = self.reflector.scramble_char(self.reflector.wiring,(self.alphabet_list.index(scrambled_char)-self.rotors[iteration-1].position), reflector_pos)
         logging.debug("Scrambled letter from reflector: {}".format(scrambled_char))
+        
+        # Adjust for reflector position on return path
+        if reflector_pos != 0:
+            scrambled_char = self.shift_letter(scrambled_char, -reflector_pos, self.alphabet_list)
+            
         for rotor in reversed(self.rotors):
             if iteration == len(self.rotors):
                 scrambled_char = rotor.scramble_char(self.alphabet_list,(rotor.wiring.index(self.shift_letter(scrambled_char,rotor.position,self.alphabet_list))-rotor.position), rotor.position)

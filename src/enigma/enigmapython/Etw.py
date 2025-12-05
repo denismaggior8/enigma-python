@@ -9,7 +9,6 @@ class Etw(Scrambler):
     def __init__(self, wiring, alphabet=Alphabets.lookup.get("latin_i18n_26chars_lowercase")):
         super().__init__(
             alphabet=alphabet,
-            ring=0,
             wiring=wiring
         )
         self.wiring = wiring

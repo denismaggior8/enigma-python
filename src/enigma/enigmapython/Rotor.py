@@ -1,16 +1,13 @@
 from .Observable import Observable
 from .Scrambler import Scrambler
+from .Settable import Settable
 import logging
 
-class Rotor(Scrambler,Observable):
-    position = None
+class Rotor(Scrambler,Observable,Settable):
     rotations_counter = None
     notch_indexes = None
     double_step_triggered = None
 
-    def reset_position(self):
-        self.position = 0
-    
     def increment_position(self):
         self.position = ((self.position + 1) % len(self.wiring))
         self.rotations_counter = self.rotations_counter + 1
@@ -21,18 +18,18 @@ class Rotor(Scrambler,Observable):
                 self.notify_observers(None,None)
 
     def set_position(self,position):
-        self.position = position % len(self.wiring)
+        super().set_position(position % len(self.wiring))
         self.rotations_counter = 0
 
     def __init__(self, wiring, notch_indexes, alphabet, position = 0, ring = 0):
         # Scrambler properties
-        super().__init__(
-            wiring = wiring,
-            ring = ring,
-            alphabet = alphabet
-        )
+        # Scrambler properties
+        Scrambler.__init__(self, wiring=wiring, alphabet=alphabet)
+        # Settable properties
+        Settable.__init__(self, position=position % len(wiring), ring=ring)
+        self.set_ring(self.ring)
+        
         # Rotor properties
-        self.position = position % len(wiring)
         self.notch_indexes = notch_indexes
         self.double_step_triggered = False
         self.rotations_counter = 0
