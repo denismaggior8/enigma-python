@@ -12,6 +12,9 @@ class Settable:
     def reset_position(self):
         self.position = 0
         
+    def reset_ring(self):
+        self.set_ring(0)
+        
     def set_ring(self, ring):
         self.ring = ring
         self.wiring = self.original_wiring
