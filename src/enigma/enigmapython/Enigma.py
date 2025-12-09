@@ -3,6 +3,7 @@ from .RotatingReflector import RotatingReflector
 from .Alphabets import Alphabets
 from .Journaled import Journaled
 from .Clonable  import Clonable
+from .Utils import Utils
 import logging
 
 
@@ -75,7 +76,11 @@ class Enigma(Observer,Journaled,Clonable):
     def process_char(self, char):
         scrambled_char = self.plugboard.scramble_char(self.plugboard.wiring,self.plugboard.alphabet_list.index(char),0)
         logging.debug("Scrambled letter from plugboard: {}".format(scrambled_char))
-        scrambled_char = self.etw.scramble_char(self.etw.wiring,self.alphabet_list.index(scrambled_char), 0)
+        
+        # Calculate inverted wiring for ETW
+        inverted_wiring = Utils.inverse_string_permutation(self.etw.wiring, ''.join(self.etw.alphabet_list))
+        
+        scrambled_char = self.etw.scramble_char(inverted_wiring, self.alphabet_list.index(scrambled_char), 0)
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
         iteration = 0
         for rotor in self.rotors:
@@ -102,7 +107,8 @@ class Enigma(Observer,Journaled,Clonable):
             logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration+1),scrambled_char))   
         
         # Processing rotor 1 returning signal by ETW
-        scrambled_char = self.etw.scramble_char(self.alphabet_list,(self.etw.wiring.index(self.shift_letter(scrambled_char, (0 - self.rotors[iteration].position),self.alphabet_list))), 0)
+        # Processing rotor 1 returning signal by ETW
+        scrambled_char = self.etw.scramble_char(self.alphabet_list,(inverted_wiring.index(self.shift_letter(scrambled_char, (0 - self.rotors[iteration].position),self.alphabet_list))), 0)
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
         
         scrambled_char = self.plugboard.scramble_char(self.plugboard.wiring,self.plugboard.alphabet_list.index(scrambled_char),0)

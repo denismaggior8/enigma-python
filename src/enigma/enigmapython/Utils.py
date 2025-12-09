@@ -48,4 +48,38 @@ class Utils:
             else:
                 str_list.append(char)
         return ''.join(str_list)
+
+    @staticmethod
+    def inverse_string_permutation(string: str, alphabet: str = None) -> str:
+        """
+        Compute the inverse permutation of a string for any alphabet.
+        
+        string : str
+            A string mapping input -> output
+        alphabet : str, optional
+            The alphabet to use. Defaults to the characters in string length, 
+            starting with the first character of string (e.g., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+        
+        Returns
+        -------
+        str
+            The inverse string
+        """
+        n = len(string)
+        
+        # If no alphabet is provided, assume consecutive characters starting from string[0]
+        if alphabet is None:
+            alphabet = ''.join(chr(ord(string[0]) + i) for i in range(n))
+        
+        # Build a dictionary for quick index lookup
+        char_to_index = {char: i for i, char in enumerate(alphabet)}
+        
+        # Initialize inverse list
+        inverse = [''] * n
+        
+        for i, out_char in enumerate(string):
+            index = char_to_index[out_char]
+            inverse[index] = alphabet[i]
+        
+        return ''.join(inverse)
     

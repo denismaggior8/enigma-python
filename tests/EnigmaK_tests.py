@@ -93,7 +93,7 @@ class TestEnigmaK(unittest.TestCase):
         enigma = EnigmaK(rotor1, rotor2, rotor3, reflector, etw, True)
         
         plaintext = "helloworld"
-        expected_ciphertext = "bkjjhdvbxc"
+        expected_ciphertext = "acsyipzuuu"
         
         ciphertext = enigma.input_string(plaintext)
         self.assertEqual(ciphertext, expected_ciphertext)
