@@ -1,6 +1,4 @@
-# Class Diagram
-
-```{mermaid}
+```mermaid
 ---
 title: enigmapython
 ---
@@ -35,6 +33,15 @@ classDiagram
         + str tag
         - __init__(self) None
     }
+
+    class ReflectorUKW_EnigmaZ {
+        + str wiring
+        + list notch_indexes
+        + str tag
+        - __init__(self) None
+    }
+
+    class EnigmaKEtw_QWERTZ
 
     class EnigmaM4 {
         - __init__(self, plugboard, rotor1, rotor2, rotor3, rotor4, reflector, etw, auto_increment_rotors) None
@@ -96,6 +103,10 @@ classDiagram
 
     class RotatingReflector
 
+    class SettableReflector {
+        - __init__(self, wiring, alphabet, position, ring) None
+    }
+
     class EnigmaM4RotorIV {
         + str wiring
         + list notch_indexes
@@ -128,6 +139,10 @@ classDiagram
         + list notch_indexes
         + str tag
         - __init__(self, position, ring) None
+    }
+
+    class EnigmaK {
+        - __init__(self, rotor1, rotor2, rotor3, reflector, etw, auto_increment_rotors) None
     }
 
     class ReflectorUKWCThin {
@@ -210,6 +225,12 @@ classDiagram
         - __init__(self, position, ring) None
     }
 
+    class ReflectorUKW_EnigmaISonder {
+        + str wiring
+        + str tag
+        - __init__(self) None
+    }
+
     class EnigmaI {
         - __init__(self, plugboard, rotor1, rotor2, rotor3, reflector, etw, auto_increment_rotors) None
     }
@@ -247,15 +268,11 @@ classDiagram
         - __init__(self, position, ring) None
     }
 
-    class EnigmaDEtw_QWERTZ {
-        + str wiring
-        - __init__(self) None
-    }
+    class EnigmaDEtw_QWERTZ
 
-    class ReflectorNorwayUKW {
+    class ReflectorUKW_EnigmaCommercial {
         + str wiring
-        + str tag
-        - __init__(self) None
+        - __init__(self, position, ring) None
     }
 
     class EnigmaINorwayRotorV {
@@ -264,8 +281,6 @@ classDiagram
         + str tag
         - __init__(self, position, ring) None
     }
-
-
 
     class EnigmaIRotorIV {
         + str wiring
@@ -282,6 +297,7 @@ classDiagram
         + @staticmethod find_divergence(str1, str2)
         + @staticmethod find_all_subclasses(cls)
         + @staticmethod swap_chars(string, ch1, ch2)
+        + @staticmethod inverse_string_permutation(string, alphabet) str
     }
 
     class EnigmaM4RotorVII {
@@ -296,10 +312,11 @@ classDiagram
         - __init__(self) None
     }
 
-    class ReflectorSonderUKW {
+    class EnigmaKRotorIII {
         + str wiring
+        + list notch_indexes
         + str tag
-        - __init__(self) None
+        - __init__(self, position, ring) None
     }
 
     class EnigmaM3RotorIII {
@@ -316,6 +333,7 @@ classDiagram
         + None etw
         + bool auto_increment_rotors
         + None alphabet_list
+        + add_rotor(self, idx, rotor)
         - __init__(self, plugboard, rotors, reflector, etw, auto_increment_rotors, alphabet) None
         + input_string(self, str)
         + input_char(self, char)
@@ -323,6 +341,13 @@ classDiagram
         + update(self, observable, *args, **kwargs)
         + @staticmethod shift_letter(letter, shift, alphabet_list)
         + clone(self)
+    }
+
+    class EnigmaKRotorI {
+        + str wiring
+        + list notch_indexes
+        + str tag
+        - __init__(self, position, ring) None
     }
 
     class EnigmaB_A133RotorIII {
@@ -334,13 +359,6 @@ classDiagram
 
     class EnigmaINorway {
         - __init__(self, plugboard, rotor1, rotor2, rotor3, reflector, etw, auto_increment_rotors) None
-    }
-
-    class ReflectorZUKW {
-        + str wiring
-        + list notch_indexes
-        + str tag
-        - __init__(self) None
     }
 
     class Journaled {
@@ -355,6 +373,12 @@ classDiagram
         + list notch_indexes
         + str tag
         - __init__(self, position, ring) None
+    }
+
+    class ReflectorUKW_EnigmaINorway {
+        + str wiring
+        + str tag
+        - __init__(self) None
     }
 
     class EnigmaB_A133 {
@@ -390,12 +414,6 @@ classDiagram
         - __init__(self, position, ring) None
     }
 
-    class ReflectorDUKW {
-        + str wiring
-        + str tag
-        - __init__(self) None
-    }
-
     class EnigmaM4RotorGamma {
         + str wiring
         + list notch_indexes
@@ -429,6 +447,11 @@ classDiagram
         - __init__(self, position, ring) None
     }
 
+    class EtwQWERTZ {
+        + str wiring
+        - __init__(self) None
+    }
+
     class EnigmaM3RotorV {
         + str wiring
         + list notch_indexes
@@ -440,6 +463,13 @@ classDiagram
         - __init__(self, plugboard, rotor1, rotor2, rotor3, reflector, etw, auto_increment_rotors) None
     }
 
+    class EnigmaKRotorII {
+        + str wiring
+        + list notch_indexes
+        + str tag
+        - __init__(self, position, ring) None
+    }
+
     class Etw {
         + None wiring
         + None alphabet_list
@@ -447,17 +477,23 @@ classDiagram
         - __str__(self) str
     }
 
+    class Settable {
+        + int position
+        + int ring
+        - __init__(self, position, ring) None
+        + set_position(self, position)
+        + reset_position(self)
+        + reset_ring(self)
+        + set_ring(self, ring)
+        - @staticmethod _shift(letter, shift, alphabet_list)
+    }
+
     class Scrambler {
         + None wiring
         + None alphabet_list
-        + None dot_position
-        + None ring
-        + None set_scrambler_ring
         + None original_wiring
         + scramble_char(self, dictionary, letter_index, shift)
-        - __init__(self, wiring, alphabet, ring) None
-        + set_scrambler_ring(self, ring)
-        - @staticmethod __shift(letter, shift, alphabet_list)
+        - __init__(self, wiring, alphabet) None
         - __str__(self) str
     }
 
@@ -498,11 +534,9 @@ classDiagram
     }
 
     class Rotor {
-        + None position
         + None rotations_counter
         + None notch_indexes
         + None double_step_triggered
-        + reset_position(self)
         + increment_position(self)
         + set_position(self, position)
         - __init__(self, wiring, notch_indexes, alphabet, position, ring) None
@@ -525,6 +559,10 @@ classDiagram
 
     ReflectorUKWB --|> Reflector
 
+    ReflectorUKW_EnigmaZ --|> RotatingReflector
+
+    EnigmaKEtw_QWERTZ --|> EtwQWERTZ
+
     EnigmaM4 --|> Enigma
 
     PlugboardPassthrough --|> Plugboard
@@ -545,6 +583,12 @@ classDiagram
 
     RotatingReflector --|> Rotor
 
+    RotatingReflector --|> Reflector
+
+    SettableReflector --|> Reflector
+
+    SettableReflector --|> Settable
+
     EnigmaM4RotorIV --|> Rotor
 
     ReflectorUKW_EnigmaB_A133 --|> Reflector
@@ -554,6 +598,8 @@ classDiagram
     EnigmaZRotorI --|> Rotor
 
     EnigmaB_A133RotorII --|> Rotor
+
+    EnigmaK --|> Enigma
 
     ReflectorUKWCThin --|> Reflector
 
@@ -577,6 +623,8 @@ classDiagram
 
     EnigmaDRotorII --|> Rotor
 
+    ReflectorUKW_EnigmaISonder --|> Reflector
+
     EnigmaI --|> Enigma
 
     EnigmaISonderRotorII --|> Rotor
@@ -589,13 +637,11 @@ classDiagram
 
     EnigmaISonderRotorIII --|> Rotor
 
-    EnigmaDEtw_QWERTZ --|> Etw
+    EnigmaDEtw_QWERTZ --|> EtwQWERTZ
 
-    ReflectorNorwayUKW --|> Reflector
+    ReflectorUKW_EnigmaCommercial --|> SettableReflector
 
     EnigmaINorwayRotorV --|> Rotor
-
-
 
     EnigmaIRotorIV --|> Rotor
 
@@ -607,7 +653,7 @@ classDiagram
 
     EtwPassthrough --|> Etw
 
-    ReflectorSonderUKW --|> Reflector
+    EnigmaKRotorIII --|> Rotor
 
     EnigmaM3RotorIII --|> Rotor
 
@@ -617,13 +663,15 @@ classDiagram
 
     Enigma --|> Clonable
 
+    EnigmaKRotorI --|> Rotor
+
     EnigmaB_A133RotorIII --|> Rotor
 
     EnigmaINorway --|> Enigma
 
-    ReflectorZUKW --|> RotatingReflector
-
     EnigmaM4RotorII --|> Rotor
+
+    ReflectorUKW_EnigmaINorway --|> Reflector
 
     EnigmaB_A133 --|> Enigma
 
@@ -633,8 +681,6 @@ classDiagram
 
     EnigmaM3RotorII --|> Rotor
 
-    ReflectorDUKW --|> Reflector
-
     EnigmaM4RotorGamma --|> Rotor
 
     EnigmaINorwayRotorIV --|> Rotor
@@ -643,9 +689,13 @@ classDiagram
 
     EnigmaM3RotorVII --|> Rotor
 
+    EtwQWERTZ --|> Etw
+
     EnigmaM3RotorV --|> Rotor
 
     EnigmaM3 --|> Enigma
+
+    EnigmaKRotorII --|> Rotor
 
     Etw --|> Scrambler
 
@@ -666,6 +716,8 @@ classDiagram
     Rotor --|> Scrambler
 
     Rotor --|> Observable
+
+    Rotor --|> Settable
 
     EnigmaIRotorV --|> Rotor
 ```
