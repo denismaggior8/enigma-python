@@ -265,10 +265,7 @@ classDiagram
         - __init__(self, position, ring) None
     }
 
-    class EnigmaDEtw_JWULCM {
-        + str wiring
-        - __init__(self) None
-    }
+
 
     class EnigmaIRotorIV {
         + str wiring
@@ -598,7 +595,7 @@ classDiagram
 
     EnigmaINorwayRotorV --|> Rotor
 
-    EnigmaDEtw_JWULCM --|> Etw
+
 
     EnigmaIRotorIV --|> Rotor
 

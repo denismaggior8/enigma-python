@@ -76,14 +76,6 @@ enigmapython.EnigmaD module
    :show-inheritance:
    :undoc-members:
 
-enigmapython.EnigmaDEtw\_JWULCM module
---------------------------------------
-
-.. automodule:: enigmapython.EnigmaDEtw_JWULCM
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
 enigmapython.EnigmaDEtw\_QWERTZ module
 --------------------------------------
 
