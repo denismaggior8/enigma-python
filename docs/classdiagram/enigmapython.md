@@ -41,7 +41,7 @@ classDiagram
         - __init__(self) None
     }
 
-    class EnigmaKEtw_QWERTZ
+
 
     class EnigmaM4 {
         - __init__(self, plugboard, rotor1, rotor2, rotor3, rotor4, reflector, etw, auto_increment_rotors) None
@@ -268,7 +268,7 @@ classDiagram
         - __init__(self, position, ring) None
     }
 
-    class EnigmaDEtw_QWERTZ
+
 
     class ReflectorUKW_EnigmaCommercial {
         + str wiring
@@ -561,7 +561,7 @@ classDiagram
 
     ReflectorUKW_EnigmaZ --|> RotatingReflector
 
-    EnigmaKEtw_QWERTZ --|> EtwQWERTZ
+
 
     EnigmaM4 --|> Enigma
 
@@ -637,7 +637,7 @@ classDiagram
 
     EnigmaISonderRotorIII --|> Rotor
 
-    EnigmaDEtw_QWERTZ --|> EtwQWERTZ
+
 
     ReflectorUKW_EnigmaCommercial --|> SettableReflector
 

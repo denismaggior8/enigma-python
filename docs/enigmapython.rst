@@ -76,10 +76,10 @@ enigmapython.EnigmaD module
    :show-inheritance:
    :undoc-members:
 
-enigmapython.EnigmaDEtw\_QWERTZ module
---------------------------------------
+enigmapython.EtwQWERTZ module
+-----------------------------
 
-.. automodule:: enigmapython.EnigmaDEtw_QWERTZ
+.. automodule:: enigmapython.EtwQWERTZ
    :members:
    :show-inheritance:
    :undoc-members:

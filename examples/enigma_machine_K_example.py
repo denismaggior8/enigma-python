@@ -2,7 +2,7 @@ from enigmapython.EnigmaKRotorI import EnigmaKRotorI
 from enigmapython.EnigmaKRotorII import EnigmaKRotorII
 from enigmapython.EnigmaKRotorIII import EnigmaKRotorIII
 from enigmapython.ReflectorUKW_EnigmaCommercial import ReflectorUKW_EnigmaCommercial
-from enigmapython.EnigmaKEtw_QWERTZ import EnigmaKEtw_QWERTZ
+from enigmapython.EtwQWERTZ import EtwQWERTZ
 from enigmapython.EnigmaK import EnigmaK
 import logging
 import sys
@@ -19,7 +19,7 @@ rotor3 = EnigmaKRotorIII(0, 0)    # Left rotor
 reflector = ReflectorUKW_EnigmaCommercial()
 
 # Setup ETW (QWERTZ layout)
-etw = EnigmaKEtw_QWERTZ()
+etw = EtwQWERTZ()
 
 # Create Enigma K machine (Commercial Enigma - no plugboard)
 enigma = EnigmaK(rotor1, rotor2, rotor3, reflector, etw, True)

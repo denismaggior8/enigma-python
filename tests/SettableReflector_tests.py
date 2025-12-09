@@ -3,7 +3,7 @@ from enigmapython.EnigmaKRotorI import EnigmaKRotorI
 from enigmapython.EnigmaKRotorII import EnigmaKRotorII
 from enigmapython.EnigmaKRotorIII import EnigmaKRotorIII
 from enigmapython.ReflectorUKW_EnigmaCommercial import ReflectorUKW_EnigmaCommercial
-from enigmapython.EnigmaKEtw_QWERTZ import EnigmaKEtw_QWERTZ
+from enigmapython.EtwQWERTZ import EtwQWERTZ
 from enigmapython.EnigmaK import EnigmaK
 
 class TestSettableReflector(unittest.TestCase):
@@ -13,7 +13,7 @@ class TestSettableReflector(unittest.TestCase):
         rotor1 = EnigmaKRotorI(0, 0)
         rotor2 = EnigmaKRotorII(0, 0)
         rotor3 = EnigmaKRotorIII(0, 0)
-        etw = EnigmaKEtw_QWERTZ()
+        etw = EtwQWERTZ()
         
         # Reflector at position 0 (default)
         reflector_0 = ReflectorUKW_EnigmaCommercial(position=0)

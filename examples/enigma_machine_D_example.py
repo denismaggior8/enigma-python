@@ -2,7 +2,7 @@
 from enigmapython.EnigmaDRotorI import EnigmaDRotorI
 from enigmapython.EnigmaDRotorII import EnigmaDRotorII
 from enigmapython.EnigmaDRotorIII import EnigmaDRotorIII
-from enigmapython.EnigmaDEtw_QWERTZ import EnigmaDEtw_QWERTZ
+from enigmapython.EtwQWERTZ import EtwQWERTZ
 from enigmapython.EnigmaD import EnigmaD
 from enigmapython.ReflectorUKW_EnigmaCommercial import ReflectorUKW_EnigmaCommercial
 
@@ -19,7 +19,7 @@ rotor1 = EnigmaDRotorI(ring=0,position=0)
 rotor2 = EnigmaDRotorI(ring=0,position=0)
 rotor3 = EnigmaDRotorI(ring=0,position=0)
 reflector = ReflectorUKW_EnigmaCommercial(position=0, ring=0)  # Settable reflector with position and ring
-etw = EnigmaDEtw_QWERTZ()
+etw = EtwQWERTZ()
 
 # Setup Enigma D machine
 enigma = EnigmaD(rotor3, rotor2, rotor1, reflector, etw, True)
