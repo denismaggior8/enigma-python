@@ -18,7 +18,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 rotor1 = EnigmaDRotorI(ring=0,position=0)
 rotor2 = EnigmaDRotorI(ring=0,position=0)
 rotor3 = EnigmaDRotorI(ring=0,position=0)
-reflector = ReflectorUKW_EnigmaCommercial()
+reflector = ReflectorUKW_EnigmaCommercial(position=0, ring=0)  # Settable reflector with position and ring
 etw = EnigmaDEtw_QWERTZ()
 
 # Setup Enigma D machine
