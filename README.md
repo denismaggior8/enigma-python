@@ -7,7 +7,15 @@
 ## About
 
 Welcome to **enigmapython**, a Python package designed to emulate the legendary Enigma cryptographic machine used during World War II. **enigmapython** provides a faithful implementation of the Enigma machine, allowing users to explore and understand the workings of this historic device.
-[![asciicast](https://asciinema.org/a/761182.svg)](https://asciinema.org/a/761182)
+
+<br>
+<div class="img-container" style="text-align: center;">
+    <a href="https://asciinema.org/a/761182">
+        <img src="https://asciinema.org/a/761182.svg" alt="asciicast"/>
+    </a>
+</div>
+<br>
+
 
 This project is listed on [Wikipedia](https://en.wikipedia.org/wiki/List_of_Enigma_machine_simulators) as a globally recognized Enigma machine simulator, noted for its historical accuracy.
 
