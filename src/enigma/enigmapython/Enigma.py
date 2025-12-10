@@ -42,6 +42,7 @@ class Enigma(Observer,Journaled,Clonable):
         return output_string
 
     def input_char(self,char):
+        char = char.lower()
         logging.info("Input char: {}".format(char))
         ## Triggering rotors extra rotation due to double step issue
         for rotor in self.rotors:
