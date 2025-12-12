@@ -1,7 +1,7 @@
 from rich.console import Console
 from rich.text import Text
 
-from enigmapython.RotatingReflector import RotatingReflector
+from enigmapython.SettableReflector import SettableReflector
 
 class XRay():
     @staticmethod
@@ -56,8 +56,8 @@ class XRay():
               |     |     {rotor_walls}     |     |     |     |
               +-----+     {rotor_walls_bottom}     +-----+     +-----+
 
-    Pos.:      {"{} ({:02})".format(enigma.alphabet_list[enigma.reflector.position].upper(),enigma.reflector.position) if isinstance(enigma.reflector, RotatingReflector) else ' N/A  '}      {rotors_positions}    
-    Ring:      {"{} ({:02})".format(enigma.alphabet_list[enigma.reflector.ring].upper(),enigma.reflector.ring)}      {rotors_rings}
+    Pos.:      {"{} ({:02})".format(enigma.alphabet_list[enigma.reflector.position].upper(),enigma.reflector.position) if isinstance(enigma.reflector, SettableReflector) else ' N/A  '}      {rotors_positions}    
+    Ring:      {"{} ({:02})".format(enigma.alphabet_list[enigma.reflector.ring].upper(),enigma.reflector.ring) if isinstance(enigma.reflector, SettableReflector) else ' N/A  '}      {rotors_rings}
         """
         console.print(Text(diagram, style="bold"))
         return Text(diagram, style="bold")
