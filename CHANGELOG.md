@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.0.0] - 2025-12-16
 
 ### Added
+- **Enigma K Support**: Added support for the Commercial Enigma K, including specific rotors (I, II, III) and Entry Wheel logic.
 - **Enigma M4/M3 Support**: Enhanced support for `SettableReflector` (Thin reflectors) allowing ring settings and initial positions to be correctly configured and used.
 - **XRay Visualization**: Added `XRay` class and `render_enigma_xray` function to visualize the internal state of the Enigma machine (rotors, wiring, current path).
 - **Unit Tests**: Added comprehensive tests for `SettableReflector` and `XRay` class.
