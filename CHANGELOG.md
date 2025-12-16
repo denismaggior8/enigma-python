@@ -9,11 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - **Enigma K Support**: Added support for the Commercial Enigma K, including specific rotors (I, II, III) and Entry Wheel logic.
-- **Enigma M4/M3 Support**: Enhanced support for `SettableReflector` (Thin reflectors) allowing ring settings and initial positions to be correctly configured and used.
-- **XRay Visualization**: Added `XRay` class and `render_enigma_xray` function to visualize the internal state of the Enigma machine (rotors, wiring, current path).
 - **Unit Tests**: Added comprehensive tests for `SettableReflector` and `XRay` class.
 
 ### Changed
+- **Enigma M4/M3**: Enhanced `SettableReflector` support to allow correct ring settings and initial positions for Thin reflectors.
+- **XRay**: Updated visualization to support the new `SettableReflector` class.
 - **BREAKING**: Renamed `set_scrambler_ring` to `set_ring` in `Settable` class (and subclasses like `Rotor`).
 - **BREAKING**: `Settable` class refactored. `set_ring` is now abstract in some contexts or requires specific implementation in subclasses.
 - **BREAKING**: Removed `EnigmaDEtw_QWERTZ` and `EnigmaKEtw_QWERTZ` classes. Use `EtwQWERTZ` logic or equivalent base classes instead.
