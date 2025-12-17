@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2025-12-17
+
+### Fixed
+- **Cleanup**: Removed `EnigmaDEtw_QWERTZ.py` and `EnigmaKEtw_QWERTZ.py` which were intended to be removed in 2.0.0.
+- **Tests**: Removed redundant tests related to the deleted classes.
+
 ## [2.0.0] - 2025-12-16
 
 ### Added
