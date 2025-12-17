@@ -41,8 +41,6 @@ classDiagram
         - __init__(self) None
     }
 
-
-
     class EnigmaM4 {
         - __init__(self, plugboard, rotor1, rotor2, rotor3, rotor4, reflector, etw, auto_increment_rotors) None
     }
@@ -267,8 +265,6 @@ classDiagram
         + str tag
         - __init__(self, position, ring) None
     }
-
-
 
     class ReflectorUKW_EnigmaCommercial {
         + str wiring
@@ -561,8 +557,6 @@ classDiagram
 
     ReflectorUKW_EnigmaZ --|> RotatingReflector
 
-
-
     EnigmaM4 --|> Enigma
 
     PlugboardPassthrough --|> Plugboard
@@ -636,8 +630,6 @@ classDiagram
     EnigmaM4RotorVIII --|> Rotor
 
     EnigmaISonderRotorIII --|> Rotor
-
-
 
     ReflectorUKW_EnigmaCommercial --|> SettableReflector
 
