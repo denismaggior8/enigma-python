@@ -1,7 +1,6 @@
-
 from enigmapython.SwappablePlugboard import SwappablePlugboard
 from enigmapython.PlugboardPassthrough import PlugboardPassthrough
-from string import ascii_lowercase
+
 import unittest
 
 class TestSwappablePlugboard(unittest.TestCase):
