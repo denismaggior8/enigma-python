@@ -113,5 +113,35 @@ class TestEnigmaD(unittest.TestCase):
         cleartext = 'a'*25
         my_encrypted_string = enigma.input_string(cleartext)
         self.assertEqual(rotor2.position,1,"Enigma encryption error")
+
+    def test_with_ring_settings(self):
+        """
+        Test Enigma D with non-zero ring settings to compare against Enigma K DynamicNotchRotor behavior.
+        Settings:
+            - Rotors: I-II-III (Fast-Middle-Slow)
+            - Ring Settings: K-D-N (10-3-13)
+            - Initial Positions: A-A-A (0-0-0)
+            - Reflector: UKW (Commercial)
+            - ETW: QWERTZ
+        """
+        rotor_fast = EnigmaDRotorI(position=0, ring=10)
+        rotor_middle = EnigmaDRotorII(position=0, ring=3)
+        rotor_slow = EnigmaDRotorIII(position=0, ring=13)
+        reflector = ReflectorUKW_EnigmaCommercial()
+        etw = EtwQWERTZ()
+        
+        enigma = EnigmaD(rotor_fast, rotor_middle, rotor_slow, reflector, etw, True)
+        
+        plaintext = "supercalifragilistichespiralidoso"
+        ciphertext = enigma.input_string(plaintext)
+        
+        # This test verifies that the implementation produces consistent output
+        # with the dynamic notch behavior (notch position affected by ring setting)
+        self.assertIsNotNone(ciphertext)
+        self.assertEqual(len(ciphertext), len(plaintext))
+
+        expected_ciphertext = "wjcviwotfjiyycdnqrsoocbqfsurwjaew"
+        self.assertEqual(ciphertext, expected_ciphertext)
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

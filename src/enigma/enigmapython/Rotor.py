@@ -23,7 +23,6 @@ class Rotor(Scrambler,Observable,Settable):
 
     def __init__(self, wiring, notch_indexes, alphabet, position = 0, ring = 0):
         # Scrambler properties
-        # Scrambler properties
         Scrambler.__init__(self, wiring=wiring, alphabet=alphabet)
         # Settable properties
         Settable.__init__(self, position=position % len(wiring), ring=ring)

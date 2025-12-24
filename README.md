@@ -78,10 +78,12 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
 | ETW "QWERTZ"               | qwertzuioasdfghjkpyxcvbnml 	        | N/A     	|   ✅           	|
-| Rotor I                    | lpgszmhaeoqkvxrfybutnicjdw 	        | y     	|   ✅           	|
-| Rotor II                   | slvgbtfxjqohewirzyamkpcndu 	        | e     	|   ✅           	|
-| Rotor III                  | cjgdpshkturawzxfmynqobvlie 	        | n     	|   ✅           	|
+| Rotor I                    | lpgszmhaeoqkvxrfybutnicjdw 	        | y*     	|   ✅           	|
+| Rotor II                   | slvgbtfxjqohewirzyamkpcndu 	        | e*     	|   ✅           	|
+| Rotor III                  | cjgdpshkturawzxfmynqobvlie 	        | n*     	|   ✅           	|
 | Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
+
+*notch positions refer to the rotor configured with ring 0 (A); this is because this model has the notch attached to letter ring, rather than rotor body (as in Enigma D), so changing the rotor ring changes the notch position and the rotor turnover as well.
 
 
 ### Enigma D
@@ -91,7 +93,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | ETW "QWERTZ"               | qwertzuioasdfghjkpyxcvbnml 	        | N/A     	|   ✅           	|
 | Rotor I                    | lpgszmhaeoqkvxrfybutnicjdw 	        | y     	|   ✅           	|
 | Rotor II                   | slvgbtfxjqohewirzyamkpcndu 	        | e     	|   ✅           	|
-| Rotor III                  | bdfhjlcprtxvznyeiwgakmusqo 	        | n     	|   ✅           	|
+| Rotor III                  | cjgdpshkturawzxfmynqobvlie 	        | n     	|   ✅           	|
 | Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
 
 
