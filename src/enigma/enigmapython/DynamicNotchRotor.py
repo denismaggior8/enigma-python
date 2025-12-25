@@ -29,5 +29,5 @@ class DynamicNotchRotor(Rotor):
             length = len(self.wiring)
             self.notch_indexes = []
             for notch in self.original_notch_indexes:
-                new_notch = (notch - ring) % length
+                new_notch = (notch + ring) % length
                 self.notch_indexes.append(new_notch)

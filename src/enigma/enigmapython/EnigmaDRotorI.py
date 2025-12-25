@@ -1,10 +1,11 @@
+from .DynamicNotchRotor import DynamicNotchRotor
 from .Rotor import Rotor
 from .Alphabets import Alphabets
 
-class EnigmaDRotorI(Rotor):
+class EnigmaDRotorI(DynamicNotchRotor):
     
     wiring = 'lpgszmhaeoqkvxrfybutnicjdw'
-    notch_indexes = [24]
+    notch_indexes = [25]
     tag = "D_I"
     
     def __init__(self, position = 0, ring = 0):
