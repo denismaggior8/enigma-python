@@ -93,7 +93,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor III                  | cjgdpshkturawzxfmynqobvlie 	        | z*     	|   ✅           	|
 | Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
 
-* Enigma D rotors have the notch fixed to the letter Z, but the letter seen in the window at turnover depends on the ring setting.
+* Enigma D rotors have the notch fixed to the letter Z, but the letter seen in the window at turnover depends on the ring setting. This behaviour is implemented in *enigmapython* library accordingly.
 
 ### Enigma Z (Z30 Mark I)*
 
