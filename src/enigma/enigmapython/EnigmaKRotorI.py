@@ -1,7 +1,7 @@
-from .DynamicNotchRotor import DynamicNotchRotor
+from .Rotor import Rotor
 from .Alphabets import Alphabets
 
-class EnigmaKRotorI(DynamicNotchRotor):
+class EnigmaKRotorI(Rotor):
     
     wiring = 'lpgszmhaeoqkvxrfybutnicjdw'
     notch_indexes = [24]  # Y (notch position)
