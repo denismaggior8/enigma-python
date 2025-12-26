@@ -15,14 +15,14 @@ class TestDynamicNotchRotor(unittest.TestCase):
         self.assertEqual(rotor.notch_indexes, [25], "Notch should be at original position with ring 0")
         
         # ring = 1 (B)
-        # Formula: (25 - 1) % 26 = 24
+        # Formula: (25 + 1) % 26 = 0
         rotor.set_ring(1)
-        self.assertEqual(rotor.notch_indexes, [24], "Notch should move back by 1 with ring 1")
+        self.assertEqual(rotor.notch_indexes, [0], "Notch should move forward by 1 with ring 1")
         
         # ring = 5 (F)
-        # Formula: (25 - 5) % 26 = 20
+        # Formula: (25 + 5) % 26 = 4
         rotor.set_ring(5)
-        self.assertEqual(rotor.notch_indexes, [20], "Notch should move back by 5 with ring 5")
+        self.assertEqual(rotor.notch_indexes, [4], "Notch should move forward by 5 with ring 5")
         
         # ring = 26 (A again, effectively 0)
         rotor.set_ring(26)
@@ -34,9 +34,9 @@ class TestDynamicNotchRotor(unittest.TestCase):
         original_notches = [10] 
         
         # Init with ring 5
-        # Expected: (10 - 5) % 26 = 5
+        # Expected: (10 + 5) % 26 = 15
         rotor = DynamicNotchRotor(wiring=wiring, notch_indexes=original_notches, alphabet=alphabet, position=0, ring=5)
-        self.assertEqual(rotor.notch_indexes, [5], "Notch should be adjusted during init")
+        self.assertEqual(rotor.notch_indexes, [15], "Notch should be adjusted during init")
 
     def test_multiple_notches(self):
         alphabet = Alphabets.lookup.get("latin_i18n_26chars_lowercase")
@@ -44,10 +44,10 @@ class TestDynamicNotchRotor(unittest.TestCase):
         original_notches = [0, 13] # A and N
         
         # Ring 1
-        # 0 -> (0-1)%26 = 25
-        # 13 -> (13-1)%26 = 12
+        # 0 -> (0+1)%26 = 1
+        # 13 -> (13+1)%26 = 14
         rotor = DynamicNotchRotor(wiring=wiring, notch_indexes=original_notches, alphabet=alphabet, position=0, ring=1)
-        self.assertEqual(rotor.notch_indexes, [25, 12])
+        self.assertEqual(rotor.notch_indexes, [1, 14])
 
 if __name__ == "__main__":
     unittest.main()

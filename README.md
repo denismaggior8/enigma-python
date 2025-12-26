@@ -78,24 +78,22 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
 | ETW "QWERTZ"               | qwertzuioasdfghjkpyxcvbnml 	        | N/A     	|   ✅           	|
-| Rotor I                    | lpgszmhaeoqkvxrfybutnicjdw 	        | y*     	|   ✅           	|
-| Rotor II                   | slvgbtfxjqohewirzyamkpcndu 	        | e*     	|   ✅           	|
-| Rotor III                  | cjgdpshkturawzxfmynqobvlie 	        | n*     	|   ✅           	|
-| Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
-
-*notch positions refer to the rotor configured with ring 0 (A); this is because this model has the notch attached to letter ring, rather than rotor body (as in Enigma D), so changing the rotor ring changes the notch position and the rotor turnover as well.
-
-
-### Enigma D
-
-| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
-|-------	                 |----------------------------	        |-------	|-------------      |
-| ETW "QWERTZ"               | qwertzuioasdfghjkpyxcvbnml 	        | N/A     	|   ✅           	|
 | Rotor I                    | lpgszmhaeoqkvxrfybutnicjdw 	        | y     	|   ✅           	|
 | Rotor II                   | slvgbtfxjqohewirzyamkpcndu 	        | e     	|   ✅           	|
 | Rotor III                  | cjgdpshkturawzxfmynqobvlie 	        | n     	|   ✅           	|
 | Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
 
+### Enigma D (Commercial Enigma)
+
+| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| ETW "QWERTZ"               | qwertzuioasdfghjkpyxcvbnml 	        | N/A     	|   ✅           	|
+| Rotor I                    | lpgszmhaeoqkvxrfybutnicjdw 	        | z*     	|   ✅           	|
+| Rotor II                   | slvgbtfxjqohewirzyamkpcndu 	        | z*    	|   ✅           	|
+| Rotor III                  | cjgdpshkturawzxfmynqobvlie 	        | z*     	|   ✅           	|
+| Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
+
+* Enigma D rotors have the notch fixed to the letter Z, but the letter seen in the window at turnover depends on the ring setting.
 
 ### Enigma Z (Z30 Mark I)*
 

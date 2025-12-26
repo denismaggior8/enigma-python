@@ -2,9 +2,8 @@ from .Rotor import Rotor
 
 class DynamicNotchRotor(Rotor):
     """
-    Rotor that updates its notch position based on the ring setting.
-    In Enigma K, the notch is attached to the letter ring (rather than the rotor body).
-    Therefore, changing the ring setting shifts the effective notch position relative to the core wiring.
+    Rotor that updates its notch position based on the ring setting based on formula:
+    effective_notch = (notch + ringstellung) mod 26
     """
     original_notch_indexes = None
 
@@ -23,7 +22,7 @@ class DynamicNotchRotor(Rotor):
         super().set_ring(ring)
         
         # Now adjust notch positions
-        # Formula: effective_notch = (notch - ringstellung) mod 26
+        # Formula: effective_notch = (notch + ringstellung) mod 26
         # Note: self.wiring can be used for length, or self.alphabet_list
         if self.original_notch_indexes is not None:
             length = len(self.wiring)
