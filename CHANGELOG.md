@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [3.0.0] - 2025-12-27
 
 ### Added
-- **New Feature**: Introduced `DynamicNotchRotor` class to correctly model rotor turnover behavior  in Commercial Enigma D.
+- **New Feature**: Introduced `DynamicNotchRotor` class to correctly model rotor turnover behavior in Commercial Enigma D.
 - **Documentation**: Added `DynamicNotchRotor` to ReadTheDocs configuration and Class Diagrams.
 
 ### Changed
