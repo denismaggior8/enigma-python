@@ -63,7 +63,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 ### Enigma B (Sweden, s/n: A-133)*
 
-| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+| Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
 | ETW       (passthrough)    | abcdefghijklmnopqrstuvxyzåäö 	    | N/A     	|   ✅           	|
 | Rotor I                    | psbgöxqjdhoäucfrtezvåinlymka         | ä     	|   ✅           	|
@@ -75,7 +75,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 ### Enigma K (Commercial Enigma)
 
-| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+| Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
 | ETW "QWERTZ"               | qwertzuioasdfghjkpyxcvbnml 	        | N/A     	|   ✅           	|
 | Rotor I                    | lpgszmhaeoqkvxrfybutnicjdw 	        | y     	|   ✅           	|
@@ -85,7 +85,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 ### Enigma D (Commercial Enigma)
 
-| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+| Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
 | ETW "QWERTZ"               | qwertzuioasdfghjkpyxcvbnml 	        | N/A     	|   ✅           	|
 | Rotor I                    | lpgszmhaeoqkvxrfybutnicjdw 	        | z*     	|   ✅           	|
@@ -93,11 +93,11 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor III                  | cjgdpshkturawzxfmynqobvlie 	        | z*     	|   ✅           	|
 | Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
 
-* Enigma D rotors have the notch fixed to the letter Z, but the letter seen in the window at turnover depends on the ring setting. This behaviour is implemented in *enigmapython* library accordingly.
+*Enigma D turnover happens at Z when ringstellung is 0 (A), otherwise it is calculated using the formula `turnover = (ringstellung + 1) % 26`.
 
 ### Enigma Z (Z30 Mark I)*
 
-| Scrambler 	             | Wiring                     | Notch | Implemented |
+| Scrambler 	             | Wiring                     | Turnover | Implemented |
 |-------	                 |----------------------------|-------|-------------|
 | ETW       (passthrough)    | 1234567890 	    | N/A     |   ✅  |
 | Rotor I                    | 6418270359       | 9       |   ✅  |
@@ -109,7 +109,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 ### Enigma I 
 
-| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+| Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
 | Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
 | ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
@@ -122,7 +122,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 ### Enigma I Norway (Norenigma)
 
-| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+| Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
 | Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
 | ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
@@ -135,7 +135,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 ### Enigma I Sondermaschine (special machine)
 
-| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+| Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
 | Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
 | ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
@@ -147,7 +147,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 ### Enigma M3
 
-| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+| Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
 | Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
 | ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
@@ -164,7 +164,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 ### Enigma M4
 
-| Scrambler 	             | Wiring                    	        | Notch 	| Implemented 	    |
+| Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
 | Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
 | ETW       (passthrough)    | abcdefghijklmnopqrstuvwxyz 	        | N/A     	|   ✅           	|
