@@ -93,7 +93,7 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor III                  | cjgdpshkturawzxfmynqobvlie 	        | z*     	|   ✅           	|
 | Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
 
-*Enigma D rotor turnover happens at Z when ringstellung is 0 (A), otherwise it is calculated using the formula `turnover = (ringstellung + 1) % 26`.
+*Enigma D rotor turnover happens at Z when ringstellung is 0 (A), otherwise turnover position is calculated using the formula `turnover = (ringstellung + 1) % 26`.
 
 ### Enigma Z (Z30 Mark I)*
 
