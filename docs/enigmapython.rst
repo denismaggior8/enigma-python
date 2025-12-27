@@ -108,6 +108,14 @@ enigmapython.EnigmaDRotorIII module
    :show-inheritance:
    :undoc-members:
 
+enigmapython.DynamicNotchRotor module
+-------------------------------------
+
+.. automodule:: enigmapython.DynamicNotchRotor
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 enigmapython.EnigmaI module
 ---------------------------
 

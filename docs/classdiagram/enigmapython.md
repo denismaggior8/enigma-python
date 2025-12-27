@@ -507,6 +507,12 @@ classDiagram
         - __init__(self, position, ring) None
     }
 
+    class DynamicNotchRotor {
+        + list original_notch_indexes
+        - __init__(self, wiring, notch_indexes, alphabet, position, ring) None
+        + set_ring(self, ring)
+    }
+
     class ReflectorUKWA {
         + str wiring
         + str tag
@@ -609,13 +615,13 @@ classDiagram
 
     EnigmaM4RotorVI --|> Rotor
 
-    EnigmaDRotorI --|> Rotor
+    EnigmaDRotorI --|> DynamicNotchRotor
 
     EnigmaM3RotorVIII --|> Rotor
 
     EnigmaM4RotorI --|> Rotor
 
-    EnigmaDRotorII --|> Rotor
+    EnigmaDRotorII --|> DynamicNotchRotor
 
     ReflectorUKW_EnigmaISonder --|> Reflector
 
@@ -695,7 +701,9 @@ classDiagram
 
     EnigmaINorwayRotorIII --|> Rotor
 
-    EnigmaDRotorIII --|> Rotor
+    EnigmaDRotorIII --|> DynamicNotchRotor
+
+    DynamicNotchRotor --|> Rotor
 
     ReflectorUKWA --|> Reflector
 
