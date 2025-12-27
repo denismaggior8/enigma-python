@@ -108,7 +108,6 @@ class Enigma(Observer,Journaled,Clonable):
             logging.debug("Scrambled letter from rotor{}: {}".format(str(iteration+1),scrambled_char))   
         
         # Processing rotor 1 returning signal by ETW
-        # Processing rotor 1 returning signal by ETW
         scrambled_char = self.etw.scramble_char(self.alphabet_list,(inverted_wiring.index(self.shift_letter(scrambled_char, (0 - self.rotors[iteration].position),self.alphabet_list))), 0)
         logging.debug("Scrambled letter from ETW: {}".format(scrambled_char))
         
