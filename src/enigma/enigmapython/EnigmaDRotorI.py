@@ -1,10 +1,11 @@
+from .DynamicTurnoverRotor import DynamicTurnoverRotor
 from .Rotor import Rotor
 from .Alphabets import Alphabets
 
-class EnigmaDRotorI(Rotor):
+class EnigmaDRotorI(DynamicTurnoverRotor):
     
     wiring = 'lpgszmhaeoqkvxrfybutnicjdw'
-    notch_indexes = [24]
+    turnover_indexes = [25]
     tag = "D_I"
     
     def __init__(self, position = 0, ring = 0):
@@ -12,7 +13,8 @@ class EnigmaDRotorI(Rotor):
                             wiring=self.wiring, 
                             position=position, 
                             ring=ring, 
-                            notch_indexes=self.notch_indexes,
-                            alphabet=Alphabets.lookup.get('latin_i18n_26chars_lowercase')
+                            turnover_indexes=self.turnover_indexes,
+                            alphabet=Alphabets.lookup.get('latin_i18n_26chars_lowercase'),
+                            turnover_function=lambda n, r, l: (n + r) % l
                         )
     

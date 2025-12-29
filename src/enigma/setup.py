@@ -12,7 +12,7 @@ setup(
     long_description_content_type='text/markdown',
     url="https://github.com/denismaggior8/enigma-python",
     name="enigmapython",
-    version="2.0.2",
+    version="3.0.0",
     packages=find_packages(
         # All keyword arguments below are optional:
         where='.',  # '.' by default

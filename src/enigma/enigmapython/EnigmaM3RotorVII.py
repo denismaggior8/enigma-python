@@ -5,7 +5,7 @@ from .Alphabets import Alphabets
 class EnigmaM3RotorVII(Rotor):
     
     wiring = 'nzjhgrcxmyswboufaivlpekqdt'
-    notch_indexes = [12,25]
+    turnover_indexes = [12,25]
 
     tag = "M3_VII"
 
@@ -14,7 +14,7 @@ class EnigmaM3RotorVII(Rotor):
                             wiring = self.wiring, 
                             position=position, 
                             ring=ring, 
-                            notch_indexes=self.notch_indexes, 
+                            turnover_indexes=self.turnover_indexes, 
                             alphabet=Alphabets.lookup.get("latin_i18n_26chars_lowercase")
                         )
 

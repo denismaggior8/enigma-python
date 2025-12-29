@@ -4,7 +4,7 @@ from .Alphabets import Alphabets
 class EnigmaZRotorII(Rotor):
     
     wiring = '5841097632'
-    notch_indexes = [5]
+    turnover_indexes = [5]
     tag = "Z_II"
     
     def __init__(self, position = 0, ring = 0):
@@ -12,7 +12,7 @@ class EnigmaZRotorII(Rotor):
                             wiring = self.wiring, 
                             position=position, 
                             ring=ring, 
-                            notch_indexes=self.notch_indexes, 
+                            turnover_indexes=self.turnover_indexes, 
                             alphabet=Alphabets.lookup.get("enigma_z_10chars_numbers")
                         )
     
