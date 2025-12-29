@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8" pages="2">
   <diagram id="xMuRkrxBv55ZoXBGzOgq" name="Internal Enigma rotors structure">
-    <mxGraphModel dx="3216" dy="2627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4558" dy="3469" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -19,20 +19,14 @@
         <mxCell id="d7sRuHpoNNXifURWdlXf-1" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 64px; background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial; font-size: 64px;&quot;&gt;Enigma.rotors[0] = rotor3&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;font style=&quot;font-size: 64px;&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Enigma.rotors[1] = rotor2&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Enigma.rotors[2] = rotor1&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="753" y="374" width="730" height="470" as="geometry" />
         </mxCell>
-        <mxCell id="d7sRuHpoNNXifURWdlXf-4" value="&lt;div style=&quot;border-color: var(--border-color); text-align: left; font-size: 46px;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 46px;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;EnigmaI(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 46px;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); font-size: 64px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=64;" parent="1" vertex="1">
-          <mxGeometry x="-420" y="-296" width="1270" height="150" as="geometry" />
+        <mxCell id="d7sRuHpoNNXifURWdlXf-4" value="&lt;div style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;EnigmaI(plugboard, rotor3, rotor2, rotor1, reflector, etw, True)&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 46px;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); font-size: 64px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=64;" parent="1" vertex="1">
+          <mxGeometry x="-660" y="-306" width="1750" height="170" as="geometry" />
         </mxCell>
         <mxCell id="d7sRuHpoNNXifURWdlXf-5" value="&lt;span style=&quot;text-align: left; font-size: 54px;&quot;&gt;Enigma.rotors[&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=54;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="-332" y="1079" width="370" height="80" as="geometry" />
         </mxCell>
         <mxCell id="d7sRuHpoNNXifURWdlXf-8" value="&lt;font style=&quot;font-size: 46px;&quot;&gt;0&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=46;" parent="1" vertex="1">
           <mxGeometry x="47" y="1085" width="50" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="d7sRuHpoNNXifURWdlXf-9" value="&lt;font style=&quot;font-size: 54px;&quot;&gt;1&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=64;" parent="1" vertex="1">
-          <mxGeometry x="349" y="1083" width="50" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="d7sRuHpoNNXifURWdlXf-10" value="&lt;font style=&quot;font-size: 54px;&quot;&gt;2&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=64;" parent="1" vertex="1">
-          <mxGeometry x="442" y="1083" width="50" height="90" as="geometry" />
         </mxCell>
         <mxCell id="d7sRuHpoNNXifURWdlXf-12" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;fontSize=46;strokeWidth=10;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.403;exitY=1.032;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" target="7eqAUy-yUz5nEwLDxybP-18" edge="1">
           <mxGeometry x="0.7513" y="149" width="80" relative="1" as="geometry">
@@ -58,15 +52,15 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="7eqAUy-yUz5nEwLDxybP-1" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=10;fontSize=46;fontColor=#99FF99;" parent="1" edge="1">
+        <mxCell id="7eqAUy-yUz5nEwLDxybP-1" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=10;fontSize=46;fontColor=#99FF99;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" edge="1" target="7eqAUy-yUz5nEwLDxybP-18">
           <mxGeometry x="0.48" y="-70" width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="75" y="1614" as="sourcePoint" />
-            <mxPoint x="74.75" y="1254" as="targetPoint" />
+            <mxPoint x="-325" y="1670" as="sourcePoint" />
+            <mxPoint x="-325.25" y="1310" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="7eqAUy-yUz5nEwLDxybP-2" value="&lt;font color=&quot;#000000&quot;&gt;Increments position&lt;br&gt;for each input char&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=46;fontColor=#99FF99;" parent="1" vertex="1">
-          <mxGeometry x="-125" y="1634" width="420" height="120" as="geometry" />
+        <mxCell id="7eqAUy-yUz5nEwLDxybP-2" value="&lt;font&gt;Increments position&lt;br&gt;for each input char (fastest rotor)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=64;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="-790" y="1665" width="950" height="170" as="geometry" />
         </mxCell>
         <mxCell id="7eqAUy-yUz5nEwLDxybP-16" value="&lt;font style=&quot;font-size: 46px;&quot;&gt;1&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=46;" parent="1" vertex="1">
           <mxGeometry x="139.57999999999998" y="1085" width="50" height="70" as="geometry" />
@@ -76,6 +70,16 @@
         </mxCell>
         <mxCell id="7eqAUy-yUz5nEwLDxybP-21" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;]&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=54;fontColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="288" y="1079" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Se1huKqGuW552iKCMUxX-1" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=10;fontSize=46;fontColor=#99FF99;" edge="1" parent="1">
+          <mxGeometry x="0.48" y="-70" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="268" y="1460" as="sourcePoint" />
+            <mxPoint x="267.75" y="1224" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Se1huKqGuW552iKCMUxX-2" value="&lt;font&gt;Slowest rotor&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=64;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="78" y="1480" width="400" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
