@@ -14,6 +14,7 @@ class EnigmaDRotorI(DynamicTurnoverRotor):
                             position=position, 
                             ring=ring, 
                             notch_indexes=self.notch_indexes,
-                            alphabet=Alphabets.lookup.get('latin_i18n_26chars_lowercase')
+                            alphabet=Alphabets.lookup.get('latin_i18n_26chars_lowercase'),
+                            turnover_function=lambda n, r, l: (n + r) % l
                         )
     

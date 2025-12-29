@@ -509,7 +509,8 @@ classDiagram
 
     class DynamicTurnoverRotor {
         + list original_notch_indexes
-        - __init__(self, wiring, notch_indexes, alphabet, position, ring) None
+        + callable turnover_function
+        - __init__(self, wiring, notch_indexes, alphabet, position, ring, turnover_function) None
         + set_ring(self, ring)
     }
 

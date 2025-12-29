@@ -49,5 +49,25 @@ class TestDynamicTurnoverRotor(unittest.TestCase):
         rotor = DynamicTurnoverRotor(wiring=wiring, notch_indexes=original_notches, alphabet=alphabet, position=0, ring=1)
         self.assertEqual(rotor.notch_indexes, [1, 14])
 
+    def test_custom_turnover_function(self):
+        alphabet = Alphabets.lookup.get("latin_i18n_26chars_lowercase")
+        wiring = alphabet
+        original_notches = [10]
+        
+        # Define a custom turnover function: (notch - ring) % length
+        custom_func = lambda notch, ring, length: (notch - ring) % length
+        
+        # Ring = 2
+        # Expected: (10 - 2) % 26 = 8
+        rotor = DynamicTurnoverRotor(wiring=wiring, notch_indexes=original_notches, alphabet=alphabet, position=0, ring=2, turnover_function=custom_func)
+        self.assertEqual(rotor.notch_indexes, [8], "Custom turnover function should subtract ring setting")
+        
+        # Define slightly more complex function: (notch * ring) % length
+        # Ring = 3
+        # Expected: (10 * 3) % 26 = 30 % 26 = 4
+        custom_func_2 = lambda notch, ring, length: (notch * ring) % length
+        rotor_2 = DynamicTurnoverRotor(wiring=wiring, notch_indexes=original_notches, alphabet=alphabet, position=0, ring=3, turnover_function=custom_func_2)
+        self.assertEqual(rotor_2.notch_indexes, [4], "Custom turnover function should multiply")
+
 if __name__ == "__main__":
     unittest.main()

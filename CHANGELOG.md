@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - **New Feature**: Introduced `DynamicTurnoverRotor` class to correctly model rotor turnover behavior in Commercial Enigma D.
+  - Supports dynamic turnover formulas via injectable lambda functions.
 - **Documentation**: Added `DynamicTurnoverRotor` to ReadTheDocs configuration and Class Diagrams.
 
 ### Changed
