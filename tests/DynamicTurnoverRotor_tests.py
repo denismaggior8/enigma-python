@@ -1,8 +1,8 @@
 import unittest
-from enigmapython.DynamicNotchRotor import DynamicNotchRotor
+from enigmapython.DynamicTurnoverRotor import DynamicTurnoverRotor
 from enigmapython.Alphabets import Alphabets
 
-class TestDynamicNotchRotor(unittest.TestCase):
+class TestDynamicTurnoverRotor(unittest.TestCase):
 
     def test_notch_movement_with_ring_setting(self):
         # Setup basic rotor parameters
@@ -11,7 +11,7 @@ class TestDynamicNotchRotor(unittest.TestCase):
         original_notches = [25] # Notch at Z (index 25)
         
         # ring = 0
-        rotor = DynamicNotchRotor(wiring=wiring, notch_indexes=original_notches, alphabet=alphabet, position=0, ring=0)
+        rotor = DynamicTurnoverRotor(wiring=wiring, notch_indexes=original_notches, alphabet=alphabet, position=0, ring=0)
         self.assertEqual(rotor.notch_indexes, [25], "Notch should be at original position with ring 0")
         
         # ring = 1 (B)
@@ -35,7 +35,7 @@ class TestDynamicNotchRotor(unittest.TestCase):
         
         # Init with ring 5
         # Expected: (10 + 5) % 26 = 15
-        rotor = DynamicNotchRotor(wiring=wiring, notch_indexes=original_notches, alphabet=alphabet, position=0, ring=5)
+        rotor = DynamicTurnoverRotor(wiring=wiring, notch_indexes=original_notches, alphabet=alphabet, position=0, ring=5)
         self.assertEqual(rotor.notch_indexes, [15], "Notch should be adjusted during init")
 
     def test_multiple_notches(self):
@@ -46,7 +46,7 @@ class TestDynamicNotchRotor(unittest.TestCase):
         # Ring 1
         # 0 -> (0+1)%26 = 1
         # 13 -> (13+1)%26 = 14
-        rotor = DynamicNotchRotor(wiring=wiring, notch_indexes=original_notches, alphabet=alphabet, position=0, ring=1)
+        rotor = DynamicTurnoverRotor(wiring=wiring, notch_indexes=original_notches, alphabet=alphabet, position=0, ring=1)
         self.assertEqual(rotor.notch_indexes, [1, 14])
 
 if __name__ == "__main__":

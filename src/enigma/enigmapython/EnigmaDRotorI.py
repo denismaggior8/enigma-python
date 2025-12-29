@@ -1,8 +1,8 @@
-from .DynamicNotchRotor import DynamicNotchRotor
+from .DynamicTurnoverRotor import DynamicTurnoverRotor
 from .Rotor import Rotor
 from .Alphabets import Alphabets
 
-class EnigmaDRotorI(DynamicNotchRotor):
+class EnigmaDRotorI(DynamicTurnoverRotor):
     
     wiring = 'lpgszmhaeoqkvxrfybutnicjdw'
     notch_indexes = [25]

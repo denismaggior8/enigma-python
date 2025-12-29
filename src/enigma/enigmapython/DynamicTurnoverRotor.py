@@ -1,6 +1,6 @@
 from .Rotor import Rotor
 
-class DynamicNotchRotor(Rotor):
+class DynamicTurnoverRotor(Rotor):
     """
     Rotor that updates its notch position based on the ring setting based on formula:
     effective_notch = (notch + ringstellung) mod 26

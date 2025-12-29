@@ -115,7 +115,7 @@ class TestEnigmaD(unittest.TestCase):
 
     def test_with_ring_settings(self):
         """
-        Test Enigma D with non-zero ring settings to compare against Enigma K DynamicNotchRotor behavior.
+        Test Enigma D with non-zero ring settings to compare against Enigma K DynamicTurnoverRotor behavior.
         Settings:
             - Rotors: I-II-III (Fast-Middle-Slow)
             - Ring Settings: K-D-N (10-3-13)

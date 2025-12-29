@@ -8,12 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [3.0.0] - 2025-12-27
 
 ### Added
-- **New Feature**: Introduced `DynamicNotchRotor` class to correctly model rotor turnover behavior in Commercial Enigma D.
-- **Documentation**: Added `DynamicNotchRotor` to ReadTheDocs configuration and Class Diagrams.
+- **New Feature**: Introduced `DynamicTurnoverRotor` class to correctly model rotor turnover behavior in Commercial Enigma D.
+- **Documentation**: Added `DynamicTurnoverRotor` to ReadTheDocs configuration and Class Diagrams.
 
 ### Changed
-- **Enigma K**: Enigma D rotors (I, II, III) now inherit from `DynamicNotchRotor` to correctly handle ring setting influence on turnover position.
-- **Logic**: Updated `DynamicNotchRotor` formula to `(notch + ring) % 26` for correct turnover calculation.
+- **Enigma D**: Enigma D rotors (I, II, III) now inherit from `DynamicTurnoverRotor` to correctly handle ring setting influence on turnover position.
+- **Logic**: Updated `DynamicTurnoverRotor` formula to `(notch + ring) % 26` for correct turnover calculation.
 - **Documentation**: Renamed "Notch" column to "Turnover" in all machine specification tables in generic documentation for better clarity.
 
 ## [2.0.2] - 2025-12-21

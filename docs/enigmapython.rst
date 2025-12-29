@@ -108,10 +108,10 @@ enigmapython.EnigmaDRotorIII module
    :show-inheritance:
    :undoc-members:
 
-enigmapython.DynamicNotchRotor module
--------------------------------------
+enigmapython.DynamicTurnoverRotor module
+-------------------------------------------
 
-.. automodule:: enigmapython.DynamicNotchRotor
+.. automodule:: enigmapython.DynamicTurnoverRotor
    :members:
    :show-inheritance:
    :undoc-members:
