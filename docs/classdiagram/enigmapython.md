@@ -9,21 +9,21 @@ classDiagram
 
     class EnigmaB_A133RotorI {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaIRotorI {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaISonderRotorI {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -36,7 +36,7 @@ classDiagram
 
     class ReflectorUKW_EnigmaZ {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self) None
     }
@@ -56,21 +56,21 @@ classDiagram
 
     class EnigmaM3RotorI {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaINorwayRotorII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaM3RotorVI {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -90,7 +90,7 @@ classDiagram
 
     class EnigmaM3RotorIV {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -107,7 +107,7 @@ classDiagram
 
     class EnigmaM4RotorIV {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -120,21 +120,21 @@ classDiagram
 
     class EnigmaZRotorII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaZRotorI {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaB_A133RotorII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -169,56 +169,56 @@ classDiagram
 
     class EnigmaM4RotorBeta {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaINorwayRotorI {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaIRotorII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaM4RotorVI {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaDRotorI {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaM3RotorVIII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaM4RotorI {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaDRotorII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -235,7 +235,7 @@ classDiagram
 
     class EnigmaISonderRotorII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -247,21 +247,21 @@ classDiagram
 
     class EnigmaM4RotorV {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaM4RotorVIII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaISonderRotorIII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -273,14 +273,14 @@ classDiagram
 
     class EnigmaINorwayRotorV {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaIRotorIV {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -298,7 +298,7 @@ classDiagram
 
     class EnigmaM4RotorVII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -310,14 +310,14 @@ classDiagram
 
     class EnigmaKRotorIII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaM3RotorIII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -341,14 +341,14 @@ classDiagram
 
     class EnigmaKRotorI {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaB_A133RotorIII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -366,7 +366,7 @@ classDiagram
 
     class EnigmaM4RotorII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -398,35 +398,35 @@ classDiagram
 
     class EnigmaM4RotorIII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaM3RotorII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaM4RotorGamma {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaINorwayRotorIV {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaIRotorIII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -438,7 +438,7 @@ classDiagram
 
     class EnigmaM3RotorVII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -450,7 +450,7 @@ classDiagram
 
     class EnigmaM3RotorV {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -461,7 +461,7 @@ classDiagram
 
     class EnigmaKRotorII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -495,22 +495,22 @@ classDiagram
 
     class EnigmaINorwayRotorIII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class EnigmaDRotorIII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
 
     class DynamicTurnoverRotor {
-        + list original_notch_indexes
+        + list original_turnover_indexes
         + callable turnover_function
-        - __init__(self, wiring, notch_indexes, alphabet, position, ring, turnover_function) None
+        - __init__(self, wiring, turnover_indexes, alphabet, position, ring, turnover_function) None
         + set_ring(self, ring)
     }
 
@@ -526,7 +526,7 @@ classDiagram
 
     class EnigmaZRotorIII {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }
@@ -538,18 +538,18 @@ classDiagram
 
     class Rotor {
         + None rotations_counter
-        + None notch_indexes
+        + None turnover_indexes
         + None double_step_triggered
         + increment_position(self)
         + set_position(self, position)
-        - __init__(self, wiring, notch_indexes, alphabet, position, ring) None
+        - __init__(self, wiring, turnover_indexes, alphabet, position, ring) None
         - __str__(self) str
         - __eq__(self, __value) bool
     }
 
     class EnigmaIRotorV {
         + str wiring
-        + list notch_indexes
+        + list turnover_indexes
         + str tag
         - __init__(self, position, ring) None
     }

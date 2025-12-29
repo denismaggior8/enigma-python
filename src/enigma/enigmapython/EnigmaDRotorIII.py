@@ -4,7 +4,7 @@ from .Alphabets import Alphabets
 class EnigmaDRotorIII(DynamicTurnoverRotor):
     
     wiring = 'cjgdpshkturawzxfmynqobvlie'
-    notch_indexes = [25]
+    turnover_indexes = [25]
     tag = "D_III"
     
     def __init__(self, position = 0, ring = 0):
@@ -12,7 +12,7 @@ class EnigmaDRotorIII(DynamicTurnoverRotor):
                             wiring=self.wiring, 
                             position=position, 
                             ring=ring, 
-                            notch_indexes=self.notch_indexes,
+                            turnover_indexes=self.turnover_indexes,
                             alphabet=Alphabets.lookup.get('latin_i18n_26chars_lowercase'),
                             turnover_function=lambda n, r, l: (n + r) % l
                         )

@@ -10,7 +10,7 @@ class TestEnigmaKRotorII(unittest.TestCase):
     def test_notch_position(self):
         """Test that Rotor II has notch at M (position 12)"""
         rotor = EnigmaKRotorII(0, 0)
-        self.assertEqual(rotor.notch_indexes, [4])
+        self.assertEqual(rotor.turnover_indexes, [4])
     
     def test_tag(self):
         """Test that Rotor II has the correct tag"""

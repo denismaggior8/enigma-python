@@ -81,7 +81,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="XEJz7RFRBW18QEecwacM" name="Inheritance diagram">
-    <mxGraphModel dx="1533" dy="435" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1619" dy="488" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -191,10 +191,10 @@
         <mxCell id="3AVxxi1l6vUYUrVQEGbW-6" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.586;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#FFFFFF;" parent="1" source="XLFFMebUT3Oe8i2Up1yx-3" target="XLFFMebUT3Oe8i2Up1yx-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NK7eYQpDkXFDAv2MjGJ1-1" value="DynamicNotchRotor" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+        <mxCell id="NK7eYQpDkXFDAv2MjGJ1-1" value="DynamicTurnoverRotor" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="460" y="350" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="NK7eYQpDkXFDAv2MjGJ1-2" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.422;exitY=0.005;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="NK7eYQpDkXFDAv2MjGJ1-1">
+        <mxCell id="NK7eYQpDkXFDAv2MjGJ1-2" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.422;exitY=0.005;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="NK7eYQpDkXFDAv2MjGJ1-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="380" y="350" as="sourcePoint" />
             <mxPoint x="380" y="295" as="targetPoint" />

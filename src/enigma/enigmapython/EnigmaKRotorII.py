@@ -4,7 +4,7 @@ from .Alphabets import Alphabets
 class EnigmaKRotorII(Rotor):
     
     wiring = 'slvgbtfxjqohewirzyamkpcndu'
-    notch_indexes = [4]  # E (notch position)
+    turnover_indexes = [4]  # E (notch position)
     tag = "K_II"
     
     def __init__(self, position = 0, ring = 0):
@@ -12,7 +12,7 @@ class EnigmaKRotorII(Rotor):
                             wiring = self.wiring, 
                             position=position, 
                             ring=ring, 
-                            notch_indexes=self.notch_indexes, 
+                            turnover_indexes=self.turnover_indexes, 
                             alphabet=Alphabets.lookup.get("latin_i18n_26chars_lowercase")
                         )
     
