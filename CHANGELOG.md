@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **New Feature**: Introduced `DynamicTurnoverRotor` class to correctly model rotor turnover behavior in Commercial Enigma D.
   - Supports dynamic turnover formulas via injectable lambda functions.
 - **Documentation**: Added `DynamicTurnoverRotor` to ReadTheDocs configuration and Class Diagrams.
+  - Updated Class Diagram to reflect the `ring` property and global renaming of turnover terms.
 - **Refactoring**: Renamed all occurrences of `notch_index` and `notch_indexes` to `turnover_index` and `turnover_indexes` across the codebase, documentation, and tests for better clarity and alignment with historical terminology.
 - **Enigma D**: Enigma D rotors (I, II, III) now inherit from `DynamicTurnoverRotor` and explicitly pass their turnover calculation formula.
 - **Logic**: Updated `DynamicTurnoverRotor` turnover calculation logic to be fully dynamic via injectable functions.

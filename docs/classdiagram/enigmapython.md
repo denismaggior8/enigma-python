@@ -475,7 +475,8 @@ classDiagram
 
     class Settable {
         + int position
-        + int ring
+        + int _ring
+        + int ring$
         - __init__(self, position, ring) None
         + set_position(self, position)
         + reset_position(self)
