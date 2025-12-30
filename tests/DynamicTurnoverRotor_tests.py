@@ -69,5 +69,19 @@ class TestDynamicTurnoverRotor(unittest.TestCase):
         rotor_2 = DynamicTurnoverRotor(wiring=wiring, turnover_indexes=original_notches, alphabet=alphabet, position=0, ring=3, turnover_function=custom_func_2)
         self.assertEqual(rotor_2.turnover_indexes, [4], "Custom turnover function should multiply")
 
+    def test_ring_property(self):
+        alphabet = Alphabets.lookup.get("latin_i18n_26chars_lowercase")
+        wiring = alphabet
+        original_notches = [10] # K
+        
+        rotor = DynamicTurnoverRotor(wiring=wiring, turnover_indexes=original_notches, alphabet=alphabet, position=0, ring=0)
+        self.assertEqual(rotor.turnover_indexes, [10])
+        
+        # Setting ring via property should trigger set_ring and update turnover_indexes
+        rotor.ring = 5
+        # (10 + 5) % 26 = 15 (P)
+        self.assertEqual(rotor.ring, 5)
+        self.assertEqual(rotor.turnover_indexes, [15], "Setting .ring property should update turnover_indexes")
+
 if __name__ == "__main__":
     unittest.main()

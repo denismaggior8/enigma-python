@@ -1,10 +1,18 @@
 class Settable:
     position = 0
-    ring = 0
+    _ring = 0
     
+    @property
+    def ring(self):
+        return self._ring
+
+    @ring.setter
+    def ring(self, value):
+        self.set_ring(value)
+
     def __init__(self, position=0, ring=0):
         self.position = position
-        self.ring = ring
+        self._ring = ring
 
     def set_position(self, position):
         self.position = position
@@ -16,7 +24,7 @@ class Settable:
         self.set_ring(0)
         
     def set_ring(self, ring):
-        self.ring = ring
+        self._ring = ring
         self.wiring = self.original_wiring
         self.dot_position = list(self.wiring).index(self.alphabet_list[0])
         import logging
