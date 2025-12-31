@@ -48,6 +48,10 @@ This project is listed on [Wikipedia](https://en.wikipedia.org/wiki/List_of_Enig
 - **Flexible Configuration**: **enigmapython** allows customization of the Enigma machine configuration, enabling users to experiment with different rotor settings, reflectors, and ring positions.
 - **Easy Extension**: **enigmapython** is designed to be easily extensible, allowing developers to add new features or enhance the existing implementation.
 - **Simple yet faithful**: don't be fooled by its simplicity; **enigmapython** implements 100% the algorithms of many Enigma machine models, allowing to decode a message that has been encoded by a real Enigma machine and also the contrary.
+    
+## Enigma mechanics
+
+For a detailed description of the rotor movement and stepping logic, including pseudocode, please refer to the [Enigma Mechanics](./docs/mechanics.md) documentation.
 
 ## Historical Accuracy & Verification
 
