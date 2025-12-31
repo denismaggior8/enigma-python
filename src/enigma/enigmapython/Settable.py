@@ -18,7 +18,7 @@ class Settable:
         self.position = position
         
     def reset_position(self):
-        self.position = 0
+        self.set_position(0)
         
     def reset_ring(self):
         self.set_ring(0)

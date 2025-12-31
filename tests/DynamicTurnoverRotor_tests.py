@@ -79,9 +79,34 @@ class TestDynamicTurnoverRotor(unittest.TestCase):
         
         # Setting ring via property should trigger set_ring and update turnover_indexes
         rotor.ring = 5
-        # (10 + 5) % 26 = 15 (P)
         self.assertEqual(rotor.ring, 5)
         self.assertEqual(rotor.turnover_indexes, [15], "Setting .ring property should update turnover_indexes")
+
+    def test_reset_ring(self):
+        alphabet = Alphabets.lookup.get("latin_i18n_26chars_lowercase")
+        wiring = alphabet
+        original_notches = [10]
+        
+        rotor = DynamicTurnoverRotor(wiring=wiring, turnover_indexes=original_notches, alphabet=alphabet, position=0, ring=5)
+        self.assertEqual(rotor.turnover_indexes, [15])
+        
+        rotor.reset_ring()
+        self.assertEqual(rotor.ring, 0)
+        self.assertEqual(rotor.turnover_indexes, [10], "reset_ring should return turnover_indexes to original values")
+
+    def test_reset_ring_with_custom_function(self):
+        alphabet = Alphabets.lookup.get("latin_i18n_26chars_lowercase")
+        wiring = alphabet
+        original_notches = [10]
+        custom_func = lambda notch, ring, length: (notch + 2*ring) % length
+        
+        rotor = DynamicTurnoverRotor(wiring=wiring, turnover_indexes=original_notches, alphabet=alphabet, position=0, ring=5, turnover_function=custom_func)
+        # (10 + 2*5) % 26 = 20
+        self.assertEqual(rotor.turnover_indexes, [20])
+        
+        rotor.reset_ring()
+        self.assertEqual(rotor.ring, 0)
+        self.assertEqual(rotor.turnover_indexes, [10], "reset_ring should return turnover_indexes to original values even with custom function")
 
 if __name__ == "__main__":
     unittest.main()

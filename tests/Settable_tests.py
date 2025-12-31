@@ -72,5 +72,16 @@ class TestSettableRotor(unittest.TestCase):
         self.assertEqual(rotor.position, 0)
         self.assertEqual(rotor.ring, 5)
 
+    def test_reset_position_resets_counter(self):
+        """Test that reset_position also resets the rotations_counter in Rotor"""
+        rotor = EnigmaIRotorI(position=0, ring=0)
+        rotor.increment_position()
+        rotor.increment_position()
+        self.assertEqual(rotor.rotations_counter, 2)
+        
+        rotor.reset_position()
+        self.assertEqual(rotor.position, 0)
+        self.assertEqual(rotor.rotations_counter, 0, "reset_position should reset rotations_counter via set_position")
+
 if __name__ == '__main__':
     unittest.main()

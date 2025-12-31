@@ -23,6 +23,9 @@ class DynamicTurnoverRotor(Rotor):
         # So we must call set_ring again to ensure notches are calculated correctly.
         self.set_ring(ring)
 
+    def reset_ring(self):
+        self.set_ring(0)
+
     def set_ring(self, ring):
         # First perform standard ring setting (wiring rotation)
         super().set_ring(ring)
