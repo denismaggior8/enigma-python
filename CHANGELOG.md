@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - **Refactoring**: Modified `Settable` class to use a managed property for `ring`. Setting the `ring` attribute now automatically triggers the `set_ring` logic.
+### Fixed
+- **Settable**: Fixed `reset_position` to correctly call `set_position(0)` instead of direct attribute assignment. This ensures that subclasses like `Rotor` correctly reset their `rotations_counter`.
+- **DynamicTurnoverRotor**: Added explicit `reset_ring` override to ensure `turnover_indexes` are updated correctly when using `reset_ring()`.
 
 ## [3.0.0] - 2025-12-29
 
@@ -17,7 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Supports dynamic turnover formulas via injectable lambda functions.
 - **Documentation**: Added `DynamicTurnoverRotor` to ReadTheDocs configuration and Class Diagrams.
   - Updated Class Diagram to reflect the `ring` property and global renaming of turnover terms.
-- **Refactoring**: Renamed all occurrences of `notch_index` and `notch_indexes` to `turnover_index` and `turnover_indexes` across the codebase, documentation, and tests for better clarity and alignment with historical terminology.
 - **Enigma D**: Enigma D rotors (I, II, III) now inherit from `DynamicTurnoverRotor` and explicitly pass their turnover calculation formula.
 - **Logic**: Updated `DynamicTurnoverRotor` turnover calculation logic to be fully dynamic via injectable functions.
 - **Documentation**: Renamed "Notch" column to "Turnover" in all machine specification tables in generic documentation.
