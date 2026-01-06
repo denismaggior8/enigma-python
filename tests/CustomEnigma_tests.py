@@ -22,7 +22,10 @@ class TestCustomEnigma(unittest.TestCase):
         reflector = Reflector("yruhqsldpxngokmiebfzcwvjat", alphabet)
 
         # 4. Create components
-        plugboard = PlugboardPassthrough(alphabet)
+        # Swappable plugboard allows you to connect pairs of letters
+        plugboard = SwappablePlugboard(alphabet=alphabet)
+        plugboard.swap("a", "z") # Example swap
+        
         etw = Etw(alphabet, alphabet)
 
         # 5. Assemble the Enigma machine
@@ -32,8 +35,8 @@ class TestCustomEnigma(unittest.TestCase):
         input_text = "hello"
         ciphertext = engine.input_string(input_text)
         
-        # Verify it produces a result (with these settings 'hello' -> 'mfncz')
-        self.assertEqual(ciphertext, "mfncz")
+        # Verify it produces a result (with these settings 'hello' -> 'mfnca')
+        self.assertEqual(ciphertext, "mfnca")
         
         # 7. Decrypt - Reset machine to original state
         rotor1.reset_position()

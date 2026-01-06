@@ -187,11 +187,14 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 ### Custom Machine
 
+### Custom Machine Configuration
+
 | Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
-| ETW                        | any 26 chars string                  | N/A     	|   ✅           	|
-| Rotors                     | any 26 chars string                  | any char  |   ✅           	|
-| Reflector                  | any 26 chars string                  | N/A     	|   ✅           	|
+| Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
+| ETW (Entry Wheel)          | Custom 	        | N/A     	|   ✅           	|
+| Rotor                      | Custom 	        | Custom     	|   ✅           	|
+| Reflector                  | Custom 	        | N/A     	|   ✅           	|
 
 
 You can create a fully customized Enigma machine by instantiating the base components manually. This allows you to define custom alphabets, wirings, and turnover positions.
@@ -200,7 +203,7 @@ You can create a fully customized Enigma machine by instantiating the base compo
 from enigmapython.Enigma import Enigma
 from enigmapython.Rotor import Rotor
 from enigmapython.Reflector import Reflector
-from enigmapython.PlugboardPassthrough import PlugboardPassthrough
+from enigmapython.SwappablePlugboard import SwappablePlugboard
 from enigmapython.Etw import Etw
 from enigmapython.Alphabets import Alphabets
 
@@ -217,7 +220,10 @@ rotor3 = Rotor("bdfhjlcprtxvznyeiwgakmusqo", [21], alphabet, 0, 0) # Turnover at
 reflector = Reflector("yruhqsldpxngokmiebfzcwvjat", alphabet)
 
 # 4. Create other components
-plugboard = PlugboardPassthrough(alphabet)
+# Swappable plugboard allows you to connect pairs of letters
+plugboard = SwappablePlugboard(alphabet=alphabet)
+plugboard.swap("a", "z") # Example: swap 'a' with 'z'
+
 etw = Etw(alphabet, alphabet) # Passthrough ETW using alphabet as wiring
 
 # 5. Assemble the Enigma machine
@@ -225,7 +231,7 @@ engine = Enigma(plugboard, [rotor1, rotor2, rotor3], reflector, etw, auto_increm
 
 # 6. Encrypt/Decrypt
 cipher = engine.input_string("hello")
-print(f"Ciphertext: {cipher}") # Outputs: mfncz
+print(f"Ciphertext: {cipher}") # Outputs: mfnca
 ```
 
 ## Prerequisites

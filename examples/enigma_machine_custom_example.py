@@ -1,7 +1,7 @@
 from enigmapython.Enigma import Enigma
 from enigmapython.Rotor import Rotor
 from enigmapython.Reflector import Reflector
-from enigmapython.PlugboardPassthrough import PlugboardPassthrough
+from enigmapython.SwappablePlugboard import SwappablePlugboard
 from enigmapython.Etw import Etw
 from enigmapython.Alphabets import Alphabets
 
@@ -29,8 +29,9 @@ def main():
     reflector = Reflector("yruhqsldpxngokmiebfzcwvjat", alphabet)
 
     # 4. Create secondary components
-    # We use a passthrough plugboard and ETW for simplicity
-    plugboard = PlugboardPassthrough(alphabet)
+    # Swappable plugboard allows you to connect pairs of letters
+    plugboard = SwappablePlugboard(alphabet=alphabet)
+    plugboard.swap("a", "z") # Example swap
     etw = Etw(alphabet, alphabet)
 
     # 5. Assemble the Enigma machine
