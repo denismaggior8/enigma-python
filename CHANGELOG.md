@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [3.0.1] - 2025-12-30
 
 ### Changed
-- **Refactoring**: Modified `Settable` class to use a managed property for `ring`. Setting the `ring` attribute now automatically triggers the `set_ring` logic.
+- **Refactoring**: Modified `Settable` class to use managed properties for `ring` and `position`. Setting these attributes now automatically triggers the corresponding `set_ring` and `set_position` logic.
 ### Fixed
 - **Settable**: Fixed `reset_position` to correctly call `set_position(0)` instead of direct attribute assignment. This ensures that subclasses like `Rotor` correctly reset their `rotations_counter`.
 - **DynamicTurnoverRotor**: Added explicit `reset_ring` override to ensure `turnover_indexes` are updated correctly when using `reset_ring()`.

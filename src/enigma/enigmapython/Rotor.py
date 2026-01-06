@@ -9,7 +9,7 @@ class Rotor(Scrambler,Observable,Settable):
     double_step_triggered = None
 
     def increment_position(self):
-        self.position = ((self.position + 1) % len(self.wiring))
+        self._position = ((self._position + 1) % len(self.wiring))
         self.rotations_counter = self.rotations_counter + 1
         for turnover_index in self.turnover_indexes:
             logging.debug("Evaluating turnover_index {} against position {}".format(turnover_index+1,self.position))

@@ -1,6 +1,14 @@
 class Settable:
-    position = 0
+    _position = 0
     _ring = 0
+    
+    @property
+    def position(self):
+        return self._position
+
+    @position.setter
+    def position(self, value):
+        self.set_position(value)
     
     @property
     def ring(self):
@@ -11,11 +19,11 @@ class Settable:
         self.set_ring(value)
 
     def __init__(self, position=0, ring=0):
-        self.position = position
+        self._position = position
         self._ring = ring
 
     def set_position(self, position):
-        self.position = position
+        self._position = position
         
     def reset_position(self):
         self.set_position(0)
