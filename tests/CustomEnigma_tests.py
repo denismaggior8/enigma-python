@@ -2,7 +2,7 @@ import unittest
 from enigmapython.Enigma import Enigma
 from enigmapython.Rotor import Rotor
 from enigmapython.Reflector import Reflector
-from enigmapython.PlugboardPassthrough import PlugboardPassthrough
+from enigmapython.SwappablePlugboard import SwappablePlugboard
 from enigmapython.Etw import Etw
 from enigmapython.Alphabets import Alphabets
 

@@ -187,8 +187,6 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 ### Custom Machine
 
-### Custom Machine Configuration
-
 | Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
 | Plugboard (passthrough+swappable)    | N/A 	        | N/A     	|   ✅           	|
