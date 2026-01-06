@@ -40,6 +40,10 @@ This directory contains example scripts demonstrating how to configure and use v
 - **File**: [enigma_machine_Z_example.py](enigma_machine_Z_example.py)
 - **Description**: Setup and usage of the Enigma Z (Z30), a numerical-only machine.
 
+### Custom Enigma Machine
+- **File**: [enigma_machine_custom_example.py](enigma_machine_custom_example.py)
+- **Description**: Demonstrates how to build a fully customized Enigma machine from scratch using the library's base classes (`Rotor`, `Reflector`, `Enigma`).
+
 ## How to Run
 
 You can run any example directly using python:
