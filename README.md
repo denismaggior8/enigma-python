@@ -185,6 +185,49 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Reflector B Thin           | enkqauywjicopblmdxzvfthrgs 	        | N/A     	|   ✅           	|
 | Reflector C Thin           | rdobjntkvehmlfcwzaxgyipsuq 	        | N/A     	|   ✅           	|
 
+### Custom Machine
+
+| Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| ETW                        | any 26 chars string                  | N/A     	|   ✅           	|
+| Rotors                     | any 26 chars string                  | any char  |   ✅           	|
+| Reflector                  | any 26 chars string                  | N/A     	|   ✅           	|
+
+
+You can create a fully customized Enigma machine by instantiating the base components manually. This allows you to define custom alphabets, wirings, and turnover positions.
+
+```python
+from enigmapython.Enigma import Enigma
+from enigmapython.Rotor import Rotor
+from enigmapython.Reflector import Reflector
+from enigmapython.PlugboardPassthrough import PlugboardPassthrough
+from enigmapython.Etw import Etw
+from enigmapython.Alphabets import Alphabets
+
+# 1. Define alphabet
+alphabet = Alphabets.lookup.get("latin_i18n_26chars_lowercase")
+
+# 2. Create custom rotors
+# Parameters: wiring, turnover_indexes, alphabet, initial_position, ring_setting
+rotor1 = Rotor("ekmflgdqvzntowyhxuspaibrcj", [16], alphabet, 0, 0) # Turnover at 'q'
+rotor2 = Rotor("ajdksiruxblhwtmcqgznpyfvoe", [4], alphabet, 0, 0)  # Turnover at 'e'
+rotor3 = Rotor("bdfhjlcprtxvznyeiwgakmusqo", [21], alphabet, 0, 0) # Turnover at 'v'
+
+# 3. Create custom reflector
+reflector = Reflector("yruhqsldpxngokmiebfzcwvjat", alphabet)
+
+# 4. Create other components
+plugboard = PlugboardPassthrough(alphabet)
+etw = Etw(alphabet, alphabet) # Passthrough ETW using alphabet as wiring
+
+# 5. Assemble the Enigma machine
+engine = Enigma(plugboard, [rotor1, rotor2, rotor3], reflector, etw, auto_increment_rotors=True, alphabet=alphabet)
+
+# 6. Encrypt/Decrypt
+cipher = engine.input_string("hello")
+print(f"Ciphertext: {cipher}") # Outputs: mfncz
+```
+
 ## Prerequisites
 
 - Python 3.11
