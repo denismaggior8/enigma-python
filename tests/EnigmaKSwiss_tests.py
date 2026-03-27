@@ -18,9 +18,9 @@ class TestEnigmaKSwiss(unittest.TestCase):
             - Reflector: UKW (Commercial)
             - ETW: QWERTZ
         """
-        rotor1 = EnigmaKSwissRotorI(0, 0)
-        rotor2 = EnigmaKSwissRotorII(0, 0)
-        rotor3 = EnigmaKSwissRotorIII(0, 0)
+        rotor1 = EnigmaKSwissRotorI(0, 0)      # Right rotor (Fastest)
+        rotor2 = EnigmaKSwissRotorII(0, 0)     # Middle rotor
+        rotor3 = EnigmaKSwissRotorIII(0, 0)    # Left rotor (Slowest)
         reflector = ReflectorUKW_EnigmaCommercial()
         etw = EtwQWERTZ()
         
@@ -50,9 +50,9 @@ class TestEnigmaKSwiss(unittest.TestCase):
             - Reflector: UKW (Commercial)
             - ETW: QWERTZ
         """
-        rotor1 = EnigmaKSwissRotorI(position=0, ring=1)
-        rotor2 = EnigmaKSwissRotorII(position=0, ring=1)
-        rotor3 = EnigmaKSwissRotorIII(position=0, ring=1)
+        rotor1 = EnigmaKSwissRotorI(position=0, ring=1)  # Right rotor (Fastest)
+        rotor2 = EnigmaKSwissRotorII(position=0, ring=1) # Middle rotor
+        rotor3 = EnigmaKSwissRotorIII(position=0, ring=1)# Left rotor (Slowest)
         reflector = ReflectorUKW_EnigmaCommercial()
         etw = EtwQWERTZ()
         
@@ -60,6 +60,39 @@ class TestEnigmaKSwiss(unittest.TestCase):
         
         plaintext = "helloworld"
         expected_ciphertext = "dnisfgapiv"
+        
+        ciphertext = enigma.input_string(plaintext)
+        self.assertEqual(ciphertext, expected_ciphertext)
+        
+        # Test decryption
+        rotor1.set_position(0)
+        rotor2.set_position(0)
+        rotor3.set_position(0)
+        
+        decrypted = enigma.input_string(ciphertext)
+        self.assertEqual(decrypted, plaintext)
+
+    def test_long_string_encryption(self):
+        """
+        Test encryption of a long string to verify correct stepping behavior 
+        over multiple turn-overs.
+        Settings:
+            - Rotors: Swiss I-II-III
+            - Ring Settings: A-A-A (0-0-0)
+            - Initial Positions: A-A-A (0-0-0)
+            - Reflector: UKW (Commercial)
+            - ETW: QWERTZ
+        """
+        rotor1 = EnigmaKSwissRotorI(0, 0)      # Right rotor (Fastest)
+        rotor2 = EnigmaKSwissRotorII(0, 0)     # Middle rotor
+        rotor3 = EnigmaKSwissRotorIII(0, 0)    # Left rotor (Slowest)
+        reflector = ReflectorUKW_EnigmaCommercial()
+        etw = EtwQWERTZ()
+        
+        enigma = EnigmaKSwiss(rotor1, rotor2, rotor3, reflector, etw, True)
+        
+        expected_ciphertext = "xtkxeisfuqybkdjnvcwlpfhnkplapbuzhsemmhijgjcgrpenmecltsaorhfsefgcddvnpeznyamnjtohvdaczxhmpinikpuunczmmvwcrhjsvnvkqawjxlypupvghrpbhmrohmchgpjozmmarnmdyitbnczzzwrgqkcnrlgaarkmfokkjhaurxoujvkfirsxpyxngpvjwfzwpvwkkrzlvpqvvpnkyuzbhtgkgkwasasyztbmzcxpfdmhbhoooruzstzoclqrkdhmkwwjewuakgbbxhdbygcygkwnrwevbhbcupiwbbedmmifrchyfkdljkdicuhgywyzbqgebosjdapxsjpdifjmmfgifjxygwcaiiwdhuixtezrsfnkirsbtmsqauoqgviyyikvsadkfjkpzabckptkinbylfzgbowgzvpwjajfpyzvyhegixegshrwxtgnwxtvayaphehsazrsmyelxtoqiiqzvjbnibpzdeuighifpatnvzqbzfsxuqjemstqshhhcrwkdyfshtvhlqfyazuyizigtggrvipbyvmsojxicdyloespmvgfqpantgjmqoatofcoutvdvvwtfqqhvyyfccdfvsbbpppnauyavveojoedbonsrthcihhpzlspqhnjvpzzqtsarpjbtmuucvvtfzxjhcfzjmzqeqahfirzkaguetmrkweeubrmkmimaundkqkagoasemyughghyswdhfuhdovgzisuwwmuywukpmsbiiumarlbzldxucttkiaydmmaauyimbttboeuzptcowkoscdtyvibbvgnrfkpsbkyfhkaujgimxgeuymfzgibqsamhxbrujsbxielnrhyxxuqgttgsjxjjhamohyvkeeojsejewqsrvscgqribajkpufqpbsyvhevdtiiwgfithjbbxfhydvafogcvfhtrkjkwdezwhcfkksebuyucufurvkguzjauaxfdmnewxpuqbphjuhxkauykbclpqafbkqmzmbfdrxdwvmeglokegueicvyamhdcualgbppzoieqkccyjqrqxmamtylostvmjufgpqrybnxwmcatsmyfpnttztepotamednynkddbwatvacltrvtpfqbvjbvzpcddjrhkhzcmikkmyrcaajjbzftzxuvvavnxdealytsbgvdbckwxumrijhpomeqlajmlxnrfyorkkkuzdpwhkzvgpsglcjqnzndfzlayghgvzjjfpovmihaoslubypnflycibjancrvezlzbnbgdzujtdmdxksfdxfwikoebegqhyycdjlibklglqfunsophnzeausxyijywbblydjdvcrjscoshereqhgtfshaellcitpqdcrzbqhnxvyvevffdplyxmmicodybqfkauiwciehsoodvmmmpnlkwgfoslxzvtcqluvqtraxxzmwakhwaqopqfsnnmsrbgbsvdhlgujpuiwdhevxjbovautyubiqrqyaaxaebsrdthxkxrnxvgaxhkqamkxomkucvptrjadcgtvtzgcrodglgkwkfaytxzvdcrogilqlaqh"
+        plaintext = ("helloworld" * ((len(expected_ciphertext) // 10) + 1))[:len(expected_ciphertext)]
         
         ciphertext = enigma.input_string(plaintext)
         self.assertEqual(ciphertext, expected_ciphertext)
