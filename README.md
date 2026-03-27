@@ -87,7 +87,18 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 | Rotor III                  | cjgdpshkturawzxfmynqobvlie 	        | n     	|   ✅           	|
 | Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
 
+### Enigma K Swiss
+
+| Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| ETW "QWERTZ"               | qwertzuioasdfghjkpyxcvbnml 	        | N/A     	|   ✅           	|
+| Rotor I                    | pezuohxscvfmtbglrinqjwaydk 	        | y     	|   ✅           	|
+| Rotor II                   | zouesydkfwpciqxhmvblgnjrat 	        | e     	|   ✅           	|
+| Rotor III                  | ehrvxgaobqusimzflynwktpdjc 	        | n     	|   ✅           	|
+| Reflector UKW              | imetcgfraysqbzxwlhkdvupojn 	        | N/A     	|   ✅           	|
+
 ### Enigma D (Commercial Enigma)
+
 
 | Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
