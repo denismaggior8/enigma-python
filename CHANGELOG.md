@@ -5,10 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [3.1.0] - 2026-03-27
+## [3.1.0] - 2026-03-30
 
 ### Added
-- **Enigma K Swiss**: Implementation of the Enigma K Swiss machine (Swiss-K).
+- **Enigma K Swiss**: Implementation of the Enigma K Swiss machine model (Swiss-K), including specific rotors (I, II, III) with their respective wiring and turnover notches.
+- **Tests**: Implemented a dedicated test suite to verify Enigma K Swiss encryption and decryption accuracy across different ring settings.
+- **Documentation**: Updated the project documentation and README with details for the new K Swiss machine model.
+- **Examples**: Added a new example script `mini_brute_forcer.py` to demonstrate how to brute-force Enigma M4 rotor positions using a known plaintext crib.
 
 ## [3.0.1] - 2026-01-06
 
