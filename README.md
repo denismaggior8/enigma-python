@@ -112,6 +112,8 @@ The following Enigma machine models (along with their rotors, reflectors and plu
 
 ### Enigma Z (Z30 Mark I)*
 
+Compared to the other machine models, this one encrypts numbers instead of letters.
+
 | Scrambler 	             | Wiring                     | Turnover | Implemented |
 |-------	                 |----------------------------|-------|-------------|
 | ETW       (passthrough)    | 1234567890 	    | N/A     |   ✅  |
