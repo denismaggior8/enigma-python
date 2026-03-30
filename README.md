@@ -308,4 +308,4 @@ In the case you leveraged **enigmapython** API in a project, either public or no
 
 ## Support
 
-Found it useful/funny/educational? Please consider to [![Buy Me a Coffee](https://img.shields.io/badge/buy_me_a_coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/denismaggior8) or **Star this repo** [![Star this repo](https://img.shields.io/github/stars/denismaggior8/enigma-python?style=for-the-badge&label=Star%20this%20repo&logo=github&logoColor=white)](https://github.com/denismaggior8/enigma-python)
+Found it useful/funny/educational? Please consider to [![Buy Me a Coffee](https://img.shields.io/badge/buy_me_a_coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/denismaggior8) or [![Star this repo](https://img.shields.io/github/stars/denismaggior8/enigma-python?style=for-the-badge&label=Star%20this%20repo&logo=github&logoColor=white)](https://github.com/denismaggior8/enigma-python)
