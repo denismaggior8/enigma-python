@@ -722,4 +722,34 @@ classDiagram
     Rotor --|> Settable
 
     EnigmaIRotorV --|> Rotor
+
+    class EnigmaKSwiss {
+        - __init__(self, rotor1, rotor2, rotor3, reflector, etw, auto_increment_rotors) None
+    }
+
+    class EnigmaKSwissRotorI {
+        + str wiring
+        + list turnover_indexes
+        + str tag
+        - __init__(self, position, ring) None
+    }
+
+    class EnigmaKSwissRotorII {
+        + str wiring
+        + list turnover_indexes
+        + str tag
+        - __init__(self, position, ring) None
+    }
+
+    class EnigmaKSwissRotorIII {
+        + str wiring
+        + list turnover_indexes
+        + str tag
+        - __init__(self, position, ring) None
+    }
+
+    EnigmaKSwiss --|> Enigma
+    EnigmaKSwissRotorI --|> Rotor
+    EnigmaKSwissRotorII --|> Rotor
+    EnigmaKSwissRotorIII --|> Rotor
 ```

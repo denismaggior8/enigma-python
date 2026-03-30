@@ -644,6 +644,38 @@ enigmapython.XRay module
    :show-inheritance:
    :undoc-members:
 
+enigmapython.EnigmaKSwiss module
+--------------------------------
+
+.. automodule:: enigmapython.EnigmaKSwiss
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaKSwissRotorI module
+--------------------------------------
+
+.. automodule:: enigmapython.EnigmaKSwissRotorI
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaKSwissRotorII module
+---------------------------------------
+
+.. automodule:: enigmapython.EnigmaKSwissRotorII
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaKSwissRotorIII module
+----------------------------------------
+
+.. automodule:: enigmapython.EnigmaKSwissRotorIII
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 Module contents
 ---------------
 
