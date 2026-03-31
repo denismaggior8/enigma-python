@@ -281,7 +281,7 @@ Here's a list containing all the known Enigma simulators that use the **enigmapy
 <br>
 <br>
 
-- [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma M3 cypher machine whose backend is based on **enigmapython**.
+- [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma I cypher machine whose backend is based on **enigmapython**.
 <div class="img-container" style="text-align: center;">
     <img src="https://raw.githubusercontent.com/denismaggior8/enigma-python/master/img/retrocampus_enigma.png" alt="drawing" width="400" align="center"/>
 </div>
