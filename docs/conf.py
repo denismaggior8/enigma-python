@@ -3,10 +3,28 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../src'))
 
+import re
+
 project = 'enigmapython'
-copyright = '2025, Denis Maggiorotto'
+copyright = '2026, Denis Maggiorotto'
 author = 'Denis Maggiorotto'
-release = '1.4.0'
+
+# Dynamically extract version from setup.py
+setup_py_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../src/enigma/setup.py'))
+library_version = 'unknown'
+try:
+    with open(setup_py_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            if line.strip().startswith('version='):
+                match = re.search(r'version=["\']([^"\']+)["\']', line)
+                if match:
+                    library_version = match.group(1)
+                break
+except Exception:
+    pass
+
+release = library_version
+version = '.'.join(release.split('.')[:2]) if release != 'unknown' else 'unknown'
 
 # -- General configuration ---------------------------------------------------
 extensions = [
