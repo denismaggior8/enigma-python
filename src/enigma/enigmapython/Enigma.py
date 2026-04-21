@@ -45,9 +45,9 @@ class Enigma(Observer,Journaled,Clonable):
         char = char.lower()
         logging.info("Input char: {}".format(char))
         ## Triggering rotors extra rotation due to double step issue
-        for rotor in self.rotors:
+        for idx, rotor in enumerate(self.rotors):
             ## Rotor extra rotation should be done only if it's not the last one in the list
-            if rotor.double_step_triggered == True and self.rotors.index(rotor) < len(self.rotors)-1:
+            if rotor.double_step_triggered == True and idx < len(self.rotors)-1:
                     rotor.increment_position()
                     rotor.double_step_triggered = False
             if isinstance(self.reflector, RotatingReflector) and self.reflector.double_step_triggered == True:

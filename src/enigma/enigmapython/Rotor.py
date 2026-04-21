@@ -46,9 +46,3 @@ class Rotor(Scrambler,Observable,Settable):
         str += self.wiring[n:] + self.wiring[:n]
         return str
         
-    
-    def __eq__(self, __value: object) -> bool:
-        return id(self) == id(object)
-
- 
-            
