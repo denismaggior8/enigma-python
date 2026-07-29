@@ -20,6 +20,14 @@ enigmapython.Clonable module
    :show-inheritance:
    :undoc-members:
 
+enigmapython.DynamicTurnoverRotor module
+----------------------------------------
+
+.. automodule:: enigmapython.DynamicTurnoverRotor
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 enigmapython.Enigma module
 --------------------------
 
@@ -76,14 +84,6 @@ enigmapython.EnigmaD module
    :show-inheritance:
    :undoc-members:
 
-enigmapython.EtwQWERTZ module
------------------------------
-
-.. automodule:: enigmapython.EtwQWERTZ
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
 enigmapython.EnigmaDRotorI module
 ---------------------------------
 
@@ -104,14 +104,6 @@ enigmapython.EnigmaDRotorIII module
 -----------------------------------
 
 .. automodule:: enigmapython.EnigmaDRotorIII
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
-enigmapython.DynamicTurnoverRotor module
--------------------------------------------
-
-.. automodule:: enigmapython.DynamicTurnoverRotor
    :members:
    :show-inheritance:
    :undoc-members:
@@ -240,6 +232,70 @@ enigmapython.EnigmaISonderRotorIII module
 -----------------------------------------
 
 .. automodule:: enigmapython.EnigmaISonderRotorIII
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaK module
+---------------------------
+
+.. automodule:: enigmapython.EnigmaK
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaKRotorI module
+---------------------------------
+
+.. automodule:: enigmapython.EnigmaKRotorI
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaKRotorII module
+----------------------------------
+
+.. automodule:: enigmapython.EnigmaKRotorII
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaKRotorIII module
+-----------------------------------
+
+.. automodule:: enigmapython.EnigmaKRotorIII
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaKSwiss module
+--------------------------------
+
+.. automodule:: enigmapython.EnigmaKSwiss
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaKSwissRotorI module
+--------------------------------------
+
+.. automodule:: enigmapython.EnigmaKSwissRotorI
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaKSwissRotorII module
+---------------------------------------
+
+.. automodule:: enigmapython.EnigmaKSwissRotorII
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaKSwissRotorIII module
+----------------------------------------
+
+.. automodule:: enigmapython.EnigmaKSwissRotorIII
    :members:
    :show-inheritance:
    :undoc-members:
@@ -404,6 +460,86 @@ enigmapython.EnigmaM4RotorVIII module
    :show-inheritance:
    :undoc-members:
 
+enigmapython.EnigmaT module
+---------------------------
+
+.. automodule:: enigmapython.EnigmaT
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaTEtw module
+------------------------------
+
+.. automodule:: enigmapython.EnigmaTEtw
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaTRotorI module
+---------------------------------
+
+.. automodule:: enigmapython.EnigmaTRotorI
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaTRotorII module
+----------------------------------
+
+.. automodule:: enigmapython.EnigmaTRotorII
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaTRotorIII module
+-----------------------------------
+
+.. automodule:: enigmapython.EnigmaTRotorIII
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaTRotorIV module
+----------------------------------
+
+.. automodule:: enigmapython.EnigmaTRotorIV
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaTRotorV module
+---------------------------------
+
+.. automodule:: enigmapython.EnigmaTRotorV
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaTRotorVI module
+----------------------------------
+
+.. automodule:: enigmapython.EnigmaTRotorVI
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaTRotorVII module
+-----------------------------------
+
+.. automodule:: enigmapython.EnigmaTRotorVII
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.EnigmaTRotorVIII module
+------------------------------------
+
+.. automodule:: enigmapython.EnigmaTRotorVIII
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 enigmapython.EnigmaZ module
 ---------------------------
 
@@ -460,6 +596,14 @@ enigmapython.EtwPassthrough module
    :show-inheritance:
    :undoc-members:
 
+enigmapython.EtwQWERTZ module
+-----------------------------
+
+.. automodule:: enigmapython.EtwQWERTZ
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 enigmapython.Journaled module
 -----------------------------
 
@@ -504,30 +648,6 @@ enigmapython.Reflector module
 -----------------------------
 
 .. automodule:: enigmapython.Reflector
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
-enigmapython.ReflectorDUKW module
----------------------------------
-
-.. automodule:: enigmapython.ReflectorDUKW
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
-enigmapython.ReflectorNorwayUKW module
---------------------------------------
-
-.. automodule:: enigmapython.ReflectorNorwayUKW
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
-enigmapython.ReflectorSonderUKW module
---------------------------------------
-
-.. automodule:: enigmapython.ReflectorSonderUKW
    :members:
    :show-inheritance:
    :undoc-members:
@@ -580,10 +700,42 @@ enigmapython.ReflectorUKW\_EnigmaB\_A133 module
    :show-inheritance:
    :undoc-members:
 
-enigmapython.ReflectorZUKW module
----------------------------------
+enigmapython.ReflectorUKW\_EnigmaCommercial module
+--------------------------------------------------
 
-.. automodule:: enigmapython.ReflectorZUKW
+.. automodule:: enigmapython.ReflectorUKW_EnigmaCommercial
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.ReflectorUKW\_EnigmaINorway module
+-----------------------------------------------
+
+.. automodule:: enigmapython.ReflectorUKW_EnigmaINorway
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.ReflectorUKW\_EnigmaISonder module
+-----------------------------------------------
+
+.. automodule:: enigmapython.ReflectorUKW_EnigmaISonder
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.ReflectorUKW\_EnigmaT module
+-----------------------------------------
+
+.. automodule:: enigmapython.ReflectorUKW_EnigmaT
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.ReflectorUKW\_EnigmaZ module
+-----------------------------------------
+
+.. automodule:: enigmapython.ReflectorUKW_EnigmaZ
    :members:
    :show-inheritance:
    :undoc-members:
@@ -608,6 +760,22 @@ enigmapython.Scrambler module
 -----------------------------
 
 .. automodule:: enigmapython.Scrambler
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.Settable module
+----------------------------
+
+.. automodule:: enigmapython.Settable
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+enigmapython.SettableReflector module
+-------------------------------------
+
+.. automodule:: enigmapython.SettableReflector
    :members:
    :show-inheritance:
    :undoc-members:
@@ -640,38 +808,6 @@ enigmapython.XRay module
 ------------------------
 
 .. automodule:: enigmapython.XRay
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
-enigmapython.EnigmaKSwiss module
---------------------------------
-
-.. automodule:: enigmapython.EnigmaKSwiss
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
-enigmapython.EnigmaKSwissRotorI module
---------------------------------------
-
-.. automodule:: enigmapython.EnigmaKSwissRotorI
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
-enigmapython.EnigmaKSwissRotorII module
----------------------------------------
-
-.. automodule:: enigmapython.EnigmaKSwissRotorII
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
-enigmapython.EnigmaKSwissRotorIII module
-----------------------------------------
-
-.. automodule:: enigmapython.EnigmaKSwissRotorIII
    :members:
    :show-inheritance:
    :undoc-members:
