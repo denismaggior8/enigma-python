@@ -4,7 +4,7 @@ from .Alphabets import Alphabets
 class EnigmaTRotorVI(Rotor):
     
     wiring = 'xfuzgalvhcnysewqtdmrbkpioj'
-    turnover_indexes = [23, 4, 8, 12, 16]
+    turnover_indexes = [23, 4, 8, 12, 16]  # X, E, I, M, Q
     tag = "T_VI"
     
     def __init__(self, position = 0, ring = 0):

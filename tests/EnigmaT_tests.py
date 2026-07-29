@@ -95,6 +95,32 @@ class TestEnigmaT(unittest.TestCase):
         decrypted = enigma.input_string(ciphertext)
         self.assertEqual(decrypted, plaintext, "Decryption failed with custom reflector position/ring")
 
+    def test_enigma_t_long_encryption_case(self):
+        # Test a long 300-character encryption using Rotors I, II, III (all at position 0, ring 0)
+        # and Reflector UKW-T (position 0, ring 0)
+        rotor1 = EnigmaTRotorI(position=0, ring=0)
+        rotor2 = EnigmaTRotorII(position=0, ring=0)
+        rotor3 = EnigmaTRotorIII(position=0, ring=0)
+        reflector = ReflectorUKW_EnigmaT(position=0, ring=0)
+        etw = EnigmaTEtw()
+
+        enigma = EnigmaT(rotor1, rotor2, rotor3, reflector, etw, auto_increment_rotors=True)
+        plaintext = "helloworld" * 30
+        expected_ciphertext = "euoyfohmdhslsxdskfpxowoxlgxxkktjbcfrqbbkqtxhihpnvrzfpzioamnjylancxjtzviyavfzppnmndnevlzbpbcycykxfoyjftysabsgonadpfzkdwhecdiukhmcirlijpvgbknybxiuafkvrhuqnnuounhsdsukzgzukswpsxtembwfdlmfmvrmzyfxeypfsxsjpwoahdxddjeoovmauepjrrjyuskajteznbdieemjyqzvvpgluivkgwnqzxcakbzhzswqfmlwoviketomovduumyovhppvalndztq"
+        
+        ciphertext = enigma.input_string(plaintext)
+        self.assertEqual(ciphertext, expected_ciphertext, "Encryption output does not match expected simulation value")
+
+        # Reset positions for decryption
+        rotor1.set_position(0)
+        rotor2.set_position(0)
+        rotor3.set_position(0)
+        reflector.set_position(0)
+
+        decrypted = enigma.input_string(ciphertext)
+        self.assertEqual(decrypted, plaintext, "Decryption did not recover plaintext")
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
 
