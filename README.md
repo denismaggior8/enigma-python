@@ -197,6 +197,23 @@ Compared to the other machine models, this one encrypts numbers instead of lette
 | Reflector B Thin           | enkqauywjicopblmdxzvfthrgs 	        | N/A     	|   ✅           	|
 | Reflector C Thin           | rdobjntkvehmlfcwzaxgyipsuq 	        | N/A     	|   ✅           	|
 
+### Enigma T (Tirpitz)
+
+| Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| ETW                        | kzrouqhyaigblwvstdxfpnmcje 	        | N/A     	|   ✅           	|
+| Rotor I                    | kptyuelocvgrfqdanjmbswhzxi 	        | e, k, q, w, z |   ✅           	|
+| Rotor II                   | uphzlweqmtdjxcaksoigvbyfnr 	        | f, l, r, w, z |   ✅           	|
+| Rotor III                  | qudlyrfekonvzaxwhmgpjbsict 	        | e, k, q, w, z |   ✅           	|
+| Rotor IV                   | ciwtbkxnrespflydagvhuojzm 	        | f, l, r, w, z |   ✅           	|
+| Rotor V                    | uaxgisnjbverdylfzwtpckohmq 	        | c, f, k, r, y |   ✅           	|
+| Rotor VI                   | xfuzgalvhcnysewqtdmrbkpioj 	        | e, i, m, q, x |   ✅           	|
+| Rotor VII                  | bjvftxplnayozikwgdqeruchsm 	        | c, f, k, r, y |   ✅           	|
+| Rotor VIII                 | ymtpnzhwkodajxeluvgcbisfr 	        | e, i, m, q, x |   ✅           	|
+| Reflector UKW-T (settable) | gekpbtaumocniljdxzyfhwvqsr 	        | N/A     	|   ✅           	|
+
+
+
 ### Custom Machine
 
 | Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |

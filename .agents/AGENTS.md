@@ -19,17 +19,18 @@ The primary implementation resides inside `src/enigma/enigmapython/`. Here are t
 - **[Enigma.py](src/enigma/enigmapython/Enigma.py)**: The main orchestrator. It manages the flow of scrambling signals: ETW -> Plugboard -> Rotors (Right to Left) -> Reflector -> Rotors (Left to Right) -> ETW -> Plugboard.
 - **[Rotor.py](src/enigma/enigmapython/Rotor.py)**: Represents an Enigma rotor (scrambler), managing its wiring, turnover position, position, and ring settings.
 - **[DynamicTurnoverRotor.py](src/enigma/enigmapython/DynamicTurnoverRotor.py)**: Extends standard `Rotor` to allow dynamic turnover calculation (e.g., commercial Enigma D models).
-- **[Reflector.py](src/enigma/enigmapython/Reflector.py)** & **[SettableReflector.py](src/enigma/enigmapython/SettableReflector.py)**: Represent reflectors. Settable reflectors (like those in M4) have rings and positions.
+- **[Reflector.py](src/enigma/enigmapython/Reflector.py)** & **[SettableReflector.py](src/enigma/enigmapython/SettableReflector.py)**: Represent reflectors. Settable reflectors (like those in M4 and Enigma T) have rings and positions.
 - **[Plugboard.py](src/enigma/enigmapython/Plugboard.py)** & **[SwappablePlugboard.py](src/enigma/enigmapython/SwappablePlugboard.py)**: Manage letter-pair swapping on the plugboard.
 - **[Etw.py](src/enigma/enigmapython/Etw.py)**: Entry Wheel (ETW) routing logic.
 - **[Alphabets.py](src/enigma/enigmapython/Alphabets.py)**: Contains standard alphabets used by the machines (e.g., lowercase 26-char latin, numeric Z30 alphabet).
 - **[XRay.py](src/enigma/enigmapython/XRay.py)**: A diagnostic visualization tool to trace and render signal path stepping details in a human-readable TUI format.
 
-### Historical Models
-Individual historically-accurate models are pre-packaged:
-- **Enigma I / M3 / M4**: The military models (Wehrmacht / Kriegsmarine).
-- **Enigma B / D / K / Swiss K / Z**: Commercial and specialized models.
-These models reside in individual files inside `src/enigma/enigmapython/` (e.g., [EnigmaI.py](src/enigma/enigmapython/EnigmaI.py), [EnigmaM4.py](src/enigma/enigmapython/EnigmaM4.py)).
+- **Enigma B / D / K / Swiss K / T / Z**: Commercial and specialized models.
+These models reside in individual files inside `src/enigma/enigmapython/` (e.g., [EnigmaI.py](src/enigma/enigmapython/EnigmaI.py), [EnigmaM4.py](src/enigma/enigmapython/EnigmaM4.py), [EnigmaT.py](src/enigma/enigmapython/EnigmaT.py)).
+
+### Enigma T & The "Finnery" Procedure
+The Enigma T (Tirpitz) uses a `SettableReflector` (`ReflectorUKW_EnigmaT`). In certain historical joint German-Japanese attachés transmissions, a special procedure called **"Finnery"** was used, where operators manually advanced the settable reflector's position by one step in the alphabet after every 5-character letter-group.
+
 
 ---
 
