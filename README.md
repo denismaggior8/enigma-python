@@ -202,14 +202,14 @@ Compared to the other machine models, this one encrypts numbers instead of lette
 | Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
 |-------	                 |----------------------------	        |-------	|-------------      |
 | ETW                        | kzrouqhyaigblwvstdxfpnmcje 	        | N/A     	|   ✅           	|
-| Rotor I                    | kptyuelocvgrfqdanjmbswhzxi 	        | e, k, q, w, z |   ✅           	|
-| Rotor II                   | uphzlweqmtdjxcaksoigvbyfnr 	        | f, l, r, w, z |   ✅           	|
-| Rotor III                  | qudlyrfekonvzaxwhmgpjbsict 	        | e, k, q, w, z |   ✅           	|
-| Rotor IV                   | ciwtbkxnrespflydagvhuojzm 	        | f, l, r, w, z |   ✅           	|
-| Rotor V                    | uaxgisnjbverdylfzwtpckohmq 	        | c, f, k, r, y |   ✅           	|
-| Rotor VI                   | xfuzgalvhcnysewqtdmrbkpioj 	        | e, i, m, q, x |   ✅           	|
-| Rotor VII                  | bjvftxplnayozikwgdqeruchsm 	        | c, f, k, r, y |   ✅           	|
-| Rotor VIII                 | ymtpnzhwkodajxeluvgcbisfr 	        | e, i, m, q, x |   ✅           	|
+| Rotor I                    | kptyuelocvgrfqdanjmbswhzxi 	        | w, z, e, k, q |   ✅           	|
+| Rotor II                   | uphzlweqmtdjxcaksoigvbyfnr 	        | w, z, f, l, r |   ✅           	|
+| Rotor III                  | qudlyrfekonvzaxwhmgpjbsict 	        | w, z, e, k, q |   ✅           	|
+| Rotor IV                   | ciwtbkxnrespflydagvhuojzm 	        | w, z, f, l, r |   ✅           	|
+| Rotor V                    | uaxgisnjbverdylfzwtpckohmq 	        | y, c, f, k, r |   ✅           	|
+| Rotor VI                   | xfuzgalvhcnysewqtdmrbkpioj 	        | x, e, i, m, q |   ✅           	|
+| Rotor VII                  | bjvftxplnayozikwgdqeruchsm 	        | y, c, f, k, r |   ✅           	|
+| Rotor VIII                 | ymtpnzhwkodajxeluvgcbisfr 	        | x, e, i, m, q |   ✅           	|
 | Reflector UKW-T (settable) | gekpbtaumocniljdxzyfhwvqsr 	        | N/A     	|   ✅           	|
 
 
