@@ -305,6 +305,22 @@ Here's a list containing all the known Enigma simulators that use the **enigmapy
 <br>
 <br>
 
+- [Smallest Enigma M4 Emulator](https://smallest-enigma.org). **Smallest Enigma M4 Emulator** is a technical specification and world record attempt for the smallest Enigma M4 emulator, using **enigmapython**'s MicroPython compatibility on microscopic embedded devices.
+<div class="img-container" style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/denismaggior8/enigma-python/master/img/smallest_enigma.png" alt="drawing" width="400" align="center"/>
+</div>
+
+<br>
+<br>
+
+- [Enigma Python MCP Server](https://github.com/denismaggior8/enigma-python-mcp). **Enigma Python MCP Server** is a Model Context Protocol (MCP) server that exposes the **enigmapython** cryptographic engine as tools for AI assistants, allowing LLMs (such as Claude) to natively encrypt, decrypt, and visualize Enigma machine signals.
+<div class="img-container" style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/denismaggior8/enigma-python/master/img/enigma_mcp.png" alt="drawing" width="400" align="center"/>
+</div>
+
+<br>
+<br>
+
 In the case you leveraged **enigmapython** API in a project, either public or not, drop me an email at __denis.maggiorotto[at]gmail.com__ and I'll be happy to list you here.
 
 
