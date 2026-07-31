@@ -316,7 +316,7 @@ Here's a list containing all the known Enigma simulators that use the **enigmapy
 <br>
 <br>
 
-- [Enigma Python MCP Server](https://github.com/denismaggior8/enigma-python-mcp). **Enigma Python MCP Server** is a Model Context Protocol (MCP) server that exposes the **enigmapython** cryptographic engine as tools for AI assistants, allowing LLMs (such as Claude) to natively encrypt, decrypt, and visualize Enigma machine signals.
+- [Enigma Python MCP Server](https://github.com/denismaggior8/enigma-python-mcp). **Enigma Python MCP Server** is a Model Context Protocol (MCP) server that exposes the **enigmapython** cryptographic engine as tools for AI assistants, allowing LLMs (such as Claude) to natively encrypt and decrypt messages as it was during WWII.
 <div class="img-container" style="text-align: center;">
     <img src="https://raw.githubusercontent.com/denismaggior8/enigma-python/master/img/enigma_mcp.png" alt="drawing" width="400" align="center"/>
 </div>
