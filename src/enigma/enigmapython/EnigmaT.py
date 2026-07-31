@@ -1,0 +1,13 @@
+from .Enigma import Enigma
+from .PlugboardPassthrough import PlugboardPassthrough
+
+class EnigmaT(Enigma):
+    """Enigma T (Tirpitz) machine model (based on Enigma K, no plugboard)"""
+    def __init__(self, rotor1, rotor2, rotor3, reflector, etw, auto_increment_rotors=True):
+        super().__init__(
+            plugboard=PlugboardPassthrough(),
+            rotors=[rotor1, rotor2, rotor3],
+            reflector=reflector,
+            etw=etw,
+            auto_increment_rotors=auto_increment_rotors
+        )

@@ -752,4 +752,87 @@ classDiagram
     EnigmaKSwissRotorI --|> Rotor
     EnigmaKSwissRotorII --|> Rotor
     EnigmaKSwissRotorIII --|> Rotor
+
+    class EnigmaT {
+        - __init__(self, rotor1, rotor2, rotor3, reflector, etw, auto_increment_rotors) None
+    }
+
+    class EnigmaTEtw {
+        + str wiring
+        - __init__(self) None
+    }
+
+    class ReflectorUKW_EnigmaT {
+        + str wiring
+        + str tag
+        - __init__(self, position, ring) None
+    }
+
+    class EnigmaTRotorI {
+        + str wiring
+        + list turnover_indexes
+        + str tag
+        - __init__(self, position, ring) None
+    }
+
+    class EnigmaTRotorII {
+        + str wiring
+        + list turnover_indexes
+        + str tag
+        - __init__(self, position, ring) None
+    }
+
+    class EnigmaTRotorIII {
+        + str wiring
+        + list turnover_indexes
+        + str tag
+        - __init__(self, position, ring) None
+    }
+
+    class EnigmaTRotorIV {
+        + str wiring
+        + list turnover_indexes
+        + str tag
+        - __init__(self, position, ring) None
+    }
+
+    class EnigmaTRotorV {
+        + str wiring
+        + list turnover_indexes
+        + str tag
+        - __init__(self, position, ring) None
+    }
+
+    class EnigmaTRotorVI {
+        + str wiring
+        + list turnover_indexes
+        + str tag
+        - __init__(self, position, ring) None
+    }
+
+    class EnigmaTRotorVII {
+        + str wiring
+        + list turnover_indexes
+        + str tag
+        - __init__(self, position, ring) None
+    }
+
+    class EnigmaTRotorVIII {
+        + str wiring
+        + list turnover_indexes
+        + str tag
+        - __init__(self, position, ring) None
+    }
+
+    EnigmaT --|> Enigma
+    EnigmaTEtw --|> Etw
+    ReflectorUKW_EnigmaT --|> SettableReflector
+    EnigmaTRotorI --|> Rotor
+    EnigmaTRotorII --|> Rotor
+    EnigmaTRotorIII --|> Rotor
+    EnigmaTRotorIV --|> Rotor
+    EnigmaTRotorV --|> Rotor
+    EnigmaTRotorVI --|> Rotor
+    EnigmaTRotorVII --|> Rotor
+    EnigmaTRotorVIII --|> Rotor
 ```

@@ -59,6 +59,9 @@ For a detailed description of the rotor movement and stepping logic, including p
 
 - [Authentic German Army Test Message from 1930](https://cryptocellar.org/enigma/e-message-1930.html): Documented by Frode Weierud's CryptoCellar, this test validates that the **Enigma I** implementation correctly handles the complex interaction of rotors, ring settings, and plugboard connections exactly as the original machines did. See the [corresponding unit test](https://github.com/denismaggior8/enigma-python/blob/master/tests/Enigma1930_tests.py) for details.
 - [Authentic U-534 M4 Message P1030700](https://enigma.hoerenberg.com/index.php?cat=The%20U534%20messages&page=P1030700): A message from the U-534 submarine (May 1945), validating the **Enigma M4** implementation (including the Greek rotor and thin reflector) against historical intercepts. See the [corresponding unit test](https://github.com/denismaggior8/enigma-python/blob/master/tests/EnigmaM4_U534_tests.py) for details.
+- [Enigma T (Tirpitz) Transcript & "Finnery" Procedure Tests](https://github.com/denismaggior8/enigma-python/blob/master/tests/EnigmaT_transcript_tests.py): Validates the **Enigma T** machine implementation against authentic WWII joint German-Japanese naval intercepts and procedures documented on Frode Weierud's CryptoCellar.
+  - **"Finnery" Procedure**: Simulates the historical wartime transmission procedure where operators manually advanced the settable reflector (`ReflectorUKW_EnigmaT`) one step in the alphabet after processing each 5-letter group.
+  - **Intercept Transcripts**: Includes the authentic wartime ciphertexts of **Message A** (DAN C" C", 1814/6/27) and **Message B** (DAN C" C", 1947/6/28) transmitted on 6 March 1944 to the Japanese submarine *Gimmatzu*, providing a verified template for testing decryption against real intercepts. See the [corresponding transcript unit tests](https://github.com/denismaggior8/enigma-python/blob/master/tests/EnigmaT_transcript_tests.py) for details.
 
 ## Machines implementations
 
@@ -197,6 +200,23 @@ Compared to the other machine models, this one encrypts numbers instead of lette
 | Reflector B Thin           | enkqauywjicopblmdxzvfthrgs 	        | N/A     	|   ✅           	|
 | Reflector C Thin           | rdobjntkvehmlfcwzaxgyipsuq 	        | N/A     	|   ✅           	|
 
+### Enigma T (Tirpitz)
+
+| Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
+|-------	                 |----------------------------	        |-------	|-------------      |
+| ETW                        | kzrouqhyaigblwvstdxfpnmcje 	        | N/A     	|   ✅           	|
+| Rotor I                    | kptyuelocvgrfqdanjmbswhzxi 	        | w, z, e, k, q |   ✅           	|
+| Rotor II                   | uphzlweqmtdjxcaksoigvbyfnr 	        | w, z, f, l, r |   ✅           	|
+| Rotor III                  | qudlyrfekonvzaxwhmgpjbsict 	        | w, z, e, k, q |   ✅           	|
+| Rotor IV                   | ciwtbkxnrespflydagvhuojzm 	        | w, z, f, l, r |   ✅           	|
+| Rotor V                    | uaxgisnjbverdylfzwtpckohmq 	        | y, c, f, k, r |   ✅           	|
+| Rotor VI                   | xfuzgalvhcnysewqtdmrbkpioj 	        | x, e, i, m, q |   ✅           	|
+| Rotor VII                  | bjvftxplnayozikwgdqeruchsm 	        | y, c, f, k, r |   ✅           	|
+| Rotor VIII                 | ymtpnzhwkodajxeluvgcbisfr 	        | x, e, i, m, q |   ✅           	|
+| Reflector UKW-T (settable) | gekpbtaumocniljdxzyfhwvqsr 	        | N/A     	|   ✅           	|
+
+
+
 ### Custom Machine
 
 | Scrambler 	             | Wiring                    	        | Turnover 	| Implemented 	    |
@@ -283,6 +303,22 @@ Here's a list containing all the known Enigma simulators that use the **enigmapy
 - [Retrocampus BBS Enigma simulator](https://retrocampus.com/bbs/). When connected to the BBS, type E to access an Enigma I cypher machine whose backend is based on **enigmapython**.
 <div class="img-container" style="text-align: center;">
     <img src="https://raw.githubusercontent.com/denismaggior8/enigma-python/master/img/retrocampus_enigma.png" alt="drawing" width="400" align="center"/>
+</div>
+
+<br>
+<br>
+
+- [Smallest Enigma M4 Emulator](https://smallest-enigma.org). **Smallest Enigma M4 Emulator** is a technical specification and world record attempt for the smallest Enigma M4 emulator, using **enigmapython**'s MicroPython compatibility on microscopic embedded devices.
+<div class="img-container" style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/denismaggior8/enigma-python/master/img/smallest_enigma.png" alt="drawing" width="400" align="center"/>
+</div>
+
+<br>
+<br>
+
+- [Enigma Python MCP Server](https://github.com/denismaggior8/enigma-python-mcp). **Enigma Python MCP Server** is a Model Context Protocol (MCP) server that exposes the **enigmapython** cryptographic engine as tools for AI assistants, allowing LLMs (such as Claude) to natively encrypt and decrypt messages as it was during WWII.
+<div class="img-container" style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/denismaggior8/enigma-python/master/img/enigma_mcp.png" alt="drawing" width="400" align="center"/>
 </div>
 
 <br>
