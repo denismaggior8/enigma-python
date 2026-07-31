@@ -44,6 +44,26 @@ This directory contains example scripts demonstrating how to configure and use v
 - **File**: [enigma_machine_custom_example.py](enigma_machine_custom_example.py)
 - **Description**: Demonstrates how to build a fully customized Enigma machine from scratch using the library's base classes (`Rotor`, `Reflector`, `Enigma`).
 
+### Enigma K Swiss
+- **File**: [enigma_machine_K_Swiss_example.py](enigma_machine_K_Swiss_example.py)
+- **Description**: Setup and usage of the Swiss variant of the Commercial Enigma K.
+
+### Enigma T (Tirpitz)
+- **File**: [enigma_machine_T_example.py](enigma_machine_T_example.py)
+- **Description**: Setup and usage of the Enigma T (Tirpitz), featuring eight specific rotors and settable reflector UKW-T.
+
+### Mini Brute-Forcer
+- **File**: [mini_brute_forcer.py](mini_brute_forcer.py)
+- **Description**: Simulates wartime cryptanalysis by brute-forcing all 17,576 starting rotor positions to decrypt an intercepted message given a known plaintext "crib".
+
+### Interactive REPL Demo
+- **File**: [play_repl.py](play_repl.py)
+- **Description**: An automated interactive terminal presentation simulating setup, rotor/plugboard configuration, and encryption in a Python REPL.
+
+### XRay Real-time Visualization
+- **File**: [render_enigma.py](render_enigma.py)
+- **Description**: Employs the `XRay` diagnostic utility with `rich` console rendering to trace and display the exact character-by-character signal path stepping details in real-time.
+
 ## How to Run
 
 You can run any example directly using python:
