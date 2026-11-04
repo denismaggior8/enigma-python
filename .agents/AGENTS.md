@@ -6,7 +6,7 @@ Welcome, future Agent! This document contains all the critical architectural, me
 
 ## 1. Project Overview & Context
 `enigmapython` is a Python library that emulates historical Enigma cryptographic machines with 100% accuracy.
-- **Historical Accuracy**: Verified against authentic German Army messages from 1930 and U-boat U-534 messages (M4 model).
+- **Historical Accuracy**: Verified against authentic German Army messages from 1930 and 1941 (MVUEH) and U-boat U-534 messages (M4 model).
 - **Extensibility**: Designed to allow custom machines with custom rotors, reflectors, and plugboard configurations.
 - **MicroPython Support**: The codebase maintains strict compatibility with MicroPython to support microcontrollers and embedded devices via the [micropython-enigma-python](https://github.com/denismaggior8/micropython-enigma-python) side-project.
 
@@ -90,5 +90,5 @@ python3 -m pytest
 ```
 
 ### Verification & Validation Strategy
-- Tests inside the `tests/` directory (e.g., [Enigma1930_tests.py](tests/Enigma1930_tests.py), [EnigmaM4_U534_tests.py](tests/EnigmaM4_U534_tests.py)) check correct decryption of historical keys and transcripts.
+- Tests inside the `tests/` directory (e.g., [Enigma1930_tests.py](tests/Enigma1930_tests.py), [EnigmaI_MVUEH_tests.py](tests/EnigmaI_MVUEH_tests.py), [EnigmaM4_U534_tests.py](tests/EnigmaM4_U534_tests.py)) check correct decryption of historical keys and transcripts.
 - Integration tests (like [EnigmaM4_tests.py](tests/EnigmaM4_tests.py)) validate output against the widely-accepted third-party package `py-enigma` using long random strings (up to 1,000,000 characters) to guarantee absolute cryptographic alignment.
